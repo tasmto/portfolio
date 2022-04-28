@@ -1,5 +1,5 @@
 import React, { Profiler } from 'react';
-import SkillsIcons from '../components/skillsBlocks/skillsIcons';
+import SkillsIcons from '../components/skillsBlocks/SkillsIcons';
 
 import PortfolioGrid from '../components/PortfolioGrid';
 
