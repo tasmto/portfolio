@@ -18,7 +18,7 @@ const Resume = () => {
         </div>
       </section>
       <section className='grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 col-span-1 gap-10 sm:gap-14'>
-        <article className='grid gap-8'>
+        <article className='grid gap-8 content-start'>
           <h2
             className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
             style={{ backdropFilter: 'blur(5px)' }}

@@ -6,23 +6,28 @@ const Contact = () => {
   };
   return (
     <div className=' mx-4 sm:mx-8 2xl:mx-auto max-w-screen-2xl flex flex-col gap-[6rem]'>
-      <section className='flex flex-col gap-8 justify-center items-center py-10 min-h-[75vh] bg-slate-100 '>
+      <section className='flex flex-col gap-8 justify-center items-center py-10 min-h-[75vh] max-h-[500px] bg-slate-100 '>
         <h1 className='text-2xl font-semibold'>Get in touch with me</h1>
 
         <form
           onSubmit={handleSubmit}
-          className='max-w-xl min-w-[40vw] w-full rounded-xl bg-white grid gap-4 p-6 py-10'
+          className='max-w-xl  w-full rounded-xl bg-white grid gap-8 p-6 py-10'
         >
-          <div>
+          <label className='text-lg font-medium  relative cursor-pointer'>
+            <span className='absolute z-10 bottom-[80%] left-10 '>
+              Enter your email
+            </span>
             <input
-              className='w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded-full '
+              className='w-full px-10 py-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded-full 
+              focus:border-cyan-900 focus:mt-4 transition-all'
               type='text'
               placeholder='Email'
+              id=''
             />
-          </div>
+          </label>
 
-          <button className='w-full rounded-full py-4 bg-blue-600 hover:bg-blue-700  text-sm font-bold text-gray-50 transition duration-200'>
-            Sign In
+          <button className='text-2xl font-semibold text-cyan-500 hover:text-cyan-700'>
+            Send
           </button>
         </form>
       </section>
