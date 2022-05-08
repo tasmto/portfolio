@@ -58,9 +58,8 @@ const PortfolioPieceCard: React.FC<Props> = ({ data }) => {
 
   return (
     <motion.div
-      className='w-full h-full grid justify-items-center content-center relative'
+      className='w-full h-full grid justify-items-center content-center relative opacity-95 hover:opacity-100 transition-opacity '
       style={{
-        background: data.header.background || '#F9F9F9',
         transform: `skew(${pos[0] * 2}deg, ${pos[1] * 1.25}deg)`,
         transition: 'transform 250ms ease',
       }}
@@ -70,7 +69,7 @@ const PortfolioPieceCard: React.FC<Props> = ({ data }) => {
       onClick={handleClick}
     >
       <img
-        className='h-[90%] w-[90%] object-contain m-auto'
+        className='h-[85%] w-[85%] object-contain m-auto'
         src={data.header.url}
         alt=''
       />

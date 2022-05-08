@@ -20,7 +20,7 @@ const Resume = () => {
       <section className='grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 col-span-1 gap-10 sm:gap-14'>
         <article className='grid gap-8 content-start'>
           <h2
-            className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+            className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
             style={{ backdropFilter: 'blur(5px)' }}
           >
             Working Experience
@@ -230,7 +230,7 @@ const Resume = () => {
         <div className='grid gap-16 content-start'>
           <article className='grid gap-8'>
             <h2
-              className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+              className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem] py-4 bg-white/80 shadow rounded-2xl'
               style={{ backdropFilter: 'blur(5px)' }}
             >
               Contact Info
@@ -251,7 +251,7 @@ const Resume = () => {
           </article>
           <article className='grid gap-8'>
             <h2
-              className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+              className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
               style={{ backdropFilter: 'blur(5px)' }}
             >
               Educational History
@@ -280,7 +280,7 @@ const Resume = () => {
           </article>
           <article className='grid gap-8'>
             <h2
-              className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+              className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
               style={{ backdropFilter: 'blur(5px)' }}
             >
               Languages and Frameworks
@@ -294,7 +294,7 @@ const Resume = () => {
           </article>
           <article className='grid gap-8'>
             <h2
-              className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+              className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
               style={{ backdropFilter: 'blur(5px)' }}
             >
               Technical and Software Skills
@@ -308,7 +308,7 @@ const Resume = () => {
           </article>
           <article className='grid gap-8 print:hidden'>
             <h2
-              className='text-2xl font-semibold sticky top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
+              className='text-2xl font-semibold sticky z-50 top-0 pl-10 translate-x-[-2.5rem]  py-4 bg-white/80 shadow rounded-2xl'
               style={{ backdropFilter: 'blur(5px)' }}
             >
               My Favorite Projects

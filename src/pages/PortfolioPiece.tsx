@@ -11,7 +11,7 @@ const PortfolioPiece = () => {
   }, []);
   return (
     <>
-      <div className=' lg:mx-auto w-screen flex flex-col gap-[6rem]'>
+      <div className=' lg:mx-auto w-screen flex flex-col gap-[6rem] '>
         <div className=' overflow-hidden col-span-6 w-screen sm:h-[50vh] max-h-[30rem] lg:col-span-6 '>
           <img className='h-full w-full object-cover' src={Portfolio4} alt='' />
         </div>

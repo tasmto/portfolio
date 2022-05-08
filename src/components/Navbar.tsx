@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
 import LogoImage from '../assets/logo.png';
 import {
   IoSchool,
@@ -16,18 +18,32 @@ const Navbar = ({ sticky = true }) => {
    * @todo remove scrollbar on mobile menu
    */
 
+  const [logo, setLogo] = useState('tasmto');
+
   return (
-    <header
+    <motion.header
       className={`flex justify-between py-4  mx-4 sm:mx-8 2xl:mx-auto max-w-screen-2xl print:hidden ${
         sticky &&
         'sticky top-0 z-10 bg-slate-50/90 mx-0 sm:mx-0 px-4 sm:px-8 shadow pb-6'
       }`}
       style={{ backdropFilter: `${sticky && 'blur(5px)'} ` }}
+      transition={{ duration: 0.5, type: 'spring' }}
+      initial={{ opacity: 0, y: -5 }}
+      animate={{ opacity: [0, 1], y: [-5, 0] }}
     >
       <Link to='/'>
-        <h1>
-          <img src={LogoImage} alt='Tashinga Mtoko' />
-        </h1>
+        <motion.h1
+          className='text-3xl font-bold '
+          onMouseEnter={() => setLogo('tashinga mtoko')}
+          onMouseLeave={() => {
+            setLogo('');
+            setTimeout(() => {
+              setLogo('tasmto');
+            }, 0);
+          }}
+        >
+          {logo}
+        </motion.h1>
       </Link>
       <nav className='flex '>
         <button role='link' className='md:hidden' onClick={handleToggleMenu}>
@@ -97,7 +113,7 @@ const Navbar = ({ sticky = true }) => {
           </ul>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

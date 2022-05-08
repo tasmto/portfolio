@@ -3,38 +3,104 @@ import { Link } from 'react-router-dom';
 import AboutExtract from '../components/AboutExtract';
 import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 import { motion } from 'framer-motion';
+import { FiMinus, FiGitCommit, FiColumns } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-lg flex flex-col gap-[6rem]'>
-      <section className='text-center flex flex-col gap-6 pt-10 sm:py-12 '>
+    <div className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'>
+      <section className='text-center flex flex-col gap-6 pt-14 sm:pt-[20vh] xl:pt-28 sm:pb-12 '>
         <motion.h1
-          className='text-2xl font-semibold'
-          transition={{ duration: 0.4 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1] }}
+          className='text-2xl font-semibold sm:text-3xl sm:leading-relaxed md:text-4xl md:leading-relaxed mb-6'
+          transition={{
+            duration: 0.75,
+            type: 'spring',
+            damping: 25,
+            stiffness: 50,
+          }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: [0, 0.4, 1], y: [-50, 20, -10] }}
+          exit={{ opacity: 0, y: -50 }}
         >
-          Heya, I'm Tashinga, a Cape Town based JavaScript developer working on
-          customer lead and user focused experiences and products currently in
-          real estate technologies.
+          Heya, I'm Tashinga, a Cape Town based Frontend JavaScript developer
+          currently in the real estate technologies field.
         </motion.h1>
         <motion.h3
-          className='text-2xl font-semibold flex flex-wrap gap-4 justify-center'
-          transition={{ duration: 0.6 }}
+          className='text-3xl font-semibold flex flex-wrap gap-4 justify-center'
+          transition={{
+            duration: 0.6,
+            delay: 0.5,
+            type: 'spring',
+            damping: 25,
+            stiffness: 500,
+          }}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: [0, 0, 1], y: [20, 20, 0] }}
+          animate={{ opacity: [0, 1], y: [20, 0] }}
         >
-          <Link to='/portfolio' className='text-cyan-500 hover:text-cyan-700'>
-            Have a look at my portfolio
-          </Link>
-          <span className='text-gray-600'>|</span>
-          <Link to='/resume' className='text-cyan-500 hover:text-cyan-700'>
-            My CV
-          </Link>
+          <motion.button
+            onClick={() => navigate('/portfolio')}
+            className='text-slate-700 hover:text-cyan-700 flex gap-4 items-center view-large'
+            transition={{
+              duration: 0.3,
+              delay: 0.5,
+              type: 'spring',
+              damping: 25,
+              stiffness: 500,
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: [0, 1], y: [20, 0] }}
+          >
+            <span>
+              <FiGitCommit className='w-10 h-10 bg-cyan-500 rounded-full text-white p-2' />
+            </span>
+            <span>Have a look at my portfolio</span>
+          </motion.button>
+
+          <motion.span
+            className='text-slate-700 '
+            transition={{
+              duration: 0.7,
+              delay: 1,
+              type: 'spring',
+              damping: 25,
+              stiffness: 500,
+            }}
+            initial={{ opacity: 0, rotate: 0 }}
+            animate={{ opacity: [0, 1], rotate: [0, 180, 270] }}
+          >
+            <FiMinus className='h-10 w-10 ' />
+          </motion.span>
+          <motion.button
+            onClick={() => navigate('/resume')}
+            className='text-slate-700 view-large hover:text-cyan-700 flex gap-4 items-center'
+            transition={{
+              duration: 0.9,
+              delay: 1.65,
+              type: 'spring',
+              damping: 25,
+              stiffness: 500,
+            }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: [0, 1], y: [-20, 10, 0] }}
+          >
+            <span>
+              <FiColumns className='w-10 h-10 bg-cyan-500 rounded-full text-white p-2' />
+            </span>
+            <span>My CV</span>
+          </motion.button>
         </motion.h3>
       </section>
-      <PortfolioGrid />
-      <AboutExtract />
+      <motion.div
+        transition={{ duration: 2, delay: 2 }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: [0, 1], y: [100, 0, 10, 0] }}
+      >
+        <PortfolioGrid />
+
+        <AboutExtract />
+      </motion.div>
     </div>
   );
 };
