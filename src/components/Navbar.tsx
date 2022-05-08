@@ -18,7 +18,7 @@ const Navbar = ({ sticky = true }) => {
 
   return (
     <header
-      className={`flex justify-between pt-6 pb-10  mx-4 sm:mx-8 2xl:mx-auto max-w-screen-2xl print:hidden ${
+      className={`flex justify-between py-4  mx-4 sm:mx-8 2xl:mx-auto max-w-screen-2xl print:hidden ${
         sticky &&
         'sticky top-0 z-10 bg-slate-50/90 mx-0 sm:mx-0 px-4 sm:px-8 shadow pb-6'
       }`}
@@ -66,7 +66,7 @@ const Navbar = ({ sticky = true }) => {
             </li>
             <li className='w-full text-center md:w-auto'>
               <Link
-                className='text-2xl  rounded-lg text-white hover:bg-gray-700 p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
+                className='text-2xl  rounded-lg text-white hover:bg-gray-700 hover:text-white p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
                 md:text-black md:text-lg md:py-2 md:px-4 md:w-auto md:gap-3'
                 to='/resume'
               >
@@ -76,7 +76,7 @@ const Navbar = ({ sticky = true }) => {
             </li>
             <li className='w-full text-center md:w-auto'>
               <Link
-                className='text-2xl   rounded-lg text-white hover:bg-gray-700 p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
+                className='text-2xl   rounded-lg text-white hover:bg-gray-700  hover:text-white  p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
                 md:text-black md:text-lg md:py-2 md:px-4 md:w-auto md:gap-3'
                 to='/portfolio'
               >
@@ -86,7 +86,7 @@ const Navbar = ({ sticky = true }) => {
             </li>
             <li className='w-full text-center md:w-auto'>
               <Link
-                className='text-2xl   rounded-lg text-white hover:bg-gray-700 p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
+                className='text-2xl   rounded-lg text-white hover:bg-gray-700  hover:text-white  p-5 w-full flex flex-wrap gap-5 gap-y-3 items-center justify-center
                 md:text-black md:text-lg md:py-2 md:px-4 md:w-auto md:gap-3'
                 to='/get-in-touch'
               >

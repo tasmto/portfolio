@@ -13,7 +13,7 @@ const Footer = () => {
         </h2>
         <Link
           to='/get-in-touch'
-          className='text-2xl font-semibold text-cyan-500 hover:text-cyan-700'
+          className='text-2xl font-semibold text-cyan-500 hover:text-cyan-700 wave'
         >
           Let’s chat!
         </Link>
@@ -26,6 +26,7 @@ const Footer = () => {
               href='https://twitter.com/tasmto'
               target='_blank'
               rel='no-referer'
+              className='sup'
             >
               Twitter
             </a>
@@ -35,6 +36,7 @@ const Footer = () => {
               href='https://github.com/tasmto'
               target='_blank'
               rel='no-referer'
+              className='sup'
             >
               Github
             </a>
@@ -44,6 +46,7 @@ const Footer = () => {
               href='https://dribbble.com/tasmto'
               target='_blank'
               rel='no-referer'
+              className='sup'
             >
               Dribbble
             </a>
@@ -53,6 +56,7 @@ const Footer = () => {
               href='https://www.linkedin.com/in/tasmto/'
               target='_blank'
               rel='no-referer'
+              className='sup'
             >
               LinkedIn
             </a>

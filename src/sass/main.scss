@@ -6,4 +6,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #252323;
+  cursor: url("../assets/cursors/cursor.png"),
+    auto;
+}
+
+a {
+  &:hover {
+    cursor: url("../assets/cursors/cursor-view.png"),
+      auto;
+  }
+
+  &:active {
+    cursor: url("../assets/cursors/cursor-view--active.png"),
+      auto;
+  }
+
+  &.wave:hover {
+    cursor: url("../assets/cursors/cursor-wave.png"),
+      auto;
+  }
+
+  &.sup:hover {
+    cursor: url("../assets/cursors/cursor-sup.png"),
+      auto;
+  }
+
+
+}
+
+.view-large {
+  cursor: url("../assets/cursors/cursor-view-large.png"),
+    auto;
 }

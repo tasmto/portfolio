@@ -1,6 +1,6 @@
 import React from 'react';
 import SkillsIcons from '../components/skillsBlocks/SkillsIcons';
-import PortfolioGrid from '../components/PortfolioGrid';
+import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 
 const Portfolio = () => {
   return (
