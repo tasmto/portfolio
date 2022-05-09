@@ -2,6 +2,7 @@ interface image {
   url: string;
   background?: string;
 }
+
 interface content {
   heading?: string;
   body?: string | Array<string>;
@@ -16,7 +17,7 @@ interface portfolioPiece {
   extract: string;
   repository?: string;
   production?: Array<{ label: string; link: string }>;
-  content?: Array<{ image?: image | [image]; text?: content }>;
+  content?: Array<{ image?: image | Array<image>; text?: content }>;
 }
 interface portfolio {
   [name: string]: portfolioPiece;

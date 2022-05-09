@@ -108,7 +108,11 @@ const Navbar = ({ sticky = true }) => {
           )}
         </AnimatePresence>
         <div className=' z-50'>
-          <button onClick={cycleOpen}>
+          <button
+            onClick={() => {
+              cycleOpen();
+            }}
+          >
             {open ? (
               <FiX className='h-10 w-10' />
             ) : (
@@ -121,9 +125,9 @@ const Navbar = ({ sticky = true }) => {
         <motion.div
           className='w-screen h-screen backdrop-blur-sm bg-gray-800/30 fixed top-0 right-0 cursor-pointer z-30'
           variants={itemVariants}
-          animate={{ open }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
-          onClick={cycleOpen}
+          onClick={() => cycleOpen()}
         ></motion.div>
       )}
     </>

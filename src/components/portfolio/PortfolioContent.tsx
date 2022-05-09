@@ -11,12 +11,11 @@ interface content {
 }
 
 interface Props {
-  content: {
-    image:
-      | { url: string; background: string }
-      | [{ url: string; background: string }];
-    text: content;
-  };
+  content: any;
+  // {
+  //   image: { url: string; background: string };
+  //   text: content;
+  // };
 }
 
 const PortfolioContent: React.FC<Props> = ({ content }) => {
@@ -45,7 +44,7 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
         <div
           className=' overflow-hidden col-span-6 h-[80vh] max-h-[500px] rounded-2xl  lg:col-span-6'
           style={{
-            background: content.image?.background || '#f5f5f5',
+            background: content.image.background || '#f5f5f5',
           }}
         >
           <PortfolioPieceCard

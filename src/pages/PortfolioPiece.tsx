@@ -12,7 +12,7 @@ const PortfolioPiece = () => {
   const params = useParams();
   const navigate = useNavigate();
   const portfolioId = params.id;
-  const [portfolioData, setPortfolioData] = useState({});
+  const [portfolioData, setPortfolioData] = useState(portfolio[portfolioId]);
 
   useEffect(() => {
     setPortfolioData(portfolio[portfolioId]);

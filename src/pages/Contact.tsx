@@ -35,6 +35,7 @@ const Contact = () => {
 
         <form
           name='contact'
+          // @ts-ignore: Type '{ children: Element[]; name: string; netlify: true; "netlify-honeypot": string; method: string;
           netlify
           netlify-honeypot='bot-field'
           method='post'
