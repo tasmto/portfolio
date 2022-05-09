@@ -24,7 +24,12 @@ const PortfolioGrid = () => {
             background: portfolio.futureagent.header.background || '#F9F9F9',
           }}
         >
-          <PortfolioPieceCard data={portfolio.futureagent} />
+          <PortfolioPieceCard
+            image={portfolio.futureagent?.header.url}
+            stack={portfolio.futureagent.stack}
+            title={portfolio.futureagent.title}
+            id={portfolio.futureagent.id}
+          />
         </div>
         <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
           <img className='h-full w-full object-cover' src={Portfolio2} alt='' />

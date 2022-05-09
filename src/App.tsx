@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './sass/main.scss';
 import './sass/index.css';
 import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Navbar from './features/navbar/Navbar';
 import Resume from './pages/Resume';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
         <Navbar sticky={false} />
-        <main>
+        <main className='pt-24 lg:pt-[10rem]'>
           <Routes>
             <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Home />} />

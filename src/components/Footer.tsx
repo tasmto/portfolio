@@ -4,16 +4,13 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className='print:hidden flex flex-col gap-10 mx-4 pt-[6rem] pb-8 sm:mx-8 2xl:mx-auto max-w-screen-2xl'>
-      <article
-        className='flex flex-col gap-2 items-center justify-center text-center bg-gray-100 rounded-xl py-20 p-10'
-        style={{ minHeight: '35vh', maxHeight: '350px' }}
-      >
-        <h2 className='text-2xl font-semibold'>
+      <article className='flex flex-col gap-2 items-center justify-center text-center bg-gray-100 rounded-xl py-[8rem] p-10 max-h-[300px]'>
+        <h2 className='text-2xl sm:text-3xl font-semibold'>
           You can get in touch with me anyway you'd like:
         </h2>
         <Link
           to='/get-in-touch'
-          className='text-2xl font-semibold text-cyan-500 hover:text-cyan-700 wave'
+          className=' font-semibold text-cyan-500 hover:text-cyan-700 wave text-2xl sm:text-3xl'
         >
           Let’s chat!
         </Link>
