@@ -13,6 +13,8 @@ interface portfolioPiece {
   title: string;
   time: string;
   stack?: Array<string>;
+  demo?: string;
+  repo?: string;
   launched?: string;
   extract: string;
   repository?: string;
@@ -33,6 +35,8 @@ export const portfolio: portfolio = {
     title: 'Future Agent Design and Development',
     time: '1 year',
     stack: ['React', 'React Native', 'Firebase', 'Node.js', 'Express.js'],
+    demo: 'https://google.com',
+    repo: 'https://github.com',
     extract:
       'A MERN + Firebase stack powered re-imagining of how houses and properties get sold in South Africa. ',
     repository: 'www.',

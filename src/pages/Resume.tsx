@@ -11,7 +11,7 @@ const Resume = () => {
       initial={pageOpacityShift.initial}
       animate={pageOpacityShift.animate}
       exit={pageOpacityShift.exit}
-      className=' mx-6 sm:mx-8 lg:mx-auto max-w-screen-lg flex flex-col gap-[6rem]'
+      className=' mx-4  sm:mx-8 xl:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'
     >
       <section className=' flex flex-col gap-8 pt-10  '>
         <h1 className='text-2xl font-semibold'>
@@ -247,10 +247,39 @@ const Resume = () => {
                 Name: Tashinga Mtoko
               </li>
               <li className='text-xl font-medium'>
-                Email: mtokotashinga@gmail.com
+                Email:{' '}
+                <a
+                  href='mailto:mtokotashinga@gmail.com'
+                  target='_blank'
+                  rel='no-referer'
+                  className='sup hover:text-cyan-700 text-cyan-500'
+                >
+                  mtokotashinga@gmail.com
+                </a>
               </li>
-              <li className='text-xl font-medium'>WhatsApp: Click to Reveal</li>
-              <li className='text-xl font-medium'>Github: @tasmto</li>
+              {/* <li className='text-xl font-medium'>WhatsApp: Click to Reveal</li> */}
+              <li className='text-xl font-medium'>
+                LinkedIn:{' '}
+                <a
+                  href='https://www.linkedin.com/in/tasmto/'
+                  target='_blank'
+                  rel='no-referer'
+                  className='sup hover:text-cyan-700 text-cyan-500'
+                >
+                  @tasmto
+                </a>
+              </li>
+              <li className='text-xl font-medium'>
+                Github:{' '}
+                <a
+                  href='https://github.com/tasmto'
+                  target='_blank'
+                  rel='no-referer'
+                  className='sup hover:text-cyan-700 text-cyan-500'
+                >
+                  @tasmto
+                </a>
+              </li>
               <li className='text-xl font-medium'>
                 @tasmto (on all social media platforms)
               </li>

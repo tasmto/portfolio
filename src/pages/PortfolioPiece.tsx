@@ -7,6 +7,7 @@ import PortfolioPieceCard from '../components/portfolio/PortfolioPieceCard';
 import { FiClock, FiCalendar } from 'react-icons/fi';
 import PortfolioContent from '../components/portfolio/PortfolioContent';
 import { pageOpacityShift } from '../features/transitions/Transitions';
+import { FiMinus, FiGlobe, FiGithub } from 'react-icons/fi';
 
 const PortfolioPiece = () => {
   const params = useParams();
@@ -50,14 +51,61 @@ const PortfolioPiece = () => {
           />
         </div>
       </div>
-      <div className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-xl flex flex-col gap-[6rem] sm:mt-[6rem]'>
+      <div className=' mx-4  sm:mx-8 xl:mx-auto max-w-screen-xl flex flex-col gap-[6rem] sm:mt-[6rem] mt-16'>
         <article className='grid sm:grid-cols-5 gap-6 '>
-          {portfolioData.title && (
-            <h1 className='text-2xl font-semibold col-span-2'>
-              {portfolioData.title}
-            </h1>
-          )}
-          <div className='col-span-3 grid gap-8'>
+          <div className='col-span-2 grid gap-4 content-start'>
+            {portfolioData.title && (
+              <h1 className='text-2xl font-semibold '>{portfolioData.title}</h1>
+            )}
+            {portfolioData.demo && (
+              <motion.a
+                href={`${portfolioData.demo}`}
+                target='_blank'
+                rel='no-referer'
+                className='text-white hover:text-slate-200 bg-slate-400 p-4 rounded-xl hover:bg-slate-500 flex gap-4 items-center view-large'
+                style={{ background: portfolioData.header.background || '' }}
+                title='View the live project'
+                transition={{
+                  duration: 0.3,
+                  delay: 0.25,
+                  type: 'spring',
+                  damping: 25,
+                  stiffness: 500,
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: [0, 1], y: [20, 0] }}
+              >
+                <span>
+                  <FiGlobe className='w-8 h-8  text-white' />
+                </span>
+                <span className='text-xl'>View Live Demo</span>
+              </motion.a>
+            )}
+            {portfolioData.repo && (
+              <motion.a
+                href={`${portfolioData.repo}`}
+                target='_blank'
+                rel='no-referer'
+                className='text-slate-900 hover:text-slate-800  bg-slate-200 p-4 rounded-xl hover:bg-slate-300 flex gap-4 items-center view-large'
+                title='View the code behind the project'
+                transition={{
+                  duration: 0.3,
+                  delay: 0.5,
+                  type: 'spring',
+                  damping: 25,
+                  stiffness: 500,
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: [0, 1], y: [20, 0] }}
+              >
+                <span>
+                  <FiGithub className='w-8 h-8  text-slate-900' />
+                </span>
+                <span className='text-xl'>View Github Repo</span>
+              </motion.a>
+            )}
+          </div>
+          <div className='col-span-3 grid gap-8 content-start'>
             {portfolioData.extract && (
               <p className='text-xl font-semibold'>{portfolioData.extract}</p>
             )}
@@ -77,6 +125,62 @@ const PortfolioPiece = () => {
           portfolioData.content.map((content, index) => (
             <PortfolioContent key={`prt-${index}`} content={content} />
           ))}
+        <div className='col-span-2 grid gap-4 justify-items-center content-start'>
+          {portfolioData.title && (
+            <h1 className='text-2xl font-semibold '>
+              Thank you so much for reading through my project.
+            </h1>
+          )}
+          <div className='flex flex-wrap gap-4 justify-center'>
+            {portfolioData.demo && (
+              <motion.a
+                href={`${portfolioData.demo}`}
+                target='_blank'
+                rel='no-referer'
+                className='text-white hover:text-slate-200 bg-slate-400 p-4 rounded-xl hover:bg-slate-500 flex gap-4 items-center view-large'
+                style={{ background: portfolioData.header.background || '' }}
+                title='View the live project'
+                transition={{
+                  duration: 0.3,
+                  delay: 0.25,
+                  type: 'spring',
+                  damping: 25,
+                  stiffness: 500,
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: [0, 1], y: [20, 0] }}
+              >
+                <span>
+                  <FiGlobe className='w-8 h-8  text-white' />
+                </span>
+                <span className='text-xl'>View Live Demo</span>
+              </motion.a>
+            )}
+            {portfolioData.repo && (
+              <motion.a
+                href={`${portfolioData.repo}`}
+                target='_blank'
+                rel='no-referer'
+                className='text-slate-900 hover:text-slate-800  bg-slate-200 p-4 rounded-xl hover:bg-slate-300 flex gap-4 items-center view-large'
+                title='View the code behind the project'
+                transition={{
+                  duration: 0.3,
+                  delay: 0.5,
+                  type: 'spring',
+                  damping: 25,
+                  stiffness: 500,
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: [0, 1], y: [20, 0] }}
+              >
+                <span>
+                  <FiGithub className='w-8 h-8  text-slate-900' />
+                </span>
+                <span className='text-xl'>View Github Repo</span>
+              </motion.a>
+            )}
+          </div>
+        </div>
       </div>
     </motion.div>
   );

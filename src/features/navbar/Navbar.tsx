@@ -53,6 +53,7 @@ const Navbar = ({ sticky = true }) => {
         initial={{ opacity: 0, y: -5, x: '40%' }}
         animate={{ opacity: [0, 1], y: [-5, 0], x: '50%' }}
         className={`w-[95%] fixed flex justify-between py-4  print:hidden z-50 max-w-screen-2xl right-1/2 translate-x-1/2`}
+        style={{ zIndex: !open && '2' }}
       >
         <Link to='/'>
           <motion.h1
@@ -80,6 +81,10 @@ const Navbar = ({ sticky = true }) => {
                 transition: { delay: 0.7, duration: 0.3 },
               }}
               className='fixed top-0 right-0 h-screen w-[18.75rem] bg-slate-300 '
+              style={{
+                boxShadow:
+                  'rgb(203 213 225 / var(--tw-bg-opacity)) 315px 0px 0px 20px, rgb(203 213 225 / var(--tw-bg-opacity)) 615px 0px 0px 20px, rgb(203 213 225 / var(--tw-bg-opacity)) 915px 0px 0px 20px, rgb(203 213 225 / var(--tw-bg-opacity)) 1215px 0px 0px 20px, rgb(203 213 225 / var(--tw-bg-opacity)) 1515px 0px 0px 20px, rgb(203 213 225 / var(--tw-bg-opacity)) 1815px 0px 0px 20px',
+              }}
             >
               <motion.div
                 className='grid gap-2 sm:gap-10 mx-6 my-10 sm:my-20 '

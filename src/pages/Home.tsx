@@ -16,7 +16,7 @@ const Home = () => {
       initial={pageOpacityShift.initial}
       animate={pageOpacityShift.animate}
       exit={pageOpacityShift.exit}
-      className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'
+      className=' mx-4  sm:mx-8 xl:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'
     >
       <section className='text-center flex flex-col gap-6  sm:pb-12 '>
         <motion.h1

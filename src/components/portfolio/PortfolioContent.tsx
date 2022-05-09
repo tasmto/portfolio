@@ -55,7 +55,7 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
         </div>
       )}
       {content.text && (
-        <article className='grid gap-4 '>
+        <article className='grid gap-4 max-w-3xl mx-auto'>
           {content.text.heading && (
             <h2 className='text-2xl font-bold '>{content.text.heading}</h2>
           )}
