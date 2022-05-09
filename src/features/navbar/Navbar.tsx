@@ -17,7 +17,7 @@ const Navbar = ({ sticky = true }) => {
   const links = [
     { name: 'Portfolio', to: '/portfolio', id: 2 },
     { name: 'My CV', to: '/resume', id: 3 },
-    { name: 'Contact', to: '/contact', id: 4 },
+    { name: 'Get in touch', to: '/get-in-touch', id: 4 },
   ];
 
   const itemVariants = {

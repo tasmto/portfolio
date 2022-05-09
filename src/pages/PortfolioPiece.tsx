@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import PortfolioPieceCard from '../components/portfolio/PortfolioPieceCard';
 import { FiClock, FiCalendar } from 'react-icons/fi';
 import PortfolioContent from '../components/portfolio/PortfolioContent';
+import { pageOpacityShift } from '../features/transitions/Transitions';
 
 const PortfolioPiece = () => {
   const params = useParams();
@@ -28,7 +29,11 @@ const PortfolioPiece = () => {
 
   if (!portfolioData.header) return <>Loading</>;
   return (
-    <>
+    <motion.div
+      initial={pageOpacityShift.initial}
+      animate={pageOpacityShift.animate}
+      exit={pageOpacityShift.exit}
+    >
       <div className=' lg:mx-auto overflow-hidden w-screen flex flex-col gap-[-5rem] mt-[-6rem] lg:mt-[-10rem] max-w-[98vw]'>
         <div
           className=' overflow-hidden col-span-6 w-[98vw] sm:h-[80vh] max-h-[34rem] lg:col-span-6'
@@ -69,11 +74,11 @@ const PortfolioPiece = () => {
           </div>
         </article>
         {portfolioData?.content &&
-          portfolioData.content.map((content) => (
-            <PortfolioContent content={content} />
+          portfolioData.content.map((content, index) => (
+            <PortfolioContent key={`prt-${index}`} content={content} />
           ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

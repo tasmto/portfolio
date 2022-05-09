@@ -1,11 +1,18 @@
 import React, { Profiler } from 'react';
 import SkillsIcons from '../components/skillsBlocks/SkillsIcons';
+import { motion } from 'framer-motion';
+import { pageOpacityShift } from '../features/transitions/Transitions';
 
 import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 
 const Resume = () => {
   return (
-    <div className=' mx-6 sm:mx-8 lg:mx-auto max-w-screen-lg flex flex-col gap-[6rem]'>
+    <motion.div
+      initial={pageOpacityShift.initial}
+      animate={pageOpacityShift.animate}
+      exit={pageOpacityShift.exit}
+      className=' mx-6 sm:mx-8 lg:mx-auto max-w-screen-lg flex flex-col gap-[6rem]'
+    >
       <section className=' flex flex-col gap-8 pt-10  '>
         <h1 className='text-2xl font-semibold'>
           I'm currently woking as a frontend developer at Future Agent.
@@ -317,7 +324,7 @@ const Resume = () => {
           </article>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

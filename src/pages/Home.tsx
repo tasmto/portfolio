@@ -5,12 +5,19 @@ import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 import { motion } from 'framer-motion';
 import { FiMinus, FiGitCommit, FiColumns } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import { pageOpacityShift } from '../features/transitions/Transitions';
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'>
+    <motion.div
+      transition={{ type: 'spring', damping: 25, stiffness: 50 }}
+      initial={pageOpacityShift.initial}
+      animate={pageOpacityShift.animate}
+      exit={pageOpacityShift.exit}
+      className=' mx-4  sm:mx-8 lg:mx-auto max-w-screen-xl flex flex-col gap-[6rem]'
+    >
       <section className='text-center flex flex-col gap-6  sm:pb-12 '>
         <motion.h1
           className='text-2xl font-semibold sm:text-3xl sm:leading-relaxed md:text-4xl md:leading-relaxed mb-6'
@@ -101,7 +108,7 @@ const Home = () => {
 
         <AboutExtract />
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

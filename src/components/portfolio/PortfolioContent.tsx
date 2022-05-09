@@ -24,12 +24,13 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
     <section className='flex flex-col gap-12'>
       {Array.isArray(content.image) && (
         <div className='grid grid-cols-2 gap-4'>
-          {content.image.map((image) => (
+          {content.image.map((image, index) => (
             <div
               className=' col-span-2 overflow-hidden  h-[80vh] max-h-[300px] rounded-2xl  lg:col-span-1'
               style={{
                 background: image?.background || '#f5f5f5',
               }}
+              key={index}
             >
               <PortfolioPieceCard
                 image={image.url}
