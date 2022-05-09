@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { pageOpacityShift } from '../features/transitions/Transitions';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    surname: '',
+    email: '',
+    message: '',
+  });
+  const onMutate = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) =>
+    setFormData((prevData) => {
+      return { ...prevData, [e.target.id]: e.target.value };
+    });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
   return (
     <motion.div
       initial={pageOpacityShift.initial}
@@ -13,81 +28,103 @@ const Contact = () => {
       exit={pageOpacityShift.exit}
       className=' mx-4 sm:mx-8 2xl:mx-auto max-w-screen-2xl flex flex-col gap-[6rem]'
     >
-      <section className='flex flex-col gap-8 justify-center items-center py-10 min-h-[75vh] max-h-[500px] bg-slate-100 '>
-        <h1 className='text-2xl font-semibold'>Get in touch with me</h1>
+      <section className='flex flex-col gap-8 justify-center items-center py-10  bg-slate-100 '>
+        <h1 className='text-2xl sm:text-3xl font-semibold'>
+          Get in touch with me
+        </h1>
 
         <form
-          onSubmit={handleSubmit}
-          className='max-w-xl  w-full rounded-xl bg-white grid gap-8 p-6 py-10'
+          name='contact'
+          netlify
+          netlify-honeypot='bot-field'
+          method='post'
+          className='max-w-xl  w-full rounded-xl bg-white grid gap-8 p-6 py-10 mx-2'
         >
-          <div className='grid xl:grid-cols-2 xl:gap-6'>
-            <div className='relative z-0 w-full mb-6 group'>
+          <div className='grid sm:grid-cols-2 gap-8 sm:gap-6'>
+            <div className='relative z-0 w-full mb-6 group col-span-1'>
               <input
                 type='text'
-                name='floating_first_name'
-                id='floating_first_name'
-                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+                name='name'
+                id='name'
+                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-600 peer'
                 placeholder=' '
                 required
+                value={formData.name}
+                onChange={onMutate}
               />
               <label
-                htmlFor='floating_first_name'
-                className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                htmlFor='name'
+                className='peer-focus:font-medium absolute text-sm  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
               >
-                First name
+                Your first name
               </label>
             </div>
-            <div className='relative z-0 w-full mb-6 group'>
+            <div className='relative z-0 w-full mb-6 group col-span-1'>
               <input
                 type='text'
-                name='floating_last_name'
-                id='floating_last_name'
-                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+                name='surname'
+                id='surname'
+                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-600 peer'
                 placeholder=' '
                 required
+                value={formData.surname}
+                onChange={onMutate}
               />
               <label
-                htmlFor='floating_last_name'
-                className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                htmlFor='surname'
+                className='peer-focus:font-medium absolute text-sm  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
               >
-                Last name
+                Your last name
               </label>
             </div>
           </div>
           <div className='relative z-0 w-full mb-6 group'>
             <input
               type='email'
-              name='floating_email'
-              className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+              name='email'
+              id='email'
+              className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-600 peer'
               placeholder=' '
               required
+              value={formData.email}
+              onChange={onMutate}
             />
             <label
-              htmlFor='floating_email'
-              className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              htmlFor='email'
+              className='peer-focus:font-medium absolute text-sm  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 '
             >
-              Email address
+              Your email address
             </label>
           </div>
 
           <div className='relative z-0 w-full mb-6 group'>
             <label
               htmlFor='message'
-              className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400'
+              className='peer-focus:font-medium text-sm  text-gray-900 duration-300 mb-2 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500  '
             >
-              Your message
+              What did you want to talk about?
             </label>
             <textarea
               id='message'
-              rows='4'
-              className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 '
+              name='message'
+              rows={4}
+              className='block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-xl border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-600 peer'
               placeholder='Leave a comment...'
+              value={formData.message}
+              onChange={onMutate}
             ></textarea>
           </div>
+          <input
+            type='hidden'
+            name='form-name'
+            className='hidden'
+            value='contact'
+            disabled={true}
+          />
 
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+            className='text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
           >
             Submit
           </button>
