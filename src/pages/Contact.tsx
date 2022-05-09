@@ -17,9 +17,6 @@ const Contact = () => {
     setFormData((prevData) => {
       return { ...prevData, [e.target.id]: e.target.value };
     });
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
 
   return (
     <motion.div
@@ -38,8 +35,9 @@ const Contact = () => {
           // @ts-ignore: Type '{ children: Element[]; name: string; netlify: true; "netlify-honeypot": string; method: string;
           netlify
           netlify-honeypot='bot-field'
-          method='post'
+          method='POST'
           className='max-w-xl  w-full rounded-xl bg-white grid gap-8 p-6 py-10 mx-2'
+          action='/'
         >
           <div className='grid sm:grid-cols-2 gap-8 sm:gap-6'>
             <div className='relative z-0 w-full mb-6 group col-span-1'>
