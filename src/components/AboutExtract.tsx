@@ -6,8 +6,8 @@ const AboutExtract = () => {
   return (
     <section>
       <div className='grid grid-cols-3 col-span-1 gap-4 sm:gap-14 items-center'>
-        <div className='col-span-3 sm:col-span-2 flex flex-col gap-6'>
-          <h1 className='text-2xl font-semibold'>
+        <div className='col-span-3 sm:col-span-2 flex flex-col gap-6 dark:text-slate-300'>
+          <h1 className='text-2xl font-semibold '>
             I’ve been working as a designer and developer for 4 years in the
             e-ccomerce, marketing, medical technologies and educational
             technologies fields

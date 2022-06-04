@@ -25,9 +25,9 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
         <div className='grid grid-cols-2 gap-4'>
           {content.image.map((image, index) => (
             <div
-              className=' col-span-2 overflow-hidden  h-[80vh] max-h-[300px] rounded-2xl  lg:col-span-1'
+              className=' col-span-2 overflow-hidden  h-[80vh] max-h-[300px] rounded-2xl  lg:col-span-1 bg-slate-200 dark:bg-slate-800'
               style={{
-                background: image?.background || '#f5f5f5',
+                background: image?.background || '',
               }}
               key={index}
             >
@@ -42,9 +42,9 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
       )}
       {content.image && content.image.url && (
         <div
-          className=' overflow-hidden col-span-6 h-[80vh] max-h-[500px] rounded-2xl  lg:col-span-6'
+          className=' overflow-hidden col-span-6 h-[80vh] max-h-[500px] rounded-2xl  lg:col-span-6 bg-slate-200 dark:bg-slate-800'
           style={{
-            background: content.image.background || '#f5f5f5',
+            background: content.image.background || '',
           }}
         >
           <PortfolioPieceCard
@@ -61,9 +61,11 @@ const PortfolioContent: React.FC<Props> = ({ content }) => {
           )}
           {content.text.body &&
             (typeof content.text.body === 'string' ? (
-              <p className='text-xl text-slate-800'>{content.text.body}</p>
+              <p className='text-xl text-slate-800 dark:text-slate-300'>
+                {content.text.body}
+              </p>
             ) : (
-              <ul className='list-disc text-lg ml-5 text-slate-800'>
+              <ul className='list-disc text-lg ml-5 text-slate-800 dark:text-slate-300'>
                 {content.text.body.map((point, index) => (
                   <li key={index}>{point}</li>
                 ))}

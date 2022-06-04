@@ -1,6 +1,6 @@
 import React from 'react';
-import SkillsIcons from '../components/skillsBlocks/SkillsIcons';
-import PortfolioGrid from '../components/portfolio/PortfolioGrid';
+import SkillsIcons from '../features/skillsBlocks/SkillsIcons';
+import PortfolioGrid from '../features/portfolio/PortfolioGrid';
 import { pageOpacityShift } from '../features/transitions/Transitions';
 import { motion } from 'framer-motion';
 

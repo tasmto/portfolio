@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Portfolio4 from '../assets/portfolio-card04.jpg';
 import { portfolio } from '../context/portfolio/PortfolioData';
 import { motion } from 'framer-motion';
-import PortfolioPieceCard from '../components/portfolio/PortfolioPieceCard';
+import PortfolioPieceCard from '../features/portfolio/PortfolioPieceCard';
 import { FiClock, FiCalendar } from 'react-icons/fi';
-import PortfolioContent from '../components/portfolio/PortfolioContent';
+import PortfolioContent from '../features/portfolio/PortfolioContent';
 import { pageOpacityShift } from '../features/transitions/Transitions';
 import { FiMinus, FiGlobe, FiGithub } from 'react-icons/fi';
 
@@ -35,9 +35,9 @@ const PortfolioPiece = () => {
       animate={pageOpacityShift.animate}
       exit={pageOpacityShift.exit}
     >
-      <div className=' lg:mx-auto overflow-hidden w-screen flex flex-col gap-[-5rem] mt-[-6rem] lg:mt-[-10rem] max-w-[98vw]'>
+      <div className=' lg:mx-auto overflow-hidden w-100 flex flex-col gap-[-5rem] mt-[-2rem] sm:mt-[-6rem]  lg:mt-[-10rem] max-w-[100%]'>
         <div
-          className=' overflow-hidden col-span-6 w-[98vw] sm:h-[80vh] max-h-[34rem] lg:col-span-6'
+          className=' overflow-hidden col-span-6 w-[100%] sm:h-[80vh] max-h-[34rem] lg:col-span-6 max-w-[100%]'
           style={{ background: portfolioData?.header?.background || '#fefefe' }}
         >
           <PortfolioPieceCard
@@ -62,7 +62,7 @@ const PortfolioPiece = () => {
                 href={`${portfolioData.demo}`}
                 target='_blank'
                 rel='no-referer'
-                className='text-white hover:text-slate-200 bg-slate-400 p-4 rounded-xl hover:bg-slate-500 flex gap-4 items-center view-large'
+                className='text-white hover:text-slate-200 bg-slate-400 dark:bg-slate-800 p-4 rounded-xl hover:bg-slate-500 flex gap-4 items-center view-large'
                 style={{ background: portfolioData.header.background || '' }}
                 title='View the live project'
                 transition={{
@@ -161,7 +161,7 @@ const PortfolioPiece = () => {
                 href={`${portfolioData.repo}`}
                 target='_blank'
                 rel='no-referer'
-                className='text-slate-900 hover:text-slate-800  bg-slate-200 p-4 rounded-xl hover:bg-slate-300 flex gap-4 items-center view-large'
+                className='text-slate-900 dark:text-slate-200 hover:text-slate-800 hover:dark:text-slate-200 dark:bg-slate-700 bg-slate-200 p-4 rounded-xl hover:bg-slate-300 hover:dark:bg-slate-500 flex gap-4 items-center view-large'
                 title='View the code behind the project'
                 transition={{
                   duration: 0.3,
@@ -174,7 +174,7 @@ const PortfolioPiece = () => {
                 animate={{ opacity: [0, 1], y: [20, 0] }}
               >
                 <span>
-                  <FiGithub className='w-8 h-8  text-slate-900' />
+                  <FiGithub className='w-8 h-8  text-slate-900 dark:text-slate-200' />
                 </span>
                 <span className='text-xl'>View Github Repo</span>
               </motion.a>

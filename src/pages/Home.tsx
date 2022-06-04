@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AboutExtract from '../components/AboutExtract';
-import PortfolioGrid from '../components/portfolio/PortfolioGrid';
+import PortfolioGrid from '../features/portfolio/PortfolioGrid';
 import { motion } from 'framer-motion';
 import { FiMinus, FiGitCommit, FiColumns } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { pageOpacityShift } from '../features/transitions/Transitions';
+import SkillsIcons from '../features/skillsBlocks/SkillsIcons';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Home = () => {
     >
       <section className='text-center flex flex-col gap-6  sm:pb-12 '>
         <motion.h1
-          className='text-2xl font-semibold sm:text-3xl sm:leading-relaxed md:text-4xl md:leading-relaxed mb-6'
+          className='text-2xl font-semibold sm:text-3xl sm:leading-relaxed md:text-4xl md:leading-relaxed mb-6 '
           transition={{
             type: 'spring',
             damping: 25,
@@ -34,7 +35,7 @@ const Home = () => {
           currently in the real estate technologies field.
         </motion.h1>
         <motion.h3
-          className='text-2xl sm:text-3xl font-semibold flex flex-wrap gap-4 justify-center'
+          className='text-2xl sm:text-3xl font-semibold flex flex-wrap gap-4 justify-center '
           transition={{
             duration: 0.6,
             delay: 0.25,
@@ -47,7 +48,7 @@ const Home = () => {
         >
           <motion.button
             onClick={() => navigate('/portfolio')}
-            className='text-slate-700 hover:text-cyan-700 flex gap-4 items-center view-large'
+            className='text-slate-700 dark:text-slate-200 hover:text-cyan-700 flex gap-4 items-center view-large'
             transition={{
               duration: 0.3,
               delay: 0.25,
@@ -80,7 +81,7 @@ const Home = () => {
           </motion.span>
           <motion.button
             onClick={() => navigate('/resume')}
-            className='text-slate-700 view-large hover:text-cyan-700 flex gap-4 items-center'
+            className='text-slate-700 dark:text-slate-200 view-large hover:text-cyan-700 flex gap-4 items-center'
             transition={{
               duration: 0.9,
               delay: 0.5,

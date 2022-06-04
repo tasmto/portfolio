@@ -24,22 +24,25 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-        <Navbar sticky={false} />
+        <div className='flex  sm:flex-row flex-col-reverse'>
+          <Navbar />
+          <div className='w-full '>
+            <main className='pt-10 sm:pt-24 lg:pt-[10rem] bg-slate-50 dark:bg-slate-900 dark:text-slate-200'>
+              <AnimatePresence exitBeforeEnter initial={true}>
+                <Routes>
+                  <Route path='*' element={<NotFound />} />
+                  <Route path='/' element={<Home />} />
+                  <Route path='/resume' element={<Resume />} />
+                  <Route path='/get-in-touch' element={<Contact />} />
+                  <Route path='/portfolio' element={<Portfolio />} />
+                  <Route path='/portfolio/:id' element={<PortfolioPiece />} />
+                </Routes>
+              </AnimatePresence>
+            </main>
 
-        <main className='pt-24 lg:pt-[10rem]'>
-          <AnimatePresence exitBeforeEnter initial={true}>
-            <Routes>
-              <Route path='*' element={<NotFound />} />
-              <Route path='/' element={<Home />} />
-              <Route path='/resume' element={<Resume />} />
-              <Route path='/get-in-touch' element={<Contact />} />
-              <Route path='/portfolio' element={<Portfolio />} />
-              <Route path='/portfolio/:id' element={<PortfolioPiece />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
-
-        <Footer />
+            <Footer />
+          </div>
+        </div>
       </Router>
     </>
   );

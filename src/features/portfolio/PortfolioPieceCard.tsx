@@ -72,7 +72,7 @@ const PortfolioPieceCard: React.FC<Props> = ({
         src={image}
       />
       {title && showTitle && (
-        <div className='absolute bottom-4 left-8 rounded-full px-6 py-1 bg-slate-50'>
+        <div className='absolute bottom-4 left-8 rounded-full px-6 py-1 bg-slate-50 dark:text-slate-800'>
           {title}
         </div>
       )}{' '}
@@ -81,7 +81,7 @@ const PortfolioPieceCard: React.FC<Props> = ({
           <motion.div
             className={`absolute text-xs  ${
               showTitle ? 'bottom-14' : 'bottom-4'
-            } left-8 rounded-full px-6 py-1 bg-slate-50 `}
+            } left-8 rounded-full px-6 py-1 bg-slate-50 dark:text-slate-800`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}

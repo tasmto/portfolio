@@ -30,3 +30,27 @@ a {
 .view-large {
   cursor: url('../assets/cursors/cursor-view-large.png'), auto;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    cursor: url('../assets/cursors/cursor-light.png'), auto;
+  }
+
+  a {
+    &:hover {
+      cursor: url('../assets/cursors/cursor-view-light.png'), auto;
+    }
+
+    &:active {
+      cursor: url('../assets/cursors/cursor-view--active-light.png'), auto;
+    }
+
+    &.wave:hover {
+      cursor: url('../assets/cursors/cursor-wave-light.png'), auto;
+    }
+
+    &.sup:hover {
+      cursor: url('../assets/cursors/cursor-sup-light.png'), auto;
+    }
+  }
+}
