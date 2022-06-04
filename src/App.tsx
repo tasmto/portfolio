@@ -24,7 +24,7 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-        <div className='flex  sm:flex-row flex-col-reverse'>
+        <div className='flex sm:flex-row flex-col-reverse'>
           <Navbar />
           <div className='w-full '>
             <main className='pt-10 sm:pt-24 lg:pt-[10rem] bg-slate-50 dark:bg-slate-900 dark:text-slate-200'>

@@ -21,7 +21,46 @@ const PortfolioGrid = () => {
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
           style={{
-            background: portfolio.futureagent.header.background || '#F9F9F9',
+            background: portfolio.inteligets.header.background || '',
+          }}
+        >
+          <PortfolioPieceCard
+            image={portfolio.inteligets?.header.url}
+            stack={portfolio.inteligets.stack}
+            title={portfolio.inteligets.title}
+            id={portfolio.inteligets.id}
+          />
+        </div>
+        <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          style={{
+            background: portfolio.mortgagely.header.background || '',
+          }}
+        >
+          <PortfolioPieceCard
+            image={portfolio.mortgagely?.header.url}
+            stack={portfolio.mortgagely.stack}
+            title={portfolio.mortgagely.title}
+            id={portfolio.mortgagely.id}
+          />
+        </div>
+        <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          style={{
+            background: portfolio.flavorfestival?.header.background || '',
+          }}
+        >
+          <PortfolioPieceCard
+            image={portfolio.flavorfestival?.header.url || ''}
+            stack={portfolio.flavorfestival.stack}
+            title={portfolio.flavorfestival.title}
+            id={portfolio.flavorfestival.id}
+          />
+        </div>
+        <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          style={{
+            background: portfolio.futureagent.header.background || '',
           }}
         >
           <PortfolioPieceCard
@@ -31,17 +70,9 @@ const PortfolioGrid = () => {
             id={portfolio.futureagent.id}
           />
         </div>
-        <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
-          <img className='h-full w-full object-cover' src={Portfolio2} alt='' />
-        </div>
-        <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
-          <img className='h-full w-full object-cover' src={Portfolio3} alt='' />
-        </div>
+
         <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
           <img className='h-full w-full object-cover' src={Portfolio5} alt='' />
-        </div>
-        <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
-          <img className='h-full w-full object-cover' src={Portfolio1} alt='' />
         </div>
       </div>
     </section>
