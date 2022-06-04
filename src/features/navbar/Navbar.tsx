@@ -50,11 +50,11 @@ const Navbar = ({}) => {
               <hr />
             </>
           )}
-          <nav className='flex flex-row w-screen sm:w-auto overflow-x-auto justify-center sm:block justify-self-center'>
+          <nav className='flex flex-row w-full sm:w-auto overflow-x-auto justify-center sm:block justify-self-center'>
             <Link
               title={'Home Page'}
               to='/'
-              className={`sm:mt-2  px-2 sm:px-3 py-3 text-lg  sm:text-2xl lg:text-3xl font-medium group cursor-pointer flex  items-center relative text-slate-700 dark:text-slate-200 sm:bg-slate-200 sm:dark:bg-slate-700 rounded-lg hover:bg-cyan-700  dark:hover:bg-cyan-600 hover:text-white ${
+              className={`sm:mt-2  sm:mx-0  px-2 sm:px-3 py-3 text-lg  sm:text-2xl lg:text-3xl font-medium group cursor-pointer flex  items-center relative text-slate-700 dark:text-slate-200 sm:bg-slate-200 sm:dark:bg-slate-700 rounded-lg hover:bg-cyan-700  dark:hover:bg-cyan-600 hover:text-white ${
                 menuOpen ? 'flex-row' : 'flex-col'
               }  ${
                 location.pathname === '/' &&
@@ -140,12 +140,13 @@ const Navbar = ({}) => {
             )}
           </nav>
         </div>
-        <button
+        {/* // ! Still need to make a class based toggler for dark and light mode */}
+        {/* <button
           type='button'
           className='justify-self-end m-auto  mb-2 px-2 sm:px-3 py-5 w-100 sm:text-2xl text-lg lg:text-3xl font-medium group cursor-pointer hidden sm:flex items-center relative text-slate-700 hover:text-cyan-600 dark:text-slate-200'
         >
           {false ? <FiMoon /> : <FiSun />}
-        </button>
+        </button> */}
       </div>
       {menuOpen && (
         <div
