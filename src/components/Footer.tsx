@@ -29,10 +29,10 @@ const Footer = () => {
         </article>
       )}
       <nav className='flex flex-col md:flex-row justify-between gap-4 items-center'>
-        <p className='text-lg dark:text-slate-400'>
+        <p className='text-sm dark:text-slate-400'>
           Tashinga Mtoko © Frontend Developer
         </p>
-        <ul className='flex gap-4 md:flex-row flex-wrap'>
+        <ul className='flex gap-4 md:flex-row flex-wrap text-sm'>
           <li>
             <a
               href='https://twitter.com/tasmto'

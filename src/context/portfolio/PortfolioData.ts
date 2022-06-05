@@ -30,7 +30,8 @@ export const portfolio: portfolio = {
   futureagent: {
     header: {
       url: '/portfolio/future-agent/main-banner.png',
-      background: 'linear-gradient(180deg, #F37A42 0%, #E17478 100%)',
+      background:
+        'linear-gradient(180deg, hsla(23, 92%, 71%, 1) 0%, hsla(345, 43%, 54%, 1) 100%)',
     },
     id: 'futureagent',
     title: 'Future Agent Design and Development',
@@ -149,11 +150,83 @@ export const portfolio: portfolio = {
       },
     ],
   },
+  blogr: {
+    header: {
+      url: '/portfolio/inteligets/cover.png',
+      background:
+        'linear-gradient(90deg, hsla(35, 79%, 68%, 1) 0%, hsla(286, 44%, 49%, 1) 100%)',
+    },
+    id: 'blogr',
+    title: 'Blogr full stack social media x blog platform',
+    time: '3 weeks',
+    launched: '2022',
+    stack: [
+      'React',
+      'Redux',
+      'MongoDB',
+      'Mongoose',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+    ],
+    demo: 'https://inteligets.herokuapp.com/',
+    repo: 'https://github.com/tasmto/inteligets',
+    extract:
+      'A fully functional fullstack e-commerce store that supports multiple user roles, CRUD of user generated orders and reviews and management of products.',
+    repository: 'https://github.com/tasmto/inteligets',
+    content: [
+      {
+        image: { url: '/portfolio/inteligets/section-1.png' },
+        text: {
+          heading:
+            'Allows anyone to sign up and browse through a catalogue of products set by admin users.',
+        },
+      },
+      {
+        image: { url: '/portfolio/inteligets/section-2.png' },
+        text: {
+          heading:
+            'Supports customer roles and administrator roles. This platform allows admins to:',
+          body: [
+            "Update and/or delete other user's profiles.",
+            'Update, create and delete products and user orders.',
+            'Property valuation tools (typically heavily regulated by real estates boards and other such parties).',
+            'Elevate or de-elevate other users to admins.',
+          ],
+        },
+      },
+
+      {
+        text: {
+          heading:
+            'Uses Mongoose on the server to enforce strict schema structure on the backend:',
+          body: 'Below is the product and review schema.',
+          code: 'https://jsfiddle.net/tasmto/5rnaypg1/1/embedded/js/dark/',
+        },
+      },
+      {
+        text: {
+          heading:
+            'Uses restful API architecture standards for the Mongo DB api.',
+          body: 'Below is a snippet of the user api routes controllers.',
+          code: 'https://jsfiddle.net/tasmto/g8nypv5e/1/embedded/js/dark/',
+        },
+      },
+      {
+        image: [
+          {
+            url: '/portfolio/inteligets/section-4.png',
+          },
+          { url: '/portfolio/inteligets/section-3.png' },
+        ],
+      },
+    ],
+  },
   mortgagely: {
     header: {
       url: '/portfolio/mortgagely/mortgagely-cover.png',
       background:
-        'linear-gradient(45deg, hsla(40, 63%, 85%, 1) 0%, hsla(22, 94%, 79%, 1) 100%)',
+        'linear-gradient(45deg, hsla(228, 17%, 53%, 1) 0%, hsla(229, 28%, 88%, 1) 100%)',
     },
     id: 'mortgagely',
     title: 'Mortgagely web-app design and development',
@@ -203,7 +276,7 @@ export const portfolio: portfolio = {
     header: {
       url: '/portfolio/flavor-festival/flavor-festival-cover.png',
       background:
-        'linear-gradient(120deg, hsla(10, 82%, 65%, 1) 0%, hsla(290, 79%, 13%, 1) 100%)',
+        ' linear-gradient(45deg, hsla(205, 34%, 40%, 1) 0%, hsla(347, 52%, 36%, 1) 100%)',
     },
     id: 'flavorfestival',
     title: 'Flavor festival recipe app design and development',
@@ -223,6 +296,58 @@ export const portfolio: portfolio = {
             'Bookmark recipes and collate ingredient shopping lists.',
           ],
         },
+      },
+    ],
+  },
+  drsetati: {
+    header: {
+      url: '/portfolio/dr-setati/dr-setati-cover.png',
+      background:
+        'linear-gradient(45deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%)',
+    },
+    repo: 'https://github.com/tasmto/dr-setati',
+    repository: 'https://github.com/tasmto/dr-setati',
+    id: 'drsetati',
+    title: 'Dr Setati php website design and development',
+    time: '1 week',
+    launched: '2019',
+    stack: ['PHP', 'HTML', 'CSS', 'JavaScript'],
+    extract:
+      'A recipe app that focusses on letting users, create, collect recipes and shop based on their collections.',
+    content: [
+      {
+        image: { url: '/portfolio/dr-setati/section-1.png' },
+        text: {
+          heading: 'Features:',
+          body: [
+            'Upload custom recipes.',
+            'Search through a catalogue of about 1 000 000 recipes.',
+            'Bookmark recipes and collate ingredient shopping lists.',
+          ],
+        },
+      },
+      {
+        image: { url: '/portfolio/dr-setati/section-2.png' },
+        text: {
+          heading: 'Features:',
+          body: [
+            'Upload custom recipes.',
+            'Search through a catalogue of about 1 000 000 recipes.',
+            'Bookmark recipes and collate ingredient shopping lists.',
+          ],
+        },
+      },
+      {
+        text: {
+          heading: 'Interactive SVG animations through framer-motion.',
+          body: 'I highly recommend going to the live site to see them properly.',
+        },
+        image: [
+          {
+            url: '/portfolio/dr-setati/section-3.png',
+          },
+          { url: '/portfolio/dr-setati/section-4.png' },
+        ],
       },
     ],
   },

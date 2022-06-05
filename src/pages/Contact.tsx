@@ -10,8 +10,10 @@ const Contact = () => {
       exit={pageOpacityShift.exit}
       className=' mx-4  sm:mx-8 xl:mx-auto max-w-screen-xl  flex flex-col gap-[6rem] mt-[-2rem] lg:mt-[-5rem] '
     >
-      <section className='flex flex-col gap-8 justify-center items-center py-10  bg-slate-100 dark:bg-slate-800 h-[70vh] max-h-[600px] '>
-        <h1 className='text-2xl sm:text-4xl font-bold'>Get in touch with me</h1>
+      <section className='flex flex-col gap-8 justify-center items-center py-10  bg-slate-100 dark:bg-slate-800 h-[70vh] max-h-[600px] px-3 text-center'>
+        <h1 className='text-2xl sm:text-4xl font-bold'>
+          You can contact me on the platforms below:
+        </h1>
         <ul className='flex gap-4 md:flex-row flex-wrap justify-center'>
           <li>
             <a

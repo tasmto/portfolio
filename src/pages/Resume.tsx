@@ -49,16 +49,16 @@ const Resume = () => {
                 of our C2C application.
               </li>
               <li>
-                Introduced and currently solely responsible for managing our
-                React and design component libraries.
+                Introduced and currently responsible for managing our React and
+                design component libraries.
               </li>
               <li>
                 Created and currently responsible for overseeing the brand
                 design system and guidelines.
               </li>
               <li>
-                Main technology researcher and helping implement technologies
-                (like React Native) for our products.
+                Helping research and implement technologies (like React Native)
+                for our products.
               </li>
             </ul>
           </article>
@@ -87,8 +87,8 @@ const Resume = () => {
                 teams and departments across the company.
               </li>
               <li>
-                Responsible for creating and maintaining our design system for
-                our marketing and technology departments.{' '}
+                Responsible for creating our design system for our marketing
+                departments.
               </li>
             </ul>
           </article>

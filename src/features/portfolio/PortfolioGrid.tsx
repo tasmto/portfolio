@@ -32,6 +32,33 @@ const PortfolioGrid = () => {
           />
         </div>
         <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
+          style={{
+            background: portfolio.blogr.header.background || '',
+          }}
+        >
+          <PortfolioPieceCard
+            image={portfolio.blogr?.header.url}
+            stack={portfolio.blogr.stack}
+            title={portfolio.blogr.title}
+            id={portfolio.blogr.id}
+          />
+        </div>
+        <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          style={{
+            background: portfolio.futureagent.header.background || '',
+          }}
+        >
+          <PortfolioPieceCard
+            image={portfolio.futureagent?.header.url}
+            stack={portfolio.futureagent.stack}
+            title={portfolio.futureagent.title}
+            id={portfolio.futureagent.id}
+          />
+        </div>
+
+        <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           style={{
             background: portfolio.mortgagely.header.background || '',
@@ -60,19 +87,15 @@ const PortfolioGrid = () => {
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           style={{
-            background: portfolio.futureagent.header.background || '',
+            background: portfolio.drsetati.header.background || '',
           }}
         >
           <PortfolioPieceCard
-            image={portfolio.futureagent?.header.url}
-            stack={portfolio.futureagent.stack}
-            title={portfolio.futureagent.title}
-            id={portfolio.futureagent.id}
+            image={portfolio.drsetati?.header.url}
+            stack={portfolio.drsetati.stack}
+            title={portfolio.drsetati.title}
+            id={portfolio.drsetati.id}
           />
-        </div>
-
-        <div className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 '>
-          <img className='h-full w-full object-cover' src={Portfolio5} alt='' />
         </div>
       </div>
     </section>

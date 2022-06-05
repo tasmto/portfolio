@@ -10,6 +10,8 @@ import {
   FiSun,
   FiMoreHorizontal,
   FiX,
+  FiShoppingCart,
+  FiFileMinus,
 } from 'react-icons/fi';
 import { DiNodejsSmall } from 'react-icons/di';
 
@@ -25,6 +27,8 @@ const Navbar = ({}) => {
     { name: 'Contact', to: '/get-in-touch', icon: FiCoffee },
   ];
   const portfolioLinks = [
+    { name: 'Inteligets', to: '/portfolio/inteligets', icon: FiShoppingCart },
+    { name: 'Blogr', to: '/portfolio/blogr', icon: FiFileMinus },
     { name: 'FutureAgent', to: '/portfolio/futureagent', icon: DiNodejsSmall },
   ];
   useEffect(() => {
@@ -33,19 +37,30 @@ const Navbar = ({}) => {
 
   return (
     <div className='sm:mr-3 sm:min-h-screen z-50 w-screen sm:w-auto fixed bottom-0 sm:relative'>
-      <div className='h-full sm:h-screen overflow-y-auto  z-50 sticky top-0 w-100 border-r-2 bg-slate-50 dark:bg-slate-800  border-t-2 shad sm:border-t-0 sm:shadow-xl shadow-[0_-10px_18px_-15px_rgb(0,0,0,0.5)] border-solid border-slate-300 dark:border-slate-700 sm:border-slate-300 sm:dark:border-slate-700  sm:pt-10 px-5 flex sm:flex-col justify-center items-center sm:justify-between'>
+      <div className='h-full sm:h-screen overflow-y-auto  z-50 sticky top-0 w-100 border-r-2 bg-slate-50 dark:bg-slate-800  border-t-2 shad sm:border-t-0 sm:shadow-xl shadow-[0_-10px_18px_-15px_rgb(0,0,0,0.5)] border-solid border-slate-300 dark:border-slate-700 sm:border-slate-300 sm:dark:border-slate-700  sm:pt-8 sm:pb-2 px-5 flex sm:flex-col justify-center items-center sm:justify-between'>
         <div>
           <button
             className='hidden m-auto mt-2 sm:px-2 lg:px-3 py-3 text-lg sm:text-2xl lg:text-3xl font-medium group cursor-pointer sm:flex items-center relative text-slate-700 hover:text-cyan-600 dark:text-slate-200 '
             onClick={handleToggleMenu}
           >
-            {!menuOpen ? <FiMoreHorizontal /> : <FiX />}
+            {!menuOpen ? (
+              <div className='d-flex flex-col justify-center align-center'>
+                <FiMoreHorizontal className='mb-0 mx-auto' />
+                <span
+                  className={` sm:block ml-0 text-xs  bg-slate-300 dark:bg-slate-700  text-slate-700 dark:text-slate-200 rounded-lg px-3`}
+                >
+                  Menu
+                </span>
+              </div>
+            ) : (
+              <FiX />
+            )}
           </button>
           {menuOpen && (
             <>
               <hr className='mt-5' />
               <p className='mt-2 mb-2 text-xs text-slate-500 dark:text-slate-400 text-center '>
-                Tashinga Mtoko
+                Main Pages
               </p>
               <hr />
             </>
@@ -115,7 +130,7 @@ const Navbar = ({}) => {
                     title={link.name}
                     to={link.to}
                     key={i}
-                    className={`sm:mt-2  px-2 sm:px-3 py-3 text-lg  sm:text-2xl lg:text-3xl font-medium group cursor-pointer flex  items-center relative text-slate-700 dark:text-slate-200 sm:bg-slate-200 sm:dark:bg-slate-700 rounded-lg hover:bg-cyan-700  dark:hover:bg-cyan-600 hover:text-white ${
+                    className={`sm:mt-2  px-2 sm:px-3 py-3 text-lg  sm:text-2xl lg:text-3xl font-medium group cursor-pointer flex  items-center relative text-slate-700 dark:text-slate-400 sm:bg-slate-200 sm:dark:bg-slate-700/50 rounded-lg hover:bg-cyan-700  dark:hover:bg-cyan-600 hover:text-white ${
                       menuOpen ? 'flex-row' : 'flex-col'
                     } ${
                       location.pathname === link.to &&
@@ -127,7 +142,7 @@ const Navbar = ({}) => {
                     <span
                       className={` sm:block ml-0 ${
                         menuOpen ? 'ml-4 text-xl' : 'mt-2 text-xs'
-                      }  bg-slate-300 dark:bg-slate-600  text-slate-700 dark:text-slate-200 rounded-lg px-3 ${
+                      }  bg-slate-300 dark:bg-slate-600  text-slate-700 dark:text-slate-300 rounded-lg px-3 ${
                         location.pathname === link.to &&
                         'bg-cyan-900 dark:bg-cyan-900 text-slate-200 dark:text-slate-200'
                       }`}
