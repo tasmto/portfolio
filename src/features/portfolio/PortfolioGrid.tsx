@@ -20,6 +20,7 @@ const PortfolioGrid = () => {
       <div className='grid grid-cols-6 col-span-2 gap-4'>
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
+          id='inteligets'
           style={{
             background: portfolio.inteligets.header.background || '',
           }}
@@ -33,6 +34,7 @@ const PortfolioGrid = () => {
         </div>
         {/* <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
+          id='blogr'
           style={{
             background: portfolio.blogr.header.background || '',
           }}
@@ -46,6 +48,7 @@ const PortfolioGrid = () => {
         </div> */}
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          id='futureAgent'
           style={{
             background: portfolio.futureagent.header.background || '',
           }}
@@ -60,6 +63,7 @@ const PortfolioGrid = () => {
 
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          id='mortgagely'
           style={{
             background: portfolio.mortgagely.header.background || '',
           }}
@@ -73,6 +77,7 @@ const PortfolioGrid = () => {
         </div>
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          id='flavorfestival'
           style={{
             background: portfolio.flavorfestival?.header.background || '',
           }}
@@ -86,6 +91,7 @@ const PortfolioGrid = () => {
         </div>
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
+          id='drsetati'
           style={{
             background: portfolio.drsetati.header.background || '',
           }}
