@@ -28,7 +28,7 @@ const Navbar = ({}) => {
   ];
   const portfolioLinks = [
     { name: 'Inteligets', to: '/portfolio/inteligets', icon: FiShoppingCart },
-    { name: 'Blogr', to: '/portfolio/blogr', icon: FiFileMinus },
+    // { name: 'Blogr', to: '/portfolio/blogr', icon: FiFileMinus },
     { name: 'FutureAgent', to: '/portfolio/futureagent', icon: DiNodejsSmall },
   ];
   useEffect(() => {

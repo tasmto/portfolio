@@ -31,7 +31,7 @@ const PortfolioGrid = () => {
             id={portfolio.inteligets.id}
           />
         </div>
-        <div
+        {/* <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
           style={{
             background: portfolio.blogr.header.background || '',
@@ -43,7 +43,7 @@ const PortfolioGrid = () => {
             title={portfolio.blogr.title}
             id={portfolio.blogr.id}
           />
-        </div>
+        </div> */}
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           style={{
