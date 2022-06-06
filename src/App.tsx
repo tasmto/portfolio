@@ -30,12 +30,12 @@ function App() {
             <main className='pt-10 sm:pt-24 lg:pt-[10rem] bg-slate-50 dark:bg-slate-900 dark:text-slate-200'>
               <AnimatePresence exitBeforeEnter initial={true}>
                 <Routes>
-                  <Route path='*' element={<NotFound />} />
                   <Route path='/' element={<Home />} />
                   <Route path='/resume' element={<Resume />} />
                   <Route path='/get-in-touch' element={<Contact />} />
                   <Route path='/portfolio' element={<Portfolio />} />
                   <Route path='/portfolio/:id' element={<PortfolioPiece />} />
+                  <Route path='*' element={<Home />} />
                 </Routes>
               </AnimatePresence>
             </main>
