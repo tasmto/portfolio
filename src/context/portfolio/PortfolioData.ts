@@ -34,16 +34,16 @@ export const portfolio: portfolio = {
         'linear-gradient(180deg, hsla(23, 92%, 71%, 1) 0%, hsla(345, 43%, 54%, 1) 100%)',
     },
     id: 'futureagent',
-    title: 'Future Agent Design and Development',
+    title: 'Future Agent product(s) Design and Development',
     time: '1 year',
     stack: ['React', 'React Native', 'Firebase', 'Node.js', 'Express.js'],
 
     extract:
-      'A MERN + Firebase stack powered re-imagining of how houses and properties get sold in South Africa. ',
+      'A MERN + React Native + Firebase stack powered re-imagining of how houses and properties get sold in South Africa. ',
     repository: 'www.',
     content: [
       {
-        image: { url: '/portfolio/future-agent/future-agent--section-1.png' },
+        image: { url: '/portfolio/future-agent/section-4.png' },
         text: {
           heading:
             'Part of an end to end solutions that gives home sellers access to the same marketing and legal tools real estates agents use to legally sell property.',
@@ -51,7 +51,20 @@ export const portfolio: portfolio = {
         },
       },
       {
-        image: { url: '/portfolio/future-agent/future-agent--section-2.png' },
+        text: {
+          body: 'Our solution is an an that lets buyers and users and connect with the oversight from the Future Agent real estate agents (through three separate platforms).',
+        },
+
+        image: { url: '/portfolio/future-agent/section-1.png' },
+      },
+      {
+        image: [
+          { url: '/portfolio/future-agent/section-2.png' },
+          { url: '/portfolio/future-agent/section-3.png' },
+        ],
+      },
+      {
+        image: { url: '/portfolio/future-agent/section-7.png' },
         text: {
           heading:
             'In most property transactions the value of having a real estate is in their',
@@ -66,14 +79,36 @@ export const portfolio: portfolio = {
       {
         image: [
           {
-            url: '/portfolio/future-agent/future-agent--section-3.png',
+            url: '/portfolio/future-agent/section-5.png',
             background: 'linear-gradient(180deg, #F37A42 0%, #E17478 100%)',
           },
-          { url: '/portfolio/future-agent/future-agent--section-4.png' },
+          { url: '/portfolio/future-agent/section-6.png' },
         ],
         text: {
           heading: 'Our design and development process',
           body: 'Trying to reinvent the entire real estate process with all the red tape and legalities was always going to be tricky, so the first thing we had to do was immersing  ourselves in the traditional process and understanding everything that we could and would be streamlining and handing over to the seller in cutting out the agent middle man. ',
+        },
+      },
+      {
+        image: {
+          url: '/portfolio/future-agent/section-8.png',
+        },
+      },
+      {
+        text: { body: 'Some of the product architecture.' },
+        image: {
+          url: '/portfolio/future-agent/section-10.svg',
+        },
+      },
+      {
+        image: {
+          url: '/portfolio/future-agent/section-9.png',
+        },
+      },
+
+      {
+        text: {
+          body: 'The project is currently under development, but if you want a demo or a deeper dive into the product itself, feel free to get in touch with me below. ',
         },
       },
     ],
@@ -85,7 +120,7 @@ export const portfolio: portfolio = {
         'linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%)',
     },
     id: 'inteligets',
-    title: 'Inteligets e-commerce design and development',
+    title: 'Inteligets fullstack e-commerce design and development',
     time: '3 weeks',
     launched: '2022',
     stack: [
@@ -278,6 +313,8 @@ export const portfolio: portfolio = {
       background:
         ' linear-gradient(45deg, hsla(205, 34%, 40%, 1) 0%, hsla(347, 52%, 36%, 1) 100%)',
     },
+    repo: 'https://github.com/tasmto/flavor-festival',
+    repository: 'https://github.com/tasmto/flavor-festival',
     id: 'flavorfestival',
     title: 'Flavor festival recipe app design and development',
     time: '1 week',
@@ -313,36 +350,24 @@ export const portfolio: portfolio = {
     launched: '2019',
     stack: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     extract:
-      'A recipe app that focusses on letting users, create, collect recipes and shop based on their collections.',
+      "A PHP and JavaScript website, redesign I made for a South African Doctor's private practice.",
     content: [
       {
-        image: { url: '/portfolio/dr-setati/section-1.png' },
         text: {
-          heading: 'Features:',
-          body: [
-            'Upload custom recipes.',
-            'Search through a catalogue of about 1 000 000 recipes.',
-            'Bookmark recipes and collate ingredient shopping lists.',
-          ],
-        },
-      },
-      {
-        image: { url: '/portfolio/dr-setati/section-2.png' },
-        text: {
-          heading: 'Features:',
-          body: [
-            'Upload custom recipes.',
-            'Search through a catalogue of about 1 000 000 recipes.',
-            'Bookmark recipes and collate ingredient shopping lists.',
-          ],
-        },
-      },
-      {
-        text: {
-          heading: 'Interactive SVG animations through framer-motion.',
-          body: 'I highly recommend going to the live site to see them properly.',
+          heading: 'The old  site vs my redesign',
         },
         image: [
+          { url: '/portfolio/dr-setati/section-6.png' },
+          { url: '/portfolio/dr-setati/section-5.png' },
+        ],
+      },
+
+      {
+        image: [
+          {
+            url: '/portfolio/dr-setati/section-1.png',
+          },
+          { url: '/portfolio/dr-setati/section-2.png' },
           {
             url: '/portfolio/dr-setati/section-3.png',
           },
