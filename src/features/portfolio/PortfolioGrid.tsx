@@ -19,7 +19,7 @@ const PortfolioGrid = () => {
     <section>
       <div className='grid grid-cols-6 col-span-2 gap-4'>
         <div
-          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           id='inteligets'
           style={{
             background: portfolio.inteligets.header.background || '',
@@ -32,8 +32,8 @@ const PortfolioGrid = () => {
             id={portfolio.inteligets.id}
           />
         </div>
-        {/* <div
-          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-6 view-large'
+        <div
+          className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           id='blogr'
           style={{
             background: portfolio.blogr.header.background || '',
@@ -45,7 +45,7 @@ const PortfolioGrid = () => {
             title={portfolio.blogr.title}
             id={portfolio.blogr.id}
           />
-        </div> */}
+        </div>
         <div
           className=' overflow-hidden rounded-2xl col-span-6 max-h-[30rem] lg:col-span-3 view-large'
           id='futureAgent'

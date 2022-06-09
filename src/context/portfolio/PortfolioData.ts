@@ -34,7 +34,7 @@ export const portfolio: portfolio = {
         'linear-gradient(180deg, hsla(23, 92%, 71%, 1) 0%, hsla(345, 43%, 54%, 1) 100%)',
     },
     id: 'futureagent',
-    title: 'Future Agent product(s) Design and Development',
+    title: 'Future Agent app design and development',
     time: '1 year',
     stack: ['React', 'React Native', 'Firebase', 'Node.js', 'Express.js'],
 
@@ -116,8 +116,7 @@ export const portfolio: portfolio = {
   inteligets: {
     header: {
       url: '/portfolio/inteligets/cover.png',
-      background:
-        'linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%)',
+      background: 'linear-gradient(to right, #114357, #f29492)',
     },
     id: 'inteligets',
     title: 'Inteligets fullstack e-commerce design and development',
@@ -187,14 +186,14 @@ export const portfolio: portfolio = {
   },
   blogr: {
     header: {
-      url: '/portfolio/inteligets/cover.png',
+      url: '/portfolio/blogr/cover.png',
       background:
         'linear-gradient(90deg, hsla(35, 79%, 68%, 1) 0%, hsla(286, 44%, 49%, 1) 100%)',
     },
     id: 'blogr',
-    title: 'Blogr full stack social media x blog platform',
+    title: 'Blogr full stack blogging platform',
     time: '3 weeks',
-    launched: '2022',
+
     stack: [
       'React',
       'Redux',
@@ -204,56 +203,60 @@ export const portfolio: portfolio = {
       'Node.js',
       'Express.js',
     ],
-    demo: 'https://inteligets.herokuapp.com/',
-    repo: 'https://github.com/tasmto/inteligets',
+
     extract:
-      'A fully functional fullstack e-commerce store that supports multiple user roles, CRUD of user generated orders and reviews and management of products.',
-    repository: 'https://github.com/tasmto/inteligets',
+      'A fully functional fullstack blog that supports 5 user role levels, CRUD of user generated posts and comments and community moderated content and users.',
+
     content: [
       {
-        image: { url: '/portfolio/inteligets/section-1.png' },
+        image: { url: '/portfolio/blogr/section-01.png' },
+      },
+      {
+        image: { url: '/portfolio/blogr/section-09.png' },
         text: {
-          heading:
-            'Allows anyone to sign up and browse through a catalogue of products set by admin users.',
+          body: 'Blogr supports rich text content (powered by tinymce), code snippets, user uploaded images and iframe embeds as part of any post. Iframe content is restricted to users with higher permissions (credit).',
         },
       },
       {
-        image: { url: '/portfolio/inteligets/section-2.png' },
+        text: { body: 'The user signin, user signup and profile screens.' },
+        image: [
+          {
+            url: '/portfolio/blogr/section-04.png',
+          },
+          { url: '/portfolio/blogr/section-05.png' },
+          { url: '/portfolio/blogr/section-07.png' },
+          { url: '/portfolio/blogr/section-06.png' },
+          { url: '/portfolio/blogr/section-12.png' },
+          { url: '/portfolio/blogr/section-13.png' },
+        ],
+      },
+
+      {
+        image: { url: '/portfolio/blogr/section-02.png' },
         text: {
-          heading:
-            'Supports customer roles and administrator roles. This platform allows admins to:',
-          body: [
-            "Update and/or delete other user's profiles.",
-            'Update, create and delete products and user orders.',
-            'Property valuation tools (typically heavily regulated by real estates boards and other such parties).',
-            'Elevate or de-elevate other users to admins.',
-          ],
+          body: 'Full credit for the homepage design goes to @jibinsjopseph on Figma community (the rest of the design is all mine).',
         },
+      },
+
+      {
+        image: { url: '/portfolio/blogr/section-10.png' },
+      },
+
+      {
+        image: [
+          { url: '/portfolio/blogr/section-08.png' },
+
+          { url: '/portfolio/blogr/section-11.png' },
+        ],
       },
 
       {
         text: {
           heading:
             'Uses Mongoose on the server to enforce strict schema structure on the backend:',
-          body: 'Below is the product and review schema.',
-          code: 'https://jsfiddle.net/tasmto/5rnaypg1/1/embedded/js/dark/',
+          body: 'Below is a part of the post schema for the database.',
+          code: 'https://jsfiddle.net/tasmto/vub9oscz/embedded/js/dark/',
         },
-      },
-      {
-        text: {
-          heading:
-            'Uses restful API architecture standards for the Mongo DB api.',
-          body: 'Below is a snippet of the user api routes controllers.',
-          code: 'https://jsfiddle.net/tasmto/g8nypv5e/1/embedded/js/dark/',
-        },
-      },
-      {
-        image: [
-          {
-            url: '/portfolio/inteligets/section-4.png',
-          },
-          { url: '/portfolio/inteligets/section-3.png' },
-        ],
       },
     ],
   },
