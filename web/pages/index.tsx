@@ -1,8 +1,21 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import groq from 'groq';
+import client from '../client';
 import Image from 'next/image';
 
-const Home: NextPage = () => {
+type Props = {
+  posts: Array<{
+    _id: string;
+    title: string;
+    slug: any;
+    publishedAt: string;
+  }>;
+};
+
+const Home = ({ posts }: Props) => {
+  console.log(posts);
   return (
     <div>
       <Head>
@@ -12,10 +25,31 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Hello World</h1>
+        <h1>Welcome to a blog</h1>
+        {posts.length > 0 &&
+          posts.map(
+            ({ _id, title = '', slug = '', publishedAt = '' }) =>
+              slug && (
+                <li key={_id}>
+                  <Link href='/post/[slug]' as={`/post/${slug.current}`}>
+                    <a>{title}</a>
+                  </Link>{' '}
+                  ({new Date(publishedAt).toDateString()})
+                </li>
+              )
+          )}
       </main>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const posts = await client.fetch(
+    groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc)`
+  );
+  return {
+    props: { posts },
+  };
 };
 
 export default Home;
