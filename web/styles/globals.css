@@ -1,16 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
+
+@layer components {
+
+  /* Prettier-ignore */
+  .container {
+   @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2
+  }
+  .container-1 {
+   @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2
+  }
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Manrope',
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
