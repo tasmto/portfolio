@@ -10,6 +10,7 @@ import {
   IoBrowsers,
   IoBrowsersOutline,
 } from 'react-icons/io5';
+import Button from '../button/Button';
 
 type Props = {};
 
@@ -55,7 +56,7 @@ const NavBar = ({}: Props) => {
 
   return (
     <header
-      className={`fixed top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] `}
+      className={`fixed top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-full`}
     >
       {/* Large Screen Nav (Accessible) */}
       <a
@@ -92,19 +93,22 @@ const NavBar = ({}: Props) => {
           ))}
         </ul>
 
-        <ul className='flex-initial flex gap-3'>
+        <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>
             <Link href='/'>
-              <a className='px-3 py-2 bg-primary-100 text-primary-500 flex items-center gap-2 text-lg tracking-tight '>
-                <IoDownloadOutline className='h-6 w-6' />
-                <span>Button 1</span>
+              <a>
+                <Button size='small' type='secondary' icon={IoDownloadOutline}>
+                  My CV
+                </Button>
               </a>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <a className='px-3 py-2 bg-primary-500 text-white flex items-center gap-2 text-lg tracking-tight '>
-                <span>Button 2</span>
+              <a>
+                <Button type='primary' size='small'>
+                  Button 2
+                </Button>
               </a>
             </Link>
           </li>
@@ -114,7 +118,7 @@ const NavBar = ({}: Props) => {
       {/* Nav for Small screens; invisible for screen readers even on mobile  */}
       <nav
         aria-hidden={true}
-        className='md:hidden not-sr-only fixed bottom-[-100vh] py-3 w-full bg-slate-50/90 border-t border-slate-300 text-primary-800 '
+        className='md:hidden not-sr-only fixed bottom-[-100vh] py-3 w-full bg-slate-50/90  backdrop-blur  border-t border-slate-300 text-primary-800 '
       >
         <ul className='flex-initial flex gap-8  sm:gap-10 lg:gap-8 text-lg tracking-tight w-full justify-center overflow-auto '>
           {mobileLinks.map((link, i) => (

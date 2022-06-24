@@ -4,6 +4,10 @@ import client from '../client';
 import Image from 'next/image';
 import NavBar from '../components/navigation/NavBar';
 import TechSlider from '../components/technologies-sliders/TechSlider';
+import Button from '../components/button/Button';
+import { IoDownloadOutline } from 'react-icons/io5';
+import Divider from '../components/divider/Divider';
+import FeaturedBlockElement from '../components/portfolio/FeaturedBlockElement';
 
 type Props = {};
 
@@ -17,7 +21,7 @@ const Home = ({}: Props) => {
       </Head>
       <NavBar />
 
-      <main id='main' className='min-h-[80vh] md:mt-[80px]'>
+      <main id='main' className='min-h-[80vh] mb-[80px] md:mt-[80px] md:mb-0 '>
         <div className='w-full h-full bg-primary-700  pt-10 pb-20 text-white'>
           <div className='container-1 grid gap-14 md:gap-28'>
             <section className='grid gap-10 justify-center'>
@@ -30,16 +34,20 @@ const Home = ({}: Props) => {
                     I'm currently looking for my next opportunity to make more
                     kickass software on the web.
                   </p>
-                  <div className='flex gap-3 mt-10'>
+                  <div className='flex flex-wrap-reverse gap-3 mt-10'>
                     <Link href='/'>
-                      <a className='px-6 py-3 bg-primary-100 hover:bg-primary-200 text-primary-500 flex items-center gap-2 text-lg tracking-tight '>
-                        My CV
+                      <a>
+                        <Button type='secondary' size='large'>
+                          My CV
+                        </Button>
                       </a>
                     </Link>
 
                     <Link href='/'>
-                      <a className='px-6 py-3 bg-primary-500 hover:bg-primary-400 text-white flex items-center gap-2 text-lg tracking-tight '>
-                        My Portfolio
+                      <a>
+                        <Button type='primary' size='large'>
+                          My Portfolio
+                        </Button>
                       </a>
                     </Link>
                   </div>
@@ -58,15 +66,68 @@ const Home = ({}: Props) => {
               <TechSlider />
             </section>
             <section className='grid gap-8'>
-              <h2 className='flex gap-4 text-xl md:text-2xl font-bold items-center'>
+              <h2 className='flex gap-4 text-xl md:text-2xl font-medium items-center'>
                 <span className='shrink-0'>Featured Projects</span>
-                <hr className='shrink h-1 w-full opacity-30' />
+                <Divider />
               </h2>
               <div className='grid gap-10 md:gap-14'>
-                <article className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                  Project 1
+                <FeaturedBlockElement
+                  image='/images/inteligets-cover.png'
+                  title='Inteligets'
+                  stack={[
+                    'React',
+                    'Redux',
+                    'Axios',
+                    'Bootstrap 5',
+                    'Sass',
+                    'Express',
+                    'MongoDB',
+                    'Mongoose',
+                    'Node.js',
+                    'Framer Motion',
+                  ]}
+                  description='A fully functional fullstack e-commerce store that supports multiple
+            user roles, the creation, reading, deletion and updating (CRUD) of
+            user generated orders and reviews and management of products.'
+                />
+
+                <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7 lg:gap-10'>
+                  <div className='col-span-1 lg:col-span-2 grid gap-5 lg:gap-7  content-start'>
+                    <h2 className='text-5xl '>Inteligets</h2>
+                    <div className='grid gap-2'>
+                      <h4 className='flex gap-4 text-xl items-center'>
+                        <span>Description</span>
+                        <Divider />
+                      </h4>
+                      <p className='text-sm text-primary-300'>
+                        A fully functional fullstack e-commerce store that
+                        supports multiple user roles, the creation, reading,
+                        deletion and updating (CRUD) of user generated orders
+                        and reviews and management of products.
+                      </p>
+                    </div>
+                    <div className='grid gap-2'>
+                      <h4 className='flex gap-4 text-xl items-center'>
+                        <span>Stack</span>
+                        <Divider />
+                      </h4>
+                      <p className='text-sm lg:text-md text-primary-300'>
+                        React, Redux, Axios, Bootstrap 5, Sass, Express,
+                        MongoDB, Mongoose, Node.js and Framer Motion.
+                      </p>
+                    </div>
+                  </div>
+                  <div className='col-span-1 md:col-span-2 lg:col-span-3'>
+                    <Image
+                      src='/images/blogr-cover.png'
+                      width={835}
+                      height={442}
+                      layout='responsive'
+                      className='object-center object-cover'
+                      alt=''
+                    />
+                  </div>
                 </article>
-                <article>Project 2</article>
               </div>
             </section>
           </div>
