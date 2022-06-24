@@ -40,7 +40,11 @@ module.exports = {
       gray: colors.gray,
     },
 
-    extend: {},
+    extend: {
+      cursor: {
+        eye: 'url(/cursors/eye.png), pointer',
+      },
+    },
   },
   plugins: [],
 };

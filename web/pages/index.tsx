@@ -8,6 +8,7 @@ import Button from '../components/button/Button';
 import { IoDownloadOutline } from 'react-icons/io5';
 import Divider from '../components/divider/Divider';
 import FeaturedBlockElement from '../components/portfolio/FeaturedBlockElement';
+import Typography from '../components/typography/Typography';
 
 type Props = {};
 
@@ -89,47 +90,32 @@ const Home = ({}: Props) => {
                   description='A fully functional fullstack e-commerce store that supports multiple
             user roles, the creation, reading, deletion and updating (CRUD) of
             user generated orders and reviews and management of products.'
+                  logoImage='/images/inteligets-logo.svg'
                 />
-
-                <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7 lg:gap-10'>
-                  <div className='col-span-1 lg:col-span-2 grid gap-5 lg:gap-7  content-start'>
-                    <h2 className='text-5xl '>Inteligets</h2>
-                    <div className='grid gap-2'>
-                      <h4 className='flex gap-4 text-xl items-center'>
-                        <span>Description</span>
-                        <Divider />
-                      </h4>
-                      <p className='text-sm text-primary-300'>
-                        A fully functional fullstack e-commerce store that
-                        supports multiple user roles, the creation, reading,
-                        deletion and updating (CRUD) of user generated orders
-                        and reviews and management of products.
-                      </p>
-                    </div>
-                    <div className='grid gap-2'>
-                      <h4 className='flex gap-4 text-xl items-center'>
-                        <span>Stack</span>
-                        <Divider />
-                      </h4>
-                      <p className='text-sm lg:text-md text-primary-300'>
-                        React, Redux, Axios, Bootstrap 5, Sass, Express,
-                        MongoDB, Mongoose, Node.js and Framer Motion.
-                      </p>
-                    </div>
-                  </div>
-                  <div className='col-span-1 md:col-span-2 lg:col-span-3'>
-                    <Image
-                      src='/images/blogr-cover.png'
-                      width={835}
-                      height={442}
-                      layout='responsive'
-                      className='object-center object-cover'
-                      alt=''
-                    />
-                  </div>
-                </article>
+                <FeaturedBlockElement
+                  image='/images/blogr-cover.png'
+                  title='Blogr'
+                  stack={[
+                    'React',
+                    'Redux',
+                    'Axios',
+                    'Bootstrap 5',
+                    'Sass',
+                    'Express',
+                    'MongoDB',
+                    'Mongoose',
+                    'Node.js',
+                    'Framer Motion',
+                  ]}
+                  description='A fully functional fullstack e-commerce store that supports multiple
+            user roles, the creation, reading, deletion and updating (CRUD) of
+            user generated orders and reviews and management of products.'
+                  textFirst
+                  logoImage='/images/blogr-logo.svg'
+                />
               </div>
             </section>
+            <Typography component='h1'>Test test test</Typography>
           </div>
         </div>
       </main>

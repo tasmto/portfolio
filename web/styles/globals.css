@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
 
 @layer components {
-
   /* Prettier-ignore */
   .container {
    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2

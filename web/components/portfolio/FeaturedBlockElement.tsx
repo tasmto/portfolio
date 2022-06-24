@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import Divider from '../divider/Divider';
+import { IoArrowForwardOutline } from 'react-icons/io5';
 
 type Props = {
   description: string;
@@ -10,6 +12,7 @@ type Props = {
   caseStudy?: string;
   liveLink?: string;
   githubLink?: string;
+  textFirst?: boolean;
 };
 
 /**
@@ -29,13 +32,16 @@ const FeaturedBlockElement = ({
   stack,
   image,
   title,
+  logoImage,
   caseStudy,
   liveLink,
   githubLink,
+  textFirst,
 }: Props) => {
+  const [activeTab, setActiveTab] = useState('description');
   return (
-    <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7 lg:gap-10'>
-      <div className='col-span-1 md:col-span-2 lg:col-span-3'>
+    <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
+      <div className='col-span-1 md:col-span-2 lg:col-span-3 cursor-eye'>
         <Image
           src={image}
           width={850}
@@ -45,24 +51,82 @@ const FeaturedBlockElement = ({
           alt=''
         />
       </div>
-      <div className='col-span-1 lg:col-span-2 grid gap-5 lg:gap-7  content-start'>
-        <h2 className='text-5xl '>Inteligets</h2>
+      <div
+        className={`col-span-1 lg:col-span-2 grid gap-3 lg:gap-7  content-start ${
+          textFirst && 'md:order-first'
+        }`}
+      >
+        <h2 className='text-4xl md:text-5xl relative'>
+          {logoImage && (
+            <Image
+              height={50}
+              width={325}
+              src={logoImage}
+              layout='intrinsic'
+              className='object-start object-contain'
+              alt=''
+            />
+          )}
+          <span className={`${logoImage && 'sr-only'}`}>{title}</span>
+        </h2>
         {description && (
-          <div className='grid gap-2'>
-            <h4 className='flex gap-4 text-xl items-center'>
-              <span>Description</span>
+          <div>
+            <h4
+              onClick={() =>
+                activeTab === 'description'
+                  ? setActiveTab('')
+                  : setActiveTab('description')
+              }
+              className='flex gap-4 text-xl items-center cursor-pointer py-2'
+            >
+              <span className='shrink-0'>Description</span>
               <Divider />
+              <IoArrowForwardOutline
+                aria-hidden={true}
+                className={`h-8 w-8 transition-transform duration-500 delay-200  ${
+                  activeTab === 'description' && 'rotate-[-270deg] delay-[0s]'
+                }`}
+              />
             </h4>
-            <p className='text-sm lg:text-md text-primary-300'>{description}</p>
+            <p
+              className={`text-sm lg:text-md text-primary-300 origin-top
+             transition-all duration-300 ease-in-out 
+            ${
+              activeTab === 'description'
+                ? 'scale-y-1 opacity-100 max-h-full'
+                : 'scale-y-0 opacity-0 max-h-0'
+            }`}
+            >
+              {description}
+            </p>
           </div>
         )}
         {stack?.length && (
-          <div className='grid gap-2'>
-            <h4 className='flex gap-4 text-xl items-center'>
-              <span>Stack</span>
+          <div className=''>
+            <h4
+              className='flex gap-4 py-2 text-xl items-center cursor-pointer'
+              onClick={() =>
+                activeTab === 'stack' ? setActiveTab('') : setActiveTab('stack')
+              }
+            >
+              <span className='shrink-0'>Built using:</span>
               <Divider />
+              <IoArrowForwardOutline
+                aria-hidden={true}
+                className={`h-8 w-8 transition-transform duration-500 delay-200  ${
+                  activeTab === 'stack' && 'rotate-[450deg] delay-[0s]'
+                }`}
+              />
             </h4>
-            <p className='text-sm text-primary-300'>
+            <p
+              className={`text-sm lg:text-md text-primary-300 origin-top
+             transition-all duration-300 ease-in-out 
+            ${
+              activeTab === 'stack'
+                ? 'scale-y-1 opacity-100 max-h-full'
+                : 'scale-y-0 opacity-0 max-h-0'
+            }`}
+            >
               {stack.toString().replaceAll(',', ', ')}.
             </p>
           </div>
