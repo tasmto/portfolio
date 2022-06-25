@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import React, { Children, useRef } from 'react';
 import { IconType } from 'react-icons';
 
@@ -9,6 +11,9 @@ type Props = {
   width?: 'block';
   children?: React.ReactNode;
   whenClicked?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  href?: string;
+  externalLink?: boolean;
+  className?: string;
 };
 
 /**
@@ -17,19 +22,22 @@ type Props = {
  * @returns JSX.Element
  * @description This component is used to create a button.
  * @param whenClicked is a function that is called when the button is clicked.
+ * @param href is the url to redirect to when the button is clicked. (enable externalLink if it is an outside link)
  */
 const Button = ({
   whenClicked,
-
+  href,
+  externalLink,
   size,
   icon,
   iconPosition,
   type,
   width,
   children,
+  className,
 }: Props) => {
   const btn = useRef(null);
-  const buttonClasses = `flex items-center gap-2 tracking-tight font-medium cursor-pointer 
+  const buttonClasses = `flex flex-wrap items-center gap-2 tracking-tight font-medium cursor-pointer 
   ${
     size === 'large'
       ? 'px-6 py-3 text-lg'
@@ -43,22 +51,55 @@ const Button = ({
       ? 'bg-primary-100 text-primary-500 hover:bg-primary-200'
       : type === 'text'
       ? 'text-primary-500 hover:text-primary-400'
-      : 'text-primary-100 hover:text-primary-200'
+      : type === 'text-light'
+      ? 'text-white hover:text-primary-200'
+      : 'text-primary-500 hover:text-primary-400'
   } 
-  ${iconPosition === 'left' ? 'flex-row' : 'flex-row-reverse'}}
+ 
   ${width === 'block' ? 'w-full' : 'w-auto'}`;
 
   const Icon = icon;
   const iconClasses = `${
     size === 'large' ? 'h-8 w-8' : size === 'small' ? 'h-4 w-4' : 'h-6 w-6'
-  }`;
+  }  ${iconPosition === 'left' ? 'order-first' : 'order-last'}`;
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (whenClicked !== undefined) whenClicked(e);
+    if (href && externalLink) window.open(href, '_blank');
   };
 
+  if (href && !externalLink) {
+    return (
+      <Link href={href} as={href}>
+        <a ref={btn} className={`${buttonClasses} ${className}`}>
+          {Icon && <Icon className={iconClasses} />}
+          <span>{children}</span>
+        </a>
+      </Link>
+    );
+  }
+
+  if (href && externalLink) {
+    return (
+      <a
+        ref={btn}
+        href={href}
+        target='_blank'
+        rel='no-refer'
+        className={`${buttonClasses} ${className}`}
+      >
+        {Icon && <Icon className={iconClasses} />}
+        <span>{children}</span>
+      </a>
+    );
+  }
+
   return (
-    <button ref={btn} className={buttonClasses} onClick={clickHandler}>
+    <button
+      ref={btn}
+      className={`${buttonClasses} ${className}`}
+      onClick={clickHandler}
+    >
       {Icon && <Icon className={iconClasses} />}
       <span>{children}</span>
     </button>

@@ -56,7 +56,7 @@ const NavBar = ({}: Props) => {
 
   return (
     <header
-      className={`fixed top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-full`}
+      className={`fixed bottom-0 md:bottom-[initial] md:top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-full`}
     >
       {/* Large Screen Nav (Accessible) */}
       <a
@@ -118,7 +118,7 @@ const NavBar = ({}: Props) => {
       {/* Nav for Small screens; invisible for screen readers even on mobile  */}
       <nav
         aria-hidden={true}
-        className='md:hidden not-sr-only fixed bottom-[-100vh] py-3 w-full bg-slate-50/90  backdrop-blur  border-t border-slate-300 text-primary-800 '
+        className='md:hidden not-sr-only fixed bottom-0 py-3 w-full bg-slate-50/90   backdrop-blur border-t border-slate-300 text-primary-800 '
       >
         <ul className='flex-initial flex gap-8  sm:gap-10 lg:gap-8 text-lg tracking-tight w-full justify-center overflow-auto '>
           {mobileLinks.map((link, i) => (

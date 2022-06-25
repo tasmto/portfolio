@@ -2,6 +2,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Divider from '../divider/Divider';
 import { IoArrowForwardOutline } from 'react-icons/io5';
+import { BiLinkExternal } from 'react-icons/bi';
+import { TbRainbow } from 'react-icons/tb';
+import Button from '../button/Button';
+import Link from 'next/link';
+import Typography from '../typography/Typography';
 
 type Props = {
   description: string;
@@ -41,22 +46,24 @@ const FeaturedBlockElement = ({
   const [activeTab, setActiveTab] = useState('description');
   return (
     <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
-      <div className='col-span-1 md:col-span-2 lg:col-span-3 cursor-eye'>
-        <Image
-          src={image}
-          width={850}
-          height={450}
-          layout='responsive'
-          className='object-center object-cover'
-          alt=''
-        />
-      </div>
+      <Link href={caseStudy || ''}>
+        <div className='col-span-1 md:col-span-2 lg:col-span-3 cursor-eye'>
+          <Image
+            src={image}
+            width={850}
+            height={450}
+            layout='responsive'
+            className='object-center object-cover'
+            alt=''
+          />
+        </div>
+      </Link>
       <div
         className={`col-span-1 lg:col-span-2 grid gap-3 lg:gap-7  content-start ${
           textFirst && 'md:order-first'
         }`}
       >
-        <h2 className='text-4xl md:text-5xl relative'>
+        <Typography as='h2' size='display2' className='relative'>
           {logoImage && (
             <Image
               height={50}
@@ -68,16 +75,19 @@ const FeaturedBlockElement = ({
             />
           )}
           <span className={`${logoImage && 'sr-only'}`}>{title}</span>
-        </h2>
+        </Typography>
         {description && (
           <div>
-            <h4
+            <Typography
+              as='button'
+              role='title'
+              size='h3'
               onClick={() =>
                 activeTab === 'description'
                   ? setActiveTab('')
                   : setActiveTab('description')
               }
-              className='flex gap-4 text-xl items-center cursor-pointer py-2'
+              className='w-full flex gap-4 items-center cursor-pointer py-2'
             >
               <span className='shrink-0'>Description</span>
               <Divider />
@@ -87,9 +97,11 @@ const FeaturedBlockElement = ({
                   activeTab === 'description' && 'rotate-[-270deg] delay-[0s]'
                 }`}
               />
-            </h4>
-            <p
-              className={`text-sm lg:text-md text-primary-300 origin-top
+            </Typography>
+            <Typography
+              as='p'
+              size='caption'
+              className={` text-primary-200 md:text-primary-100 origin-top
              transition-all duration-300 ease-in-out 
             ${
               activeTab === 'description'
@@ -98,13 +110,16 @@ const FeaturedBlockElement = ({
             }`}
             >
               {description}
-            </p>
+            </Typography>
           </div>
         )}
         {stack?.length && (
           <div className=''>
-            <h4
-              className='flex gap-4 py-2 text-xl items-center cursor-pointer'
+            <Typography
+              as='button'
+              role='title'
+              size='h3'
+              className='w-full  flex gap-4 py-2 items-center cursor-pointer'
               onClick={() =>
                 activeTab === 'stack' ? setActiveTab('') : setActiveTab('stack')
               }
@@ -117,9 +132,11 @@ const FeaturedBlockElement = ({
                   activeTab === 'stack' && 'rotate-[450deg] delay-[0s]'
                 }`}
               />
-            </h4>
-            <p
-              className={`text-sm lg:text-md text-primary-300 origin-top
+            </Typography>
+            <Typography
+              as='p'
+              size='caption'
+              className={` text-primary-200 md:text-primary-100 origin-top
              transition-all duration-300 ease-in-out 
             ${
               activeTab === 'stack'
@@ -128,7 +145,34 @@ const FeaturedBlockElement = ({
             }`}
             >
               {stack.toString().replaceAll(',', ', ')}.
-            </p>
+            </Typography>
+          </div>
+        )}
+        {(liveLink || caseStudy) && (
+          <div className='grid gap-1'>
+            {liveLink && (
+              <Button
+                type='text-light'
+                icon={BiLinkExternal}
+                iconPosition='right'
+                href={liveLink}
+                externalLink
+              >
+                View Live Project
+              </Button>
+            )}
+            <Divider />
+            {caseStudy && (
+              <Button
+                type='text-light'
+                icon={TbRainbow}
+                iconPosition='right'
+                href={caseStudy}
+                className='text-primary-100'
+              >
+                Case Study
+              </Button>
+            )}
           </div>
         )}
       </div>
