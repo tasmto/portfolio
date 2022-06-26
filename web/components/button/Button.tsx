@@ -4,13 +4,13 @@ import React, { Children, useRef } from 'react';
 import { IconType } from 'react-icons';
 
 type Props = {
-  type: 'primary' | 'secondary' | 'text' | 'text-light';
+  type: 'primary' | 'tertiary' | 'text' | 'text-light';
   size?: 'large' | 'small';
   icon?: IconType;
   iconPosition?: 'left' | 'right';
   width?: 'block';
   children?: React.ReactNode;
-  whenClicked?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   href?: string;
   externalLink?: boolean;
   className?: string;
@@ -18,14 +18,14 @@ type Props = {
 
 /**
  *
- * @param param0 {type, size, icon, iconPosition, width, whenClicked}
+ * @param param0 {type, size, icon, iconPosition, width, onClick}
  * @returns JSX.Element
  * @description This component is used to create a button.
- * @param whenClicked is a function that is called when the button is clicked.
+ * @param onClick is a function that is called when the button is clicked.
  * @param href is the url to redirect to when the button is clicked. (enable externalLink if it is an outside link)
  */
 const Button = ({
-  whenClicked,
+  onClick,
   href,
   externalLink,
   size,
@@ -47,7 +47,7 @@ const Button = ({
   } ${
     type === 'primary'
       ? 'bg-primary-500 text-primary-100 hover:bg-primary-400'
-      : type === 'secondary'
+      : type === 'tertiary'
       ? 'bg-primary-100 text-primary-500 hover:bg-primary-200'
       : type === 'text'
       ? 'text-primary-500 hover:text-primary-400'
@@ -64,7 +64,7 @@ const Button = ({
   }  ${iconPosition === 'left' ? 'order-first' : 'order-last'}`;
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (whenClicked !== undefined) whenClicked(e);
+    if (onClick !== undefined) onClick(e);
     if (href && externalLink) window.open(href, '_blank');
   };
 
@@ -85,7 +85,7 @@ const Button = ({
         ref={btn}
         href={href}
         target='_blank'
-        rel='no-refer'
+        rel='noopener, noreferrer'
         className={`${buttonClasses} ${className}`}
       >
         {Icon && <Icon className={iconClasses} />}

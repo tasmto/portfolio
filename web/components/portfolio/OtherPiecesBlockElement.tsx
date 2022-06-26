@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { Ref, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import Typography from '../typography/Typography';
 
 type Props = {};
 
@@ -22,6 +23,7 @@ const OtherPiecesBlockElement = (props: Props) => {
 
   type PortfolioRowContent = {
     image: string;
+    title?: string;
     width:
       | '1/1'
       | '1/2'
@@ -90,19 +92,45 @@ const OtherPiecesBlockElement = (props: Props) => {
         className='w-[110vw] relative grid auto-rows-min gap-4 overflow-x-auto origin-center right-[6vw]'
         style={{ transform: `translateX(${mousePosition}%)` }}
         animate={{ x: mousePosition }}
+        transition={{ ease: 'linear' }}
       >
         {contentRows.map((row, i) => {
           const columns = Number(row[0].width.at(-1)); // thank you boxing
 
           return (
             <div
-              className={`grid grid-cols-${columns} auto-rows-fr gap-4 w-full h-full`}
+              className={`grid ${
+                columns === 5
+                  ? 'grid-cols-5'
+                  : columns === 4
+                  ? 'grid-cols-4'
+                  : columns === 3
+                  ? 'grid-cols-3'
+                  : columns === 2
+                  ? 'grid-cols-2'
+                  : 'grid-cols-1'
+              }
+              auto-rows-fr gap-4 w-full h-full`}
               key={i}
             >
               {row.map((content, j) => {
                 const span = Number(content.width.at(0));
                 return (
-                  <div key={j} className={`col-span-${span || '1'}`}>
+                  <div
+                    key={j}
+                    className={`col-span-${
+                      span || '1'
+                    } relative overflow-hidden cursor-eye group`}
+                  >
+                    <article className='w-full h-full absolute top-0 grid content-center bg-primary-800/70 z-10 text-center  backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-1000'>
+                      <Typography
+                        as='h4'
+                        size='h3'
+                        className='text-primary-100'
+                      >
+                        View Project
+                      </Typography>
+                    </article>
                     <Image
                       src={content.image}
                       width={calculateStaticWidth(content.width)}

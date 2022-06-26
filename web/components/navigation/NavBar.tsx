@@ -97,7 +97,7 @@ const NavBar = ({}: Props) => {
           <li>
             <Link href='/'>
               <a>
-                <Button size='small' type='secondary' icon={IoDownloadOutline}>
+                <Button size='small' type='tertiary' icon={IoDownloadOutline}>
                   My CV
                 </Button>
               </a>
@@ -127,7 +127,7 @@ const NavBar = ({}: Props) => {
                 <a
                   className={`flex flex-col items-center gap-1 text-lg hover:text-primary-700 hover:bg-primary-100/20 before:border-t-2 before:absolute before:w-full before:h-2 before:border-slate-700 before:max-w-[35px] before:origin-[100% 50%] before:top-[-0.05rem] before:z-10 before:scale-0 before:transition-transform  hover:before:scale-75 before:duration-500 ${
                     router.pathname === link.href &&
-                    'text-secondary-800 hover:text-secondary-900 before:border-secondary-500 before:scale-100 hover:before:scale-75 font-medium '
+                    'text-tertiary-800 hover:text-tertiary-900 before:border-tertiary-500 before:scale-100 hover:before:scale-75 font-medium '
                   }`}
                 >
                   <span className='h-6 w-5'>{link.icon}</span>

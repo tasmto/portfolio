@@ -45,15 +45,29 @@ const Typography = ({
     display1: `text-5xl md:text-6xl font-bold`,
     display2: `text-4xl md:text-5xl font-bold`,
     display3: `text-3xl md:text-4xl font-bold`,
-    h1: `text-3xl md:text-4xl ${bold ? 'font-bold' : 'font-medium'}`,
-    h2: `text-xl md:text-2xl   ${bold ? 'font-bold' : 'font-medium'}`,
-    h3: `text-lg md:text-xl  ${bold ? 'font-bold' : 'font-medium'}`,
-    body1: `text-lg md:text-xl  ${bold ? 'font-medium' : 'font-light'}`,
-    body2: `text-base md:text-lg  ${bold ? 'font-medium' : 'font-light'}`,
-    body3: `text-base  ${bold ? 'font-medium' : 'font-light'}`,
-    caption: `text-xs md:text-sm  ${bold ? 'font-medium' : 'font-light'}`,
-    button: `text-base md:text-lg  ${bold ? 'font-medium' : 'font-light'}`,
-    small: `text-xs ${bold ? 'font-medium' : 'font-light'}`,
+    h1: `text-3xl md:text-4xl tracking-tight ${
+      bold ? 'font-bold' : 'font-medium'
+    }`,
+    h2: `text-xl md:text-2xl tracking-tight  ${
+      bold ? 'font-bold' : 'font-medium'
+    }`,
+    h3: `text-lg md:text-xl tracking-tight ${
+      bold ? 'font-bold' : 'font-medium'
+    }`,
+    body1: `text-lg md:text-xl tracking-tight ${
+      bold ? 'font-medium' : 'font-light'
+    }`,
+    body2: `text-base md:text-lg tracking-tight ${
+      bold ? 'font-medium' : 'font-light'
+    }`,
+    body3: `text-base tracking-tight ${bold ? 'font-medium' : 'font-light'}`,
+    caption: `text-xs md:text-sm tracking-tight ${
+      bold ? 'font-medium' : 'font-light'
+    }`,
+    button: `text-base md:text-lg tracking-tight ${
+      bold ? 'font-medium' : 'font-light'
+    }`,
+    small: `text-xs tracking-tight ${bold ? 'font-medium' : 'font-light'}`,
     inherit: '',
   };
 

@@ -102,7 +102,7 @@ const FeaturedBlockElement = ({
               as='p'
               size='caption'
               className={` text-primary-200 md:text-primary-100 origin-top
-             transition-all duration-300 ease-in-out 
+             transition-all duration-300 ease-in-out  
             ${
               activeTab === 'description'
                 ? 'scale-y-1 opacity-100 max-h-full'
