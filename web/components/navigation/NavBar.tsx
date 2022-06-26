@@ -56,7 +56,7 @@ const NavBar = ({}: Props) => {
 
   return (
     <header
-      className={`fixed bottom-0 md:bottom-[initial] md:top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-full`}
+      className={`fixed bottom-0 md:bottom-[initial] md:top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-[100vw]`}
     >
       {/* Large Screen Nav (Accessible) */}
       <a

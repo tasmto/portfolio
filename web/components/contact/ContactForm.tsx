@@ -4,12 +4,18 @@ import TextArea from '../form/TextArea';
 import TextInput from '../form/TextInput';
 import { IoSend } from 'react-icons/io5';
 import { useForm, ValidationError } from '@formspree/react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Typography from '../typography/Typography';
 
 type Props = {};
 
 const ContactForm = (props: Props) => {
-  const [state, handleSubmit] = useForm('mbjwezkz');
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const [state, handleSubmit] = useForm('mbjwezkz', {
+    // @ts-ignore
+    data: { 'g-recaptcha-reponse': executeRecaptcha },
+  });
 
   const [formData, setFormData] = useState({
     name: '',
@@ -35,7 +41,14 @@ const ContactForm = (props: Props) => {
     );
   else
     return (
-      <form method='POST' onSubmit={handleSubmit}>
+      <form
+        method='POST'
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(formData);
+          console.log(state);
+        }}
+      >
         <TextInput
           label='What is your name?'
           onChange={handleChange}
