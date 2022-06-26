@@ -14,6 +14,7 @@ type Props = {
   href?: string;
   externalLink?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 /**
@@ -25,6 +26,7 @@ type Props = {
  * @param href is the url to redirect to when the button is clicked. (enable externalLink if it is an outside link)
  */
 const Button = ({
+  disabled,
   onClick,
   href,
   externalLink,
@@ -55,12 +57,13 @@ const Button = ({
       ? 'text-white hover:text-primary-200'
       : 'text-primary-500 hover:text-primary-400'
   } 
+  ${disabled && 'cursor-not-allowed opacity-70'}
  
-  ${width === 'block' ? 'w-full' : 'w-auto'}`;
+  ${width === 'block' ? 'w-full justify-center' : 'w-auto'}`;
 
   const Icon = icon;
   const iconClasses = `${
-    size === 'large' ? 'h-8 w-8' : size === 'small' ? 'h-4 w-4' : 'h-6 w-6'
+    size === 'large' ? 'h-7 w-7' : size === 'small' ? 'h-4 w-4' : 'h-6 w-6'
   }  ${iconPosition === 'left' ? 'order-first' : 'order-last'}`;
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -85,7 +88,7 @@ const Button = ({
         ref={btn}
         href={href}
         target='_blank'
-        rel='noopener, noreferrer'
+        rel='noreferrer'
         className={`${buttonClasses} ${className}`}
       >
         {Icon && <Icon className={iconClasses} />}
@@ -99,6 +102,7 @@ const Button = ({
       ref={btn}
       className={`${buttonClasses} ${className}`}
       onClick={clickHandler}
+      disabled={disabled}
     >
       {Icon && <Icon className={iconClasses} />}
       <span>{children}</span>

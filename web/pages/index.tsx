@@ -158,7 +158,7 @@ const Home = ({}: Props) => {
               </Button>
             </div>
           </section>
-          <section className=' w-full bg-secondary-100 bg-gradient-to-br from-secondary-50 to-secondary-100 py-10 px-4 md:px-10 md:py-28 grid gap-4 md:grid-cols-2'>
+          <section className=' w-full bg-secondary-100 bg-gradient-to-br from-secondary-50 to-secondary-100 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 md:grid-cols-2'>
             <div className='grid gap-5'>
               <Typography size='h1' as='h2' bold>
                 You can get in touch with me any way you'd like.
@@ -172,7 +172,7 @@ const Home = ({}: Props) => {
                   <a
                     href='https://github.com/tasmto'
                     target='_blank'
-                    rel='no-refer no-opener'
+                    rel='noreferrer'
                     title='Visit my github profile'
                   >
                     <Image
@@ -181,6 +181,7 @@ const Home = ({}: Props) => {
                       height={50}
                       layout='intrinsic'
                       className='object-contain'
+                      alt=''
                     />
                   </a>
                 </li>
@@ -188,7 +189,7 @@ const Home = ({}: Props) => {
                   <a
                     href='https://www.linkedin.com/in/tasmto/'
                     target='_blank'
-                    rel='no-refer no-opener'
+                    rel='noreferrer'
                     title='Visit my Linkedin profile'
                   >
                     <Image
@@ -197,6 +198,7 @@ const Home = ({}: Props) => {
                       height={50}
                       layout='intrinsic'
                       className='object-contain'
+                      alt=''
                     />
                   </a>
                 </li>
@@ -204,7 +206,7 @@ const Home = ({}: Props) => {
                   <a
                     href='mailto:mtokotashinga@gmail.com'
                     target='_blank'
-                    rel='no-refer no-opener'
+                    rel='noreferrer'
                     title='Email me'
                   >
                     <Image
@@ -213,6 +215,7 @@ const Home = ({}: Props) => {
                       height={50}
                       layout='intrinsic'
                       className='object-contain'
+                      alt=''
                     />
                   </a>
                 </li>
@@ -220,7 +223,7 @@ const Home = ({}: Props) => {
                   <a
                     href='https://dribbble.com/tasmto'
                     target='_blank'
-                    rel='no-refer no-opener'
+                    rel='noreferrer'
                     title='Visit my Dribble profile'
                   >
                     <Image
@@ -229,6 +232,7 @@ const Home = ({}: Props) => {
                       height={50}
                       layout='intrinsic'
                       className='object-contain'
+                      alt=''
                     />
                   </a>
                 </li>
@@ -236,7 +240,7 @@ const Home = ({}: Props) => {
                   <a
                     href='https://wa.link/rab693'
                     target='_blank'
-                    rel='no-refer no-opener'
+                    rel='noreferrer'
                     title='send me a WhatsApp message'
                   >
                     <Image
@@ -245,6 +249,7 @@ const Home = ({}: Props) => {
                       height={50}
                       layout='intrinsic'
                       className='object-contain'
+                      alt=''
                     />
                   </a>
                 </li>
@@ -252,7 +257,7 @@ const Home = ({}: Props) => {
               <Typography
                 size='caption'
                 as='span'
-                className='flex gap-0 items-center'
+                className='flex gap-0 items-center mt-[-15px]'
               >
                 * Icons by{' '}
                 <Button
