@@ -28,7 +28,7 @@ const Home = ({}: Props) => {
                   className='max-w-[30rem] sm:text-xl  lg:text-2xl text-primary-100 font-light'
                 >
                   I'm currently looking for my next opportunity to make more
-                  kickass software on the web.
+                  kickass software for the web.
                 </Typography>
                 <div className='flex flex-wrap-reverse gap-3 mt-10'>
                   <Link href='/'>
@@ -145,7 +145,7 @@ const Home = ({}: Props) => {
           </div>
         </section>
         <section className=' w-full bg-secondary-100 bg-gradient-to-br from-secondary-50 to-secondary-100 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 md:grid-cols-2'>
-          <div className='grid gap-5'>
+          <div className='grid gap-5 content-start'>
             <Typography size='h1' as='h2' bold>
               You can get in touch with me any way you'd like.
             </Typography>
@@ -153,7 +153,7 @@ const Home = ({}: Props) => {
               I recommend using any of the social media avenues below but feel
               free to fill in the form as well :)
             </Typography>
-            <ul className='flex gap-5'>
+            <ul className='flex gap-5 mt-3 md:mt-5'>
               <li>
                 <a
                   href='https://github.com/tasmto'
@@ -245,14 +245,13 @@ const Home = ({}: Props) => {
               as='span'
               className='flex gap-0 items-center mt-[-15px]'
             >
-              * Icons by{' '}
               <Button
                 href='https://harnoorbhullar.com/resources/'
                 externalLink
                 type='text'
                 className='text-sm'
               >
-                Harnoor Bhullar.
+                * Icons by Harnoor Bhullar.
               </Button>
             </Typography>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import styles from '../../styles/ScrollBar.module.css';
 import {
   DiBootstrap,
   DiCss3Full,
@@ -80,12 +81,18 @@ const TechSlider = (props: Props) => {
     },
   ];
   return (
-    <ScrollContainer className='max-w-lg md:max-w-[100%] flex  bg-slate-200 border-x-[20px] border-slate-200 rounded-full py-2 px-6 scroll-container cursor-grab active:cursor-grabbing focus:cursor-grabbing'>
-      <ul className='transition-transform duration-500 flex gap-8 text-gray-700 flex-nowrap w-full  snap-x'>
+    <ScrollContainer
+      hideScrollbars={false}
+      className={`${styles.horizontalScroll} max-w-lg md:max-w-[100%] flex py-2 px-2 scroll-container cursor-grab active:cursor-grabbing focus:cursor-grabbing`}
+    >
+      <ul className='transition-transform duration-500 flex gap-8 text-gray-400 flex-nowrap w-full  snap-x'>
         {technologies.map((tech, i) => {
           const Icon = tech.icon;
           return (
-            <li key={i} className='flex-shrink-0 flex gap-2 snap-center'>
+            <li
+              key={i}
+              className='flex-shrink-0 flex gap-2 snap-center hover:text-gray-300/80'
+            >
               <Icon className='w-6 h-6' />
               <span>{tech.name}</span>
             </li>
