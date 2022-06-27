@@ -78,6 +78,13 @@ export default {
       description: 'A link to the project repository (if it exists)',
     },
     {
+      title: 'Is this a captstone project?',
+      description: 'Add this as a featured piece.',
+      name: 'featured',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'relatedProjects',
       title: 'Related Projects.',
       type: 'array',
@@ -93,8 +100,8 @@ export default {
 
   preview: {
     select: {
-      name: 'projectName',
-      aspect: 'projectSubtitle',
+      title: 'projectName',
+      subtitle: 'projectSubtitle',
       media: 'coverImage',
     },
   },

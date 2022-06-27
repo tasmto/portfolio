@@ -28,8 +28,7 @@ const CodeEmbedPreviewer = ({ value }) => {
           font-weight: bold;
           color: darkgray;
         }
-
-        .button-secondary {
+        cd s .button-secondary {
           color: #273773;
           font-size: 0.6rem;
           background-color: #cbd3ee;

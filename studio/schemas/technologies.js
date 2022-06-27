@@ -35,7 +35,7 @@ export default {
       description: 'This may also appear on a custom CV maker I may make.',
       name: 'featured',
       type: 'boolean',
-      initialValue: false,
+      initialValue: true,
     },
   ],
 };

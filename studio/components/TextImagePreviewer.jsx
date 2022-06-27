@@ -12,7 +12,7 @@ const TextImagePreviewer = ({ value }) => {
         style={{ flexDirection: `${textLast ? 'row' : 'row-reverse'}` }}
       >
         <img
-          src={`${image}`}
+          src={`${image || 'https://picsum.photos/1080'}`}
           className='col-1-2'
           style={{ maxWidth: '50%', objectFit: 'contain' }}
         />
