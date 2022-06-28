@@ -63,7 +63,18 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      // type: 'blockContent',
+      type: 'array',
+      of: [
+        { type: 'block' },
+        { type: 'codeEmbed' },
+        { type: 'iframeEmbed' },
+        { type: 'textImage' },
+        {
+          type: 'image',
+          options: { hotspot: true },
+        },
+      ],
     },
     {
       name: 'liveUrl',

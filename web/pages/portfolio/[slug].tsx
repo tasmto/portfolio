@@ -5,6 +5,11 @@ import { PortableText } from '@portabletext/react';
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import Typography from '../../components/typography/Typography';
+import CodeTextEmbedBlock from '../../components/portableTextBlocks/CodeTextEmbedBlock';
+import GetResourceUrl from '../../components/sanityio/GetResourceURL';
+import TextImageBlock from '../../components/portableTextBlocks/TextImageBlock';
+import PortFolioPieceCover from '../../components/portfolio/PortFolioPieceCover';
+import PageScrollLine from '../../components/pagescroll-tracker/PageScrollLine';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -19,9 +24,6 @@ type textImage = {
   };
 };
 
-const urlFor = (source: SanityReference) => {
-  return imageUrlBuilder(client).image(source);
-};
 const ptComponents = {
   types: {
     image: ({ value }: any) => {
@@ -32,7 +34,7 @@ const ptComponents = {
         <Image
           alt={value.alt || ''}
           loading='lazy'
-          src={urlFor(value)
+          src={GetResourceUrl(value)
             .width(320)
             .height(240)
             .fit('max')
@@ -43,26 +45,15 @@ const ptComponents = {
         />
       );
     },
-    textImage: ({ value }: textImage) => {
-      //   if (!value?.image?._ref) {
-      //     return null;
-      //   }
+    textImage: ({ value }: textImage) => <TextImageBlock content={value} />,
+    codeEmbed: ({ value }: any) => <CodeTextEmbedBlock content={value} />,
+    block: ({ value }: any) => {
       return (
-        <section>
-          {value.heading && (
-            <Typography as='h2' size='h2'>
-              {value.heading}
-            </Typography>
-          )}
-          {value.description && (
-            <Typography as='p'>{value.description}</Typography>
-          )}
+        <section className='max-w-sm'>
+          <PortableText value={value} />
         </section>
       );
     },
-    // block: ({ value }: any) => {
-    //     return <section>{value[0]}</section>
-    // }
   },
 };
 
@@ -73,10 +64,15 @@ type Props = {
 const PortfolioPiece = ({ piece }: Props) => {
   console.log(piece);
   return (
-    <div>
-      <div>Scroll progress</div>
-      <article>Cover + stack</article>
-      <div className='container-1'>
+    <div className='bg-slate-50/50 text-primary-900'>
+      <PageScrollLine />
+      <PortFolioPieceCover
+        coverVideo={piece.walkthrough}
+        title={piece.title}
+        subtitle={piece.subtitle}
+        coverImage={piece.coverImage}
+      />
+      <div className='container-1 grid gap-14 md:gap-24 mt-10'>
         <PortableText value={piece.body} components={ptComponents} />
       </div>
     </div>
@@ -85,11 +81,11 @@ const PortfolioPiece = ({ piece }: Props) => {
 
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
     projectSubtitle,
-    projectTitle,
+    projectName,
     liveUrl,repoUrl,
     "isFeatured": featured,
     "stack":technologies[]->name,
-    "coverImage": coverImage->image,
+   coverImage,
     body,
     startedAt,completeAt,walkthrough,
     }`;
