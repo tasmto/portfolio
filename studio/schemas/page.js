@@ -1,15 +1,15 @@
-import { IoDocumentOutline } from 'react-icons/io5';
-
+import { IoCopyOutline, IoImageOutline } from 'react-icons/io5';
 export default {
-  name: 'post',
-  title: 'Post',
-  icon: IoDocumentOutline,
+  name: 'page',
+  title: 'Pages',
   type: 'document',
+  icon: IoCopyOutline,
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,25 +19,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
@@ -68,11 +50,4 @@ export default {
       hidden: ({ document }) => !document.customSEO,
     },
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      media: 'mainImage',
-    },
-  },
 };

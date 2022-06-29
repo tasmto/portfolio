@@ -19,14 +19,13 @@ export default {
       description: 'List sub-heading (optional).',
     },
     {
-      title: 'Link',
+      title: 'Link *',
       name: 'link',
       type: 'url',
       validation: (Rule) => Rule.isRequired(),
     },
-
     {
-      title: 'Link Text',
+      title: 'Link Text *',
       name: 'linkText',
       type: 'string',
       validation: (Rule) => Rule.isRequired(),

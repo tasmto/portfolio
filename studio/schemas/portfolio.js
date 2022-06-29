@@ -48,7 +48,7 @@ export default {
 
     {
       name: 'startedAt',
-      title: 'When did you start working on it?',
+      title: 'When did you start working on it? *',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
     },
@@ -73,7 +73,7 @@ export default {
     },
     {
       name: 'brief',
-      title: 'What was the brief?',
+      title: 'What was the brief? *',
       description:
         'What was the problem you were trying to solve for your client or with this idea?',
       type: 'strippedRCE',
@@ -81,7 +81,7 @@ export default {
     },
     {
       name: 'extractTitle',
-      title: 'The title of the extract',
+      title: 'The title of the brief *',
       type: 'string',
       description:
         'If you want to add a title to the extract, you can do so here. If not it wont be shown.',
@@ -89,7 +89,7 @@ export default {
     },
     {
       name: 'extract',
-      title: 'A brief summary of the solution.',
+      title: 'A brief summary of the solution. *',
       type: 'strippedRCE',
       description:
         'In a few sentences, describe the solution you came up with for your client or with this idea.',
@@ -98,7 +98,6 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      // type: 'blockContent',
       style: 'custom',
       type: 'array',
       of: [
@@ -108,16 +107,12 @@ export default {
         { type: 'plainText' },
         { type: 'customList' },
         { type: 'button' },
-        {
-          type: 'image',
-          icon: IoImageOutline,
-          options: { hotspot: true },
-        },
+        { type: 'imageEmbed' },
       ],
     },
     {
       name: 'liveUrl',
-      title: 'Live Project URL',
+      title: 'Live project URL',
       type: 'url',
       description: 'A link to the live product produced',
     },
@@ -136,15 +131,28 @@ export default {
     },
     {
       name: 'relatedProjects',
-      title: 'Related Projects.',
+      title: 'Related projects.',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'portfolio' } }],
     },
     {
       name: 'relatedArticles',
-      title: 'Related blog posts.',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'post' } }],
+      title: 'Related blog posts (series only).',
+      type: 'reference',
+      to: [{ type: 'postSeries' }],
+    },
+    {
+      name: 'customSEO',
+      title: 'Customize the SEO tags for this page?',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      title: 'Edit SEO',
+      name: 'seo',
+      type: 'customSEO',
+      description: 'Customize the SEO tags for this page.',
+      hidden: ({ document }) => !document.customSEO,
     },
   ],
 

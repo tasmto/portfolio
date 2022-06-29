@@ -1,5 +1,4 @@
 import { IoDocumentTextOutline } from 'react-icons/io5';
-import IframeEmbedPreviewer from '../../components/IframeEmbedPreviewer';
 import plainTextPreviewer from '../../components/plainTextPreviewer';
 
 export default {

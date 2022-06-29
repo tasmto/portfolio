@@ -11,7 +11,13 @@ export default {
       name: 'heading',
       title: 'Heading',
       type: 'string',
-      description: 'Section heading (optional).',
+      description: 'List heading (optional).',
+    },
+    {
+      name: 'subheading',
+      title: 'Sub-Heading',
+      type: 'string',
+      description: 'List sub-heading (optional).',
     },
     {
       name: 'iframeLink',

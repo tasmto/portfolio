@@ -8,7 +8,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blockContent from './blockContent';
 import category from './category';
 import post from './post';
-import author from './author';
 import technologies from './technologies';
 import portfolio from './portfolio';
 import codeEmbed from './custom/codeEmbed';
@@ -18,6 +17,10 @@ import plainText from './custom/plainText';
 import strippedRCE from './custom/strippedRCE';
 import customList from './custom/customList';
 import button from './custom/button';
+import page from './page';
+import postSeries from './postSeries';
+import customSEO from './areas/customSEO';
+import imageEmbed from './custom/imageEmbed';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,10 +32,12 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     portfolio,
-    post,
-    author,
-    category,
+    page,
     technologies,
+    post,
+    postSeries,
+    category,
+
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     // Customized RCEs
@@ -40,6 +45,8 @@ export default createSchema({
     strippedRCE,
 
     // Custom sections
+    customSEO,
+    imageEmbed,
     codeEmbed,
     iframeEmbed,
     textImage,
