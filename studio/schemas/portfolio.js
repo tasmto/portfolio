@@ -41,7 +41,7 @@ export default {
     {
       name: 'walkthrough',
       title: 'Video Showcase',
-      type: 'url',
+      type: 'file',
       description: 'A video walk through of the project.',
     },
     {
@@ -64,12 +64,13 @@ export default {
       name: 'body',
       title: 'Body',
       // type: 'blockContent',
+      style: 'custom',
       type: 'array',
       of: [
-        { type: 'block' },
         { type: 'codeEmbed' },
         { type: 'iframeEmbed' },
         { type: 'textImage' },
+        { type: 'plainText' },
         {
           type: 'image',
           options: { hotspot: true },

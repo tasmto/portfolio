@@ -1,5 +1,5 @@
 import { GrArticle } from 'react-icons/gr';
-import TextImagePreviewer from '../components/TextImagePreviewer';
+import TextImagePreviewer from '../../components/TextImagePreviewer';
 
 export default {
   title: 'Text & Image',
@@ -56,7 +56,7 @@ export default {
       description: 'description',
       link: 'link',
       linkText: 'linkText',
-      image: 'image.asset.url',
+      media: 'image.asset.url',
       textLast: 'textLast',
     },
     component: TextImagePreviewer,

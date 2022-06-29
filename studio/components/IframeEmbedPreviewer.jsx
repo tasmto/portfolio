@@ -8,7 +8,7 @@ const IframeEmbedPreviewer = ({ value }) => {
   return (
     <div style={{ display: 'grid', gap: '1rem' }}>
       {heading && <h3 className='heading m-0'>{heading}</h3>}
-      <div className='iframe-container'>
+      <div className='iframe-container' style={{ maxHeight: '200px' }}>
         <iframe border='0' loading='lazy' src={iframeLink}></iframe>
       </div>
       <div className='row items-center justify-between'>
@@ -21,7 +21,7 @@ const IframeEmbedPreviewer = ({ value }) => {
           <p className={'annotation-text col-3-4'}>{description}</p>
         )}
       </div>
-      <style jsx>{`
+      <style jsx='true'>{`
         .heading {
           font-size: 1.15rem;
           width: 100%;

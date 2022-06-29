@@ -21,7 +21,7 @@ const CodeEmbedPreviewer = ({ value }) => {
           <p className={'annotation-text col-3-4'}>{description}</p>
         )}
       </div>
-      <style jsx>{`
+      <style jsx='true'>{`
         .heading {
           font-size: 1.15rem;
           width: 100%;

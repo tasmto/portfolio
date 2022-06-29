@@ -11,9 +11,11 @@ import post from './post';
 import author from './author';
 import technologies from './technologies';
 import portfolio from './portfolio';
-import codeEmbed from './codeEmbed';
-import textImage from './textImage';
-import iframeEmbed from './iframeEmbed';
+import codeEmbed from './custom/codeEmbed';
+import textImage from './custom/textImage';
+import iframeEmbed from './custom/iframeEmbed';
+import plainText from './custom/plainText';
+import strippedRCE from './custom/strippedRCE';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,9 +33,14 @@ export default createSchema({
     technologies,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    // Customized RCEs
     blockContent,
+    strippedRCE,
+
+    // Custom sections
     codeEmbed,
     iframeEmbed,
     textImage,
+    plainText,
   ]),
 });

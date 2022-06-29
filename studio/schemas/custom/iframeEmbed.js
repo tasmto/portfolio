@@ -1,5 +1,5 @@
 import { IoCodeSlash } from 'react-icons/io5';
-import IframeEmbedPreviewer from '../components/IframeEmbedPreviewer';
+import IframeEmbedPreviewer from '../../components/IframeEmbedPreviewer';
 
 export default {
   title: 'Iframe Embed',

@@ -1,7 +1,10 @@
 import client from '../../client';
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
-import { PortableText } from '@portabletext/react';
+import {
+  PortableText,
+  PortableTextComponentsProvider,
+} from '@portabletext/react';
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import Typography from '../../components/typography/Typography';
@@ -10,6 +13,7 @@ import GetResourceUrl from '../../components/sanityio/GetResourceURL';
 import TextImageBlock from '../../components/portableTextBlocks/TextImageBlock';
 import PortFolioPieceCover from '../../components/portfolio/PortFolioPieceCover';
 import PageScrollLine from '../../components/pagescroll-tracker/PageScrollLine';
+import NormalTextBlock from '../../components/portableTextBlocks/NormalTextBlock';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -35,8 +39,7 @@ const ptComponents = {
           alt={value.alt || ''}
           loading='lazy'
           src={GetResourceUrl(value)
-            .width(320)
-            .height(240)
+            .width(1080)
             .fit('max')
             .auto('format')
             .url()}
@@ -47,13 +50,7 @@ const ptComponents = {
     },
     textImage: ({ value }: textImage) => <TextImageBlock content={value} />,
     codeEmbed: ({ value }: any) => <CodeTextEmbedBlock content={value} />,
-    block: ({ value }: any) => {
-      return (
-        <section className='max-w-sm'>
-          <PortableText value={value} />
-        </section>
-      );
-    },
+    normalText: ({ value }: any) => <NormalTextBlock content={value} />,
   },
 };
 
@@ -64,15 +61,18 @@ type Props = {
 const PortfolioPiece = ({ piece }: Props) => {
   console.log(piece);
   return (
-    <div className='bg-slate-50/50 text-primary-900'>
+    <div className='bg-slate-50/20 text-primary-700'>
       <PageScrollLine />
-      <PortFolioPieceCover
-        coverVideo={piece.walkthrough}
-        title={piece.title}
-        subtitle={piece.subtitle}
-        coverImage={piece.coverImage}
-      />
-      <div className='container-1 grid gap-14 md:gap-24 mt-10'>
+
+      <div className='container-2 grid gap-14 md:gap-22 lg:gap-28 mt-8 md:mt-32'>
+        <PortFolioPieceCover
+          coverVideo={piece.walkthrough}
+          title={piece.projectName}
+          subtitle={piece.projectSubtitle}
+          coverImage={piece.coverImage}
+          startDate={piece.startedAt}
+          endDate={piece.completedAt}
+        />
         <PortableText value={piece.body} components={ptComponents} />
       </div>
     </div>
@@ -87,7 +87,7 @@ const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
     "stack":technologies[]->name,
    coverImage,
     body,
-    startedAt,completeAt,walkthrough,
+    startedAt,completeAt,walkthrough,completedAt
     }`;
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.

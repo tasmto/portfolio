@@ -7,21 +7,18 @@
 @layer components {
   /* Prettier-ignore */
   .container {
-   @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2
+    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2;
   }
   .container-1 {
-   @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2
+    @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2;
+  }
+  .container-2 {
+    @apply max-w-4xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2;
   }
 }
 
 html,
 body {
-  font-family: 'Manrope',
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-

@@ -1,32 +1,41 @@
 import React from 'react';
+import trimString from '../utilities/trimString';
 
 const TextImagePreviewer = ({ value }) => {
-  const { image, link, linkText, description, heading, textLast } = value;
-
-  if (!image) return null;
+  if (!value?.media) return null;
 
   return (
     <div style={{ display: 'grid', gap: '1rem' }}>
       <div
         className='row row-reverse items-center justify-between'
-        style={{ flexDirection: `${textLast ? 'row' : 'row-reverse'}` }}
+        style={{ flexDirection: `${value?.textLast ? 'row' : 'row-reverse'}` }}
       >
         <img
-          src={`${image || 'https://picsum.photos/1080'}`}
           className='col-1-2'
-          style={{ maxWidth: '50%', objectFit: 'contain' }}
+          src={`${value.media || 'https://via.placeholder.com/400'}`}
+          style={{
+            maxWidth: '50%',
+            objectFit: 'contain',
+            maxHeight: '200px',
+          }}
         />
         <div className='col-1-2'>
-          {heading && <h3 className='heading m-0'>{heading}</h3>}
-          {description && <p className={'annotation-text '}>{description}</p>}
-          {link && (
-            <a href={link} target='_blank' className='button-secondary '>
-              {linkText || 'view more'}
+          {value?.heading && (
+            <h3 className='heading m-0'>{trimString(value.heading, 75)}</h3>
+          )}
+          {value?.description && (
+            <p className={'annotation-text '}>
+              {trimString(value.description, 150)}
+            </p>
+          )}
+          {value?.link && (
+            <a href={value.link} target='_blank' className='button-secondary '>
+              {value.linkText || 'view more'}
             </a>
           )}
         </div>
       </div>
-      <style jsx>{`
+      <style jsx='true'>{`
         .heading {
           font-size: 1.15rem;
           width: 100%;

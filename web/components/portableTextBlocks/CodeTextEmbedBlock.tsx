@@ -28,7 +28,7 @@ const CodeTextEmbedBlock = ({ content }: Props) => {
           {heading}
         </Typography>
       )}
-      <div className='overflow-hidden max-h-96'>
+      <div className='overflow-hidden max-h-96 rounded-lg border-slate-200 border'>
         <CodeParser code={code.code} language={code.language} />
       </div>
       <div className='flex gap-4'>
