@@ -1,4 +1,4 @@
-import { TbRainbow } from 'react-icons/tb';
+import { TbRainbow, IoImageOutline } from 'react-icons/tb';
 export default {
   name: 'portfolio',
   title: 'Portfolio',
@@ -38,11 +38,32 @@ export default {
         hotspot: true,
       },
     },
+
     {
       name: 'walkthrough',
       title: 'Video Showcase',
-      type: 'file',
+      type: 'url',
       description: 'A video walk through of the project.',
+    },
+
+    {
+      name: 'startedAt',
+      title: 'When did you start working on it?',
+      type: 'datetime',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'completedAt',
+      title: 'When did you complete the project?',
+      type: 'datetime',
+      validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => document.ongoing,
+    },
+    {
+      name: 'ongoing',
+      title: 'Are you still busy working on it?',
+      type: 'boolean',
+      initialValue: false,
     },
     {
       name: 'technologies',
@@ -51,14 +72,28 @@ export default {
       of: [{ type: 'reference', to: { type: 'technologies' } }],
     },
     {
-      name: 'startedAt',
-      title: 'When did you start working on it?',
-      type: 'datetime',
+      name: 'brief',
+      title: 'What was the brief?',
+      description:
+        'What was the problem you were trying to solve for your client or with this idea?',
+      type: 'strippedRCE',
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'completedAt',
-      title: 'When did you complete the project?',
-      type: 'datetime',
+      name: 'extractTitle',
+      title: 'The title of the extract',
+      type: 'string',
+      description:
+        'If you want to add a title to the extract, you can do so here. If not it wont be shown.',
+      validation: (Rule) => Rule.required().max(150),
+    },
+    {
+      name: 'extract',
+      title: 'A brief summary of the solution.',
+      type: 'strippedRCE',
+      description:
+        'In a few sentences, describe the solution you came up with for your client or with this idea.',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
@@ -71,8 +106,11 @@ export default {
         { type: 'iframeEmbed' },
         { type: 'textImage' },
         { type: 'plainText' },
+        { type: 'customList' },
+        { type: 'button' },
         {
           type: 'image',
+          icon: IoImageOutline,
           options: { hotspot: true },
         },
       ],
@@ -90,7 +128,7 @@ export default {
       description: 'A link to the project repository (if it exists)',
     },
     {
-      title: 'Is this a captstone project?',
+      title: 'Is this a capstone project?',
       description: 'Add this as a featured piece.',
       name: 'featured',
       type: 'boolean',

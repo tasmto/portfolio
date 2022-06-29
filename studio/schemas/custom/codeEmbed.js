@@ -1,11 +1,11 @@
-import { IoCodeSlash } from 'react-icons/io5';
+import { IoTerminalOutline } from 'react-icons/io5';
 import CodeEmbedPreviewer from '../../components/CodeEmbedPreviewer';
 
 export default {
   title: 'Code Embed',
   name: 'codeEmbed',
   type: 'object',
-  icon: IoCodeSlash,
+  icon: IoTerminalOutline,
   fields: [
     {
       name: 'heading',

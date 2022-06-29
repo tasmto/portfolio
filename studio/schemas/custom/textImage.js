@@ -1,11 +1,11 @@
-import { GrArticle } from 'react-icons/gr';
+import { IoNewspaperOutline } from 'react-icons/io5';
 import TextImagePreviewer from '../../components/TextImagePreviewer';
 
 export default {
   title: 'Text & Image',
   name: 'textImage',
   type: 'object',
-  icon: GrArticle,
+  icon: IoNewspaperOutline,
   fields: [
     {
       name: 'image',

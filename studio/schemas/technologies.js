@@ -1,9 +1,9 @@
-import { FaToolbox } from 'react-icons/fa';
+import { IoAppsOutline } from 'react-icons/io5';
 export default {
   name: 'technologies',
   title: 'Technologies',
   type: 'document',
-  icon: FaToolbox,
+  icon: IoAppsOutline,
   fields: [
     {
       name: 'name',

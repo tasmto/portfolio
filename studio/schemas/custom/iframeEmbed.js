@@ -1,11 +1,11 @@
-import { IoCodeSlash } from 'react-icons/io5';
+import { IoLaptopOutline } from 'react-icons/io5';
 import IframeEmbedPreviewer from '../../components/IframeEmbedPreviewer';
 
 export default {
   title: 'Iframe Embed',
   name: 'iframeEmbed',
   type: 'object',
-  icon: IoCodeSlash,
+  icon: IoLaptopOutline,
   fields: [
     {
       name: 'heading',

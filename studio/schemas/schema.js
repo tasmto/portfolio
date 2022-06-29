@@ -16,6 +16,8 @@ import textImage from './custom/textImage';
 import iframeEmbed from './custom/iframeEmbed';
 import plainText from './custom/plainText';
 import strippedRCE from './custom/strippedRCE';
+import customList from './custom/customList';
+import button from './custom/button';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -42,5 +44,7 @@ export default createSchema({
     iframeEmbed,
     textImage,
     plainText,
+    customList,
+    button,
   ]),
 });
