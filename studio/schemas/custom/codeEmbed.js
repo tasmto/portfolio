@@ -60,7 +60,7 @@ export default {
   ],
   preview: {
     select: {
-      description: 'annotation',
+      description: 'description',
       link: 'link',
       linkText: 'linkText',
       code: 'code',

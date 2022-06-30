@@ -1,34 +1,15 @@
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import React from 'react';
+import { PortfolioPieceType } from '../../pages/portfolio/types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 
 type Props = {
-  coverVideo: { asset: { _ref: SanityReference } };
-  title: string;
-  subtitle: string;
-  coverImage: SanityReference;
-  startDate: string;
-  endDate: string;
+  portfolio: PortfolioPieceType;
 };
 
-const PortFolioPieceCover = ({
-  coverVideo,
-  title,
-  subtitle,
-  coverImage,
-  startDate,
-  endDate,
-}: Props) => {
-  const startDateString = new Date(startDate).toLocaleDateString('en-US', {
-    month: 'long',
-    year: 'numeric',
-  });
-  const endDateString = new Date(endDate).toLocaleDateString('en-US', {
-    month: 'long',
-    year: 'numeric',
-  });
+const PortFolioPieceCover = ({ portfolio }: Props) => {
   return (
     <div className='grid gap-6 md:gap-10'>
       <div className='bg-slate-100 shadow-xl overflow-hidden rounded-2xl border'>
@@ -36,7 +17,9 @@ const PortFolioPieceCover = ({
           <div
             className='w-full h-full absolute top-0 left-0 opacity-10'
             style={{
-              backgroundImage: `url(${GetResourceUrl(coverImage)
+              backgroundImage: `url(${GetResourceUrl(
+                portfolio.productImage.asset
+              )
                 .width(500)
                 .height(500)
                 .fit('max')
@@ -48,24 +31,24 @@ const PortFolioPieceCover = ({
             }}
           ></div>
           <div className='z-10 grid gap-2 self-center'>
-            <Typography
+            {/* <Typography
               size='body3'
               as='p'
               className='text-primary-400 mb-6'
               bold
             >
               {startDateString} — {endDateString}
-            </Typography>
+            </Typography> */}
             <Typography
               size='display1'
               as='h1'
               className='text-primary-600 !font-regular'
             >
-              {title}
+              {portfolio.projectName} — {portfolio.projectSubtitle}
             </Typography>
-            <Typography size='h2' as='h1' className='text-primary-400'>
+            {/* <Typography size='h2' as='h1' className='text-primary-400'>
               {subtitle}
-            </Typography>
+            </Typography> */}
           </div>
         </article>
       </div>

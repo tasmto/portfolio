@@ -26,8 +26,8 @@ export default {
       description: 'A link that will be i-framed.',
     },
     {
-      title: 'Annotation',
-      name: 'annotation',
+      title: 'Description',
+      name: 'description',
       description: 'A short description of the item being embedded.',
       type: 'text',
       rows: 3,

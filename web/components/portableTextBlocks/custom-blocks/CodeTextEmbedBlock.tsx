@@ -1,26 +1,15 @@
 import React from 'react';
-import Button from '../button/Button';
-import Typography from '../typography/Typography';
-import CodeParser from './CodeParser';
+import Button from '../../button/Button';
+import Typography from '../../typography/Typography';
+import CodeParser from '../../code-embeds/CodeParser';
+import { CodeEmbedType } from '../../../pages/portfolio/types';
 
 type Props = {
-  content: {
-    heading?: string;
-    annotation?: 'string';
-    code: {
-      _type: 'code';
-      code: string;
-      language: string;
-    };
-    link?: string;
-    linkText?: string;
-    _key: string;
-    _type: 'codeEmbed';
-  };
+  content: CodeEmbedType;
 };
 
 const CodeTextEmbedBlock = ({ content }: Props) => {
-  const { heading, annotation, code, link, linkText } = content;
+  const { heading, description, code, link, linkText } = content;
   return (
     <section className='grid gap-6 md:gap-7'>
       {heading && (
@@ -37,9 +26,9 @@ const CodeTextEmbedBlock = ({ content }: Props) => {
             {linkText || 'Learn More'}
           </Button>
         )}
-        {annotation && (
+        {description && (
           <Typography as='p' size='body1'>
-            {annotation}
+            {JSON.stringify(description)}
           </Typography>
         )}
       </div>

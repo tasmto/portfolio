@@ -30,9 +30,27 @@ export default {
       },
     },
     {
-      name: 'coverImage',
-      title: 'Cover image',
+      name: 'bannerImage',
+      title: 'Lifestyle or cover image',
       description: 'Preferred dimensions are ast least 1080px by 1080px.',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'productImage',
+      title: 'Main Product image',
+      description: 'Preferred dimensions are ast least 1080px by 1080px.',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'logo',
+      title: 'Company Logo',
+      description: 'Upload SVG images if possible.',
       type: 'image',
       options: {
         hotspot: true,
@@ -56,7 +74,6 @@ export default {
       name: 'completedAt',
       title: 'When did you complete the project?',
       type: 'datetime',
-      validation: (Rule) => Rule.required(),
       hidden: ({ document }) => document.ongoing,
     },
     {
@@ -72,6 +89,13 @@ export default {
       of: [{ type: 'reference', to: { type: 'technologies' } }],
     },
     {
+      name: 'extractTitle',
+      title: 'The title of the brief',
+      type: 'string',
+      description:
+        'If you want to add a title to the extract, you can do so here. If not it wont be shown.',
+    },
+    {
       name: 'brief',
       title: 'What was the brief? *',
       description:
@@ -79,21 +103,14 @@ export default {
       type: 'strippedRCE',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'extractTitle',
-      title: 'The title of the brief *',
-      type: 'string',
-      description:
-        'If you want to add a title to the extract, you can do so here. If not it wont be shown.',
-      validation: (Rule) => Rule.required().max(150),
-    },
+
     {
       name: 'extract',
       title: 'A brief summary of the solution. *',
       type: 'strippedRCE',
       description:
         'In a few sentences, describe the solution you came up with for your client or with this idea.',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().max(350),
     },
     {
       name: 'body',
@@ -160,7 +177,16 @@ export default {
     select: {
       title: 'projectName',
       subtitle: 'projectSubtitle',
-      media: 'coverImage',
+      media: 'productImage',
+      capstone: 'featured',
+    },
+    prepare({ title, subtitle, media, capstone }) {
+      const titleText = capstone ? `${title} 🌟` : title;
+      return {
+        title: titleText,
+        subtitle,
+        media,
+      };
     },
   },
 };

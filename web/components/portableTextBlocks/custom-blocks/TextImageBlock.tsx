@@ -1,8 +1,8 @@
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import React from 'react';
-import GetResourceUrl from '../sanityio/GetResourceURL';
-import Typography from '../typography/Typography';
+import GetResourceUrl from '../../sanityio/GetResourceURL';
+import Typography from '../../typography/Typography';
 
 type Props = {
   content: {

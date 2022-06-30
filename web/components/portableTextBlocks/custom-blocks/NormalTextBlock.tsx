@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../button/Button';
-import Typography from '../typography/Typography';
+import Button from '../../button/Button';
+import Typography from '../../typography/Typography';
 
 type Props = {
   content: {
