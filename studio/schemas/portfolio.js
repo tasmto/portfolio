@@ -89,13 +89,6 @@ export default {
       of: [{ type: 'reference', to: { type: 'technologies' } }],
     },
     {
-      name: 'extractTitle',
-      title: 'The title of the brief',
-      type: 'string',
-      description:
-        'If you want to add a title to the extract, you can do so here. If not it wont be shown.',
-    },
-    {
       name: 'brief',
       title: 'What was the brief? *',
       description:

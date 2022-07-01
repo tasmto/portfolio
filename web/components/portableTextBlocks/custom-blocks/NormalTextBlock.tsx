@@ -15,7 +15,7 @@ const NormalTextBlock = ({ content }: Props) => {
   return (
     <section className='max-w-2xl mx-auto grid gap-6 '>
       {content.heading && (
-        <Typography as='h2' size='h2'>
+        <Typography as='h2' size='h3'>
           {content.heading}
         </Typography>
       )}

@@ -3,6 +3,7 @@ import Button from '../../button/Button';
 import Typography from '../../typography/Typography';
 import CodeParser from '../../code-embeds/CodeParser';
 import { CodeEmbedType } from '../../../pages/portfolio/types';
+import PortableTextParser from '../PortableTextParser';
 
 type Props = {
   content: CodeEmbedType;
@@ -27,8 +28,8 @@ const CodeTextEmbedBlock = ({ content }: Props) => {
           </Button>
         )}
         {description && (
-          <Typography as='p' size='body1'>
-            {JSON.stringify(description)}
+          <Typography as='p' size='body2'>
+            <PortableTextParser content={description} />
           </Typography>
         )}
       </div>

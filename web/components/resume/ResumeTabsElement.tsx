@@ -64,7 +64,7 @@ const ResumeTabsElement = (props: Props) => {
         aria-controls='cv-content'
         className='p-7 pt-10 self-stretch bg-gradient-to-br from-primary-50 to-primary-100/70  grid gap-5 col-span-2'
       >
-        <Typography as='p' size='caption' bold className='text-gray-600'>
+        <Typography as='p' size='caption' className='text-gray-600'>
           * Click on any of the tabs below to view a breakdown
         </Typography>
         <form
@@ -80,10 +80,10 @@ const ResumeTabsElement = (props: Props) => {
               size='small'
               className='flex flex-col gap-0 text-start !items-start'
             >
-              <Typography as='span' size='caption' bold>
+              <Typography as='span' size='caption'>
                 {content.company} | {content.startDate} - {content.endDate}
               </Typography>
-              <Typography as='p' size='body1' bold>
+              <Typography as='p' size='body1'>
                 {content.title}
               </Typography>
             </Button>
@@ -100,7 +100,7 @@ const ResumeTabsElement = (props: Props) => {
       </aside>
       <article
         id='cv-content'
-        className='p-6 py-10 bg-gradient-to-tr from-tertiary-100 to-tertiary-200  col-span-3 h-full flex flex-col items-start justify-center self-stretch'
+        className='p-6 py-10 bg-gradient-to-tr from-tertiary-100 to-tertiary-200  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800'
       >
         <Typography as='p' size='body1'>
           {resumeContent[activeTab].startDate}

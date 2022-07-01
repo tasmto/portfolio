@@ -113,9 +113,13 @@ export type PortfolioPieceType = {
   completedAt: string;
   ongoing: boolean;
 
-  technologies: SanityReference[];
+  technologies: {
+    description: string;
+    name: string;
+    icon: SanityReferenceType;
+    featured: boolean;
+  }[];
 
-  extractTitle: string;
   extract: SanityBlockContentType[];
   brief: SanityBlockContentType[];
   body: Array<

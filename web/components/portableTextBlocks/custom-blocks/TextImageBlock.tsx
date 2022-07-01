@@ -40,7 +40,7 @@ const TextImageBlock = ({ content }: Props) => {
         }`}
       >
         {heading && (
-          <Typography as='h2' size='h1' bold>
+          <Typography as='h2' size='h1'>
             {heading}
           </Typography>
         )}

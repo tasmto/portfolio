@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import TechSlider from '../components/technologies-sliders/TechSlider';
+import TechSlider from '../components/tech-stacks/TechSlider';
 import Button from '../components/button/Button';
 import { IoDownloadOutline } from 'react-icons/io5';
 import Divider from '../components/divider/Divider';

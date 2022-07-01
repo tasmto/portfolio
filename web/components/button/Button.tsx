@@ -39,7 +39,7 @@ const Button = ({
   className,
 }: Props) => {
   const btn = useRef(null);
-  const buttonClasses = `flex flex-wrap items-center gap-2 tracking-tight font-medium cursor-pointer 
+  const buttonClasses = `flex flex-wrap items-center gap-2 group tracking-tight font-medium cursor-pointer 
   ${
     size === 'large'
       ? 'px-6 py-3 text-lg'
@@ -48,7 +48,7 @@ const Button = ({
       : 'px-2 py-1 text-lg'
   } ${
     type === 'primary'
-      ? 'bg-primary-500 text-primary-100 hover:bg-primary-400'
+      ? ` bg-primary-500 text-primary-100 hover:bg-primary-400`
       : type === 'tertiary'
       ? 'bg-primary-100 text-primary-500 hover:bg-primary-200'
       : type === 'text'
@@ -62,9 +62,13 @@ const Button = ({
   ${width === 'block' ? 'w-full justify-center' : 'w-auto'}`;
 
   const Icon = icon;
-  const iconClasses = `${
+  const iconClasses = ` transition-transform ${
     size === 'large' ? 'h-7 w-7' : size === 'small' ? 'h-4 w-4' : 'h-6 w-6'
-  }  ${iconPosition === 'left' ? 'order-first' : 'order-last'}`;
+  }  ${
+    iconPosition === 'left'
+      ? 'order-first group-hover:translate-x-[-0.5rem]'
+      : 'order-last group-hover:translate-x-2'
+  }`;
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (onClick !== undefined) onClick(e);
