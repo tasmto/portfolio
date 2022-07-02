@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Typography from '../typography/Typography';
 import { PortfolioPieceType } from '../../pages/portfolio/types';
 import subDivideArray from '../../utilities/subDivideArray';
+import GetResourceUrl from '../sanityio/GetResourceURL';
+import Link from 'next/link';
 
 type Props = {
   pieces: Array<PortfolioPieceType>;
@@ -40,44 +42,21 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
       | '3/5';
   };
 
-  const portfolioRows = subDivideArray(pieces);
-  console.log(portfolioRows);
+  const portfolioRows: PortfolioPieceType[][] = subDivideArray(pieces, 3);
 
-  const contentRows: Array<PortfolioRowContent[]> = [
-    [
-      { image: '/images/future-agent-app-cover.jpg', width: '1/3' },
-      { image: '/images/mortgagely-cover.jpg', width: '1/3' },
-      { image: '/images/flavor-festival-cover.jpg', width: '1/3' },
-    ],
-    [
-      { image: '/images/dr-setati-cover.jpg', width: '2/5' },
-      { image: '/images/dropend-cover.jpg', width: '1/5' },
-      { image: '/images/future-agent-form-cover.jpg', width: '2/5' },
-    ],
-    [
-      { image: '/images/sanctuary-cover.jpg', width: '1/2' },
-      { image: '/images/arch-studios-cover.jpg', width: '1/2' },
-    ],
-  ];
-
-  const calculateStaticWidth = (width: string): number =>
-    width === '1/2'
+  const calculateStaticWidth = (width: number): number =>
+    width === 2
       ? 900
-      : width === '1/3'
+      : width === 3
       ? 600
-      : width === '2/3'
-      ? 1200
-      : width === '1/4'
+      : width === 4
       ? 450
-      : width === '3/4'
-      ? 1350
-      : width === '1/5'
+      : width === 5
       ? 360
-      : width === '2/5'
-      ? 720
-      : width === '3/5'
-      ? 1080
       : 1800;
+
+  const calculateStaticHeight = (width: number): number =>
+    width === 3 ? 350 : width === 2 ? 490 : 600;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setMousePosition(getRelativeCoordinates(e, containerRef.current));
@@ -101,52 +80,47 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
         animate={{ x: mousePosition }}
         transition={{ ease: 'linear' }}
       >
-        {contentRows.map((row, i) => {
-          const columns = Number(row[0].width.at(-1)); // thank you boxing
-
+        {portfolioRows.map((row, i, arr) => {
           return (
             <div
-              className={`grid ${
-                columns === 5
-                  ? 'grid-cols-5'
-                  : columns === 4
-                  ? 'grid-cols-4'
-                  : columns === 3
-                  ? 'grid-cols-3'
-                  : columns === 2
-                  ? 'grid-cols-2'
-                  : 'grid-cols-1'
-              }
+              className={`grid grid-cols-${row.length}
               auto-rows-fr gap-4 w-full h-full`}
               key={i}
             >
               {row.map((content, j) => {
-                const span = Number(content.width.at(0));
                 return (
-                  <div
-                    key={j}
-                    className={`col-span-${
-                      span || '1'
-                    } relative overflow-hidden cursor-eye group`}
-                  >
-                    <article className='w-full h-full absolute top-0 grid content-center bg-primary-800/70 z-10 text-center  backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-1000'>
-                      <Typography
-                        as='h4'
-                        size='h3'
-                        className='text-primary-100'
-                      >
-                        View Project
-                      </Typography>
-                    </article>
-                    <Image
-                      src={content.image}
-                      width={calculateStaticWidth(content.width)}
-                      height={600}
-                      layout='responsive'
-                      className='object-center object-cover h-full w-full'
-                      alt=''
-                    />
-                  </div>
+                  <Link key={j} href={`/portfolio/${content.slug.current}`}>
+                    <a
+                      className={`col-span-1 relative overflow-hidden cursor-eye group`}
+                    >
+                      <article className='w-full h-full absolute top-0 grid content-center bg-primary-900/70 z-10 text-center  backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-1000'>
+                        <Typography
+                          as='h4'
+                          size='h3'
+                          className='text-primary-100'
+                        >
+                          View Project
+                        </Typography>
+                      </article>
+                      <Image
+                        src={GetResourceUrl(
+                          content?.productImage?.asset
+                            ? content?.productImage?.asset
+                            : content?.bannerImage?.asset
+                        )
+                          .height(calculateStaticHeight(row.length))
+                          .width(calculateStaticWidth(row.length))
+                          .fit('min')
+                          .auto('format')
+                          .url()}
+                        width={calculateStaticWidth(row.length)}
+                        height={calculateStaticHeight(row.length)}
+                        layout='responsive'
+                        className='h-full w-full object-contain object-center'
+                        alt=''
+                      />
+                    </a>
+                  </Link>
                 );
               })}
             </div>

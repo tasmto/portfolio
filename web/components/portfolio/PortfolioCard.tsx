@@ -32,7 +32,7 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
           )
             .width(1080)
             .height(500)
-            .blur(12)
+            .blur(1)
             .fit('max')
             .auto('format')
             .url()})`,

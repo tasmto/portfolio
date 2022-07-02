@@ -27,9 +27,9 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
           Some of my past projects and work.
         </Typography>
         <Typography size='body1' as='p'>
-          Below are some of my publicly available work, whether they are design
-          only, design and development or development only projects. Please feel
-          free to get in touch with me if you need more information.
+          Below are some of my publicly available work, some are design only,
+          design and development or development only projects. Please feel free
+          to get in touch with me if you need more information.
         </Typography>
       </article>
       <section className='grid  gap-6'>

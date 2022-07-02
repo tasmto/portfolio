@@ -111,10 +111,15 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
           </div>
           <div
             aria-hidden='true'
-            className='md:hidden flex justify-center
+            className='md:hidden mb-10 flex justify-center
             '
           >
-            <Button size='large' type='primary' icon={IoDownloadOutline}>
+            <Button
+              size='large'
+              type='primary'
+              width='block'
+              icon={IoDownloadOutline}
+            >
               Download My CV
             </Button>
           </div>
