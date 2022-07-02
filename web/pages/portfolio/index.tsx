@@ -27,9 +27,9 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
           Some of my past projects and work.
         </Typography>
         <Typography size='body1' as='p'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-          numquam, consequatur incidunt amet perferendis nihil praesentium
-          veritatis illo possimus vel a commodi, laboriosam eveniet.
+          Below are some of my publicly available work, whether they are design
+          only, design and development or development only projects. Please feel
+          free to get in touch with me if you need more information.
         </Typography>
       </article>
       <section className='grid  gap-6'>
@@ -50,7 +50,12 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
           <IoChatbubbleEllipsesSharp className='h-8 w-8 text-secondary-500' />
           <span>You can get in touch with me any way you'd like.</span>
         </Typography>
-        <Button type='tertiary' size='large' className='!items-center'>
+        <Button
+          type='tertiary'
+          size='large'
+          className='!items-center'
+          href='/#contact'
+        >
           Get in touch
         </Button>
       </section>

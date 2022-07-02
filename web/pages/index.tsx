@@ -9,10 +9,19 @@ import Typography from '../components/typography/Typography';
 import OtherPiecesBlockElement from '../components/portfolio/OtherPiecesBlockElement';
 import ResumeTabsElement from '../components/resume/ResumeTabsElement';
 import ContactForm from '../components/contact/ContactForm';
+import groq from 'groq';
+import client from '../client';
+import { PortfolioPieceType } from './portfolio/types';
 
-type Props = {};
+type Props = {
+  portfolioPieces: Array<PortfolioPieceType>;
+  technologies: PortfolioPieceType['technologies'];
+};
 
-const Home = ({}: Props) => {
+const Home = ({ portfolioPieces, technologies }: Props) => {
+  const featuredPieces = portfolioPieces.filter((piece) => piece.featured);
+  const nonFeaturedPieces = portfolioPieces.filter((piece) => !piece.featured);
+
   return (
     <div className='max-w-[100vw] grid gap-12 md:gap-24  relative'>
       <div className=' w-full h-full max-w-[100vw] overflow-x-hidden bg-primary-700  pt-10 pb-20 text-white'>
@@ -25,13 +34,13 @@ const Home = ({}: Props) => {
                 </Typography>
                 <Typography
                   size='body1'
-                  className='max-w-[30rem] sm:text-xl  lg:text-2xl text-primary-100 font-light'
+                  className='max-w-[30rem] sm:text-xl  lg:text-2xl text-primary-100'
                 >
                   I'm currently looking for my next opportunity to make more
                   kickass software for the web.
                 </Typography>
                 <div className='flex flex-wrap-reverse gap-3 mt-10'>
-                  <Link href='/'>
+                  <Link href='/#career-highlights'>
                     <a>
                       <Button type='tertiary' size='large'>
                         My CV
@@ -39,7 +48,7 @@ const Home = ({}: Props) => {
                     </a>
                   </Link>
 
-                  <Link href='/'>
+                  <Link href='/portfolio'>
                     <a>
                       <Button type='primary' size='large'>
                         My Portfolio
@@ -59,7 +68,7 @@ const Home = ({}: Props) => {
                 />
               </div>
             </article>
-            <TechSlider />
+            <TechSlider technologies={technologies} />
           </section>
           <section className='grid gap-8'>
             <Typography size='h2' className='flex gap-4 items-center'>
@@ -67,59 +76,25 @@ const Home = ({}: Props) => {
               <Divider />
             </Typography>
             <div className='grid gap-10 md:gap-14'>
-              <FeaturedBlockElement
-                image='/images/inteligets-cover.png'
-                title='Inteligets'
-                stack={[
-                  'React',
-                  'Redux',
-                  'Axios',
-                  'Bootstrap 5',
-                  'Sass',
-                  'Express',
-                  'MongoDB',
-                  'Mongoose',
-                  'Node.js',
-                  'Framer Motion',
-                ]}
-                description='A fully functional fullstack e-commerce store that supports multiple
-            user roles, the creation, reading, deletion and updating (CRUD) of
-            user generated orders and reviews and management of products.'
-                logoImage='/images/inteligets-logo.svg'
-              />
-              <FeaturedBlockElement
-                image='/images/blogr-cover.png'
-                title='Blogr'
-                stack={[
-                  'React',
-                  'Redux',
-                  'Axios',
-                  'Bootstrap 5',
-                  'Sass',
-                  'Express',
-                  'MongoDB',
-                  'Mongoose',
-                  'Node.js',
-                  'Framer Motion',
-                ]}
-                description='A fully functional fullstack e-commerce store that supports multiple
-            user roles, the creation, reading, deletion and updating (CRUD) of
-            user generated orders and reviews and management of products.'
-                textFirst
-                logoImage='/images/blogr-logo.svg'
-                liveLink='https://blogr.tashinga.com'
-                githubLink='github.com/tashinga/blogr'
-                caseStudy='/'
-              />
+              {featuredPieces.map((piece, i) => (
+                <FeaturedBlockElement
+                  key={i}
+                  piece={piece}
+                  textFirst={i % 2 === 0}
+                />
+              ))}
             </div>
           </section>
         </div>
       </div>
       <section className='overflow-x-hidden'>
-        <OtherPiecesBlockElement />
+        <OtherPiecesBlockElement pieces={nonFeaturedPieces} />
       </section>
       <div className='grid gap-5 container-1'>
-        <section className=' text-gray-900 grid gap-10 w-full'>
+        <section
+          className=' text-gray-900 grid gap-10 w-full'
+          id='career-highlights'
+        >
           <article>
             <div className='grid gap-5'>
               <Typography size='h1' as='h2' bold>
@@ -144,7 +119,10 @@ const Home = ({}: Props) => {
             </Button>
           </div>
         </section>
-        <section className=' w-full bg-secondary-100 bg-gradient-to-br from-secondary-50 to-secondary-100 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 md:grid-cols-2'>
+        <section
+          className=' w-full bg-secondary-100 bg-gradient-to-br from-secondary-50 to-secondary-100 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-xl md:grid-cols-2'
+          id='contact'
+        >
           <div className='grid gap-5 content-start'>
             <Typography size='h1' as='h2' bold>
               You can get in touch with me any way you'd like.
@@ -260,6 +238,23 @@ const Home = ({}: Props) => {
       </div>
     </div>
   );
+};
+
+const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
+  ...,
+  "technologies": technologies[]->name,
+}`;
+const technologiesQuery = groq`*[_type == "technologies"][] | order(featured desc){
+ name, icon, description,featured
+}`;
+
+export const getStaticProps = async () => {
+  const portfolioPieces = await client.fetch(projectsQuery);
+  const technologies = await client.fetch(technologiesQuery);
+
+  return {
+    props: { portfolioPieces, technologies },
+  };
 };
 
 export default Home;

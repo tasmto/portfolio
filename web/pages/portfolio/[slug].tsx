@@ -22,7 +22,7 @@ type Props = {
 const PortfolioPiece = ({ piece }: Props) => {
   // console.log(piece);
   return (
-    <div className='bg-slate-50/20 text-gray-900 snap-proximity  snap-y'>
+    <div className='bg-slate-50/20 text-gray-900 snap-proximity snap-y'>
       <PageScrollLine />
 
       <div className='container-1 grid gap-16 mt-8 md:mt-24 lg:gap-24 snap-start'>
@@ -67,7 +67,7 @@ const PortfolioPiece = ({ piece }: Props) => {
             href={piece?.liveUrl || piece?.repoUrl || ''}
             target='_blank'
             rel='noreferrer'
-            className='block shadow-xl shadow-primary-200/10 border border-gray-200 rounded-lg'
+            className='block'
           >
             <Image
               src={GetResourceUrl(piece.productImage.asset)
@@ -77,6 +77,7 @@ const PortfolioPiece = ({ piece }: Props) => {
                 .auto('format')
                 .url()}
               alt=''
+              className='rounded-xl shadow-primary-200/10 border border-gray-200'
               loading='lazy'
               width={1280}
               height={720}
@@ -139,11 +140,9 @@ const PortfolioPiece = ({ piece }: Props) => {
               )}
             </div>
           </div>
-          <Divider type='solid' />
-        </section>
-        <div className='container-2'>
+          <Divider type='solid' className='mb-10' />
           <RecommendedProjectsCards projects={piece.relatedProjects} />
-        </div>
+        </section>
       </div>
     </div>
   );

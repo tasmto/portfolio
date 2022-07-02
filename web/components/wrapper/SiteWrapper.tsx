@@ -3,6 +3,7 @@ import GoogleCaptchaWrapper from '../captcha/GoogleCaptchaWrapper';
 import Footer from '../navigation/Footer';
 import NavBar from '../navigation/NavBar';
 import PageMeta from '../seo/PageMeta';
+import LogRocket from 'logrocket';
 
 type Props = {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ type Props = {
  * @description Wrapper for the site, includes global stuff Redux stores etc if needed.
  */
 const SiteWrapper = ({ children }: Props) => {
+  LogRocket.init('fjdwny/portfolio');
   return (
     <>
       <PageMeta />

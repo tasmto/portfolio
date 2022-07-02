@@ -10,6 +10,7 @@ import {
   IoArrowForwardOutline,
   IoLogoGithub,
   IoPlayOutline,
+  IoTodayOutline,
 } from 'react-icons/io5';
 
 type Props = {
@@ -39,14 +40,22 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
             }}
           ></motion.div>
           <div className='z-10 grid gap-2'>
-            {/* <Typography
+            <Typography
               size='body3'
               as='p'
-              className='text-primary-400 mb-6'
-              bold
+              className='text-white justify-self-start self-start tracking-tight drop-shadow-xl bg-secondary-900/70 backdrop-blur-xl max-w-2xl px-2 rounded-b-sm rounded-t-md m-0 flex gap-3'
             >
-              {startDateString} — {endDateString}
-            </Typography> */}
+              <IoTodayOutline className='h-5 w-5' />
+              <span>
+                {portfolio?.completedAt
+                  ? `Completed: 
+            ${new Date(portfolio?.completedAt).toLocaleDateString('en-US', {
+              month: 'long',
+              year: 'numeric',
+            })}`
+                  : 'Ongoing'}
+              </span>
+            </Typography>
             <Typography
               size='display1'
               as='h1'

@@ -7,16 +7,14 @@ import { TbRainbow } from 'react-icons/tb';
 import Button from '../button/Button';
 import Link from 'next/link';
 import Typography from '../typography/Typography';
+import { PortfolioPieceType } from '../../pages/portfolio/types';
+import GetResourceUrl from '../sanityio/GetResourceURL';
+import PortableTextParser from '../portableTextBlocks/PortableTextParser';
+import { blockContentToPlainText } from 'react-portable-text';
+import trimString from '../../utilities/trimString';
 
 type Props = {
-  description: string;
-  image: string;
-  title: string;
-  logoImage?: string;
-  stack?: string[];
-  caseStudy?: string;
-  liveLink?: string;
-  githubLink?: string;
+  piece: PortfolioPieceType;
   textFirst?: boolean;
 };
 
@@ -32,51 +30,57 @@ type Props = {
  * @param logoImage - The logo image of the project (shows instead of text title)
  * @returns {JSX.Element}
  */
-const FeaturedBlockElement = ({
-  description,
-  stack,
-  image,
-  title,
-  logoImage,
-  caseStudy,
-  liveLink,
-  githubLink,
-  textFirst,
-}: Props) => {
+const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
   const [activeTab, setActiveTab] = useState('description');
   return (
-    <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
-      <Link href={caseStudy || ''}>
+    <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
+      <Link href={`/portfolio/${piece.slug.current}`}>
         <div className='col-span-1 md:col-span-2 lg:col-span-3 cursor-eye'>
           <Image
-            src={image}
+            src={GetResourceUrl(
+              piece?.productImage?.asset
+                ? piece?.productImage?.asset
+                : piece?.bannerImage?.asset
+            )
+              .width(850)
+              .height(450)
+              .fit('max')
+              .auto('format')
+              .url()}
             width={850}
             height={450}
             layout='responsive'
-            className='object-center object-cover'
+            className='object-center object-cover rounded-xl shadow-xl'
             alt=''
           />
         </div>
       </Link>
       <div
-        className={`col-span-1 lg:col-span-2 grid gap-3 lg:gap-7  content-start ${
+        className={`col-span-1 lg:col-span-2 grid gap-4 content-start ${
           textFirst && 'md:order-first'
         }`}
       >
-        <Typography as='h2' size='display2' className='relative'>
-          {logoImage && (
-            <Image
-              height={50}
+        <Typography as='h2' size='display3' className='relative mb-4'>
+          {piece?.logo && (
+            <img
+              height={30}
               width={325}
-              src={logoImage}
-              layout='intrinsic'
-              className='object-start object-contain'
+              src={GetResourceUrl(piece?.logo?.asset)
+                .width(325)
+                .height(30)
+                .fit('min')
+                .auto('format')
+                .url()}
+              // layout='intrinsic'
+              className='object-start object-contain h-8 object-left brightness-150'
               alt=''
             />
           )}
-          <span className={`${logoImage && 'sr-only'}`}>{title}</span>
+          <span className={`${piece?.logo && 'sr-only'} text-slate-200`}>
+            {piece.projectName}
+          </span>
         </Typography>
-        {description && (
+        {piece.extract && (
           <div>
             <Typography
               as='button'
@@ -87,7 +91,7 @@ const FeaturedBlockElement = ({
                   ? setActiveTab('')
                   : setActiveTab('description')
               }
-              className='w-full flex gap-4 items-center cursor-pointer py-2'
+              className='w-full flex gap-4 items-center cursor-pointer py-1'
             >
               <span className='shrink-0'>Description</span>
               <Divider />
@@ -99,9 +103,9 @@ const FeaturedBlockElement = ({
               />
             </Typography>
             <Typography
-              as='p'
+              as='div'
               size='caption'
-              className={` text-primary-200 md:text-primary-100 origin-top
+              className={` text-primary-200 md:text-primary-200 origin-top
              transition-all duration-300 ease-in-out  
             ${
               activeTab === 'description'
@@ -109,11 +113,12 @@ const FeaturedBlockElement = ({
                 : 'scale-y-0 opacity-0 max-h-0'
             }`}
             >
-              {description}
+              {/* @ts-ignore: Block content to plain text requires one input */}
+              {trimString(blockContentToPlainText(piece.extract), 200)}
             </Typography>
           </div>
         )}
-        {stack?.length && (
+        {piece.technologies?.length && (
           <div className=''>
             <Typography
               as='button'
@@ -136,7 +141,7 @@ const FeaturedBlockElement = ({
             <Typography
               as='p'
               size='caption'
-              className={` text-primary-200 md:text-primary-100 origin-top
+              className={` text-primary-200 md:text-primary-200 origin-top
              transition-all duration-300 ease-in-out 
             ${
               activeTab === 'stack'
@@ -144,30 +149,30 @@ const FeaturedBlockElement = ({
                 : 'scale-y-0 opacity-0 max-h-0'
             }`}
             >
-              {stack.toString().replaceAll(',', ', ')}.
+              {piece.technologies.toString().replaceAll(',', ', ')}.
             </Typography>
           </div>
         )}
-        {(liveLink || caseStudy) && (
-          <div className='grid gap-1'>
-            {liveLink && (
+        {(piece?.slug?.current || piece?.liveUrl) && (
+          <div className='grid gap-1 mt-5'>
+            {piece?.liveUrl && (
               <Button
                 type='text-light'
                 icon={BiLinkExternal}
                 iconPosition='right'
-                href={liveLink}
+                href={piece?.liveUrl}
                 externalLink
               >
                 View Live Project
               </Button>
             )}
             <Divider />
-            {caseStudy && (
+            {piece?.slug?.current && (
               <Button
                 type='text-light'
                 icon={TbRainbow}
                 iconPosition='right'
-                href={caseStudy}
+                href={`/portfolio/${piece?.slug?.current}`}
                 className='text-primary-100'
               >
                 Case Study

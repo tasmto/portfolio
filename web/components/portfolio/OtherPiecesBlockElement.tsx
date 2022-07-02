@@ -2,8 +2,11 @@ import Image from 'next/image';
 import React, { Ref, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Typography from '../typography/Typography';
+import { PortfolioPieceType } from '../../pages/portfolio/types';
 
-type Props = {};
+type Props = {
+  pieces: Array<PortfolioPieceType>;
+};
 
 const getRelativeCoordinates = (
   event: React.MouseEvent<HTMLElement, MouseEvent>,
@@ -17,7 +20,7 @@ const getRelativeCoordinates = (
   return Math.round(((position - right / 2) / 8) * -1);
 };
 
-const OtherPiecesBlockElement = (props: Props) => {
+const OtherPiecesBlockElement = ({ pieces }: Props) => {
   const [mousePosition, setMousePosition] = useState(0);
   const containerRef = useRef();
 
@@ -35,6 +38,17 @@ const OtherPiecesBlockElement = (props: Props) => {
       | '2/5'
       | '3/5';
   };
+
+  // const portfolioRows = (): Array<PortfolioRowContent>[] => {
+  //   const divisions = pieces.length / 3;
+  //   const portfolioRows = [];
+
+  //   for (let index = 0; index < array.length; index++) {
+  //     const element = array[index];
+
+  //   }
+  // };
+  // portfolioRows();
 
   const contentRows: Array<PortfolioRowContent[]> = [
     [

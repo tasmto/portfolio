@@ -18,86 +18,43 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
+import { PortfolioPieceType } from '../../pages/portfolio/types';
+import GetResourceUrl from '../sanityio/GetResourceURL';
 
-type Props = {};
+type Props = {
+  technologies: PortfolioPieceType['technologies'];
+};
 
-const TechSlider = (props: Props) => {
-  type TechType = {
-    name: string;
-    icon: any;
-  };
-  const technologies: Array<TechType> = [
-    {
-      name: 'React',
-      icon: DiReact,
-    },
-    {
-      name: 'TypeScript',
-      icon: SiTypescript,
-    },
-    {
-      name: 'Node.js',
-      icon: DiNodejsSmall,
-    },
-    {
-      name: 'Express.js',
-      icon: SiExpress,
-    },
-    {
-      name: 'MongoDB',
-      icon: DiMongodb,
-    },
-    {
-      name: 'Next.js',
-      icon: SiNextdotjs,
-    },
-    {
-      name: 'Firebase',
-      icon: SiFirebase,
-    },
-    {
-      name: 'Redux',
-      icon: SiRedux,
-    },
-    {
-      name: 'MUI (Material UI)',
-      icon: SiMaterialui,
-    },
-    {
-      name: 'Bootstrap',
-      icon: DiBootstrap,
-    },
-    {
-      name: 'Tailwind CSS',
-      icon: SiTailwindcss,
-    },
-    {
-      name: 'HTML',
-      icon: DiHtml5,
-    },
-    {
-      name: 'CSS',
-      icon: DiCss3Full,
-    },
-  ];
+const TechSlider = ({ technologies }: Props) => {
+  if (!technologies) return null;
+
   return (
     <ScrollContainer
       hideScrollbars={false}
       className={`${styles.horizontalScroll} max-w-lg md:max-w-[100%] flex py-2 px-2 scroll-container cursor-grab active:cursor-grabbing focus:cursor-grabbing`}
     >
       <ul className='transition-transform duration-500 flex gap-8 text-gray-400 flex-nowrap w-full  snap-x'>
-        {technologies.map((tech, i) => {
-          const Icon = tech.icon;
-          return (
-            <li
-              key={i}
-              className='flex-shrink-0 flex gap-2 snap-center hover:text-gray-300/80'
-            >
-              <Icon className='w-6 h-6' />
-              <span>{tech.name}</span>
-            </li>
-          );
-        })}
+        {technologies.map((tech, i) => (
+          <li
+            key={i}
+            className='flex-shrink-0 flex gap-2 snap-center items-center hover:text-gray-300/80'
+          >
+            <img
+              src={GetResourceUrl(tech.icon.asset)
+                .width(20)
+                .height(20)
+                .fit('max')
+                .auto('format')
+                .url()}
+              alt=''
+              loading='lazy'
+              className='opacity-40 grayscale brightness-[400]'
+              width={20}
+              height={20}
+            />
+            <span>{tech.name}</span>
+          </li>
+        ))}
       </ul>
     </ScrollContainer>
   );

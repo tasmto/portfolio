@@ -20,11 +20,11 @@ const NavBar = ({}: Props) => {
 
   const primaryLinks = [
     {
-      href: '/',
+      href: '/portfolio',
       text: 'Portfolio',
     },
     {
-      href: '/',
+      href: '/#career-highlights',
       text: 'Career Highlights',
     },
     {
@@ -41,13 +41,13 @@ const NavBar = ({}: Props) => {
       iconActive: IoBrowsers,
     },
     {
-      href: '/cv',
+      href: '/#career-highlights',
       text: 'My CV',
       icon: <IoNewspaperOutline className='w-full h-full' />,
       iconActive: IoNewspaper,
     },
     {
-      href: '/',
+      href: '/#contact',
       text: 'Connect',
       icon: <IoChatbubbleOutline className='w-full h-full' />,
       iconActive: IoChatbubble,
@@ -93,7 +93,7 @@ const NavBar = ({}: Props) => {
         </ul>
         <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>
-            <Link href='/'>
+            <Link href='/#career-highlights'>
               <a>
                 <Button size='small' type='tertiary' icon={IoDownloadOutline}>
                   My CV
@@ -102,10 +102,10 @@ const NavBar = ({}: Props) => {
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/#contact'>
               <a>
                 <Button type='primary' size='small'>
-                  Button 2
+                  Contact
                 </Button>
               </a>
             </Link>

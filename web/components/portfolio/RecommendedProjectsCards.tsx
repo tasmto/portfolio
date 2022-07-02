@@ -14,13 +14,10 @@ const RecommendedProjectsCards = ({ projects }: Props) => {
 
   return (
     <section className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-      <Typography as='h2' size='h1' className='md:col-span-2 mb-2'>
-        Related Projects:
-      </Typography>
       {projects.map((project, i) => (
         <Link key={i} href={`/portfolio/${project?.slug.current}`}>
-          <a className='grid gap-4'>
-            <figure className='grid gap-4'>
+          <a className='grid gap-4 cursor-eye'>
+            <figure className='grid gap-4 group'>
               {(project?.productImage?.asset ||
                 project?.bannerImage?.asset) && (
                 <Image
@@ -33,14 +30,14 @@ const RecommendedProjectsCards = ({ projects }: Props) => {
                     .auto('format')
                     .url()}
                   alt=''
-                  className='rounded-lg'
+                  className='rounded-lg group:hover:opacity-75'
                   loading='lazy'
                   width={1280}
                   height={720}
                 />
               )}
 
-              <Typography as='figcaption' size='h2'>
+              <Typography as='figcaption' size='h2' className='text-slate-300'>
                 {project.projectName} — {project.projectSubtitle}
               </Typography>
             </figure>

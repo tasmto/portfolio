@@ -1,4 +1,4 @@
-import PortableText from 'react-portable-text';
+import PortableText, { blockContentToPlainText } from 'react-portable-text';
 import Image from 'next/image';
 import React from 'react';
 import {
