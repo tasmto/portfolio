@@ -1,3 +1,4 @@
+import { useTransform, useViewportScroll, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -17,6 +18,9 @@ type Props = {};
 const NavBar = ({}: Props) => {
   const tailWindBreakPoint = 'md';
   const router = useRouter();
+
+  // const { scrollYProgress } = useViewportScroll();
+  // const yRange = useTransform(scrollYProgress, [0, 100], [0, 100]);
 
   const primaryLinks = [
     {
@@ -69,21 +73,23 @@ const NavBar = ({}: Props) => {
         className={`sr-only ${tailWindBreakPoint}:not-sr-only md:not-sr-only 
        flex justify-between items-center gap-8 container-1 ${tailWindBreakPoint}:px-6 md:px-6 lg:px-8 xl:px-0 z-50`}
       >
-        <h1 className='flex-none font-bold text-primary-800 tracking-tighter text-3xl lg:text-4xl'>
+        <h1 className='flex-none font-bold text-slate-900 tracking-tighter text-3xl'>
           <Link href='/'>
             <a>
               tash<span className='text-primary-500'>i</span>nga
             </a>
           </Link>
         </h1>
-        <ul className='flex-initial flex gap-6 lg:gap-8 text-lg tracking-tight '>
+        <motion.ul
+          className='flex-initial flex gap-6 lg:gap-8 tracking-tight '
+          // style={{ scale: `${yRange}%` }}
+        >
           {primaryLinks.map((link, i) => (
             <li key={i}>
               <Link href={link.href}>
                 <a
-                  className={` text-slate-500 hover:text-primary-700 transition-colors ${
-                    router.pathname === link.href &&
-                    'text-primary-500 font-medium'
+                  className={` text-slate-800 font-medium hover:text-primary-700 transition-colors ${
+                    router.pathname === link.href && 'text-primary-800 '
                   }`}
                 >
                   {link.text}
@@ -91,7 +97,7 @@ const NavBar = ({}: Props) => {
               </Link>
             </li>
           ))}
-        </ul>
+        </motion.ul>
 
         <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>

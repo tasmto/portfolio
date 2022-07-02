@@ -45,7 +45,7 @@ const TextImageBlock = ({ content }: Props) => {
           </Typography>
         )}
         {description && (
-          <Typography as='p' size='body3'>
+          <Typography as='p' size='body2'>
             {description}
           </Typography>
         )}

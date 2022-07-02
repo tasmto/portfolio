@@ -90,32 +90,35 @@ type Props = {
   className?: string;
 };
 
-const PortableTextParser = ({ content, className }: Props) => (
-  <PortableText
-    className={className}
-    content={content}
-    serializers={{
-      h1: (props: any) => (
-        <Typography size='h1' as='h1' className='mb-5' {...props} />
-      ),
-      h2: (props: any) => (
-        <Typography size='h2' as='h2' className='mb-4' {...props} />
-      ),
-      h3: (props: any) => (
-        <Typography size='h3' as='h3' className='mb-2' {...props} />
-      ),
-      li: ({ children }: any) => (
-        <li className='ml-6 relative before:block before:absolute  before:left-[-24px] before:content-[">"] before:text-gray-400 before:font-bold before:text-sm'>
-          {children}
-        </li>
-      ),
-      ul: ({ children }: any) => <ul className=''>{children}</ul>,
-      textImage: (value: TextImageType) => <TextImageBlock content={value} />,
-      codeEmbed: (value: CodeEmbedType) => (
-        <CodeTextEmbedBlock content={value} />
-      ),
-    }}
-  />
-);
+const PortableTextParser = ({ content, className }: Props) => {
+  if (!content) return null;
+  return (
+    <PortableText
+      className={className}
+      content={content}
+      serializers={{
+        h1: (props: any) => (
+          <Typography size='h1' as='h1' className='mb-5' {...props} />
+        ),
+        h2: (props: any) => (
+          <Typography size='h2' as='h2' className='mb-4' {...props} />
+        ),
+        h3: (props: any) => (
+          <Typography size='h3' as='h3' className='mb-2' {...props} />
+        ),
+        li: ({ children }: any) => (
+          <li className='ml-8 relative before:block before:absolute  before:left-[-24px] before:content-[">"] before:text-gray-400 before:font-bold before:text-xs before:top-[5px]'>
+            {children}
+          </li>
+        ),
+        ul: ({ children }: any) => <ul className=''>{children}</ul>,
+        textImage: (value: TextImageType) => <TextImageBlock content={value} />,
+        codeEmbed: (value: CodeEmbedType) => (
+          <CodeTextEmbedBlock content={value} />
+        ),
+      }}
+    />
+  );
+};
 
 export default PortableTextParser;

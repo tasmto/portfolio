@@ -136,7 +136,7 @@ export type PortfolioPieceType = {
 
   featured: boolean;
   relatedProjects: any[];
-  relatedArticles: SanityReference;
+  relatedArticles: any[];
 
   // Meta
   _createdAt: string;

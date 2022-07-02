@@ -22,11 +22,11 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
 
   return (
     <div className='grid gap-6 md:gap-10'>
-      <div className='bg-slate-900 shadow-xl overflow-hidden rounded-2xl border'>
-        <article className='px-6 py-8 md:py-14 relative h-[85vh] min-h-[250px] max-h-[400px] overflow-hidden grid content-center gap-6'>
+      <div className='bg-primary-900 shadow-xl overflow-hidden rounded-2xl border'>
+        <article className='px-6 relative min-h-[250px] py-16 md:pt-24 lg:pt-32 md:pb-20 overflow-hidden grid content-center gap-6'>
           <motion.div
-            className='w-full h-full absolute top-0 left-0 bg-[120%] bg-center
-            bg-no-repeat opacity-90'
+            className='w-full h-full absolute top-0 left-0 bg-cover bg-center
+            bg-no-repeat opacity-80'
             style={{
               // y: y2,
               backgroundImage: `url(${GetResourceUrl(
@@ -36,7 +36,6 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
               )
                 .width(1080)
                 .height(500)
-                .blur(10)
                 .fit('max')
                 .auto('format')
                 .url()})`,
@@ -51,16 +50,20 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
             >
               {startDateString} — {endDateString}
             </Typography> */}
-            <Typography size='display2' as='h1' className='text-white max-w-xl'>
+            <Typography
+              size='display1'
+              as='h1'
+              className='text-white tracking-tight drop-shadow-md max-w-2xl'
+            >
               {portfolio.projectName} — {portfolio.projectSubtitle}
             </Typography>
           </div>
-          <div className='z-10 self-end'>
+          <div className='z-10 self-end justify-self-start mt-6'>
             {portfolio?.liveUrl ? (
               <Button
                 type='text-light'
                 size='large'
-                className='px-0'
+                className='pl-0 drop-shadow-md !text-slate-200 hover:!text-white transition-colors'
                 href={portfolio.liveUrl}
                 externalLink
                 icon={IoArrowForwardOutline}
@@ -71,6 +74,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
               <Button
                 type='text-light'
                 href={portfolio.repoUrl}
+                className='pl-0 drop-shadow-md'
                 externalLink
                 icon={IoLogoGithub}
               >
@@ -80,6 +84,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
               <Button
                 type='text-light'
                 href={portfolio.walkthrough}
+                className='pl-0 drop-shadow-md'
                 externalLink
                 icon={IoPlayOutline}
               >

@@ -10,25 +10,27 @@ type Props = {
 };
 
 const TechStacksCards = ({ technologies }: Props) => {
+  if (!technologies) return null;
+
   return (
     <section className='grid grid-cols-2 gap-4'>
       {technologies.map((tech, i) => (
         <article
           key={i}
-          className='p-3 py-4 md:p-6 bg-primary-50/50 rounded-xl  flex gap-2 items-start'
+          className='p-3 py-4 md:p-6 bg-primary-50/50 rounded-xl grid gap-4 items-start'
         >
-          <Image
+          <img
             src={GetResourceUrl(tech.icon.asset)
-              .width(120)
-              .height(120)
+              .width(40)
+              .height(40)
               .fit('max')
               .auto('format')
               .url()}
             alt=''
             loading='lazy'
-            className='object-cover !h-full bg-slate-600 self-start'
-            width={60}
-            height={60}
+            className=' self-start'
+            width={40}
+            height={40}
           />
           <div className='grid gap-1'>
             <Typography size='h3' as='h2' className='text-primary-500'>

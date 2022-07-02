@@ -42,13 +42,13 @@ const Typography = ({
 }: Props) => {
   const Element = as;
   const classes = {
-    display1: `text-5xl md:text-6xl leading-loose ${
+    display1: `text-5xl md:text-6xl leading-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
-    display2: `text-4xl md:text-5xl leading-loose ${
+    display2: `text-4xl md:text-5xl leading-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
-    display3: `text-3xl md:text-4xl leading-loose ${
+    display3: `text-3xl md:text-4xl leading-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
     h1: `text-3xl md:text-4xl tracking-tight ${
@@ -61,19 +61,19 @@ const Typography = ({
       bold ? 'font-bold' : 'font-medium'
     }`,
     body1: `text-lg md:text-xl tracking-tight ${
-      bold ? 'font-bold' : 'font-normal'
+      bold ? 'font-medium' : 'font-normal'
     }`,
     body2: `text-base md:text-lg tracking-tight ${
-      bold ? 'font-bold' : 'font-normal'
+      bold ? 'font-medium' : 'font-normal'
     }`,
-    body3: `text-base tracking-tight ${bold ? 'font-bold' : 'font-normal'}`,
+    body3: `text-base tracking-tight ${bold ? 'font-medium' : 'font-normal'}`,
     caption: `text-xs md:text-sm tracking-tight ${
-      bold ? 'font-bold' : 'font-normal'
+      bold ? 'font-medium' : 'font-normal'
     }`,
     button: `text-base md:text-lg tracking-tight ${
-      bold ? 'font-bold' : 'font-normal'
+      bold ? 'font-medium' : 'font-normal'
     }`,
-    small: `text-xs tracking-tight ${bold ? 'font-bold' : 'font-normal'}`,
+    small: `text-xs tracking-tight ${bold ? 'font-medium' : 'font-normal'}`,
     inherit: '',
   };
 

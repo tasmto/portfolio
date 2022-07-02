@@ -1,13 +1,14 @@
 type Props = {
   type?: 'solid' | 'dashed' | 'dotted';
   prominent?: boolean;
+  className?: string;
 };
 
 /**
  *
  * @returns A styled divider component (hr)
  */
-const Divider = ({ type, prominent }: Props) => {
+const Divider = ({ type, prominent, className }: Props) => {
   return (
     <hr
       className={`shrink w-full  ${
@@ -18,7 +19,7 @@ const Divider = ({ type, prominent }: Props) => {
           : type === 'dashed'
           ? 'border-dashed'
           : 'border-solid'
-      }`}
+      } ${className ? className : ''}`}
     />
   );
 };
