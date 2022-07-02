@@ -13,7 +13,7 @@ const TechStacksCards = ({ technologies }: Props) => {
   if (!technologies) return null;
 
   return (
-    <section className='grid grid-cols-2 gap-4'>
+    <section className='grid grid-cols-2 gap-4' style={{}}>
       {technologies.map((tech, i) => (
         <article
           key={i}

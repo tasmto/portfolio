@@ -17,9 +17,6 @@ type Props = {
 };
 
 const PortFolioPieceCover = ({ portfolio }: Props) => {
-  const { scrollY } = useViewportScroll();
-  // const y2 = useTransform(scrollY, [0, 10], [0, 10]);
-
   return (
     <div className='grid gap-6 md:gap-10'>
       <div className='bg-primary-900 shadow-xl overflow-hidden rounded-2xl border'>

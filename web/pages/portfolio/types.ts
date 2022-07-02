@@ -135,7 +135,13 @@ export type PortfolioPieceType = {
   liveUrl: string;
 
   featured: boolean;
-  relatedProjects: any[];
+  relatedProjects: {
+    bannerImage?: SanityReferenceType;
+    productImage?: SanityReferenceType;
+    projectName: string;
+    projectSubtitle: string;
+    slug: SanitySlug;
+  }[];
   relatedArticles: any[];
 
   // Meta

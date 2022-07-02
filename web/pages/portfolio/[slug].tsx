@@ -11,6 +11,7 @@ import Image from 'next/image';
 import GetResourceUrl from '../../components/sanityio/GetResourceURL';
 import { IoBowlingBall, IoCamera, IoCameraOutline } from 'react-icons/io5';
 import Button from '../../components/button/Button';
+import RecommendedProjectsCards from '../../components/portfolio/RecommendedProjectsCards';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -19,7 +20,7 @@ type Props = {
 };
 
 const PortfolioPiece = ({ piece }: Props) => {
-  console.log(piece);
+  // console.log(piece);
   return (
     <div className='bg-slate-50/20 text-gray-900 snap-proximity  snap-y'>
       <PageScrollLine />
@@ -108,7 +109,7 @@ const PortfolioPiece = ({ piece }: Props) => {
         />
         <Divider type='dotted' className='container-3' />
       </div>
-      <div className='w-full h-full max-w-[100vw] min-h-[80vh] grid items-center overflow-x-hidden bg-primary-700  pt-10 pb-20 text-white snap-start'>
+      <div className='w-full h-full max-w-[100vw] min-h-[80vh] grid items-center gap-10 overflow-x-hidden bg-primary-700 py-20 text-white snap-start'>
         <section className='container-2 grid gap-4 w-full'>
           <Divider type='solid' />
           <div className='flex flex-wrap gap-10 justify-between items-center'>
@@ -140,6 +141,9 @@ const PortfolioPiece = ({ piece }: Props) => {
           </div>
           <Divider type='solid' />
         </section>
+        <div className='container-2'>
+          <RecommendedProjectsCards projects={piece.relatedProjects} />
+        </div>
       </div>
     </div>
   );
@@ -147,8 +151,9 @@ const PortfolioPiece = ({ piece }: Props) => {
 
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
   ...,
- "technologies": technologies[]->{name, icon, description,featured},
-}`;
+  "technologies": technologies[]->{name, icon, description,featured},
+"relatedProjects": relatedProjects[]->{bannerImage,productImage,projectName, projectSubtitle, slug}
+ }`;
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.
 export const getStaticPaths = async () => {
@@ -168,6 +173,13 @@ export const getStaticProps = async (context: any) => {
   const { slug = '' }: { slug: string } = context.params;
 
   const piece = await client.fetch(query, { slug });
+
+  // Query 2 random pieces to show as related projects if there aren't any related projects
+  if (!piece.relatedProjects) {
+    piece.relatedProjects = await client.fetch(
+      groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{bannerImage,productImage, projectName, projectSubtitle, slug}`
+    );
+  }
   return { props: { piece } };
 };
 

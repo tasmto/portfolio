@@ -1,4 +1,3 @@
-import { useTransform, useViewportScroll, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -18,9 +17,6 @@ type Props = {};
 const NavBar = ({}: Props) => {
   const tailWindBreakPoint = 'md';
   const router = useRouter();
-
-  // const { scrollYProgress } = useViewportScroll();
-  // const yRange = useTransform(scrollYProgress, [0, 100], [0, 100]);
 
   const primaryLinks = [
     {
@@ -76,14 +72,11 @@ const NavBar = ({}: Props) => {
         <h1 className='flex-none font-bold text-slate-900 tracking-tighter text-3xl'>
           <Link href='/'>
             <a>
-              tash<span className='text-primary-500'>i</span>nga
+              tash<span className='text-primary-300'>i</span>nga
             </a>
           </Link>
         </h1>
-        <motion.ul
-          className='flex-initial flex gap-6 lg:gap-8 tracking-tight '
-          // style={{ scale: `${yRange}%` }}
-        >
+        <ul className='flex-initial flex gap-6 lg:gap-8 tracking-tight '>
           {primaryLinks.map((link, i) => (
             <li key={i}>
               <Link href={link.href}>
@@ -97,8 +90,7 @@ const NavBar = ({}: Props) => {
               </Link>
             </li>
           ))}
-        </motion.ul>
-
+        </ul>
         <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>
             <Link href='/'>
