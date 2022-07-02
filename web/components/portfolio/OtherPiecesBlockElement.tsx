@@ -3,6 +3,7 @@ import React, { Ref, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Typography from '../typography/Typography';
 import { PortfolioPieceType } from '../../pages/portfolio/types';
+import subDivideArray from '../../utilities/subDivideArray';
 
 type Props = {
   pieces: Array<PortfolioPieceType>;
@@ -39,16 +40,8 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
       | '3/5';
   };
 
-  // const portfolioRows = (): Array<PortfolioRowContent>[] => {
-  //   const divisions = pieces.length / 3;
-  //   const portfolioRows = [];
-
-  //   for (let index = 0; index < array.length; index++) {
-  //     const element = array[index];
-
-  //   }
-  // };
-  // portfolioRows();
+  const portfolioRows = subDivideArray(pieces);
+  console.log(portfolioRows);
 
   const contentRows: Array<PortfolioRowContent[]> = [
     [

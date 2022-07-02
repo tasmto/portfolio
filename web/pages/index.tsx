@@ -97,7 +97,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
         >
           <article>
             <div className='grid gap-5'>
-              <Typography size='h1' as='h2' bold>
+              <Typography size='h1' as='h2'>
                 I have been in the industry for over 4 years....
               </Typography>
               <Typography size='body1' className='max-w-[30rem]'>
@@ -124,7 +124,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
           id='contact'
         >
           <div className='grid gap-5 content-start'>
-            <Typography size='h1' as='h2' bold>
+            <Typography size='h1' as='h2'>
               You can get in touch with me any way you'd like.
             </Typography>
             <Typography size='body1' className='max-w-[30rem]'>
