@@ -18,7 +18,7 @@ type Props = {
 };
 
 const PortFolioPieceCover = ({ portfolio }: Props) => {
-  if (!portfolio?.bannerImage?.asset || portfolio?.productImage?.asset)
+  if (!portfolio?.bannerImage?.asset && !portfolio?.productImage?.asset)
     return null;
   return (
     <div className='grid gap-6 md:gap-10'>
