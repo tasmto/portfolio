@@ -19,7 +19,7 @@ const SiteWrapper = ({ children }: Props) => {
       <PageMeta />
       <div
         id='main'
-        className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mt-[80px] md:mb-0 md:gap-32 selection:bg-primary-500 selection:text-primary-100 relative'
+        className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mt-[70px] md:mb-0 md:gap-32 selection:bg-primary-500 selection:text-primary-100 relative'
       >
         <NavBar />
         <main id='#content'>

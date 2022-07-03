@@ -17,11 +17,12 @@ type Props = {
 
 const TextImageBlock = ({ content }: Props) => {
   const { description, heading, image, link, linkText, textLast } = content;
+  if (!image?.asset?._ref) return null;
   return (
     <section className='grid grid-cols-1 md:grid-cols-5 items-center gap-10 md:gap-8'>
       <div className='col-span-3 shadow-xl border border-gray-200 rounded-lg'>
         <Image
-          src={GetResourceUrl(image.asset._ref)
+          src={GetResourceUrl(image?.asset?._ref)
             .width(1280)
             .height(720)
             .fit('max')

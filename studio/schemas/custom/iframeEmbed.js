@@ -29,7 +29,7 @@ export default {
       title: 'Description',
       name: 'description',
       description: 'A short description of the item being embedded.',
-      type: 'text',
+      type: 'strippedRCE',
       rows: 3,
       validation: (Rule) => Rule.max(2000),
     },

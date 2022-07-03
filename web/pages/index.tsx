@@ -11,7 +11,8 @@ import ResumeTabsElement from '../components/resume/ResumeTabsElement';
 import ContactForm from '../components/contact/ContactForm';
 import groq from 'groq';
 import client from '../client';
-import { PortfolioPieceType } from './portfolio/types';
+import { PortfolioPieceType } from '../components/portfolio/types';
+import PortfolioCard from '../components/portfolio/PortfolioCard';
 
 type Props = {
   portfolioPieces: Array<PortfolioPieceType>;
@@ -30,7 +31,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
             <article className='w-full grid md:grid-cols-5 gap-10 content-center justify-items-center'>
               <div className='flex flex-col gap-5 self-center justify-self-center md:col-span-3 max-w-lg md:max-w-none'>
                 <Typography size='display2' as='h1'>
-                  Hi, im Tashinga, a full-stack JavaScript developer.
+                  Hi, I'm Tashinga, a full-stack JavaScript developer.
                 </Typography>
                 <Typography
                   size='body1'
@@ -70,7 +71,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
             </article>
             <TechSlider technologies={technologies} />
           </section>
-          <section className='grid gap-8'>
+          <section className='grid gap-12'>
             <Typography size='h2' className='flex gap-4 items-center'>
               <span className='shrink-0'>Featured Projects</span>
               <Divider />
@@ -87,8 +88,10 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
           </section>
         </div>
       </div>
-      <section className='overflow-x-hidden'>
-        <OtherPiecesBlockElement pieces={nonFeaturedPieces} />
+      <section className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container-1'>
+        {nonFeaturedPieces.map((piece, i) => (
+          <PortfolioCard portfolio={piece} key={i} />
+        ))}
       </section>
       <div className='grid gap-5 container-1'>
         <section
@@ -119,6 +122,8 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
               type='primary'
               width='block'
               icon={IoDownloadOutline}
+              href='/Tashinga-Mtoko-Frontend-Developer-CV.pdf'
+              download
             >
               Download My CV
             </Button>

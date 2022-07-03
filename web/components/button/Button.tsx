@@ -15,6 +15,7 @@ type Props = {
   externalLink?: boolean;
   className?: string;
   disabled?: boolean;
+  download?: boolean;
 };
 
 /**
@@ -37,9 +38,10 @@ const Button = ({
   width,
   children,
   className,
+  download,
 }: Props) => {
   const btn = useRef(null);
-  const buttonClasses = `flex flex-wrap items-center gap-2 group tracking-tight font-medium cursor-pointer 
+  const buttonClasses = `flex flex-wrap items-center gap-2 group tracking-tight font-medium cursor-pointer  rounded-lg
   ${
     size === 'large'
       ? 'px-6 py-3 text-lg'
@@ -78,7 +80,7 @@ const Button = ({
   if (href && !externalLink) {
     return (
       <Link href={href} as={href}>
-        <a ref={btn} className={`${buttonClasses} ${className}`}>
+        <a ref={btn} className={`${buttonClasses} ${className || ''}`}>
           {Icon && <Icon className={iconClasses} />}
           <span>{children}</span>
         </a>
@@ -86,14 +88,15 @@ const Button = ({
     );
   }
 
-  if (href && externalLink) {
+  if ((href && externalLink) || (href && download)) {
     return (
       <a
         ref={btn}
         href={href}
         target='_blank'
         rel='noreferrer'
-        className={`${buttonClasses} ${className}`}
+        download={download || false}
+        className={`${buttonClasses} ${className || ''}`}
       >
         {Icon && <Icon className={iconClasses} />}
         <span>{children}</span>
@@ -104,7 +107,7 @@ const Button = ({
   return (
     <button
       ref={btn}
-      className={`${buttonClasses} ${className}`}
+      className={`${buttonClasses} ${className || ''}`}
       onClick={clickHandler}
       disabled={disabled}
     >

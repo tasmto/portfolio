@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../button/Button';
 import Typography from '../../typography/Typography';
 import CodeParser from '../../code-embeds/CodeParser';
-import { CodeEmbedType } from '../../../pages/portfolio/types';
+import { CodeEmbedType } from '../../portfolio/types';
 import PortableTextParser from '../PortableTextParser';
 
 type Props = {

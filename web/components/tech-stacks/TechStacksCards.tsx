@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { title } from 'process';
 import React from 'react';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from '../portfolio/types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 

@@ -24,7 +24,7 @@ export type IframeEmbedType = {
   _key: string;
   heading?: string;
   subheading?: string;
-  description?: string;
+  description?: SanityBlockContentType[];
   iframeLink: string;
   link?: string;
   linkText?: string;
@@ -38,6 +38,15 @@ export type ImageEmbedType = {
   image: SanityReferenceType;
   link?: string;
   linkText?: string;
+};
+export type ButtonType = {
+  _key: string;
+  _type: 'button';
+  externalLink: boolean;
+  heading?: string;
+  link: string;
+  linkText?: string;
+  subheading?: string;
 };
 export type CodeEmbedType = {
   _key: string;
@@ -53,14 +62,7 @@ export type CodeEmbedType = {
   link?: string;
   linkText?: string;
 };
-export type ButtonType = {
-  _key: string;
-  _type: 'button';
-  heading?: string;
-  subheading?: string;
-  link: string;
-  linkText?: string;
-};
+
 export type CustomListType = {
   _type: 'customList';
   _key: string;

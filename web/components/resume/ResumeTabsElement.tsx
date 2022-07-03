@@ -94,6 +94,8 @@ const ResumeTabsElement = (props: Props) => {
           className='text-gray-700 mt-3 text-start'
           icon={IoDownloadOutline}
           iconPosition='left'
+          href='/Tashinga-Mtoko-Frontend-Developer-CV.pdf'
+          download
         >
           Download a full PDF version <span className='sr-only'>of my CV</span>
         </Button>

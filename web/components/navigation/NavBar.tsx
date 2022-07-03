@@ -28,8 +28,8 @@ const NavBar = ({}: Props) => {
       text: 'Career Highlights',
     },
     {
-      href: '/about',
-      text: 'About me',
+      href: '/hi',
+      text: 'Book Meeting',
     },
   ];
 
@@ -56,7 +56,7 @@ const NavBar = ({}: Props) => {
 
   return (
     <header
-      className={`fixed bottom-0 md:bottom-[initial] md:top-0 md:py-4 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-[100vw]`}
+      className={`fixed bottom-0 md:bottom-[initial] md:top-0 md:py-3 md:border-b bg-white/95 backdrop-blur md:border-slate-300 w-screen z-[1000] max-w-[100vw]`}
     >
       {/* Large Screen Nav (Accessible) */}
       <a
@@ -72,7 +72,7 @@ const NavBar = ({}: Props) => {
         <h1 className='flex-none font-bold text-slate-900 tracking-tighter text-3xl'>
           <Link href='/'>
             <a>
-              tash<span className='text-primary-300'>i</span>nga
+              tash<span className='text-secondary-800'>i</span>nga
             </a>
           </Link>
         </h1>
@@ -93,13 +93,15 @@ const NavBar = ({}: Props) => {
         </ul>
         <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>
-            <Link href='/#career-highlights'>
-              <a>
-                <Button size='small' type='tertiary' icon={IoDownloadOutline}>
-                  My CV
-                </Button>
-              </a>
-            </Link>
+            <Button
+              size='small'
+              type='tertiary'
+              icon={IoDownloadOutline}
+              href='/Tashinga-Mtoko-Frontend-Developer-CV.pdf'
+              download
+            >
+              My CV
+            </Button>
           </li>
           <li>
             <Link href='/#contact'>

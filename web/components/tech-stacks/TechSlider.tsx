@@ -18,7 +18,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from '../portfolio/types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 
 type Props = {

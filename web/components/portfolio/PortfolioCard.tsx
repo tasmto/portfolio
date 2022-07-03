@@ -1,7 +1,7 @@
 import React from 'react';
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from './types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
@@ -23,7 +23,7 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
   return (
     <Link href={`/portfolio/${portfolio?.slug?.current}`}>
       <a
-        className={`px-6 relative min-h-[250px] py-16 md:py-20 overflow-hidden grid gap-6 bg-cover bg-center bg-no-repeat rounded-xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-primary-900/40 hover:before:backdrop-blur-sm before:hover:bg-primary-900/70 before:transition-colors before:duration-300 cursor-eye ${className}`}
+        className={`px-6 relative min-h-[250px] py-16 md:py-20 overflow-hidden grid gap-6 bg-cover bg-center bg-no-repeat rounded-xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-primary-900/60 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
         style={{
           backgroundImage: `url(${GetResourceUrl(
             portfolio?.bannerImage?.asset
@@ -69,11 +69,10 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
               type='text-light'
               size='large'
               className='pl-0 drop-shadow-md !text-slate-200 hover:!text-white transition-colors'
-              href={portfolio?.slug.current}
-              externalLink
+              href={`/portfolio/${portfolio?.slug.current}`}
               icon={IoArrowForwardOutline}
             >
-              View live project
+              Project case-study
             </Button>
           )}
         </div>

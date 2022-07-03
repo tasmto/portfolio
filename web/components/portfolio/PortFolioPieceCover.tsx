@@ -1,7 +1,7 @@
 import { SanityReference } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import React from 'react';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from './types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
@@ -18,23 +18,26 @@ type Props = {
 };
 
 const PortFolioPieceCover = ({ portfolio }: Props) => {
+  if (!portfolio?.bannerImage?.asset || portfolio?.productImage?.asset)
+    return null;
   return (
     <div className='grid gap-6 md:gap-10'>
       <div className='bg-primary-900 shadow-xl overflow-hidden rounded-2xl border'>
         <article className='px-6 relative min-h-[250px] py-16 md:pt-24 lg:pt-32 md:pb-20 overflow-hidden grid content-center gap-6'>
           <motion.div
             className='w-full h-full absolute top-0 left-0 bg-cover bg-center
-            bg-no-repeat opacity-80'
+            bg-no-repeat opacity-60 '
             style={{
               // y: y2,
               backgroundImage: `url(${GetResourceUrl(
                 portfolio?.bannerImage?.asset
-                  ? portfolio.bannerImage.asset
+                  ? portfolio.bannerImage?.asset
                   : portfolio?.productImage?.asset
               )
                 .width(1080)
                 .height(500)
                 .fit('max')
+                .blur(5)
                 .auto('format')
                 .url()})`,
             }}

@@ -2,15 +2,19 @@ import PortableText, { blockContentToPlainText } from 'react-portable-text';
 import Image from 'next/image';
 import React from 'react';
 import {
+  ButtonType,
   CodeEmbedType,
+  IframeEmbedType,
   PortfolioPieceType,
   TextImageType,
-} from '../../pages/portfolio/types';
+} from '../portfolio/types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 import CodeTextEmbedBlock from './custom-blocks/CodeTextEmbedBlock';
 import NormalTextBlock from './custom-blocks/NormalTextBlock';
 import TextImageBlock from './custom-blocks/TextImageBlock';
+import ButtonBlock from './custom-blocks/ButtonBlock';
+import IframeEmbed from './custom-blocks/IframeEmbed';
 
 const ptComponents = {
   image: ({ value }: any) => {
@@ -33,8 +37,18 @@ const ptComponents = {
   codeEmbed: ({ value }: { value: CodeEmbedType }) => (
     <CodeTextEmbedBlock content={value} />
   ),
+  button: ({ value }: { value: ButtonType }) => <ButtonBlock content={value} />,
   normalText: ({ value }: any) => <NormalTextBlock content={value} />,
-
+  link: ({ children, value }: any) => (
+    <a
+      href={value.href}
+      target='_blank'
+      rel='noreferrer'
+      className='text-primary-600 hover:text-primary-500 underline underline-offset-1'
+    >
+      {children}
+    </a>
+  ),
   block: {
     // Ex. 1: customizing common block types
     h1: ({ children }: any) => (
@@ -77,7 +91,12 @@ const ptComponents = {
         ? 'noreferrer noopener'
         : undefined;
       return (
-        <a href={value.href} rel={rel}>
+        <a
+          href={value.href}
+          target='_blank'
+          rel={'noreferrer'}
+          className='text-primary-600 hover:text-primary-500 underline underline-offset-1'
+        >
           {children}
         </a>
       );
@@ -115,6 +134,20 @@ const PortableTextParser = ({ content, className }: Props) => {
         textImage: (value: TextImageType) => <TextImageBlock content={value} />,
         codeEmbed: (value: CodeEmbedType) => (
           <CodeTextEmbedBlock content={value} />
+        ),
+        iframeEmbed: (value: IframeEmbedType) => (
+          <IframeEmbed content={value} />
+        ),
+        button: (value: ButtonType) => <ButtonBlock content={value} />,
+        link: ({ children, href }: any) => (
+          <a
+            href={href}
+            target='_blank'
+            rel='noreferrer'
+            className='text-primary-600 hover:text-primary-500 underline underline-offset-1'
+          >
+            {children}
+          </a>
         ),
       }}
     />

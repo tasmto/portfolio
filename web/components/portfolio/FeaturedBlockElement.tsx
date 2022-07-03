@@ -7,7 +7,7 @@ import { TbRainbow } from 'react-icons/tb';
 import Button from '../button/Button';
 import Link from 'next/link';
 import Typography from '../typography/Typography';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from './types';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import PortableTextParser from '../portableTextBlocks/PortableTextParser';
 import { blockContentToPlainText } from 'react-portable-text';
@@ -35,7 +35,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
   return (
     <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
       <Link href={`/portfolio/${piece.slug.current}`}>
-        <div className='col-span-1 md:col-span-2 lg:col-span-3 cursor-eye'>
+        <a className='col-span-1 md:col-span-2 lg:col-span-3 relative before:block before:absolute before:top-0 before:w-full before:h-full before:bg-primary-900/0 hover:before:backdrop-blur-[2px] before:hover:bg-primary-900/20 before:transition-colors before:duration-300 before:z-10 cursor-eye '>
           <Image
             src={GetResourceUrl(
               piece?.productImage?.asset
@@ -53,14 +53,18 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
             className='object-center object-cover rounded-xl shadow-xl'
             alt=''
           />
-        </div>
+        </a>
       </Link>
       <div
         className={`col-span-1 lg:col-span-2 grid gap-4 content-start ${
           textFirst && 'md:order-first'
         }`}
       >
-        <Typography as='h2' size='display3' className='relative mb-4'>
+        <Typography
+          as='h2'
+          size='display3'
+          className='relative mb-4 mt-5 md:mt-0'
+        >
           {piece?.logo && (
             <img
               height={30}
@@ -154,7 +158,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
           </div>
         )}
         {(piece?.slug?.current || piece?.liveUrl) && (
-          <div className='grid gap-1 mt-5'>
+          <div className='grid gap-1 md:mt-5'>
             {piece?.liveUrl && (
               <Button
                 type='text-light'
@@ -162,6 +166,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
                 iconPosition='right'
                 href={piece?.liveUrl}
                 externalLink
+                className='pl-0'
               >
                 View Live Project
               </Button>
@@ -173,7 +178,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
                 icon={TbRainbow}
                 iconPosition='right'
                 href={`/portfolio/${piece?.slug?.current}`}
-                className='text-primary-100'
+                className='text-primary-100 pl-0'
               >
                 Case Study
               </Button>

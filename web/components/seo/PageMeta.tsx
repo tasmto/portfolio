@@ -8,13 +8,13 @@ type Props = {
 };
 
 const PageMeta = ({
-  title = 'Tashinga | Full Stack Developer',
+  title = 'Full Stack Developer',
   description = 'Tashinga is a full stack developer who specializes in JavaScript, React, Node, and MongoDB.',
   favicon = '/favicon.ico',
 }: Props) => {
   return (
     <Head>
-      <title>{title}</title>
+      <title>Tashinga | {title}</title>
       <meta name='description' content={description} />
       <link rel='icon' href={favicon} />
     </Head>

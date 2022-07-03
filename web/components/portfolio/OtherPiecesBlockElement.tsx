@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { Ref, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Typography from '../typography/Typography';
-import { PortfolioPieceType } from '../../pages/portfolio/types';
+import { PortfolioPieceType } from './types';
 import subDivideArray from '../../utilities/subDivideArray';
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Link from 'next/link';
@@ -83,8 +83,15 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
         {portfolioRows.map((row, i, arr) => {
           return (
             <div
-              className={`grid grid-cols-${row.length}
-              auto-rows-fr gap-4 w-full h-full`}
+              className={`grid ${
+                row.length === 1
+                  ? 'grid-cols-1'
+                  : row.length === 2
+                  ? 'grid-cols-2'
+                  : row.length === 3
+                  ? 'grid-cols-3'
+                  : 'grid-cols-4'
+              } auto-rows-fr gap-4 w-full h-full`}
               key={i}
             >
               {row.map((content, j) => {
