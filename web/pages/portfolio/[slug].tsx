@@ -121,7 +121,7 @@ const PortfolioPiece = ({ piece }: Props) => {
         <div className='w-full h-full max-w-[100vw] min-h-[80vh] grid items-center gap-10 overflow-x-hidden bg-primary-700 py-20 text-white snap-start'>
           <section className='container-2 grid gap-4 w-full'>
             <Divider type='solid' />
-            <div className='flex flex-wrap gap-10 justify-between items-center'>
+            <div className='flex flex-wrap gap-4 md:gap-10 justify-between items-center'>
               <Typography size='h3' as='h3'>
                 Thank you so much for checking out this project!
               </Typography>

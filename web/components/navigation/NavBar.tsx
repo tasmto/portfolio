@@ -6,7 +6,7 @@ import {
   IoChatbubble,
   IoChatbubbleOutline,
   IoNewspaper,
-  IoNewspaperOutline,
+  IoDocumentTextOutline,
   IoBrowsers,
   IoBrowsersOutline,
 } from 'react-icons/io5';
@@ -43,7 +43,7 @@ const NavBar = ({}: Props) => {
     {
       href: '/#career-highlights',
       text: 'My CV',
-      icon: <IoNewspaperOutline className='w-full h-full' />,
+      icon: <IoDocumentTextOutline className='w-full h-full' />,
       iconActive: IoNewspaper,
     },
     {

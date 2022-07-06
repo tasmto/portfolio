@@ -64,7 +64,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
                   width={500}
                   height={500}
                   layout='intrinsic'
-                  className='object-center object-cover'
+                  className='object-center object-contain'
                   alt=''
                 />
               </div>
@@ -99,13 +99,14 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
           id='career-highlights'
         >
           <article>
-            <div className='grid gap-5'>
+            <div className='grid gap-3 md:gap-5'>
               <Typography size='h1' as='h2'>
-                I have been in the industry for over 4 years....
+                I have been in the industry for over 4 years.
               </Typography>
-              <Typography size='body1' className='max-w-[30rem]'>
-                Fast and scalable hosting, advanced secuNow we can update text
-                and images on some of our.
+              <Typography size='body1' className='max-w-[40rem]'>
+                From e-commerce to ed-tech to marketing and even medical
+                technologies, I have a wealth of experience in developing user
+                focussed and modern applications for the web.
               </Typography>
             </div>
           </article>
@@ -114,7 +115,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
           </div>
           <div
             aria-hidden='true'
-            className='md:hidden mb-10 flex justify-center
+            className='md:hidden mb-10 mt-[-12px] flex justify-center
             '
           >
             <Button
@@ -222,7 +223,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
                     width={50}
                     height={50}
                     layout='intrinsic'
-                    className='object-contain'
+                    className='object-contain w-14 h-14'
                     alt=''
                   />
                 </a>

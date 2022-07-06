@@ -6,6 +6,15 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Manrope',
+        'Helvetica',
+        'ui-sans-serif',
+        'system-ui',
+        'sans-serif',
+      ],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

@@ -47,7 +47,7 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
               }
             />
           ))}
-          <article className='w-full h-full p-8 md:px-10 md:py-10 bg-primary-50/50 rounded-xl border-2 border-dashed flex flex-col gap-4 justify-center '>
+          <article className='w-full h-full p-8 md:px-10 md:py-10 bg-primary-50/20 rounded-xl border-2 border-dashed flex flex-col gap-4 justify-center '>
             <Typography size='body2' bold className='mb-[-13px] opacity-80'>
               Your project goes here:
             </Typography>

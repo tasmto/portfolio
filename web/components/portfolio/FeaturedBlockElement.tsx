@@ -56,7 +56,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
         </a>
       </Link>
       <div
-        className={`col-span-1 lg:col-span-2 grid gap-4 content-start ${
+        className={`col-span-1 lg:col-span-2 grid gap-1 md:gap-4 content-start ${
           textFirst && 'md:order-first'
         }`}
       >
@@ -76,7 +76,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
                 .auto('format')
                 .url()}
               // layout='intrinsic'
-              className='object-start object-contain h-8 object-left brightness-150'
+              className='object-start object-contain h-8 object-left '
               alt=''
             />
           )}
@@ -158,7 +158,7 @@ const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
           </div>
         )}
         {(piece?.slug?.current || piece?.liveUrl) && (
-          <div className='grid gap-1 md:mt-5'>
+          <div className='grid gap-1 mt-3 md:mt-5'>
             {piece?.liveUrl && (
               <Button
                 type='text-light'

@@ -78,7 +78,7 @@ const ResumeTabsElement = (props: Props) => {
               key={index}
               type={index === activeTab ? 'primary' : 'tertiary'}
               size='small'
-              className='flex flex-col gap-0 text-start !items-start rounded-l-xl'
+              className='flex flex-col gap-0 text-start !items-start rounded-l-xl rounded-r-none'
             >
               <Typography as='span' size='caption'>
                 {content.company} | {content.startDate} - {content.endDate}

@@ -56,9 +56,10 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
             </span>
           </Typography>
           <Typography
+            bold
             size='display3'
             as='h1'
-            className='text-white tracking-tight drop-shadow-lg max-w-2xl'
+            className='text-white tracking-tight drop-shadow-md max-w-2xl'
           >
             {portfolio.projectName} — {portfolio.projectSubtitle}
           </Typography>

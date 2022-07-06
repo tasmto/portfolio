@@ -60,6 +60,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
               </span>
             </Typography>
             <Typography
+              bold
               size='display1'
               as='h1'
               className='text-white tracking-tight drop-shadow-md max-w-2xl'

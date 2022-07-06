@@ -13,7 +13,7 @@ type Props = {
  * @description Wrapper for the site, includes global stuff Redux stores etc if needed.
  */
 const SiteWrapper = ({ children }: Props) => {
-  LogRocket.init('fjdwny/portfolio');
+  if (process.env.NODE_ENV === 'production') LogRocket.init('fjdwny/portfolio');
   return (
     <>
       <PageMeta />
@@ -23,7 +23,11 @@ const SiteWrapper = ({ children }: Props) => {
       >
         <NavBar />
         <main id='#content'>
-          <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
+          {process.env.NODE_ENV === 'production' ? (
+            <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
+          ) : (
+            <>{children}</>
+          )}
         </main>
         <Footer />
       </div>
