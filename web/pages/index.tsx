@@ -123,7 +123,7 @@ const Home = ({ portfolioPieces, technologies }: Props) => {
               type='primary'
               width='block'
               icon={IoDownloadOutline}
-              href='/Tashinga-Mtoko-Frontend-Developer-CV.pdf'
+              href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
               download
             >
               Download My CV

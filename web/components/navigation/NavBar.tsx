@@ -81,7 +81,7 @@ const NavBar = ({}: Props) => {
             <li key={i}>
               <Link href={link.href}>
                 <a
-                  className={` text-slate-800 font-medium hover:text-primary-700 transition-colors ${
+                  className={` text-slate-800 font-medium hover:text-primary-500 transition-colors ${
                     router.pathname === link.href && 'text-primary-800 '
                   }`}
                 >
@@ -97,7 +97,7 @@ const NavBar = ({}: Props) => {
               size='small'
               type='tertiary'
               icon={IoDownloadOutline}
-              href='/Tashinga-Mtoko-Frontend-Developer-CV.pdf'
+              href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
               download
             >
               My CV
