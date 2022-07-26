@@ -6,6 +6,7 @@ import { IoSend } from 'react-icons/io5';
 import { useForm, ValidationError } from '@formspree/react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Typography from '../typography/Typography';
+import GoogleCaptchaWrapper from '../captcha/GoogleCaptchaWrapper';
 
 type Props = {};
 
@@ -41,58 +42,60 @@ const ContactForm = (props: Props) => {
     );
   else
     return (
-      <form
-        method='POST'
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(formData);
-          console.log(state);
-        }}
-      >
-        <TextInput
-          label='What is your name?'
-          onChange={handleChange}
-          name='name'
-          value={formData.name}
-          required
-        />
-        <ValidationError prefix='Name' field='name' errors={state.errors} />
-        <TextInput
-          label='What is your email?'
-          onChange={handleChange}
-          name='email'
-          value={formData.email}
-          required
-          type='email'
-        />
-        <ValidationError prefix='Email' field='email' errors={state.errors} />
-        <TextArea
-          label='What do you want to talk about?'
-          onChange={handleChange}
-          name='message'
-          value={formData.message}
-          required
-        />
-        <ValidationError
-          prefix='Message'
-          field='message'
-          errors={state.errors}
-        />
-        <Button
-          disabled={
-            formData.email === '' ||
-            formData.name === '' ||
-            formData.message === ''
-          }
-          size='large'
-          type='primary'
-          width='block'
-          icon={IoSend}
-          className='mt-8'
+      <GoogleCaptchaWrapper>
+        <form
+          method='POST'
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(formData);
+            console.log(state);
+          }}
         >
-          {state.submitting ? 'Loading' : 'Send'}
-        </Button>
-      </form>
+          <TextInput
+            label='What is your name?'
+            onChange={handleChange}
+            name='name'
+            value={formData.name}
+            required
+          />
+          <ValidationError prefix='Name' field='name' errors={state.errors} />
+          <TextInput
+            label='What is your email?'
+            onChange={handleChange}
+            name='email'
+            value={formData.email}
+            required
+            type='email'
+          />
+          <ValidationError prefix='Email' field='email' errors={state.errors} />
+          <TextArea
+            label='What do you want to talk about?'
+            onChange={handleChange}
+            name='message'
+            value={formData.message}
+            required
+          />
+          <ValidationError
+            prefix='Message'
+            field='message'
+            errors={state.errors}
+          />
+          <Button
+            disabled={
+              formData.email === '' ||
+              formData.name === '' ||
+              formData.message === ''
+            }
+            size='large'
+            type='primary'
+            width='block'
+            icon={IoSend}
+            className='mt-8'
+          >
+            {state.submitting ? 'Loading' : 'Send'}
+          </Button>
+        </form>
+      </GoogleCaptchaWrapper>
     );
 };
 

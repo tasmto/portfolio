@@ -12,7 +12,7 @@ const ButtonBlock = ({ content }: Props) => {
   if (!content.link) return null;
 
   return (
-    <section className='p-8 md:px-14 md:py-10 bg-primary-50/50 rounded-2xl flex flex-col md:flex-row justify-between gap-6 w-full'>
+    <section className='p-8 md:px-14 md:py-10 bg-primary-50/50 rounded-2xl flex flex-col md:flex-row justify-between gap-6 w-full container-2'>
       <div className='grid gap-3'>
         {content?.subheading && (
           <Typography as='h3' size='body2' bold className='opacity-80'>

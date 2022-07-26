@@ -19,8 +19,8 @@ const TextImageBlock = ({ content }: Props) => {
   const { description, heading, image, link, linkText, textLast } = content;
   if (!image?.asset?._ref) return null;
   return (
-    <section className='grid grid-cols-1 md:grid-cols-5 items-center gap-10 md:gap-8'>
-      <div className='col-span-3 shadow-xl border border-gray-200 rounded-lg'>
+    <section className='grid grid-cols-1 md:grid-cols-5 items-center gap-5 md:gap-10 relative  w-full max-w-[120rem] m-auto sm:px-4 px-2 md:px-0'>
+      <div className='col-span-3  border border-gray-200 rounded-3xl w-full'>
         <Image
           src={GetResourceUrl(image?.asset?._ref)
             .width(1280)
@@ -36,8 +36,10 @@ const TextImageBlock = ({ content }: Props) => {
         />
       </div>
       <div
-        className={`col-span-2 grid gap-5 md:gap-8 md:max-w-sm md:self-center md:justify-self-center ${
-          textLast ? 'order-last' : 'order-first'
+        className={`col-span-2 grid gap-4 md:gap-8 md:max-w-sm md:self-center order-first ${
+          textLast
+            ? 'md:order-last md:justify-self-start  md:pr-8'
+            : 'md:order-first md:justify-self-end md:pl-8 '
         }`}
       >
         {heading && (

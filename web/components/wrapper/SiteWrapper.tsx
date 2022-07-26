@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleCaptchaWrapper from '../captcha/GoogleCaptchaWrapper';
 import Footer from '../navigation/Footer';
 import NavBar from '../navigation/NavBar';
 import PageMeta from '../seo/PageMeta';
@@ -22,13 +21,7 @@ const SiteWrapper = ({ children }: Props) => {
         className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mt-[70px] md:mb-0 md:gap-32 selection:bg-primary-500 selection:text-primary-100 relative'
       >
         <NavBar />
-        <main id='#content'>
-          {process.env.NODE_ENV === 'production' ? (
-            <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
-          ) : (
-            <>{children}</>
-          )}
-        </main>
+        <main id='#content'>{children}</main>
         <Footer />
       </div>
     </>

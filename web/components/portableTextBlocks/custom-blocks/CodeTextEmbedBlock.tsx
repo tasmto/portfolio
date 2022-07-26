@@ -12,13 +12,13 @@ type Props = {
 const CodeTextEmbedBlock = ({ content }: Props) => {
   const { heading, description, code, link, linkText } = content;
   return (
-    <section className='grid gap-6 md:gap-7'>
+    <section className='grid gap-6 md:gap-7 container-2 w-full'>
       {heading && (
         <Typography as='h2' size='h2'>
           {heading}
         </Typography>
       )}
-      <div className='overflow-hidden max-h-96 rounded-lg border-slate-200 border'>
+      <div className='overflow-hidden max-h-96 w-full rounded-lg border-slate-200 border'>
         <CodeParser code={code.code} language={code.language} />
       </div>
       <div className='flex gap-4'>

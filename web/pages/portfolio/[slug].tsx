@@ -27,11 +27,11 @@ const PortfolioPiece = ({ piece }: Props) => {
     <>
       <PageMeta title={piece?.projectName || 'Portfolio'} />
       <PageScrollLine />
-      <div className='bg-slate-50/20 text-gray-900 snap-proximity snap-y  grid gap-16 md:gap-24 '>
-        <div className='container-1 grid gap-16 mt-8 lg:gap-24 snap-start'>
+      <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 '>
+        <div className='grid gap-16 mt-8 lg:gap-24 snap-start'>
           <PortFolioPieceCover portfolio={piece} />
 
-          <div className='grid gap-10 md:gap-20 container-3'>
+          <div className='grid gap-10 md:gap-14 container-2'>
             {piece?.brief && (
               <article className='grid gap-6'>
                 <Typography
@@ -41,7 +41,7 @@ const PortfolioPiece = ({ piece }: Props) => {
                 >
                   The brief/ challenge
                 </Typography>
-                <Typography size='body2' as='div'>
+                <Typography size='body2' as='div' className='text-gray-700'>
                   <PortableTextParser content={piece?.brief} />
                 </Typography>
               </article>
@@ -65,61 +65,16 @@ const PortfolioPiece = ({ piece }: Props) => {
             <TechStacksCards technologies={piece?.technologies} />
             <Divider type='dotted' prominent />
           </div>
-          {piece?.productImage?.asset && (
-            <figure className='grid gap-4'>
-              <a
-                href={piece?.liveUrl || piece?.repoUrl || 'javascript:void(0)'}
-                target={(piece?.liveUrl || piece?.repoUrl) && '_blank'}
-                rel='noreferrer'
-                className='block'
-              >
-                <Image
-                  src={GetResourceUrl(piece?.productImage.asset)
-                    .width(1280)
-                    .height(720)
-                    .fit('max')
-                    .auto('format')
-                    .url()}
-                  alt=''
-                  className='rounded-xl shadow-primary-200/10 border border-gray-200'
-                  loading='lazy'
-                  width={1280}
-                  height={720}
-                />
-              </a>
-              <div className='flex gap-4 text-slate-400 items-center container-3 w-full'>
-                <IoCamera className='w-5 h-5' />
-                <Typography as='figcaption' size='body3'>
-                  An Image of the final product
-                  {(piece?.liveUrl || piece?.repoUrl) && (
-                    <a
-                      href={
-                        piece?.liveUrl || piece?.repoUrl || 'javascript:void(0)'
-                      }
-                      target='_blank'
-                      rel='noreferrer'
-                      className='text-primary-200 hover:text-primary-300 font-medium underline underline-offset-8'
-                    >
-                      {piece?.liveUrl
-                        ? ' view live project'
-                        : ' view the github repo'}
-                    </a>
-                  )}
-                  .
-                </Typography>
-              </div>
-            </figure>
-          )}
 
           {piece?.body && (
             <PortableTextParser
               content={piece?.body}
-              className={'grid gap-14 md:gap-22 lg:gap-24 container-3'}
+              className={'grid gap-14 md:gap-22 lg:gap-24 '}
             />
           )}
         </div>
         <div className='w-full h-full max-w-[100vw] min-h-[80vh] grid items-center gap-10 overflow-x-hidden bg-primary-700 py-20 text-white snap-start'>
-          <section className='container-2 grid gap-4 w-full'>
+          <section className='container-1 grid gap-4 w-full'>
             <Divider type='solid' />
             <div className='flex flex-wrap gap-4 md:gap-10 justify-between items-center'>
               <Typography size='h3' as='h3'>
@@ -152,9 +107,6 @@ const PortfolioPiece = ({ piece }: Props) => {
             <Divider type='solid' className='mb-10' />
             <RecommendedProjectsCards projects={piece?.relatedProjects} />
           </section>
-        </div>
-        <div className='container-1  grid gap-16 md:gap-24 w-full'>
-          <FooterSecondaryContactCard />
         </div>
       </div>
     </>
