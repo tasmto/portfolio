@@ -1,0 +1,13 @@
+{
+  "name": "tasmto-portfolio",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "web": "yarn workspace web dev",
+    "studio": "yarn workspace web start"
+  }
+}
