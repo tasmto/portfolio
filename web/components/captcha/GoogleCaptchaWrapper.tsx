@@ -8,7 +8,7 @@ const GoogleCaptchaWrapper = ({ children }: Props) => {
   if (process.env.NODE_ENV === 'production')
     return (
       <GoogleReCaptchaProvider
-        reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY || ''}
+        reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
         useRecaptchaNet={true}
         scriptProps={{
           async: true, // optional, default to false,
@@ -20,7 +20,7 @@ const GoogleCaptchaWrapper = ({ children }: Props) => {
         {children}
       </GoogleReCaptchaProvider>
     );
-  return <>{children}</>;
+  else return <>{children}</>;
 };
 
 export default GoogleCaptchaWrapper;
