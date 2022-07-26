@@ -5,7 +5,7 @@ type Props = {
 };
 
 const GoogleCaptchaWrapper = ({ children }: Props) => {
-  if (process.env.NODE_ENV === 'production')
+  if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
     return (
       <GoogleReCaptchaProvider
         reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}

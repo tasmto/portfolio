@@ -12,7 +12,8 @@ type Props = {
  * @description Wrapper for the site, includes global stuff Redux stores etc if needed.
  */
 const SiteWrapper = ({ children }: Props) => {
-  if (process.env.NODE_ENV === 'production') LogRocket.init('fjdwny/portfolio');
+  if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
+    LogRocket.init('fjdwny/portfolio');
   return (
     <>
       <PageMeta />
