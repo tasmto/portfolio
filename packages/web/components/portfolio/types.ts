@@ -144,7 +144,7 @@ export type PortfolioPieceType = {
     projectSubtitle: string;
     slug: SanitySlug;
   }[];
-  relatedArticles: any[];
+  relatedPosts: any[];
 
   // Meta
   _createdAt: string;

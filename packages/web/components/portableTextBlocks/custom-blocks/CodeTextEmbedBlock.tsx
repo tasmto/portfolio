@@ -12,7 +12,7 @@ type Props = {
 const CodeTextEmbedBlock = ({ content }: Props) => {
   const { heading, description, code, link, linkText } = content;
   return (
-    <section className='grid gap-6 md:gap-7 container-2 w-full'>
+    <section className='grid gap-6 md:gap-7 container-1 w-full'>
       {heading && (
         <Typography as='h2' size='h2'>
           {heading}

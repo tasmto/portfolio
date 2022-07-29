@@ -7,16 +7,20 @@
 @layer components {
   /* Prettier-ignore */
   .container {
-    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2;
+    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2 w-full;
   }
   .container-1 {
-    @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2;
+    @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;
   }
   .container-2 {
-    @apply max-w-4xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2;
+    @apply max-w-4xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;
   }
   .container-3 {
-    @apply max-w-3xl md:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2;
+    @apply max-w-3xl md:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;
+  }
+
+  .link {
+    @apply after:pointer-events-none break-before-avoid text-primary-700 cursor-pointer hover:text-primary-900 relative after:translate-x-1/2 after:right-1/2 after:block after:absolute after:bottom-[-3px] after:border after:border-dashed after:bg-transparent  after:border-slate-400 hover:after:border-primary-800 hover:after:bottom-[-5px] after:transition-all after:w-full;
   }
 }
 

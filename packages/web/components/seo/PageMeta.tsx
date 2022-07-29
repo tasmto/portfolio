@@ -14,7 +14,7 @@ const PageMeta = ({
 }: Props) => {
   return (
     <Head>
-      <title>{`Tashinga | ${title}`}</title>
+      <title>{`${title} | Tashinga`}</title>
       <meta name='description' content={description} />
       <link rel='icon' href={favicon} />
     </Head>

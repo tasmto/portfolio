@@ -11,10 +11,15 @@ import {
 import GetResourceUrl from '../sanityio/GetResourceURL';
 import Typography from '../typography/Typography';
 import CodeTextEmbedBlock from './custom-blocks/CodeTextEmbedBlock';
-import NormalTextBlock from './custom-blocks/NormalTextBlock';
+import NormalTextBlock, {
+  PlainTextType,
+} from './custom-blocks/NormalTextBlock';
 import TextImageBlock from './custom-blocks/TextImageBlock';
 import ButtonBlock from './custom-blocks/ButtonBlock';
 import IframeEmbed from './custom-blocks/IframeEmbed';
+import CustomListBlock, {
+  CustomListType,
+} from './custom-blocks/CustomList.tsx';
 
 const ptComponents = {
   image: ({ value }: any) => {
@@ -132,6 +137,12 @@ const PortableTextParser = ({ content, className }: Props) => {
         ),
         ul: ({ children }: any) => <ul className=''>{children}</ul>,
         textImage: (value: TextImageType) => <TextImageBlock content={value} />,
+        customList: (value: CustomListType) => (
+          <CustomListBlock content={value} />
+        ),
+        plainText: (value: PlainTextType) => (
+          <NormalTextBlock content={value} />
+        ),
         codeEmbed: (value: CodeEmbedType) => (
           <CodeTextEmbedBlock content={value} />
         ),
@@ -140,12 +151,7 @@ const PortableTextParser = ({ content, className }: Props) => {
         ),
         button: (value: ButtonType) => <ButtonBlock content={value} />,
         link: ({ children, href }: any) => (
-          <a
-            href={href}
-            target='_blank'
-            rel='noreferrer'
-            className='text-primary-600 hover:text-primary-500 underline underline-offset-1'
-          >
+          <a href={href} target='_blank' rel='noreferrer' className='link'>
             {children}
           </a>
         ),

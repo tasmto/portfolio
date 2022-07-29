@@ -11,9 +11,9 @@ type Props = {
 const IframeEmbed = ({ content }: Props) => {
   if (!content.iframeLink) return null;
   return (
-    <section className='grid gap-6 md:gap-7 container-2'>
+    <section className='grid gap-6 md:gap-7 container-1 w-full'>
       {content?.heading && (
-        <Typography as='h2' size='h2'>
+        <Typography as='h2' size='h2' bold>
           {content?.heading}
         </Typography>
       )}

@@ -10,6 +10,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,14 +20,16 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'coverImage',
+      title: 'Cover image',
       type: 'image',
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'categories',
@@ -38,6 +41,13 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    },
+    {
+      name: 'extract',
+      title: 'A summary of the post.',
+      type: 'string',
+      description: 'In a few sentences, describe the post.',
+      validation: (Rule) => Rule.required().max(200),
     },
     {
       name: 'body',
@@ -53,6 +63,12 @@ export default {
         { type: 'button' },
         { type: 'imageEmbed' },
       ],
+    },
+    {
+      name: 'relatedPosts',
+      title: 'Related blog posts (series only).',
+      type: 'reference',
+      to: [{ type: 'postSeries' }],
     },
     {
       name: 'customSEO',
@@ -72,7 +88,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      media: 'coverImage',
     },
   },
 };

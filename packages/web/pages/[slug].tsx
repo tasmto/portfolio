@@ -22,7 +22,7 @@ const PortfolioPiece = ({ data }: Props) => {
           className={'grid gap-14 md:gap-22 lg:gap-24 w-full'}
         />
       )}
-      <Divider type='dotted' prominent />
+
       <FooterSecondaryContactCard />
     </div>
   );

@@ -42,13 +42,13 @@ const Typography = ({
 }: Props) => {
   const Element = as;
   const classes = {
-    display1: `text-5xl md:text-6xl leading-tight tracking-tight ${
+    display1: `text-5xl md:text-6xl leading-tighter tracking-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
-    display2: `text-4xl md:text-5xl leading-tight  tracking-tight ${
+    display2: `text-4xl md:text-5xl leading-tighter  tracking-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
-    display3: `text-3xl md:text-4xl leading-tight  tracking-tight ${
+    display3: `text-3xl md:text-4xl leading-tighter  tracking-tight ${
       bold ? 'font-bold' : 'font-medium'
     } `,
     h1: `text-3xl md:text-4xl tracking-tight ${

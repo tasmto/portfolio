@@ -146,7 +146,7 @@ export default {
       of: [{ type: 'reference', to: { type: 'portfolio' } }],
     },
     {
-      name: 'relatedArticles',
+      name: 'relatedPosts',
       title: 'Related blog posts (series only).',
       type: 'reference',
       to: [{ type: 'postSeries' }],

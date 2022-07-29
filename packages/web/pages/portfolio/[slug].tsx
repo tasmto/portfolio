@@ -1,6 +1,6 @@
 import client from '../../client';
 import groq from 'groq';
-import PortFolioPieceCover from '../../components/portfolio/PortFolioPieceCover';
+import PortFolioPieceCover from '../../components/portfolio/Cover';
 import PageScrollLine from '../../components/pagescroll-tracker/PageScrollLine';
 import { PortfolioPieceType } from '../../components/portfolio/types';
 import PortableTextParser from '../../components/portableTextBlocks/PortableTextParser';
@@ -82,22 +82,12 @@ const PortfolioPiece = ({ piece }: Props) => {
               </Typography>
               <div className='flex gap-4'>
                 {piece?.repoUrl && (
-                  <Button
-                    type='tertiary'
-                    size='small'
-                    href={piece?.repoUrl}
-                    externalLink
-                  >
+                  <Button type='tertiary' href={piece?.repoUrl} externalLink>
                     View the code
                   </Button>
                 )}
                 {piece?.liveUrl && (
-                  <Button
-                    type='primary'
-                    size='small'
-                    href={piece?.liveUrl}
-                    externalLink
-                  >
+                  <Button type='primary' href={piece?.liveUrl} externalLink>
                     View the live project
                   </Button>
                 )}

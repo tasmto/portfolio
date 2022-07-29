@@ -1,30 +1,38 @@
 import React from 'react';
 import Button from '../../button/Button';
 import Typography from '../../typography/Typography';
+import PortableTextParser from '../PortableTextParser';
+
+export type PlainTextType = {
+  description?: any;
+  heading?: string;
+  subheading?: string;
+  link?: string;
+  linkText?: string;
+};
 
 type Props = {
-  content: {
-    description?: string;
-    heading?: string;
-    link?: string;
-    linkText?: string;
-  };
+  content: PlainTextType;
 };
 
 const NormalTextBlock = ({ content }: Props) => {
+  console.log(content);
   return (
-    <section className='max-w-2xl mx-auto grid gap-6 container-2'>
-      {content.heading && (
-        <Typography as='h2' size='h3'>
+    <section className='w-full grid gap-4 container-2'>
+      {content?.heading && (
+        <Typography as='h2' size='h1'>
           {content.heading}
         </Typography>
       )}
-      {content.description && (
-        <Typography as='p' size='body1'>
-          {content.description}
+      {content?.subheading && (
+        <Typography as='h3' size='h3'>
+          {content.subheading}
         </Typography>
       )}
-      {content.link && (
+      {content?.description && (
+        <PortableTextParser content={content.description} />
+      )}
+      {content?.link && (
         <Button href={content.link} externalLink size='large' type='tertiary'>
           {content.linkText || 'Learn More'}
         </Button>

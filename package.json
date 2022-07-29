@@ -8,6 +8,6 @@
   },
   "scripts": {
     "web": "yarn workspace web dev",
-    "studio": "yarn workspace web start"
+    "studio": "yarn workspace studio start"
   }
 }

@@ -66,8 +66,8 @@ const NavBar = ({}: Props) => {
         Skip to content
       </a>
       <nav
-        className={`sr-only ${tailWindBreakPoint}:not-sr-only md:not-sr-only 
-       flex justify-between items-center gap-8 container-1 ${tailWindBreakPoint}:px-6 md:px-6 lg:px-8 xl:px-0 z-50`}
+        className={`sr-only md:not-sr-only 
+       flex justify-between items-center gap-8 !container-1 z-50`}
       >
         <h1 className='flex-none font-bold text-primary-900 tracking-tighter text-3xl'>
           <Link href='/'>

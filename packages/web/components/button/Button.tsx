@@ -46,8 +46,8 @@ const Button = ({
     size === 'large'
       ? 'px-6 py-3 text-lg'
       : size === 'small'
-      ? 'px-3 py-2 text-lg'
-      : 'px-2 py-1 text-lg'
+      ? 'px-2 py-1 text-lg'
+      : 'px-3 py-2 text-lg'
   } ${
     type === 'primary'
       ? ` bg-primary-600 text-primary-50 hover:bg-primary-800`

@@ -62,7 +62,7 @@ const ResumeTabsElement = (props: Props) => {
     <div className='grid grid-cols-5 gap-3 w-full content-stretch'>
       <aside
         aria-controls='cv-content'
-        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-3xl from-primary-50 to-primary-100/70 border border-primary-100 grid gap-5 col-span-2'
+        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-3xl from-primary-50 to-primary-100/70 border border-primary-100 grid gap-5 col-span-2 '
       >
         <Typography as='p' size='caption' className='text-gray-600'>
           * Click on any of the tabs below to view a breakdown
@@ -105,7 +105,7 @@ const ResumeTabsElement = (props: Props) => {
       </aside>
       <article
         id='cv-content'
-        className='p-6 py-10 bg-gradient-to-tr rounded-r-3xl from-tertiary-200 to-tertiary-50  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800'
+        className='p-6 py-10 bg-gradient-to-tr rounded-r-3xl from-secondary-200 to-secondary-50  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800 border border-secondary-300'
       >
         <Typography as='p' size='body1'>
           {resumeContent[activeTab].startDate}
