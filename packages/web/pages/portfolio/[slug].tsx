@@ -28,7 +28,7 @@ const PortfolioPiece = ({ piece }: Props) => {
       <PageMeta title={piece?.projectName || 'Portfolio'} />
       <PageScrollLine />
       <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 '>
-        <div className='grid gap-16 mt-8 lg:gap-24 snap-start'>
+        <div className='grid gap-16 lg:gap-24 snap-start'>
           <PortFolioPieceCover portfolio={piece} />
 
           <div className='grid gap-10 md:gap-14 container-2'>

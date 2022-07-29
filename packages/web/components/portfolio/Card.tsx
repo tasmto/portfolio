@@ -45,11 +45,13 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
               <IoTodayOutline className='h-5 w-5' />
               <span>
                 {portfolio?.completedAt
-                  ? `Completed: 
-            ${new Date(portfolio?.completedAt).toLocaleDateString('en-US', {
-              month: 'long',
-              year: 'numeric',
-            })}`
+                  ? new Date(portfolio?.completedAt).toLocaleDateString(
+                      'en-US',
+                      {
+                        month: 'long',
+                        year: 'numeric',
+                      }
+                    )
                   : 'Ongoing'}
               </span>
             </>

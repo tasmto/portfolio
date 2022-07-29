@@ -18,7 +18,7 @@ const convertLanguageNameToAlias = (language: string): string => {
     case 'csharp':
       return 'c#';
     default:
-      return language;
+      return language || 'js';
   }
 };
 const CodeParser = ({ code, language }: Props) => {
@@ -29,7 +29,7 @@ const CodeParser = ({ code, language }: Props) => {
         title={language}
         aria-hidden={true}
       >
-        {convertLanguageNameToAlias(language).toUpperCase()}
+        {convertLanguageNameToAlias(language)?.toUpperCase()}
       </span>
       <SyntaxHighlighter
         language={language}

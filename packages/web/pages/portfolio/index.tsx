@@ -17,6 +17,7 @@ import {
 } from 'react-icons/io5';
 import FooterSecondaryContactCard from '../../components/navigation/FooterSecondaryContactCard';
 import PageMeta from '../../components/seo/PageMeta';
+import PageTitle from '../../components/pages/Title';
 
 type Props = {
   portfolioPieces: Array<PortfolioPieceType>;
@@ -26,22 +27,22 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
   return (
     <div className='mt-8 md:mt-32 grid gap-16 md:gap-24 container-1 text-gray-900'>
       <PageMeta title={'Portfolio'} />
-      <article className=' grid gap-6 max-w-3xl'>
-        <Typography size='display1' bold as='h1' className='tracking-tighter'>
-          Here are some of my favorite projects I've ever worked on.
-        </Typography>
-        <Typography size='body2' as='p'>
-          <Link href='contact'>
-            <a className='link'>Let me know </a>
-          </Link>{' '}
-          if you have any questions or if you need a{' '}
-          <Link href='/hi'>
-            <a className='link'>in-person demo</a>
-          </Link>{' '}
-          of any of my projects.
-        </Typography>
-      </article>
-      <Divider type='dashed' className='opacity-100 border-slate-600' />
+      <PageTitle
+        title="Here are some of my favorite projects I've ever worked on."
+        body={
+          <>
+            <Link href='contact'>
+              <a className='link'>Let me know if you have any questions</a>
+            </Link>{' '}
+            or if you need a{' '}
+            <Link href='/hi'>
+              <a className='link'>in-person demo</a>
+            </Link>{' '}
+            of any of my projects.
+          </>
+        }
+      />
+
       <section className='grid  gap-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 custom-portfolio-grid'>
           {portfolioPieces.map((piece, i) => (

@@ -105,7 +105,7 @@ const ResumeTabsElement = (props: Props) => {
       </aside>
       <article
         id='cv-content'
-        className='p-6 py-10 bg-gradient-to-tr rounded-r-3xl from-secondary-200 to-secondary-50  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800 border border-secondary-300'
+        className='p-6 py-10 rounded-r-3xl bg-secondary-100  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800 border border-secondary-300'
       >
         <Typography as='p' size='body1'>
           {resumeContent[activeTab].startDate}

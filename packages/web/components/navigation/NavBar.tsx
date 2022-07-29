@@ -25,11 +25,15 @@ const NavBar = ({}: Props) => {
     },
     {
       href: '/#career-highlights',
-      text: 'Career Highlights',
+      text: 'Career',
     },
     {
       href: '/hi',
       text: 'Book Meeting',
+    },
+    {
+      href: '/blog',
+      text: 'Blog',
     },
   ];
 
@@ -72,7 +76,7 @@ const NavBar = ({}: Props) => {
         <h1 className='flex-none font-bold text-primary-900 tracking-tighter text-3xl'>
           <Link href='/'>
             <a>
-              tash<span className='text-tertiary-600'>i</span>nga
+              tash<span className='text-primary-400'>i</span>nga
             </a>
           </Link>
         </h1>

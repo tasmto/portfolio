@@ -44,7 +44,8 @@ const PortfolioPiece = ({ piece }: Props) => {
   );
 };
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]`;
+const query = groq`*[_type == "post" && slug.current == $slug][0]{ ...,
+  "categories": categories[]->name,}`;
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.
 export const getStaticPaths = async () => {
@@ -62,15 +63,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   // Its important to default the slug so that it doesn't return undefined
   const { slug = '' }: { slug: string } = context.params;
-
   const piece = await client.fetch(query, { slug });
-
-  // Query 2 random pieces to show as related projects if there aren't any related projects
-  // if (!piece?.relatedProjects) {
-  //   piece.relatedProjects = await client.fetch(
-  //     groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{bannerImage,productImage, projectName, projectSubtitle, slug}`
-  //   );
-  // }
   return { props: { piece } };
 };
 

@@ -19,7 +19,7 @@ export type BlogPostType = {
   coverImage: SanityReferenceType;
   categories: {
     description: string;
-    name: string;
+    title: string;
     slug: SanitySlug;
   }[];
 

@@ -33,7 +33,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
           <section className='grid gap-10 justify-center'>
             <article className='w-full grid md:grid-cols-5 gap-10 content-center justify-items-center'>
               <div className='flex flex-col gap-5 self-center justify-self-center md:col-span-3 max-w-lg md:max-w-none'>
-                <Typography size='display1' as='h1' bold>
+                <Typography size='display1' as='h1'>
                   Hi, I'm Tashinga, a full-stack JavaScript developer.
                 </Typography>
                 <Typography
@@ -61,14 +61,15 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
                   </Link>
                 </div>
               </div>
-              <div className='hidden md:block col-span-2'>
+              <div className='hidden md:block col-span-2 '>
                 <Image
-                  src='/images/guide.gif'
-                  // src='/images/about-me-image-cluster.png'
-                  width={500}
-                  height={500}
+                  // src='/images/guide.gif'
+                  src='/images/about-me-image-cluster.png'
+                  width={450}
+                  height={450}
                   layout='intrinsic'
                   className='object-center object-contain'
+                  priority={true}
                   alt=''
                 />
               </div>
@@ -145,12 +146,14 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
             developer and a designer.
           </Typography>
         </article>
-        {blogPosts?.map((piece, i) => (
-          <BlogCard post={piece} key={i} />
-        ))}
+        <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
+          {blogPosts?.map((piece, i) => (
+            <BlogCard post={piece} key={i} />
+          ))}
+        </div>
       </section>
       <section
-        className='container-1 w-full border border-slate-200 bg-slate-200 bg-gradient-to-br from-slate-50 to-slate-200 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-3xl md:grid-cols-2'
+        className='container-1 w-full border border-slate-200 bg-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-3xl md:grid-cols-2'
         id='contact'
       >
         <div className='grid gap-3 content-start'>
@@ -272,7 +275,10 @@ const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
 const technologiesQuery = groq`*[_type == "technologies" && featured][] | order(featured desc){
  name, icon, description,featured
 }`;
-const blogQuery = groq`*[_type == "post"][0..5] | order(featured desc)`;
+const blogQuery = groq`*[_type == "post"][0..5] | order(featured desc){
+  ...,
+  "categories": categories[]->title,
+}`;
 
 export const getStaticProps = async () => {
   const portfolioPieces = await client.fetch(projectsQuery);
