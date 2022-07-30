@@ -1,6 +1,6 @@
-import '../styles/globals.css';
+import '../styles/styles.css';
 import type { AppProps } from 'next/app';
-import SiteWrapper from '../components/wrapper/SiteWrapper';
+import SiteWrapper from '../components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

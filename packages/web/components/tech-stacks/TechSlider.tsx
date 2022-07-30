@@ -1,25 +1,8 @@
 import React from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import styles from '../../styles/ScrollBar.module.css';
-import {
-  DiBootstrap,
-  DiCss3Full,
-  DiHtml5,
-  DiMongodb,
-  DiNodejsSmall,
-  DiReact,
-} from 'react-icons/di';
-import {
-  SiExpress,
-  SiFirebase,
-  SiMaterialui,
-  SiNextdotjs,
-  SiRedux,
-  SiTailwindcss,
-  SiTypescript,
-} from 'react-icons/si';
-import { PortfolioPieceType } from '../portfolio/types';
-import GetResourceUrl from '../sanityio/GetResourceURL';
+import GetResourceUrl from '../../utilities/GetResourceURL';
+import { PortfolioPieceType } from '../../features/portfolio/types';
 
 type Props = {
   technologies: PortfolioPieceType['technologies'];

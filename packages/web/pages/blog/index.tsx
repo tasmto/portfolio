@@ -1,19 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
 import groq from 'groq';
 import client from '../../client';
-import Image from 'next/image';
-import Typography from '../../components/typography/Typography';
-import Divider from '../../components/divider/Divider';
-import Button from '../../components/button/Button';
-import { IoChevronDown } from 'react-icons/io5';
-import FooterSecondaryContactCard from '../../components/navigation/FooterSecondaryContactCard';
-import PageMeta from '../../components/seo/PageMeta';
-import { BlogPostType } from '../../components/blog/types';
-import GetResourceUrl from '../../components/sanityio/GetResourceURL';
-import PageTitle from '../../components/pages/Title';
-import BlogCard from '../../components/blog/Card';
+import FooterSecondaryContactCard from '../../features/navigation/components/FooterCard';
+import PageMeta from '../../components/seo/Seo';
+import PageTitle from '../../features/pages/components/Title';
+import BlogCard from '../../features/blog/components/Card';
+import { BlogPostType } from '../../features/blog/types';
 
 type Props = {
   posts: Array<BlogPostType>;

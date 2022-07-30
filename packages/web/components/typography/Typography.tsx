@@ -22,7 +22,7 @@ type Props = {
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   role?: string;
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 /**
  * @param size - The size of the text.

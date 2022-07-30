@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import React, { Children, useRef } from 'react';
+import React, { useRef } from 'react';
 import { IconType } from 'react-icons';
 
 type Props = {

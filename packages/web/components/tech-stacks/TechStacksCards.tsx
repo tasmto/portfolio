@@ -1,8 +1,6 @@
-import Image from 'next/image';
-import { title } from 'process';
 import React from 'react';
-import { PortfolioPieceType } from '../portfolio/types';
-import GetResourceUrl from '../sanityio/GetResourceURL';
+import { PortfolioPieceType } from '../../features/portfolio/types';
+import GetResourceUrl from '../../utilities/GetResourceURL';
 import Typography from '../typography/Typography';
 
 type Props = {

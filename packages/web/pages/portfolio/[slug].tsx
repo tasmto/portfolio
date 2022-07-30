@@ -1,19 +1,15 @@
 import client from '../../client';
 import groq from 'groq';
-import PortFolioPieceCover from '../../components/portfolio/Cover';
-import PageScrollLine from '../../components/pagescroll-tracker/PageScrollLine';
-import { PortfolioPieceType } from '../../components/portfolio/types';
-import PortableTextParser from '../../components/portableTextBlocks/PortableTextParser';
+import PageScrollLine from '../../features/pages/components/ScrollProgress';
+import PortableTextParser from '../../features/portable-text/PortableTextParser';
 import Typography from '../../components/typography/Typography';
 import Divider from '../../components/divider/Divider';
 import TechStacksCards from '../../components/tech-stacks/TechStacksCards';
-import Image from 'next/image';
-import GetResourceUrl from '../../components/sanityio/GetResourceURL';
-import { IoBowlingBall, IoCamera, IoCameraOutline } from 'react-icons/io5';
 import Button from '../../components/button/Button';
-import RecommendedProjectsCards from '../../components/portfolio/RecommendedProjectsCards';
-import FooterSecondaryContactCard from '../../components/navigation/FooterSecondaryContactCard';
-import PageMeta from '../../components/seo/PageMeta';
+import PageMeta from '../../components/seo/Seo';
+import RecommendedProjectsCards from '../../features/portfolio/components/RecommendedProjectsCards';
+import { PortfolioPieceType } from '../../features/portfolio/types';
+import PortFolioPieceCover from '../../features/portfolio/components/Cover';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
