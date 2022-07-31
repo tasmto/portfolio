@@ -15,6 +15,7 @@ import { PortfolioPieceType } from '../features/portfolio/types';
 import FeaturedBlockElement from '../features/portfolio/components/FeaturedBlockElement';
 import { BlogPostType } from '../features/blog/types';
 import Layout from '../components/Layout';
+import { motion } from 'framer-motion';
 
 type Props = {
   portfolioPieces: Array<PortfolioPieceType>;
@@ -105,10 +106,10 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
         >
           <article className='grid gap-3 '>
             <Typography size='h1' as='h2'>
-              I have been in the industry for over 4 years.
+              My career highlights.
             </Typography>
             <Typography size='body2' className='max-w-3xl'>
-              From e-commerce to ed-tech to marketing and even medical
+              From e-commerce to ed-tech to marketing and even real estate
               technologies, I have a wealth of experience in developing user
               focussed and modern applications for the web.
             </Typography>
@@ -148,13 +149,21 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
           </article>
           <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
             {blogPosts?.map((piece, i) => (
-              <BlogCard post={piece} key={i} />
+              <motion.div
+                key={i}
+                // initial={{ opacity: 0 }}
+                // whileInView={{ opacity: 1 }}
+                // transition={{ duration: 2 }}
+                // viewport={{ once: true }}
+              >
+                <BlogCard post={piece} />
+              </motion.div>
             ))}
           </div>
         </section>
         <div className='container-1'>
           <section
-            className=' w-full border border-slate-200 bg-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-3xl md:grid-cols-2'
+            className=' w-full border border-slate-200 bg-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-2xl md:grid-cols-2'
             id='contact'
           >
             <div className='grid gap-3 content-start'>

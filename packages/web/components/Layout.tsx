@@ -16,7 +16,7 @@ const Layout = ({ children }: Props) => {
   const variants = {
     hidden: { opacity: 0, x: -200 },
     enter: { opacity: 1, x: 0, y: 0, duration: 1 },
-    exit: { opacity: 0, x: 200, duration: 1.5 },
+    exit: { opacity: 0, x: 200, duration: 0.6 },
   };
 
   return (

@@ -87,7 +87,7 @@ const ScrollMenu = () => {
           >
             <nav className='w-full grid container-1 justify-end  md:max-w-[98vw]'>
               <ul
-                className={`${styles.verticalScroll} mt-5 translate-x-[-10%] lg:col-start-3 w-full max-w-[80vw] max-h-[90vh] min-h-[80vh] min-w-[300px] md:min-w-[450px] sm:min-w-[350px] md:col-start-2 col-span-1 bg-slate-50 h-full pt-8 pb-10 px-8 sm:px-14 sm:pt-12 md:pb-14 rounded-xl md:rounded-3xl flex flex-col gap-8   justify-start items-center container-3  border border-slate-400 shadow-2xl overflow-y-auto`}
+                className={`${styles.verticalScroll} mt-5 translate-x-[-10%] lg:col-start-3 w-full max-w-[80vw] max-h-[90vh] min-h-[80vh] min-w-[300px] md:min-w-[450px] sm:min-w-[350px] md:col-start-2 col-span-1 bg-slate-50 h-full pt-8 pb-10 px-8 sm:px-14 sm:pt-12 md:pb-14 rounded-xl md:rounded-2xl flex flex-col gap-8   justify-start items-center container-3  border border-slate-400 shadow-2xl overflow-y-auto`}
               >
                 <Typography as='li' size='display2' className='self-end'>
                   <span

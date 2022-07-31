@@ -30,7 +30,7 @@ const FeaturedBlockElement = ({
   return (
     <Link href={`/portfolio/${piece?.slug?.current}`}>
       <a
-        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-3xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
+        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
         style={{
           backgroundImage: `url(${GetResourceUrl(
             piece?.bannerImage?.asset

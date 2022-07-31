@@ -15,7 +15,7 @@ const BlogCard = ({ post, className = '' }: Props) => {
   return (
     <Link href={`/blog/${post?.slug?.current}`}>
       <a
-        className={`px-6 relative min-h-[200px] h-full py-10  overflow-hidden sm:grid-cols-1 grid-cols-5 grid gap-3 rounded-xl sm:rounded-2xl cursor-eye bg-[#f8f8f8]  border border-slate-200 hover:bg-slate-100 transition-all  text-slate-700  ${className}`}
+        className={`px-6 relative min-h-[200px] h-full py-10  overflow-hidden sm:grid-cols-1 grid-cols-5 grid gap-3 rounded-xl sm:rounded-2xl cursor-eye bg-slate-50  border border-slate-200 hover:bg-slate-100 transition-all  text-slate-700  ${className}`}
       >
         <div className='hidden sm:flex absolute top-4 left-6 gap-2 flex-wrap'>
           {post?.categories?.map((category, i) => (
