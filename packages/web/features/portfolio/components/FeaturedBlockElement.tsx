@@ -17,6 +17,7 @@ import { blockContentToPlainText } from 'react-portable-text';
 import trimString from '../../../utilities/trimString';
 import Tag from '../../../components/tags/Tag';
 import PortableTextParser from '../../portable-text/PortableTextParser';
+import generatePlainText from '../../portable-text/lib/generatePlainText';
 type Props = {
   piece: PortfolioPieceType;
   textFirst?: boolean;
@@ -96,7 +97,7 @@ const FeaturedBlockElement = ({
         <div className='grid gap-4 lg:col-span-2 self-center'>
           <Typography as='p' size='body1' className='sticky text-slate-100 '>
             {piece?.extract &&
-              trimString(blockContentToPlainText(piece.extract), 200)}
+              trimString(generatePlainText(piece.extract), 200)}
           </Typography>
           <Typography as='p' size='body3' className='sticky text-slate-300 '>
             Built with: {piece?.technologies.join(' | ')}.
