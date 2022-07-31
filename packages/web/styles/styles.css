@@ -29,10 +29,6 @@ strong {
   font-weight: 600;
 }
 
-* {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   background-color: #fff;

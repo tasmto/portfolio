@@ -8,10 +8,12 @@ import LogRocket from 'logrocket';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import PageMeta from '../components/seo/Seo';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
     LogRocket.init('fjdwny/portfolio');
+  const router = useRouter();
 
   return (
     <div
@@ -21,11 +23,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <PageMeta />
       <NavBar />
       <AnimatePresence
-        exitBeforeEnter
+        exitBeforeEnter={true}
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >
-        <Component {...pageProps} />
+        <Component {...pageProps} key={router.pathname} />
       </AnimatePresence>
       <Footer />
     </div>
