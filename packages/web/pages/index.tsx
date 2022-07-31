@@ -78,11 +78,10 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
               <TechSlider technologies={technologies} />
             </section>
             <section className='grid gap-12'>
-              <Typography size='h1' as='h2' className='flex gap-4 items-center'>
-                <span className='shrink-0'>Featured Projects</span>
-                <Divider />
+              <Typography size='h1' as='h2'>
+                Featured Projects
               </Typography>
-              <div className='grid gap-10 md:gap-14'>
+              <div className='grid gap-8'>
                 {featuredPieces.map((piece, i) => (
                   <FeaturedBlockElement
                     key={i}

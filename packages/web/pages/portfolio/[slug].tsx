@@ -10,6 +10,7 @@ import PageMeta from '../../components/seo/Seo';
 import RecommendedProjectsCards from '../../features/portfolio/components/RecommendedProjectsCards';
 import { PortfolioPieceType } from '../../features/portfolio/types';
 import PortFolioPieceCover from '../../features/portfolio/components/Cover';
+import Layout from '../../components/Layout';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -20,7 +21,7 @@ type Props = {
 const PortfolioPiece = ({ piece }: Props) => {
   if (!piece) return null;
   return (
-    <>
+    <Layout>
       <PageMeta title={piece?.projectName || 'Portfolio'} />
       <PageScrollLine />
       <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 '>
@@ -95,7 +96,7 @@ const PortfolioPiece = ({ piece }: Props) => {
           </section>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

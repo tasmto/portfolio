@@ -7,10 +7,29 @@
 .horizontalScroll::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgb(109, 109, 109);
   border-radius: 10px;
-  background-color: #8090A3;
+  background-color: #8090a3;
 }
 
 /* Handle */
 .horizontalScroll::-webkit-scrollbar-thumb {
   background: #cbcbcb;
-  border-radius: 3px;}
+  border-radius: 3px;
+}
+
+/* Width */
+.verticalScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.verticalScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(109, 109, 109);
+  border-radius: 10px;
+  background-color: #8090a3;
+}
+
+/* Handle */
+.verticalScroll::-webkit-scrollbar-thumb {
+  background: #cbcbcb;
+  border-radius: 3px;
+}

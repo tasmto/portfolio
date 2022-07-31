@@ -33,10 +33,7 @@ export const primaryLinks = [
     href: '/portfolio',
     text: 'Portfolio',
   },
-  {
-    href: '/#career-highlights',
-    text: 'Career',
-  },
+
   {
     href: '/hi',
     text: 'Book Meeting',
@@ -47,17 +44,41 @@ export const primaryLinks = [
   },
 ];
 
+export const allLinks = [
+  {
+    href: '/portfolio',
+    text: 'Portfolio',
+  },
+  // {
+  //   text: 'About me.',
+  //   href: '/about',
+  // },
+  {
+    href: '/hi',
+    text: 'Book a Meeting',
+  },
+  {
+    href: '/blog',
+    text: 'Blog',
+  },
+
+  {
+    text: 'Contact me',
+    href: '/contact',
+  },
+];
+
 export const footerLinks = [
   {
     title: 'About me',
     childLinks: [
-      {
-        title: 'Who am I?',
-        href: '/about',
-      },
+      // {
+      //   title: 'Who am I?',
+      //   href: '/about',
+      // },
       {
         title: 'Career history',
-        href: '/career-highlights',
+        href: '/#career-highlights',
       },
       {
         title: 'Download my CV',

@@ -11,7 +11,7 @@ const Tag = ({ color, children }: Props) => {
     <Typography
       size='body3'
       as='p'
-      className={`py-2 text-white justify-self-start self-start tracking-tight  ${
+      className={`py-1 text-sm text-white justify-self-start self-start tracking-tight  ${
         color === 'primary'
           ? 'bg-primary-700'
           : color === 'secondary'

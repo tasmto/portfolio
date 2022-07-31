@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Divider from '../../../components/divider/Divider';
-import { IoArrowForwardOutline } from 'react-icons/io5';
+import {
+  IoArrowForwardOutline,
+  IoBookmarks,
+  IoTodayOutline,
+} from 'react-icons/io5';
 import { BiLinkExternal } from 'react-icons/bi';
 import { TbRainbow } from 'react-icons/tb';
 import Button from '../../../components/button/Button';
@@ -11,168 +15,95 @@ import { PortfolioPieceType } from '../types';
 import GetResourceUrl from '../../../utilities/GetResourceURL';
 import { blockContentToPlainText } from 'react-portable-text';
 import trimString from '../../../utilities/trimString';
-
+import Tag from '../../../components/tags/Tag';
+import PortableTextParser from '../../portable-text/PortableTextParser';
 type Props = {
   piece: PortfolioPieceType;
   textFirst?: boolean;
+  className?: string;
 };
-const FeaturedBlockElement = ({ piece, textFirst = false }: Props) => {
-  const [activeTab, setActiveTab] = useState('description');
+const FeaturedBlockElement = ({
+  piece,
+  textFirst = false,
+  className = '',
+}: Props) => {
   return (
-    <article className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center  gap-y-3 gap-5 md:gap-7 lg:gap-10'>
-      <Link href={`/portfolio/${piece.slug.current}`}>
-        <a className='col-span-1 md:col-span-2 lg:col-span-3 relative before:block before:absolute before:top-0 before:w-full before:h-full before:bg-primary-900/0 hover:before:backdrop-blur-[2px] before:hover:bg-primary-900/20 before:transition-colors before:duration-300 before:z-10 cursor-eye '>
-          <Image
-            src={GetResourceUrl(
-              piece?.productImage?.asset
-                ? piece?.productImage?.asset
-                : piece?.bannerImage?.asset
-            )
-              .width(850)
-              .height(450)
-              .fit('max')
-              .auto('format')
-              .url()}
-            width={850}
-            height={450}
-            layout='responsive'
-            className='object-center object-cover rounded-xl md:rounded-3xl shadow-xl'
-            alt=''
-          />
-        </a>
-      </Link>
-      <div
-        className={`col-span-1 lg:col-span-2 grid gap-1 md:gap-4 content-start ${
-          textFirst && 'md:order-first'
-        }`}
+    <Link href={`/portfolio/${piece?.slug?.current}`}>
+      <a
+        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-3xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
+        style={{
+          backgroundImage: `url(${GetResourceUrl(
+            piece?.bannerImage?.asset
+              ? piece.bannerImage.asset
+              : piece?.productImage?.asset
+          )
+            .width(1080)
+            .height(500)
+            .blur(1)
+            .fit('max')
+            .auto('format')
+            .url()})`,
+        }}
       >
-        <Typography
-          as='h2'
-          size='display3'
-          className='relative mb-4 mt-5 md:mt-0'
-        >
-          {piece?.logo && (
-            <img
-              height={30}
-              width={325}
-              src={GetResourceUrl(piece?.logo?.asset)
-                .width(325)
-                .height(30)
-                .fit('min')
-                .auto('format')
-                .url()}
-              // layout='intrinsic'
-              className='object-start object-contain h-8 object-left '
-              alt=''
-            />
-          )}
-          <span className={`${piece?.logo && 'sr-only'} text-slate-200`}>
-            {piece.projectName}
-          </span>
-        </Typography>
-        {piece.extract && (
-          <div>
+        <div className='grid gap-6 lg:col-span-3'>
+          <div className='z-10 grid gap-2 max-w-2xl'>
+            <div className='flex gap-4'>
+              <Tag color={piece?.completedAt ? 'secondary' : 'tertiary'}>
+                <>
+                  <IoTodayOutline className='h-5 w-5' />
+                  <span>
+                    {piece?.completedAt
+                      ? new Date(piece?.completedAt).toLocaleDateString(
+                          'en-US',
+                          {
+                            month: 'long',
+                            year: 'numeric',
+                          }
+                        )
+                      : 'Ongoing'}
+                  </span>
+                </>
+              </Tag>
+              <Tag color={'primary'}>
+                <>
+                  <IoBookmarks className='h-5 w-5' />
+                  <span>Featured</span>
+                </>
+              </Tag>
+            </div>
             <Typography
-              as='button'
-              role='title'
-              size='h3'
-              onClick={() =>
-                activeTab === 'description'
-                  ? setActiveTab('')
-                  : setActiveTab('description')
-              }
-              className='w-full flex gap-4 items-center cursor-pointer py-1'
+              size='display2'
+              as='h1'
+              className='text-white tracking-tight drop-shadow-md max-w-2xl'
             >
-              <span className='shrink-0'>Description</span>
-              <Divider />
-              <IoArrowForwardOutline
-                aria-hidden={true}
-                className={`h-8 w-8 transition-transform duration-500 delay-200  ${
-                  activeTab === 'description' && 'rotate-[-270deg] delay-[0s]'
-                }`}
-              />
-            </Typography>
-            <Typography
-              as='div'
-              size='caption'
-              className={` text-slate-400 md:text-slate-400 origin-top
-             transition-all duration-300 ease-in-out  
-            ${
-              activeTab === 'description'
-                ? 'scale-y-1 opacity-100 max-h-full'
-                : 'scale-y-0 opacity-0 max-h-0'
-            }`}
-            >
-              {/* @ts-ignore: Block content to plain text requires one input */}
-              {trimString(blockContentToPlainText(piece.extract), 200)}
+              <strong>{piece.projectName}</strong> — {piece.projectSubtitle}
             </Typography>
           </div>
-        )}
-        {piece.technologies?.length && (
-          <div className=''>
-            <Typography
-              as='button'
-              role='title'
-              size='h3'
-              className='w-full  flex gap-4 py-2 items-center cursor-pointer'
-              onClick={() =>
-                activeTab === 'stack' ? setActiveTab('') : setActiveTab('stack')
-              }
-            >
-              <span className='shrink-0'>Built using:</span>
-              <Divider />
-              <IoArrowForwardOutline
-                aria-hidden={true}
-                className={`h-8 w-8 transition-transform duration-500 delay-200  ${
-                  activeTab === 'stack' && 'rotate-[450deg] delay-[0s]'
-                }`}
-              />
-            </Typography>
-            <Typography
-              as='p'
-              size='caption'
-              className={` text-slate-400 md:text-slate-400 origin-top
-             transition-all duration-300 ease-in-out 
-            ${
-              activeTab === 'stack'
-                ? 'scale-y-1 opacity-100 max-h-full'
-                : 'scale-y-0 opacity-0 max-h-0'
-            }`}
-            >
-              {piece.technologies.toString().replaceAll(',', ', ')}.
-            </Typography>
-          </div>
-        )}
-        {(piece?.slug?.current || piece?.liveUrl) && (
-          <div className='grid gap-1 mt-3 md:mt-5'>
-            {piece?.liveUrl && (
+          <div className='z-10 self-end justify-self-start mt-[-15px] sm:mt-6'>
+            {piece?.slug && (
               <Button
                 type='text-light'
-                icon={BiLinkExternal}
-                iconPosition='right'
-                href={piece?.liveUrl}
-                externalLink
-                className='pl-0'
+                size='large'
+                className='pl-0 drop-shadow-md !text-slate-100 hover:!text-slate-200 transition-colors'
+                // href={`/piece/${piece?.slug.current}`}
+                icon={IoArrowForwardOutline}
               >
-                View Live Project
-              </Button>
-            )}
-            <Divider />
-            {piece?.slug?.current && (
-              <Button
-                type='text-light'
-                icon={TbRainbow}
-                iconPosition='right'
-                href={`/portfolio/${piece?.slug?.current}`}
-                className='text-slate-400 pl-0'
-              >
-                Case Study
+                Project case-study
               </Button>
             )}
           </div>
-        )}
-      </div>
-    </article>
+        </div>
+        <div className='grid gap-4 lg:col-span-2 self-center'>
+          <Typography as='p' size='body1' className='sticky text-slate-100 '>
+            {piece?.extract &&
+              trimString(blockContentToPlainText(piece.extract), 200)}
+          </Typography>
+          <Typography as='p' size='body3' className='sticky text-slate-300 '>
+            Built with: {piece?.technologies.join(' | ')}.
+          </Typography>
+        </div>
+      </a>
+    </Link>
   );
 };
 

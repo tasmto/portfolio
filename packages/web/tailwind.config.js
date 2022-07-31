@@ -69,6 +69,10 @@ module.exports = {
       cursor: {
         eye: 'url(/cursors/eye.png), pointer',
       },
+      screens: {
+        // prettier-ignore
+        'xs': '350px',
+      },
     },
   },
   plugins: [],

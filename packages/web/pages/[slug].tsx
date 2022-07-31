@@ -3,6 +3,7 @@ import groq from 'groq';
 import PortableTextParser from '../features/portable-text/PortableTextParser';
 import { pageType } from '../features/pages/types';
 import FooterSecondaryContactCard from '../features/navigation/components/FooterCard';
+import Layout from '../components/Layout';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -12,17 +13,19 @@ type Props = {
 
 const PortfolioPiece = ({ data }: Props) => {
   return (
-    <div className='mt-32 grid gap-16 md:gap-24 container-1 text-gray-900'>
-      {/* <PageMeta title={data?.projectName || 'Portfolio'} /> */}
-      {data?.body && (
-        <PortableTextParser
-          content={data?.body}
-          className={'grid gap-14 md:gap-22 lg:gap-24 w-full'}
-        />
-      )}
+    <Layout>
+      <div className='mt-16 grid gap-16 md:gap-24 container-1 text-gray-900'>
+        {/* <PageMeta title={data?.projectName || 'Portfolio'} /> */}
+        {data?.body && (
+          <PortableTextParser
+            content={data?.body}
+            className={'grid gap-14 md:gap-22 lg:gap-24 w-full'}
+          />
+        )}
 
-      <FooterSecondaryContactCard />
-    </div>
+        <FooterSecondaryContactCard />
+      </div>
+    </Layout>
   );
 };
 
@@ -36,7 +39,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 };
 

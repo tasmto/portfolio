@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { IoLogoLinkedin } from 'react-icons/io5';
-import { FaGithubSquare, FaWhatsappSquare } from 'react-icons/fa';
+import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5';
 import Divider from '../../../components/divider/Divider';
 import Typography from '../../../components/typography/Typography';
 import { footerLinks } from '../routes';
@@ -71,9 +70,9 @@ const Footer = () => {
             className='link text-slate-400 border-slate-400'
           >
             Next.js
-          </a>{' '}
+          </a>
+          , {'  '}
           {'  '}
-          and {'  '}
           <a
             href='https://www.sanity.io/'
             target='_blank'
@@ -81,6 +80,15 @@ const Footer = () => {
             className='link text-slate-400 border-slate-400'
           >
             Sanity
+          </a>{' '}
+          {'  '}& {'  '}
+          <a
+            href='https://tailwindcss.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='link text-slate-400 border-slate-400'
+          >
+            Tailwind
           </a>
           .
         </Typography>
@@ -104,7 +112,7 @@ const Footer = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <FaGithubSquare
+              <IoLogoGithub
                 className='h-8 w-8 hover:text-slate-500'
                 title='GitHub'
               />
@@ -116,7 +124,7 @@ const Footer = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <FaWhatsappSquare
+              <IoLogoWhatsapp
                 className='h-8 w-8 hover:text-slate-500'
                 title='WhatsApp'
               />

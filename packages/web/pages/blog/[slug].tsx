@@ -4,6 +4,7 @@ import PageScrollLine from '../../features/pages/components/ScrollProgress';
 import PageMeta from '../../components/seo/Seo';
 import PortableTextParser from '../../features/portable-text/PortableTextParser';
 import { BlogPostType } from '../../features/blog/types';
+import Layout from '../../components/Layout';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -14,7 +15,7 @@ type Props = {
 const PortfolioPiece = ({ piece }: Props) => {
   if (!piece) return null;
   return (
-    <>
+    <Layout>
       <PageMeta title={piece?.title || 'Post'} />
       <PageScrollLine />
       <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 '>
@@ -29,7 +30,7 @@ const PortfolioPiece = ({ piece }: Props) => {
           )}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

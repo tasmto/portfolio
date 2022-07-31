@@ -15,7 +15,7 @@ const FooterSecondaryContactCard = (props: Props) => {
       <Button
         type='primary'
         className='!items-center bg-slate-300 !text-slate-700 !hover:text-slate-200 hover:bg-slate-500 '
-        href='/#contact'
+        href='/contact'
       >
         Get in touch
       </Button>

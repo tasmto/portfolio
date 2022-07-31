@@ -15,9 +15,10 @@ type Props = {
 const Layout = ({ children }: Props) => {
   const variants = {
     hidden: { opacity: 0, x: -200 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -100 },
+    enter: { opacity: 1, x: 0, y: 0, duration: 1 },
+    exit: { opacity: 0, x: 200, duration: 1.5 },
   };
+
   return (
     <motion.main
       id='#content'
@@ -25,7 +26,7 @@ const Layout = ({ children }: Props) => {
       animate='enter'
       exit='exit'
       variants={variants}
-      transition={{ type: 'linear' }}
+      transition={{ type: 'spring', stiffness: 100 }}
     >
       {children}
     </motion.main>

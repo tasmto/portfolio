@@ -28,10 +28,10 @@ const DesktopMenu = (props: Props) => {
         className='md:py-3 md:mb-1 sticky
        flex justify-between items-center gap-8 bg-white/95  !container-1 z-[10000] md:border-b backdrop-blur md:border-slate-300 overflow-hidden max-w-screen'
       >
-        <h1 className='flex-none font-bold text-slate-800 tracking-tighter text-3xl'>
+        <h1 className='flex-none font-bold text-slate-800 tracking-tighter text-2xl'>
           <Link href='/' scroll={false}>
             <a className='flex items-center gap-3'>
-              <Logo className='w-10 h-10 opacity-90 invert' />
+              <Logo className='ml-2 w-10 h-10 opacity-90 invert' />
               <span>tashinga</span>
             </a>
           </Link>
