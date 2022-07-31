@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React, { Ref, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import Typography from '../typography/Typography';
 import { PortfolioPieceType } from '../types';
-import subDivideArray from '../../utilities/subDivideArray';
-import GetResourceUrl from '../sanityio/GetResourceURL';
 import Link from 'next/link';
+import Typography from '../../../components/typography/Typography';
+import GetResourceUrl from '../../../utilities/GetResourceURL';
+import subDivideArray from '../../../utilities/subDivideArray';
 
 type Props = {
   pieces: Array<PortfolioPieceType>;
