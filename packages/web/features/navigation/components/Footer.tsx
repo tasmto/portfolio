@@ -44,7 +44,7 @@ const Footer = () => {
             </li>
             {heading.childLinks.map((link, i) => (
               <li key={i}>
-                <Link href={link.href}>
+                <Link href={link.href} scroll={false}>
                   <a>
                     <Typography
                       size='body3'

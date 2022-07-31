@@ -50,12 +50,12 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
             </>
           </Tag>
           <Typography
-            bold
             size='display3'
             as='h1'
             className='text-white tracking-tight drop-shadow-md max-w-2xl'
           >
-            {portfolio.projectName} — {portfolio.projectSubtitle}
+            <strong>{portfolio.projectName}</strong> —{' '}
+            {portfolio.projectSubtitle}
           </Typography>
         </div>
         <div className='z-10 self-end justify-self-start mt-6'>

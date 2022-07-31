@@ -3,6 +3,7 @@ import Footer from '../features/navigation/components/Footer';
 import NavBar from '../features/navigation/components/NavBar';
 import LogRocket from 'logrocket';
 import PageMeta from './seo/Seo';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {
   children: React.ReactNode;
@@ -11,22 +12,24 @@ type Props = {
 /**
  * @description Wrapper for the site, includes global stuff Redux stores etc if needed.
  */
-const SiteWrapper = ({ children }: Props) => {
-  if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
-    LogRocket.init('fjdwny/portfolio');
+const Layout = ({ children }: Props) => {
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100, transition: { duration: 2 } },
+  };
   return (
-    <>
-      <PageMeta />
-      <div
-        id='main'
-        className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mb-0 md:gap-32 selection:bg-primary-100 selection:text-primary-800 relative'
-      >
-        <NavBar />
-        <main id='#content'>{children}</main>
-        <Footer />
-      </div>
-    </>
+    <motion.main
+      id='#content'
+      initial='hidden'
+      animate='enter'
+      exit='exit'
+      variants={variants}
+      transition={{ type: 'linear' }}
+    >
+      {children}
+    </motion.main>
   );
 };
 
-export default SiteWrapper;
+export default Layout;

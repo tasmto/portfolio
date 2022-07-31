@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { IoDownloadOutline } from 'react-icons/io5';
 import Button from '../../../components/button/Button';
 import { primaryLinks } from '../routes';
+import Logo from '../assets/ts-logo.svg';
 
 type Props = {};
 
@@ -14,13 +15,8 @@ const DesktopMenu = (props: Props) => {
   const { scrollYProgress } = useScroll();
   const translateMenuUpAnim = useTransform(
     scrollYProgress,
-    [0, 0.02],
+    [0, 0.01],
     [0, -200]
-  );
-  const translateMenuDownAnim = useTransform(
-    scrollYProgress,
-    [0, 0.02],
-    [800, 0]
   );
 
   return (
@@ -29,22 +25,23 @@ const DesktopMenu = (props: Props) => {
         style={{
           y: translateMenuUpAnim,
         }}
-        className='md:py-3 md:mb-1
-       flex justify-between items-center gap-8 bg-white/95  !container-1 z-50 md:border-b backdrop-blur md:border-slate-300 overflow-hidden max-w-screen'
+        className='md:py-3 md:mb-1 sticky
+       flex justify-between items-center gap-8 bg-white/95  !container-1 z-[10000] md:border-b backdrop-blur md:border-slate-300 overflow-hidden max-w-screen'
       >
-        <h1 className='flex-none font-bold text-primary-900 tracking-tighter text-3xl'>
-          <Link href='/'>
-            <a>
-              tash<span className='text-primary-400'>i</span>nga
+        <h1 className='flex-none font-bold text-slate-800 tracking-tighter text-3xl'>
+          <Link href='/' scroll={false}>
+            <a className='flex items-center gap-3'>
+              <Logo className='w-10 h-10 opacity-90 invert' />
+              <span>tashinga</span>
             </a>
           </Link>
         </h1>
         <ul className='flex-initial flex gap-6  tracking-tight '>
           {primaryLinks.map((link, i) => (
             <li key={i}>
-              <Link href={link.href}>
+              <Link href={link.href} scroll={false}>
                 <a
-                  className={` text-slate-600 font-medium hover:text-primary-500 transition-colors ${
+                  className={` text-slate-800 text-lg font-medium hover:text-primary-500 transition-colors ${
                     router.pathname === link.href && 'text-primary-800 '
                   }`}
                 >
@@ -57,7 +54,6 @@ const DesktopMenu = (props: Props) => {
         <ul className='align-self-center justify-self-center flex-initial flex gap-3'>
           <li>
             <Button
-              size='small'
               type='secondary'
               icon={IoDownloadOutline}
               href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
@@ -67,11 +63,9 @@ const DesktopMenu = (props: Props) => {
             </Button>
           </li>
           <li>
-            <Link href='/contact'>
+            <Link scroll={false} href='/contact'>
               <a>
-                <Button type='primary' size='small'>
-                  Contact
-                </Button>
+                <Button type='primary'>Contact</Button>
               </a>
             </Link>
           </li>

@@ -28,7 +28,7 @@ const CodeTextEmbedBlock = ({ content }: Props) => {
           </Button>
         )}
         {description && (
-          <Typography as='p' size='body2'>
+          <Typography as='div' size='body2'>
             <PortableTextParser content={description} />
           </Typography>
         )}

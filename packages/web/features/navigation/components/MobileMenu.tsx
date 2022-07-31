@@ -17,7 +17,7 @@ const MobileMenu = (props: Props) => {
       <ul className='flex-initial flex text-lg tracking-tight w-full justify-center overflow-auto '>
         {mobileLinks.map((link, i, arr) => (
           <li key={i}>
-            <Link href={link.href}>
+            <Link href={link.href} scroll={false}>
               <a
                 className={`px-8 md:px-10 flex flex-col items-center gap-1 text-lg hover:text-primary-700 hover:bg-primary-100/20 before:border-t-2 before:absolute before:w-full before:h-2 before:border-slate-700 before:max-w-[35px] before:origin-[100% 50%] before:top-[-0.05rem] before:z-10 before:scale-0 before:transition-transform  hover:before:scale-75 before:duration-500 ${
                   router.pathname === link.href &&
