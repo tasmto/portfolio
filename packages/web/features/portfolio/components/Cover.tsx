@@ -46,7 +46,8 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
               as='h1'
               className='text-white tracking-tight drop-shadow-md max-w-3xl'
             >
-              {portfolio.projectName} — {portfolio.projectSubtitle}
+              <strong>{portfolio.projectName}</strong> —{' '}
+              {portfolio.projectSubtitle}
             </Typography>
           </div>
           <div className='z-10 self-end justify-self-start  mt-8 flex flex-wrap gap-4 '>

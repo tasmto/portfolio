@@ -291,7 +291,7 @@ const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
 const technologiesQuery = groq`*[_type == "technologies" && featured][] | order(featured desc){
  name, icon, description,featured
 }`;
-const blogQuery = groq`*[_type == "post"][0..5] | order(featured desc){
+const blogQuery = groq`*[_type == "post"][0..5] | order(publishedAt  desc){
   ...,
   "categories": categories[]->title,
 }`;

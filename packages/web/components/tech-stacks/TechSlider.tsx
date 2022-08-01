@@ -20,7 +20,7 @@ const TechSlider = ({ technologies }: Props) => {
         {technologies.map((tech, i) => (
           <li
             key={i}
-            className='flex-shrink-0 flex gap-2 snap-center items-center hover:text-gray-300/80'
+            className='flex-shrink-0 flex gap-2 snap-center items-center hover:text-gray-300 group'
           >
             <img
               src={GetResourceUrl(tech.icon.asset)
@@ -31,7 +31,7 @@ const TechSlider = ({ technologies }: Props) => {
                 .url()}
               alt=''
               loading='lazy'
-              className='opacity-40 grayscale brightness-[400]'
+              className='opacity-40 group-hover:opacity-60 grayscale brightness-[400]'
               width={20}
               height={20}
             />

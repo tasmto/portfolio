@@ -31,16 +31,16 @@ const FeaturedBlockElement = ({
   return (
     <Link href={`/portfolio/${piece?.slug?.current}`}>
       <a
-        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
+        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-top bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
         style={{
           backgroundImage: `url(${GetResourceUrl(
-            piece?.bannerImage?.asset
-              ? piece.bannerImage.asset
-              : piece?.productImage?.asset
+            piece?.productImage?.asset
+              ? piece?.productImage?.asset
+              : piece.bannerImage.asset
           )
             .width(1080)
             .height(500)
-            .blur(1)
+            .blur(5)
             .fit('max')
             .auto('format')
             .url()})`,
@@ -95,11 +95,19 @@ const FeaturedBlockElement = ({
           </div>
         </div>
         <div className='grid gap-4 lg:col-span-2 self-center'>
-          <Typography as='p' size='body1' className='sticky text-slate-100 '>
+          <Typography
+            as='p'
+            size='body1'
+            className='sticky text-slate-100 drop-shadow'
+          >
             {piece?.extract &&
               trimString(generatePlainText(piece.extract), 200)}
           </Typography>
-          <Typography as='p' size='body3' className='sticky text-slate-300 '>
+          <Typography
+            as='p'
+            size='body3'
+            className='sticky text-slate-300 drop-shadow'
+          >
             Built with: {piece?.technologies.join(' | ')}.
           </Typography>
         </div>
