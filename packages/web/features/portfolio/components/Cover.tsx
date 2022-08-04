@@ -81,7 +81,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
                 externalLink
                 icon={IoPlayOutline}
               >
-                View Walkthrough
+                Video Walkthrough
               </Button>
             )}
           </div>

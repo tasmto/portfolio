@@ -47,7 +47,7 @@ export default {
       title: 'A summary of the post.',
       type: 'string',
       description: 'In a few sentences, describe the post.',
-      validation: (Rule) => Rule.required().max(200),
+      validation: (Rule) => Rule.required().max(350),
     },
     {
       name: 'body',

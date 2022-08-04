@@ -26,7 +26,7 @@ const Layout = ({ children }: Props) => {
       animate='enter'
       exit='exit'
       variants={variants}
-      transition={{ type: 'spring', stiffness: 100, duration: 1 }}
+      transition={{ ease: 'easeOut', duration: 0.3 }}
     >
       {children}
     </motion.main>

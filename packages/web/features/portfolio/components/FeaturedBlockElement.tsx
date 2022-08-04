@@ -31,7 +31,7 @@ const FeaturedBlockElement = ({
   return (
     <Link href={`/portfolio/${piece?.slug?.current}`}>
       <a
-        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-top bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
+        className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-top bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm  before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
         style={{
           backgroundImage: `url(${GetResourceUrl(
             piece?.productImage?.asset
@@ -40,7 +40,7 @@ const FeaturedBlockElement = ({
           )
             .width(1080)
             .height(500)
-            .blur(5)
+            .blur(10)
             .fit('max')
             .auto('format')
             .url()})`,
@@ -83,6 +83,7 @@ const FeaturedBlockElement = ({
           <div className='z-10 self-end justify-self-start mt-[-15px] sm:mt-6'>
             {piece?.slug && (
               <Button
+                aria-hidden='true'
                 type='text-light'
                 size='large'
                 className='pl-0 drop-shadow-md !text-slate-100 hover:!text-slate-200 transition-colors'

@@ -33,3 +33,7 @@ html,
 body {
   background-color: #fff;
 }
+
+.image-h-full * {
+  height: 100% !important;
+}

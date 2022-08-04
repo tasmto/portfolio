@@ -34,7 +34,7 @@ const PortfolioCollectionsPage = ({ posts }: Props) => {
   );
 };
 
-const query = groq`*[_type == "post"][0..5] | order(featured desc){
+const query = groq`*[_type == "post"][0..5] | order(publishedAt  desc){
   ...,
   "categories": categories[]->title,
 }`;

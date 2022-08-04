@@ -16,7 +16,7 @@ export type BlogPostType = {
   _type: string;
   title: string;
   slug: SanitySlug;
-  coverImage: SanityReferenceType;
+  coverImage: any;
   categories: {
     description: string;
     title: string;

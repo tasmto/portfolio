@@ -23,7 +23,7 @@ const PageNotFound = ({ portfolioPieces }: Props) => {
           title='Ummmmmm.'
           body={
             <>
-              Unfortunately we couldn't find the page you were looking for. You
+              Unfortunately I couldn't find the page you were looking for. You
               could go{' '}
               <Link href='/' scroll={false}>
                 <strong className='link'>back to the homepage</strong>

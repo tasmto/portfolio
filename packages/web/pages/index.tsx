@@ -163,7 +163,8 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
         </section>
         <div className='container-1'>
           <section
-            className=' w-full border border-slate-200 bg-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 py-10 px-4 md:px-10 md:py-28 grid gap-4 gap-y-8 rounded-2xl md:grid-cols-2'
+            // border-slate-200 bg-gray-200 bg-gradient-to-br from-gray-50 to-gray-200 border px-4 md:px-10 md:py-28
+            className=' w-full py-10  grid gap-4 gap-y-14 rounded-2xl md:grid-cols-2'
             id='contact'
           >
             <div className='grid gap-3 content-start'>

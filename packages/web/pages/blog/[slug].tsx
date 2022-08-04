@@ -5,6 +5,11 @@ import PageMeta from '../../components/seo/Seo';
 import PortableTextParser from '../../features/portable-text/PortableTextParser';
 import { BlogPostType } from '../../features/blog/types';
 import Layout from '../../components/Layout';
+import PageTitle from '../../features/pages/components/Title';
+import Image from 'next/image';
+import GetResourceUrl from '../../utilities/GetResourceURL';
+import Typography from '../../components/typography/Typography';
+import Divider from '../../components/divider/Divider';
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
@@ -18,17 +23,44 @@ const PortfolioPiece = ({ piece }: Props) => {
     <Layout>
       <PageMeta title={piece?.title || 'Post'} />
       <PageScrollLine />
-      <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 '>
-        <div className='grid gap-16 mt-8 lg:gap-24 snap-start'>
-          {/* <PortFolioPieceCover portfolio={piece} /> */}
+      <div className='bg-slate-50/20 text-gray-800 snap-proximity snap-y  grid gap-16 md:gap-24 mt-14 '>
+        <div className='container-1 grid gap-10 md:gap-24 md:grid-cols-2'>
+          <article className=' grid gap-6 max-w-3xl content-center self-center'>
+            <Typography size='display1' as='h1' className='tracking-tighter'>
+              {piece?.title}
+            </Typography>
 
-          {piece?.body && (
-            <PortableTextParser
-              content={piece?.body}
-              className={'grid gap-14 md:gap-22 lg:gap-24 '}
+            <Typography size='body2' as='p'>
+              {piece.extract}
+            </Typography>
+          </article>
+          <div className='border image-h-full border-gray-200 rounded-3xl w-full min-h-[400px] lg:min-h-[500px]'>
+            <Image
+              src={GetResourceUrl(piece?.coverImage?.asset?._ref)
+                .width(1280)
+                .height(720)
+                .fit('max')
+                .auto('format')
+                .url()}
+              alt=''
+              loading='lazy'
+              width={1280}
+              height={720}
+              className='object-cover !h-full'
             />
-          )}
+          </div>
+          <Divider
+            type='dashed'
+            className='mt-6 md:mt-0 opacity-100 !border-slate-500 col-span-full'
+          />
         </div>
+
+        {piece?.body && (
+          <PortableTextParser
+            content={piece?.body}
+            className={'grid gap-14 md:gap-22 lg:gap-24 '}
+          />
+        )}
       </div>
     </Layout>
   );

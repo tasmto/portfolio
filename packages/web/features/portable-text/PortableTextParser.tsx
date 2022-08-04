@@ -15,10 +15,10 @@ import ButtonBlock from './components/ButtonBlock';
 import IframeEmbed from './components/IframeEmbed';
 import CustomListBlock, { CustomListType } from './components/CustomList.tsx';
 
-type Props = {
+interface Props {
   content: PortfolioPieceType['body'] | any;
   className?: string;
-};
+}
 
 const PortableTextParser = ({ content, className }: Props) => {
   if (!content) return null;
@@ -35,6 +35,9 @@ const PortableTextParser = ({ content, className }: Props) => {
         ),
         h3: (props: any) => (
           <Typography size='h3' as='h3' className='mb-2' {...props} />
+        ),
+        normal: (props: any) => (
+          <Typography size='body1' as='p' className='mb-8' {...props} />
         ),
         li: ({ children }: any) => (
           <li className='ml-8 relative before:block before:absolute  before:left-[-24px] before:content-[">"] before:text-gray-400 before:font-bold before:text-xs before:top-[5px]'>

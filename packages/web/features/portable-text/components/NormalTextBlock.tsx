@@ -18,7 +18,7 @@ type Props = {
 const NormalTextBlock = ({ content }: Props) => {
   console.log(content);
   return (
-    <section className='w-full grid gap-4 container-2'>
+    <section className='w-full grid gap-4 container-1'>
       {content?.heading && (
         <Typography as='h2' size='h1'>
           {content.heading}
@@ -30,7 +30,9 @@ const NormalTextBlock = ({ content }: Props) => {
         </Typography>
       )}
       {content?.description && (
-        <PortableTextParser content={content.description} />
+        <Typography as='div' size='body1'>
+          <PortableTextParser content={content.description} />
+        </Typography>
       )}
       {content?.link && (
         <Button href={content.link} externalLink size='large' type='tertiary'>

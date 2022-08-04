@@ -9,6 +9,7 @@ type Props = {
 const Tag = ({ color, children }: Props) => {
   return (
     <Typography
+      aria-hidden='true'
       size='body3'
       as='p'
       className={`py-1 text-sm text-white justify-self-start self-start tracking-tight  ${

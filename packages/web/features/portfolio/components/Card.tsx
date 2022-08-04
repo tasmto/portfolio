@@ -61,6 +61,7 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
         <div className='z-10 self-end justify-self-start mt-6'>
           {portfolio?.slug && (
             <Button
+              aria-hidden='true'
               type='text-light'
               size='large'
               className='pl-0 drop-shadow-md !text-slate-200 hover:!text-white transition-colors'
