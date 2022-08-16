@@ -103,7 +103,7 @@ const PortfolioPiece = ({ piece }: Props) => {
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
   ...,
   "technologies": technologies[]->{name, icon, description,featured},
-"relatedProjects": relatedProjects[]->{coverImage,coverImage,projectName, projectSubtitle, slug, technologies[]-> {name, icon}}
+"relatedProjects": relatedProjects[]->{coverImage,coverImage,projectName, projectSubtitle, completedAt,slug, technologies[]-> {name, icon}}
  }`
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.
