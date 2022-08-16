@@ -29,34 +29,17 @@ export default {
         maxLength: 96,
       },
     },
-    {
-      name: 'bannerImage',
-      title: 'Lifestyle or cover image',
-      description: 'Preferred dimensions are ast least 1080px by 1080px.',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'productImage',
-      title: 'Main Product image',
-      description: 'Preferred dimensions are ast least 1080px by 1080px.',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'logo',
-      title: 'Company Logo',
-      description: 'Upload SVG images if possible.',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
 
+    {
+      name: 'coverImage',
+      title: 'Cover Image',
+      description: 'Preferred dimensions are ast least 1080px by 1500px.',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    },
     {
       name: 'walkthrough',
       title: 'Video Showcase',
@@ -170,7 +153,7 @@ export default {
     select: {
       title: 'projectName',
       subtitle: 'projectSubtitle',
-      media: 'productImage',
+      media: 'coverImage',
       capstone: 'featured',
     },
     prepare({ title, subtitle, media, capstone }) {

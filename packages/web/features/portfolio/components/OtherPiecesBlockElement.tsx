@@ -111,9 +111,9 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
                       </article>
                       <Image
                         src={GetResourceUrl(
-                          content?.productImage?.asset
-                            ? content?.productImage?.asset
-                            : content?.bannerImage?.asset
+                          content?.coverImage?.asset
+                            ? content?.coverImage?.asset
+                            : content?.coverImage?.asset
                         )
                           .height(calculateStaticHeight(row.length))
                           .width(calculateStaticWidth(row.length))

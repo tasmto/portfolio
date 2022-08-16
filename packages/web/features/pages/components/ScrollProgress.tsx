@@ -1,13 +1,18 @@
-import { useTransform, useViewportScroll, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import {
+  useTransform,
+  useViewportScroll,
+  motion,
+  useScroll,
+} from 'framer-motion'
+import React, { useState } from 'react'
 
-type Props = {};
+type Props = {}
 
 const PageScrollLine = (props: Props) => {
-  const [scrollProgress, SetScrollProgress] = useState(0);
-  const { scrollYProgress } = useViewportScroll();
+  const [scrollProgress, SetScrollProgress] = useState(0)
+  const { scrollYProgress } = useScroll()
 
-  scrollYProgress.onChange((x) => SetScrollProgress(x));
+  scrollYProgress.onChange((x) => SetScrollProgress(x))
 
   return (
     <div className='relative h-0 w-full' aria-hidden='true'>
@@ -18,7 +23,7 @@ const PageScrollLine = (props: Props) => {
         ></motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PageScrollLine;
+export default PageScrollLine

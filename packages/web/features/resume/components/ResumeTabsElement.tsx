@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { IoDownloadOutline } from 'react-icons/io5';
-import Button from '../../../components/button/Button';
-import Typography from '../../../components/typography/Typography';
+import { useState } from 'react'
+import { IoDownloadOutline } from 'react-icons/io5'
+import Button from '../../../components/button/Button'
+import Typography from '../../../components/typography/Typography'
 
-type Props = {};
+type Props = {}
 
 const ResumeTabsElement = (props: Props) => {
   const resumeContent = [
@@ -56,15 +56,15 @@ const ResumeTabsElement = (props: Props) => {
         'Worked directly with our partner institutions, providing technical support to their lecturers and staff. Most notably worked directly with the Saïd Business School in Oxford and the Ross Business School in Michigan, especially at the beginning of the pandemic.',
       ],
     },
-  ];
-  const [activeTab, setActiveTab] = useState(0);
+  ]
+  const [activeTab, setActiveTab] = useState(0)
   return (
     <div className='grid grid-cols-5 gap-3 w-full content-stretch'>
       <aside
         aria-controls='cv-content'
-        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-2xl from-primary-50 to-primary-100/70 border border-primary-100 grid gap-5 col-span-2 '
+        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-2xl from-slate-900/90 to-slate-900 border border-slate-300 grid gap-5 col-span-2  text-slate-100 '
       >
-        <Typography as='p' size='caption' className='text-gray-600'>
+        <Typography as='p' size='caption'>
           * Click on any of the tabs below to view a breakdown
         </Typography>
         <form
@@ -78,9 +78,9 @@ const ResumeTabsElement = (props: Props) => {
               key={index}
               type='primary'
               size='small'
-              className={`flex flex-col gap-0 text-start !items-start rounded-l-xl rounded-r-none border border-primary-400 ${
+              className={`flex flex-col gap-0 text-start !items-start rounded-l-xl rounded-r-none border border-slate-600 ${
                 index !== activeTab &&
-                'bg-primary-50 !text-primary-800 hover:bg-primary-100 border-primary-200'
+                'bg-slate-700 !text-slate-200 hover:bg-slate-600 border-slate-700'
               }`}
             >
               <Typography as='span' size='caption'>
@@ -94,7 +94,7 @@ const ResumeTabsElement = (props: Props) => {
         </form>
         <Button
           type='text'
-          className='text-gray-700 mt-3 text-start'
+          className='mt-3 text-start  text-slate-100 '
           icon={IoDownloadOutline}
           iconPosition='left'
           href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
@@ -105,7 +105,7 @@ const ResumeTabsElement = (props: Props) => {
       </aside>
       <article
         id='cv-content'
-        className='p-6 py-10 rounded-r-2xl bg-secondary-100  col-span-3 h-full flex flex-col items-start justify-center self-stretch text-gray-800 border border-secondary-300'
+        className='p-6 py-10 rounded-r-2xl bg-gray-200  bg-gradient-to-tr  from-slate-200/70 to-slate-100 text-slate-700  col-span-3 h-full flex flex-col items-start justify-center self-stretch border border-slate-200'
       >
         <Typography as='p' size='body1'>
           {resumeContent[activeTab].startDate}
@@ -120,7 +120,7 @@ const ResumeTabsElement = (props: Props) => {
         <ul className='mt-3 list-disc ml-6'>
           {resumeContent[activeTab].description.map((item, index) => (
             <li key={index}>
-              <Typography as='span' size='body3'>
+              <Typography as='span' size='body2'>
                 {item}
               </Typography>
             </li>
@@ -128,7 +128,7 @@ const ResumeTabsElement = (props: Props) => {
         </ul>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default ResumeTabsElement;
+export default ResumeTabsElement

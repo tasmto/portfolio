@@ -1,80 +1,98 @@
-import React from 'react';
-import { PortfolioPieceType } from '../types';
-import GetResourceUrl from '../../../utilities/GetResourceURL';
-import Typography from '../../../components/typography/Typography';
-import Button from '../../../components/button/Button';
-import { IoArrowForwardOutline, IoTodayOutline } from 'react-icons/io5';
-import Link from 'next/link';
-import Tag from '../../../components/tags/Tag';
-import { useRouter } from 'next/router';
+import React from 'react'
+import { PortfolioPieceType } from '../types'
+import GetResourceUrl from '../../../utilities/GetResourceURL'
+import Typography from '../../../components/typography/Typography'
+import Button from '../../../components/button/Button'
+import { IoArrowForwardOutline, IoTodayOutline } from 'react-icons/io5'
+import Link from 'next/link'
+import Tag from '../../../components/tags/Tag'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 type Props = {
-  portfolio: PortfolioPieceType;
-  className?: string;
-};
+  portfolio: PortfolioPieceType
+  className?: string
+}
 
 const PortfolioCard = ({ portfolio, className = '' }: Props) => {
   return (
-    <Link href={`/portfolio/${portfolio?.slug?.current}`}>
-      <a
-        className={`px-6 relative min-h-[250px] h-full py-16 md:py-14  overflow-hidden grid gap-6 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
-        style={{
-          backgroundImage: `url(${GetResourceUrl(
-            portfolio?.bannerImage?.asset
-              ? portfolio.bannerImage.asset
-              : portfolio?.productImage?.asset
-          )
-            .width(1080)
-            .height(500)
-            .blur(1)
-            .fit('max')
-            .auto('format')
-            .url()})`,
-        }}
-      >
-        <div className='z-10 grid gap-2 max-w-md'>
-          <Tag color={portfolio?.completedAt ? 'secondary' : 'tertiary'}>
-            <>
-              <IoTodayOutline className='h-5 w-5' />
-              <span>
-                {portfolio?.completedAt
-                  ? new Date(portfolio?.completedAt).toLocaleDateString(
-                      'en-US',
-                      {
-                        month: 'long',
-                        year: 'numeric',
-                      }
-                    )
-                  : 'Ongoing'}
-              </span>
-            </>
-          </Tag>
-          <Typography
-            size='display3'
-            as='h1'
-            className='text-white tracking-tight drop-shadow-md max-w-2xl'
-          >
-            <strong>{portfolio.projectName}</strong> —{' '}
-            {portfolio.projectSubtitle}
-          </Typography>
-        </div>
-        <div className='z-10 self-end justify-self-start mt-6'>
-          {portfolio?.slug && (
-            <Button
-              aria-hidden='true'
-              type='text-light'
-              size='large'
-              className='pl-0 drop-shadow-md !text-slate-200 hover:!text-white transition-colors'
-              // href={`/portfolio/${portfolio?.slug.current}`}
-              icon={IoArrowForwardOutline}
-            >
-              Project case-study
-            </Button>
-          )}
-        </div>
-      </a>
-    </Link>
-  );
-};
+    <article className='group'>
+      <Link href={`/portfolio/${portfolio?.slug?.current}`}>
+        <a className='relative grid gap-3 self-stretch group after:absolute after:w-full after:h-[50%] after:bottom-0 after:left-0 overflow-hidden after:rounded-xl after:bg-gradient-to-t after:from-primary-900/95 after:via-primary-900/30 sm:after:opacity-0 group-hover:after:opacity-100 after:to-slate-50/0 text-white  cursor-eye '>
+          <span className='z-10 grid gap-2 max-w-md absolute top-6 left-10'>
+            <Tag color={portfolio?.completedAt ? 'secondary' : 'tertiary'}>
+              <>
+                <IoTodayOutline className='h-4 w-4' />
+                <span>
+                  {portfolio?.completedAt
+                    ? new Date(portfolio?.completedAt).toLocaleDateString(
+                        'en-US',
+                        {
+                          month: 'long',
+                          year: 'numeric',
+                        }
+                      )
+                    : 'Ongoing'}
+                </span>
+              </>
+            </Tag>
+          </span>
 
-export default PortfolioCard;
+          <div className='w-full border border-slate-200 rounded-xl'>
+            <Image
+              alt=''
+              src={GetResourceUrl(portfolio.coverImage?.asset)
+                .width(1000)
+                .height(800)
+                .blur(1)
+                .fit('max')
+                .auto('format')
+                .url()}
+              width={1000}
+              height={800}
+              className='w-full h-full image-h-full rounded-xl cursor-eye group-hover:opacity-95 aspect-square'
+            />
+          </div>
+          <div
+            aria-hidden='true'
+            className='absolute z-50 top-6 right-6 flex gap-2 flex-wrap bg-slate-100/80 px-2 py-1 rounded-full  shadow-sm border border-slate-300'
+          >
+            {portfolio.technologies.map((technology, i) => (
+              <img
+                key={i}
+                src={
+                  GetResourceUrl(technology?.icon?.asset ?? '')
+                    ?.width(20)
+                    ?.height(20)
+                    ?.fit('fillmax')
+                    ?.auto('format')
+                    ?.url() ?? ''
+                }
+                alt=''
+                className=' opacity-80'
+                loading='lazy'
+                width={20}
+                height={20}
+              />
+            ))}
+          </div>
+          <div className='grid gap-2 z-50 w-3/4 right-1/2 translate-x-1/2 mx-3 absolute md:bottom-3 bottom-6  transition-all sm:translate-y-[50%] sm:group-hover:translate-y-0 origin-top '>
+            <h1 className=' px-4 py-1 bg-slate-800/80 justify-self-start rounded-full tracking-tight max-w-2xl leading-tight font-bold  drop-shadow-md delay-[50ms] text-xl'>
+              {portfolio.projectName}
+            </h1>
+
+            <Typography
+              size='body3'
+              as='p'
+              className='tracking-tight max-w-2xl leading-tight sm:opacity-0 group-hover:opacity-100 md:min-h-[45px]'
+            >
+              {portfolio.projectSubtitle}
+            </Typography>
+          </div>
+        </a>
+      </Link>
+    </article>
+  )
+}
+
+export default PortfolioCard

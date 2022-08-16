@@ -41,7 +41,7 @@ const DesktopMenu = (props: Props) => {
             <li key={i}>
               <Link href={link.href} scroll={false}>
                 <a
-                  className={` text-slate-800 text-lg font-medium hover:text-primary-500 transition-colors ${
+                  className={` text-slate-600 text-lg font-medium hover:text-primary-500 transition-colors ${
                     router.pathname === link.href && 'text-primary-800 '
                   }`}
                 >

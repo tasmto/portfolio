@@ -18,13 +18,11 @@ const RecommendedProjectsCards = ({ projects }: Props) => {
         <Link key={i} href={`/portfolio/${project?.slug.current}`}>
           <a className='grid gap-4'>
             <figure className='grid gap-4 group'>
-              {(project?.productImage?.asset ||
-                project?.bannerImage?.asset) && (
+              {(project?.coverImage?.asset || project?.coverImage?.asset) && (
                 <span className='cursor-eye relative before:z-10 before:block before:absolute before:top-0 before:w-full before:h-full  group-hover:before:backdrop-blur-[1px] before:group-hover:bg-primary-900/30 before:transition-colors before:duration-300'>
                   <Image
                     src={GetResourceUrl(
-                      project?.productImage?.asset ||
-                        project?.bannerImage?.asset
+                      project?.coverImage?.asset || project?.coverImage?.asset
                     )
                       .width(1280)
                       .height(720)

@@ -16,7 +16,7 @@ const PageTitle = ({ body, title }: Props) => {
           {title}
         </Typography>
         {body && (
-          <Typography size='body2' as='p'>
+          <Typography size='body2' as='p' className=' text-gray-700'>
             {body}
           </Typography>
         )}

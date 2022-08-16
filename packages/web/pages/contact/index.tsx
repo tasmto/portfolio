@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import React from 'react';
-import ContactForm from '../../features/forms/components/ContactForm';
-import Typography from '../../components/typography/Typography';
-import Layout from '../../components/Layout';
+import Image from 'next/image'
+import React from 'react'
+import ContactForm from '../../features/forms/components/ContactForm'
+import Typography from '../../components/typography/Typography'
+import Layout from '../../components/Layout'
 
-type Props = {};
+type Props = {}
 
 const index = (props: Props) => {
   return (
@@ -15,7 +15,7 @@ const index = (props: Props) => {
           id='contact'
         >
           <div className='grid gap-3 content-start'>
-            <Typography size='display1' as='h2'>
+            <Typography size='display1' as='h2' className='text-slate-700'>
               Get in touch.
             </Typography>
             <Typography size='body2' className='max-w-[30rem]'>
@@ -124,7 +124,7 @@ const index = (props: Props) => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default index;
+export default index

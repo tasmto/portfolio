@@ -29,8 +29,8 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
 
   return (
     <Layout>
-      <div className='max-w-[100vw] grid gap-12 md:gap-24  relative'>
-        <div className=' w-full h-full max-w-[100vw] overflow-x-hidden bg-primary-800  pt-10 pb-20 text-white bg-gradient-to-tr  from-primary-900/70 to-primary-900'>
+      <div className='max-w-[100vw] grid gap-12 md:gap-24  relative '>
+        <div className=' w-full h-full max-w-[100vw] overflow-x-hidden bg-slate-800  pt-10 pb-20 text-white bg-gradient-to-tr  from-slate-900/70 to-slate-900'>
           <div className='container-1 grid gap-14 md:gap-28'>
             <section className='grid gap-10 justify-center w-full'>
               <article className='w-full grid md:grid-cols-5 gap-10 content-center justify-items-center'>
@@ -94,21 +94,26 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
             </section>
           </div>
         </div>
-        <section className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container-1'>
+        <section className='grid gap-8 gap-y-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 container-1 justify-start'>
           {nonFeaturedPieces.map((piece, i) => (
             <PortfolioCard portfolio={piece} key={i} />
           ))}
         </section>
 
         <section
-          className=' text-gray-900 grid gap-10 w-full container-1'
+          className=' grid gap-10 w-full container-1'
           id='career-highlights'
         >
           <article className='grid gap-3 '>
-            <Typography size='h1' as='h2'>
+            <Typography
+              size='h1'
+              as='h2'
+              className=' text-gray-900
+'
+            >
               My career highlights.
             </Typography>
-            <Typography size='body2' className='max-w-3xl'>
+            <Typography size='body2' as='p' className='max-w-3xl'>
               From e-commerce to ed-tech to marketing and even real estate
               technologies, I have a wealth of experience in developing user
               focussed and modern applications for the web.
@@ -135,14 +140,14 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
           </div>
         </section>
         <section
-          className=' text-gray-900 grid gap-10 w-full container-1'
+          className=' grid gap-10 w-full container-1'
           id='career-highlights'
         >
           <article className='grid gap-3 '>
-            <Typography size='h1' as='h2'>
+            <Typography size='h1' as='h2' className=' text-gray-900'>
               My blog posts.
             </Typography>
-            <Typography size='body2' className='max-w-3xl'>
+            <Typography size='body2' as='p' className='max-w-3xl'>
               Here are the lessons I've learned throughout my career as a
               developer and a designer.
             </Typography>
@@ -168,7 +173,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
             id='contact'
           >
             <div className='grid gap-3 content-start'>
-              <Typography size='h1' as='h2'>
+              <Typography size='h1' as='h2' className=' text-gray-900'>
                 Get in touch with me.
               </Typography>
               <Typography size='body2' className='max-w-[30rem]'>
@@ -287,7 +292,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
 
 const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
   ...,
-  "technologies": technologies[]->name,
+  "technologies": technologies[]->{name,icon}
 }`;
 const technologiesQuery = groq`*[_type == "technologies" && featured][] | order(featured desc){
  name, icon, description,featured

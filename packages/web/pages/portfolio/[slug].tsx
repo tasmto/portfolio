@@ -103,7 +103,7 @@ const PortfolioPiece = ({ piece }: Props) => {
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
   ...,
   "technologies": technologies[]->{name, icon, description,featured},
-"relatedProjects": relatedProjects[]->{bannerImage,productImage,projectName, projectSubtitle, slug}
+"relatedProjects": relatedProjects[]->{coverImage,coverImage,projectName, projectSubtitle, slug}
  }`;
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.
@@ -128,7 +128,7 @@ export const getStaticProps = async (context: any) => {
   // Query 2 random pieces to show as related projects if there aren't any related projects
   if (!piece?.relatedProjects) {
     piece.relatedProjects = await client.fetch(
-      groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{bannerImage,productImage, projectName, projectSubtitle, slug}`
+      groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{coverImage,coverImage, projectName, projectSubtitle, slug}`
     );
   }
   return { props: { piece } };

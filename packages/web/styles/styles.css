@@ -7,10 +7,10 @@
 @layer components {
   /* Prettier-ignore */
   .container {
-    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2 w-full;
+    @apply max-w-[1350px] lg:!mx-auto md:px-6 lg:px-8 xl:px-0 px-2 w-full;
   }
   .container-1 {
-    @apply max-w-6xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;
+    @apply max-w-7xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;
   }
   .container-2 {
     @apply max-w-4xl lg:!mx-auto md:px-6 lg:px-8 xl:px-0 sm:px-4 px-2 w-full;

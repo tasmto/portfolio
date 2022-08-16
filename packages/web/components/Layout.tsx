@@ -27,6 +27,7 @@ const Layout = ({ children }: Props) => {
       exit='exit'
       variants={variants}
       transition={{ ease: 'easeOut', duration: 0.3 }}
+      className='text-slate-600'
     >
       {children}
     </motion.main>

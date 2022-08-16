@@ -105,8 +105,8 @@ export type PortfolioPieceType = {
   projectSubtitle: string;
   slug: SanitySlug;
 
-  bannerImage: SanityReferenceType;
-  productImage: SanityReferenceType;
+  coverImage: SanityReferenceType;
+
   logo: SanityReferenceType;
 
   walkthrough: string;
@@ -138,8 +138,7 @@ export type PortfolioPieceType = {
 
   featured: boolean;
   relatedProjects: {
-    bannerImage?: SanityReferenceType;
-    productImage?: SanityReferenceType;
+    coverImage?: SanityReferenceType;
     projectName: string;
     projectSubtitle: string;
     slug: SanitySlug;
