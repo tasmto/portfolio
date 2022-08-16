@@ -1,25 +1,25 @@
-import client from '../../client';
-import groq from 'groq';
-import PageScrollLine from '../../features/pages/components/ScrollProgress';
-import PortableTextParser from '../../features/portable-text/PortableTextParser';
-import Typography from '../../components/typography/Typography';
-import Divider from '../../components/divider/Divider';
-import TechStacksCards from '../../components/tech-stacks/TechStacksCards';
-import Button from '../../components/button/Button';
-import PageMeta from '../../components/seo/Seo';
-import RecommendedProjectsCards from '../../features/portfolio/components/RecommendedProjectsCards';
-import { PortfolioPieceType } from '../../features/portfolio/types';
-import PortFolioPieceCover from '../../features/portfolio/components/Cover';
-import Layout from '../../components/Layout';
+import client from '../../client'
+import groq from 'groq'
+import PageScrollLine from '../../features/pages/components/ScrollProgress'
+import PortableTextParser from '../../features/portable-text/PortableTextParser'
+import Typography from '../../components/typography/Typography'
+import Divider from '../../components/divider/Divider'
+import TechStacksCards from '../../components/tech-stacks/TechStacksCards'
+import Button from '../../components/button/Button'
+import PageMeta from '../../components/seo/Seo'
+import RecommendedProjectsCards from '../../features/portfolio/components/RecommendedProjectsCards'
+import { PortfolioPieceType } from '../../features/portfolio/types'
+import PortFolioPieceCover from '../../features/portfolio/components/Cover'
+import Layout from '../../components/Layout'
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 
 type Props = {
-  piece: PortfolioPieceType;
-};
+  piece: PortfolioPieceType
+}
 
 const PortfolioPiece = ({ piece }: Props) => {
-  if (!piece) return null;
+  if (!piece) return null
   return (
     <Layout>
       <PageMeta title={piece?.projectName || 'Portfolio'} />
@@ -70,7 +70,7 @@ const PortfolioPiece = ({ piece }: Props) => {
             />
           )}
         </div>
-        <div className='w-full h-full max-w-[100vw] min-h-[80vh] 2xl:min-h-full grid items-center gap-10 overflow-x-hidden bg-primary-800 bg-gradient-to-tr bg-[radial-gradient(115% 90% at 0% 100%, var(--tw-gradient-stops))] from-primary-900/80 to-primary-900 py-20 text-white snap-start'>
+        <div className='w-full h-full max-w-[100vw] min-h-[80vh] 2xl:min-h-full grid items-center gap-10 overflow-x-hidden bg-slate-900 bg-gradient-to-tr bg-[radial-gradient(115% 90% at 0% 100%, var(--tw-gradient-stops))]  from-slate-900/70 to-slate-900 py-20 text-white snap-start'>
           <section className='container-1 grid gap-4 w-full'>
             <Divider type='solid' />
             <div className='flex flex-wrap gap-4 md:gap-10 justify-between items-center'>
@@ -97,41 +97,41 @@ const PortfolioPiece = ({ piece }: Props) => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
   ...,
   "technologies": technologies[]->{name, icon, description,featured},
-"relatedProjects": relatedProjects[]->{coverImage,coverImage,projectName, projectSubtitle, slug}
- }`;
+"relatedProjects": relatedProjects[]->{coverImage,coverImage,projectName, projectSubtitle, slug, technologies[]-> {name, icon}}
+ }`
 
 // This validates whether the slug is correct, exists and makes it available for getStaticProps.
 export const getStaticPaths = async () => {
   const paths = await client.fetch(
     groq`*[_type == "portfolio" && defined(slug.current)][].slug.current`
-  );
+  )
 
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: true,
-  };
-};
+  }
+}
 
 // Fetched the piece from sanity.
 export const getStaticProps = async (context: any) => {
   // Its important to default the slug so that it doesn't return undefined
-  const { slug = '' }: { slug: string } = context.params;
+  const { slug = '' }: { slug: string } = context.params
 
-  const piece = await client.fetch(query, { slug });
+  const piece = await client.fetch(query, { slug })
 
   // Query 2 random pieces to show as related projects if there aren't any related projects
   if (!piece?.relatedProjects) {
     piece.relatedProjects = await client.fetch(
       groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{coverImage,coverImage, projectName, projectSubtitle, slug}`
-    );
+    )
   }
-  return { props: { piece } };
-};
+  return { props: { piece } }
+}
 
-export default PortfolioPiece;
+export default PortfolioPiece

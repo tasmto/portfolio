@@ -1,23 +1,23 @@
-import React from 'react';
-import { motion, useTransform, useScroll } from 'framer-motion';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { IoDownloadOutline } from 'react-icons/io5';
-import Button from '../../../components/button/Button';
-import { primaryLinks } from '../routes';
-import Logo from '../assets/ts-logo.svg';
+import React from 'react'
+import { motion, useTransform, useScroll } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { IoDownloadOutline } from 'react-icons/io5'
+import Button from '../../../components/button/Button'
+import { primaryLinks } from '../routes'
+import Logo from '../assets/ts-logo.svg'
 
-type Props = {};
+type Props = {}
 
 const DesktopMenu = (props: Props) => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll()
   const translateMenuUpAnim = useTransform(
     scrollYProgress,
-    [0, 0.01],
+    [0, 0.005],
     [0, -200]
-  );
+  )
 
   return (
     <div className='sr-only md:not-sr-only '>
@@ -72,7 +72,7 @@ const DesktopMenu = (props: Props) => {
         </ul>
       </motion.nav>
     </div>
-  );
-};
+  )
+}
 
-export default DesktopMenu;
+export default DesktopMenu

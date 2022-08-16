@@ -1,31 +1,31 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import TechSlider from '../components/tech-stacks/TechSlider';
-import Button from '../components/button/Button';
-import { IoDownloadOutline } from 'react-icons/io5';
-import Divider from '../components/divider/Divider';
-import Typography from '../components/typography/Typography';
-import ResumeTabsElement from '../features/resume/components/ResumeTabsElement';
-import ContactForm from '../features/forms/components/ContactForm';
-import groq from 'groq';
-import client from '../client';
-import PortfolioCard from '../features/portfolio/components/Card';
-import BlogCard from '../features/blog/components/Card';
-import { PortfolioPieceType } from '../features/portfolio/types';
-import FeaturedBlockElement from '../features/portfolio/components/FeaturedBlockElement';
-import { BlogPostType } from '../features/blog/types';
-import Layout from '../components/Layout';
-import { motion } from 'framer-motion';
+import Link from 'next/link'
+import Image from 'next/image'
+import TechSlider from '../components/tech-stacks/TechSlider'
+import Button from '../components/button/Button'
+import { IoDownloadOutline } from 'react-icons/io5'
+import Divider from '../components/divider/Divider'
+import Typography from '../components/typography/Typography'
+import ResumeTabsElement from '../features/resume/components/ResumeTabsElement'
+import ContactForm from '../features/forms/components/ContactForm'
+import groq from 'groq'
+import client from '../client'
+import PortfolioCard from '../features/portfolio/components/Card'
+import BlogCard from '../features/blog/components/Card'
+import { PortfolioPieceType } from '../features/portfolio/types'
+import FeaturedBlockElement from '../features/portfolio/components/FeaturedBlockElement'
+import { BlogPostType } from '../features/blog/types'
+import Layout from '../components/Layout'
+import { motion } from 'framer-motion'
 
 type Props = {
-  portfolioPieces: Array<PortfolioPieceType>;
-  technologies: PortfolioPieceType['technologies'];
-  blogPosts: Array<BlogPostType>;
-};
+  portfolioPieces: Array<PortfolioPieceType>
+  technologies: PortfolioPieceType['technologies']
+  blogPosts: Array<BlogPostType>
+}
 
 const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
-  const featuredPieces = portfolioPieces.filter((piece) => piece.featured);
-  const nonFeaturedPieces = portfolioPieces.filter((piece) => !piece.featured);
+  const featuredPieces = portfolioPieces.filter((piece) => piece.featured)
+  const nonFeaturedPieces = portfolioPieces.filter((piece) => !piece.featured)
 
   return (
     <Layout>
@@ -39,7 +39,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
                     Hi, I'm Tashinga, a full-stack JavaScript developer.
                   </Typography>
                   <Typography
-                    size='body2'
+                    size='body1'
                     className='max-w-[30rem] text-slate-300'
                   >
                     I'm currently looking for my next opportunity to make more
@@ -287,29 +287,29 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
   ...,
   "technologies": technologies[]->{name,icon}
-}`;
+}`
 const technologiesQuery = groq`*[_type == "technologies" && featured][] | order(featured desc){
  name, icon, description,featured
-}`;
+}`
 const blogQuery = groq`*[_type == "post"][0..5] | order(publishedAt  desc){
   ...,
   "categories": categories[]->title,
-}`;
+}`
 
 export const getStaticProps = async () => {
-  const portfolioPieces = await client.fetch(projectsQuery);
-  const technologies = await client.fetch(technologiesQuery);
-  const blogPosts = await client.fetch(blogQuery);
+  const portfolioPieces = await client.fetch(projectsQuery)
+  const technologies = await client.fetch(technologiesQuery)
+  const blogPosts = await client.fetch(blogQuery)
 
   return {
     props: { portfolioPieces, technologies, blogPosts },
-  };
-};
+  }
+}
 
-export default Home;
+export default Home

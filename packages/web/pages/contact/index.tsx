@@ -15,7 +15,7 @@ const index = (props: Props) => {
           id='contact'
         >
           <div className='grid gap-3 content-start'>
-            <Typography size='display1' as='h2' className='text-slate-700'>
+            <Typography size='display1' as='h2' className='text-slate-800'>
               Get in touch.
             </Typography>
             <Typography size='body2' className='max-w-[30rem]'>

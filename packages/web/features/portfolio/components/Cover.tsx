@@ -22,7 +22,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
   return (
     <div className='grid gap-6 md:gap-10 w-full m-auto md:mb-14'>
       <div
-        className=' bg-gradient-to-tr  bg-slate-800  from-slate-900/70 to-slate-900 border px-2 grid pt-16 md:pt-32 bg-fixed shadow-inner'
+        className=' bg-gradient-to-tr  bg-slate-900  from-slate-900/80 to-slate-900 border px-2 grid pt-16 md:pt-32 bg-fixed shadow-inner'
         style={{ backgroundImage: 'url("/images/section-bg.webp")' }}
       >
         <div className='container-1 w-full'>

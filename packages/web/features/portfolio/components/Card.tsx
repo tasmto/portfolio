@@ -18,7 +18,7 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
   return (
     <article className='group'>
       <Link href={`/portfolio/${portfolio?.slug?.current}`}>
-        <a className='relative grid gap-3 self-stretch group after:absolute after:w-full after:h-[50%] after:bottom-0 after:left-0 overflow-hidden after:rounded-xl after:bg-gradient-to-t after:from-primary-900/95 after:via-primary-900/30 sm:after:opacity-0 group-hover:after:opacity-100 after:to-slate-50/0 text-white  cursor-eye '>
+        <a className='relative grid gap-3 self-stretch group after:absolute after:w-full after:h-[50%] after:bottom-0 after:left-0 overflow-hidden after:rounded-xl rounded-xl after:bg-gradient-to-t after:from-primary-900/95 after:via-primary-900/30 sm:after:opacity-0 group-hover:after:opacity-100 after:to-slate-50/0 text-white  cursor-eye '>
           <span className='z-10 grid gap-2 max-w-md absolute top-6 left-10'>
             <Tag color={portfolio?.completedAt ? 'secondary' : 'tertiary'}>
               <>
@@ -38,7 +38,7 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
             </Tag>
           </span>
 
-          <div className='w-full border border-slate-200 rounded-xl'>
+          <div className='w-full  image-h-full border border-slate-200'>
             <Image
               alt=''
               src={GetResourceUrl(portfolio.coverImage?.asset)
@@ -50,14 +50,14 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
                 .url()}
               width={1000}
               height={800}
-              className='w-full h-full image-h-full rounded-xl cursor-eye group-hover:opacity-95 aspect-square'
+              className='w-full h-full rounded-xl cursor-eye group-hover:opacity-95 aspect-square'
             />
           </div>
           <div
             aria-hidden='true'
-            className='absolute z-50 top-6 right-6 flex gap-2 flex-wrap bg-slate-100/80 px-2 py-1 rounded-full  shadow-sm border border-slate-300'
+            className='absolute z-50 top-6 right-6 flex items-center gap-2 flex-wrap bg-slate-100/80 px-2 py-1 rounded-full  image-h-full shadow-sm border border-slate-300'
           >
-            {portfolio.technologies.map((technology, i) => (
+            {portfolio?.technologies?.map((technology, i) => (
               <img
                 key={i}
                 src={
@@ -77,12 +77,12 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
             ))}
           </div>
           <div className='grid gap-2 z-50 w-3/4 right-1/2 translate-x-1/2 mx-3 absolute md:bottom-3 bottom-6  transition-all sm:translate-y-[50%] sm:group-hover:translate-y-0 origin-top '>
-            <h1 className=' px-4 py-1 bg-slate-800/80 justify-self-start rounded-full tracking-tight max-w-2xl leading-tight font-bold  drop-shadow-md delay-[50ms] text-xl'>
+            <h1 className=' px-4 py-1 bg-slate-800/80 justify-self-start rounded-full tracking-tight max-w-2xl leading-tight font-bold  drop-shadow-md delay-[50ms] text-xl md:text-2xl'>
               {portfolio.projectName}
             </h1>
 
             <Typography
-              size='body3'
+              size='body2'
               as='p'
               className='tracking-tight max-w-2xl leading-tight sm:opacity-0 group-hover:opacity-100 md:min-h-[45px]'
             >

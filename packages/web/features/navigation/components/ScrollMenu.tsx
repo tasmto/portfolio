@@ -1,41 +1,36 @@
-import React, { useEffect } from 'react';
-import {
-  motion,
-  useTransform,
-  useScroll,
-  AnimatePresence,
-} from 'framer-motion';
-import Logo from '../assets/ts-logo.svg';
-import { HiMenuAlt4 } from 'react-icons/hi';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Typography from '../../../components/typography/Typography';
-import { IoClose, IoCloseCircle, IoDownloadOutline } from 'react-icons/io5';
-import { allLinks, primaryLinks } from '../routes';
-import { CgCloseR } from 'react-icons/cg';
-import Button from '../../../components/button/Button';
-import styles from '../../../styles/ScrollBar.module.css';
+import React, { useEffect } from 'react'
+import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
+import Logo from '../assets/ts-logo.svg'
+import { HiMenuAlt4 } from 'react-icons/hi'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Typography from '../../../components/typography/Typography'
+import { IoClose, IoCloseCircle, IoDownloadOutline } from 'react-icons/io5'
+import { allLinks, primaryLinks } from '../routes'
+import { CgCloseR } from 'react-icons/cg'
+import Button from '../../../components/button/Button'
+import styles from '../../../styles/ScrollBar.module.css'
 
 const ScrollMenu = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll()
   const translateMenuDownAnim = useTransform(
     scrollYProgress,
-    [0, 0.01],
+    [0, 0.005],
     [-300, 30]
-  );
+  )
 
-  const router = useRouter();
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const router = useRouter()
+  const [menuOpen, setMenuOpen] = React.useState(false)
   useEffect(() => {
-    setMenuOpen(false);
+    setMenuOpen(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.route]);
+  }, [router.route])
 
   const variants = {
     hidden: { opacity: 0, x: -10 },
     enter: { opacity: 1, x: 0, y: 0, duration: 1 },
     exit: { opacity: 0, x: 10, duration: 1.5 },
-  };
+  }
 
   return (
     <>
@@ -50,7 +45,7 @@ const ScrollMenu = () => {
       >
         <Logo
           onClick={() => {
-            if (router.pathname !== '/') router.push('/');
+            if (router.pathname !== '/') router.push('/')
           }}
           title='back to home'
           className='w-10 h-10 cursor-pointer pointer-events-auto hover:rotate-6 transition-all duration-200'
@@ -81,7 +76,7 @@ const ScrollMenu = () => {
             key='menu'
             aria-hidden='true'
             onClick={(e) => {
-              setMenuOpen(false);
+              setMenuOpen(false)
             }}
             className='hidden xs:block fixed mx-auto z-[10000] top-0 left-0 w-screen max-w-[100vw] h-screen bg-slate-700/60 md:pr-2 backdrop-blur-sm'
           >
@@ -127,7 +122,7 @@ const ScrollMenu = () => {
         )}
       </AnimatePresence>
     </>
-  );
-};
+  )
+}
 
-export default ScrollMenu;
+export default ScrollMenu

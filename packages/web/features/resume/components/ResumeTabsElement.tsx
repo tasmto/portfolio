@@ -62,7 +62,7 @@ const ResumeTabsElement = (props: Props) => {
     <div className='grid grid-cols-5 gap-3 w-full content-stretch'>
       <aside
         aria-controls='cv-content'
-        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-2xl from-slate-900/90 to-slate-900 border border-slate-300 grid gap-5 col-span-2  text-slate-100 '
+        className='p-7 pt-10 self-stretch bg-gradient-to-br rounded-l-2xl from-slate-900/90 to-slate-800 border border-slate-300 grid gap-5 col-span-2  text-slate-100 '
       >
         <Typography as='p' size='caption'>
           * Click on any of the tabs below to view a breakdown
