@@ -16,6 +16,7 @@ const RecommendedProjectsCards = ({ projects }: Props) => {
   return (
     <section className='grid grid-cols-1 md:grid-cols-2 gap-10'>
       {projects.map((project, i) => (
+        // @ts-expect-error: Portfolio type required
         <PortfolioCard key={i} portfolio={project} />
       ))}
     </section>
