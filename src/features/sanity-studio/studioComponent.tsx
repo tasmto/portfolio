@@ -1,7 +1,9 @@
 import React from 'react'
-import config from '../../../sanity.config'
+// eslint-disable-next-line import/no-unresolved
 import { NextStudio } from 'next-sanity/studio'
-import { StudioProvider, StudioLayout } from 'sanity'
+import { StudioLayout, StudioProvider } from 'sanity'
+
+import config from '../../../sanity.config'
 
 type Props = {}
 

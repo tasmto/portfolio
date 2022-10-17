@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import DesktopMenu from './DesktopMenu';
-import MobileMenu from './MobileMenu';
-import ScrollMenu from './ScrollMenu';
+import DesktopMenu from './DesktopMenu'
+import MobileMenu from './MobileMenu'
+import ScrollMenu from './ScrollMenu'
 
 const NavBar = () => {
   return (
@@ -20,7 +20,7 @@ const NavBar = () => {
       </header>
       <ScrollMenu />
     </>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

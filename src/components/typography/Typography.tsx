@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
   size?:
@@ -14,15 +14,15 @@ type Props = {
     | 'caption'
     | 'button'
     | 'small'
-    | 'inherit';
-  color?: string;
-  children?: React.ReactNode;
-  as?: React.ElementType;
-  bold?: boolean;
-  className?: string;
-  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  role?: string;
-} & React.HTMLAttributes<HTMLElement>;
+    | 'inherit'
+  color?: string
+  children?: React.ReactNode
+  as?: React.ElementType
+  bold?: boolean
+  className?: string
+  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
+  role?: string
+} & React.HTMLAttributes<HTMLElement>
 
 /**
  * @param size - The size of the text.
@@ -40,7 +40,7 @@ const Typography = ({
   onClick,
   role,
 }: Props) => {
-  const Element = as;
+  const Element = as
   const classes = {
     display1: `text-5xl md:text-6xl leading-tighter tracking-tight ${
       bold ? 'font-bold' : 'font-medium'
@@ -75,11 +75,11 @@ const Typography = ({
     }`,
     small: `text-xs tracking-tight ${bold ? 'font-medium' : 'font-normal'}`,
     inherit: '',
-  };
+  }
 
   const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    if (onClick) onClick(e);
-  };
+    if (onClick) onClick(e)
+  }
 
   return (
     <Element
@@ -89,7 +89,7 @@ const Typography = ({
     >
       {children}
     </Element>
-  );
-};
+  )
+}
 
-export default Typography;
+export default Typography

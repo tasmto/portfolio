@@ -7,14 +7,14 @@ import {
   PlainTextType,
   SanitySlug,
   TextImageType,
-} from '../portfolio/types';
+} from '../portfolio/types'
 
 export type pageType = {
-  _createdAt: string;
-  _id: string;
-  _rev: string;
-  _type: 'page';
-  _updatedAt: string;
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: 'page'
+  _updatedAt: string
   body: Array<
     | PlainTextType
     | CodeEmbedType
@@ -23,14 +23,14 @@ export type pageType = {
     | TextImageType
     | ButtonType
     | CustomListType
-  >;
-  customSEO: boolean;
+  >
+  customSEO: boolean
   seo: {
-    _type: 'customSEO';
-    seoDescription: string;
-    seoTitle: string;
-  };
+    _type: 'customSEO'
+    seoDescription: string
+    seoTitle: string
+  }
 
-  slug: SanitySlug;
-  title: string;
-};
+  slug: SanitySlug
+  title: string
+}

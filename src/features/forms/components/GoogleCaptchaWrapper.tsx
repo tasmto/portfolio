@@ -1,8 +1,8 @@
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 const GoogleCaptchaWrapper = ({ children }: Props) => {
   if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
@@ -19,8 +19,8 @@ const GoogleCaptchaWrapper = ({ children }: Props) => {
       >
         {children}
       </GoogleReCaptchaProvider>
-    );
-  else return <>{children}</>;
-};
+    )
+  else return <>{children}</>
+}
 
-export default GoogleCaptchaWrapper;
+export default GoogleCaptchaWrapper

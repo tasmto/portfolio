@@ -1,4 +1,4 @@
-import { IoCopyOutline, IoImageOutline } from 'react-icons/io5'
+import { IoCopyOutline } from 'react-icons/io5'
 import { defineType } from 'sanity'
 
 export default defineType({

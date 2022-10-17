@@ -88,7 +88,7 @@ export const getStaticProps = async (context: any) => {
   // Its important to default the slug so that it doesn't return undefined
   const { slug = '' }: { slug: string } = context.params
   const piece = await getClient().fetch(query, { slug })
-  return { props: { piece }, fallback: 'blocking', revalidate: 400 }
+  return { props: { piece } }
 }
 
 export default PortfolioPiece

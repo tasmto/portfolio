@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { PortfolioPieceType } from '@/features/portfolio/types'
 import { urlFor } from '@/lib/sanity'
+
 import Typography from '../typography/Typography'
 
 type Props = {
@@ -18,12 +20,14 @@ const TechStacksCards = ({ technologies }: Props) => {
           className='p-3 py-4 md:p-6 bg-slate-100 border border-slate-200 bg-gradient-to-tr from-slate-100 to-slate-50 rounded-xl grid gap-4 items-start'
         >
           <img
-            src={urlFor(tech.icon.asset)
-              .width(40)
-              .height(40)
-              .fit('max')
-              .auto('format')
-              .url()}
+            src={
+              urlFor(tech.icon.asset)
+                ?.width(40)
+                ?.height(40)
+                ?.fit('max')
+                ?.auto('format')
+                ?.url() ?? ''
+            }
             alt=''
             loading='lazy'
             className=' self-start'

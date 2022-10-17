@@ -1,23 +1,18 @@
-import Image from 'next/image'
-import { useState } from 'react'
-import Divider from '@/components/divider/Divider'
 import {
   IoArrowForwardOutline,
   IoBookmarks,
   IoTodayOutline,
 } from 'react-icons/io5'
-import { BiLinkExternal } from 'react-icons/bi'
-import { TbRainbow } from 'react-icons/tb'
-import Button from '@/components/button/Button'
 import Link from 'next/link'
-import Typography from '@/components/typography/Typography'
-import { PortfolioPieceType } from '../types'
-import { blockContentToPlainText } from 'react-portable-text'
-import trimString from '../../../utilities/trimString'
+
+import Button from '@/components/button/Button'
 import Tag from '@/components/tags/Tag'
-import PortableTextParser from '../../portable-text/PortableTextParser'
-import generatePlainText from '../../portable-text/lib/generatePlainText'
+import Typography from '@/components/typography/Typography'
 import { urlFor } from '@/lib/sanity'
+
+import trimString from '../../../utilities/trimString'
+import generatePlainText from '../../portable-text/lib/generatePlainText'
+import { PortfolioPieceType } from '../types'
 // import {urlFor} from '@/lib/sanity'
 type Props = {
   piece: PortfolioPieceType
@@ -34,13 +29,15 @@ const FeaturedBlockElement = ({
       <a
         className={`px-6 relative min-h-[250px] h-full py-16 md:py-24  overflow-hidden grid sm:grid-cols-2 lg:grid-cols-5 gap-6 bg-cover bg-top bg-no-repeat rounded-xl md:rounded-2xl before:block before:absolute before:top-0 before:w-full before:h-full before:bg-slate-900/80 hover:before:backdrop-blur-sm  before:hover:bg-primary-900/80 before:transition-colors before:duration-300 cursor-eye ${className}`}
         style={{
-          backgroundImage: `url(${urlFor(piece?.coverImage?.asset)
-            .width(1080)
-            .height(500)
-            .blur(10)
-            .fit('max')
-            .auto('format')
-            .url()})`,
+          backgroundImage: `url(${
+            urlFor(piece?.coverImage?.asset)
+              ?.width(1080)
+              ?.height(500)
+              ?.blur(10)
+              ?.fit('max')
+              ?.auto('format')
+              ?.url() ?? ''
+          })`,
         }}
       >
         <div className='grid gap-6 lg:col-span-3'>

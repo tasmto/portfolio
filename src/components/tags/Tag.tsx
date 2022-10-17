@@ -1,10 +1,11 @@
-import React from 'react';
-import Typography from '../typography/Typography';
+import React from 'react'
+
+import Typography from '../typography/Typography'
 
 type Props = {
-  color?: 'primary' | 'secondary' | 'tertiary';
-  children: React.ReactNode;
-};
+  color?: 'primary' | 'secondary' | 'tertiary'
+  children: React.ReactNode
+}
 
 const Tag = ({ color, children }: Props) => {
   return (
@@ -24,7 +25,7 @@ const Tag = ({ color, children }: Props) => {
     >
       {children}
     </Typography>
-  );
-};
+  )
+}
 
-export default Tag;
+export default Tag

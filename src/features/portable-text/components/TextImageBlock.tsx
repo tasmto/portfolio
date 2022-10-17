@@ -1,6 +1,7 @@
+import React from 'react'
 import { SanityReference } from '@sanity/image-url/lib/types/types'
 import Image from 'next/image'
-import React from 'react'
+
 import Typography from '@/components/typography/Typography'
 import { urlFor } from '@/lib/sanity'
 
@@ -22,12 +23,14 @@ const TextImageBlock = ({ content }: Props) => {
     <section className='grid grid-cols-1 md:grid-cols-5 items-center gap-5 md:gap-10 relative  w-full max-w-[120rem] m-auto sm:px-4 px-2 md:px-0'>
       <div className='col-span-3 border border-gray-200 rounded-3xl w-full'>
         <Image
-          src={urlFor(image?.asset?._ref)
-            .width(1280)
-            .height(720)
-            .fit('max')
-            .auto('format')
-            .url()}
+          src={
+            urlFor(image?.asset?._ref)
+              ?.width(1280)
+              ?.height(720)
+              ?.fit('max')
+              ?.auto('format')
+              ?.url() ?? ''
+          }
           alt=''
           loading='lazy'
           width={1280}

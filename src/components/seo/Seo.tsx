@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import React from 'react';
+import React from 'react'
+import Head from 'next/head'
 
 type Props = {
-  title?: string;
-  description?: string;
-  favicon?: string;
-};
+  title?: string
+  description?: string
+  favicon?: string
+}
 
 const PageMeta = ({
   title = 'Full Stack Developer',
@@ -18,7 +18,7 @@ const PageMeta = ({
       <meta name='description' content={description} />
       <link rel='icon' href={favicon} />
     </Head>
-  );
-};
+  )
+}
 
-export default PageMeta;
+export default PageMeta

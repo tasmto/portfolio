@@ -1,10 +1,5 @@
-import {
-  useTransform,
-  useViewportScroll,
-  motion,
-  useScroll,
-} from 'framer-motion'
 import React, { useState } from 'react'
+import { motion, useScroll } from 'framer-motion'
 
 type Props = {}
 

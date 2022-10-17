@@ -27,12 +27,14 @@ const BlogCard = ({ post, className = '' }: Props) => {
 
         <div className='col-span-2 order-last sm:order-first sm:col-span-1 justify-self-center self-center max-w-[300px]'>
           <Image
-            src={urlFor(post.coverImage.asset)
-              .width(400)
-              .height(400)
-              .fit('max')
-              .auto('format')
-              .url()}
+            src={
+              urlFor(post.coverImage.asset)
+                ?.width(400)
+                ?.height(400)
+                ?.fit('max')
+                ?.auto('format')
+                ?.url() ?? ''
+            }
             height={400}
             width={400}
             alt=''

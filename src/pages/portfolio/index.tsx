@@ -82,8 +82,6 @@ export const getStaticProps = async () => {
   const portfolioPieces = await getClient().fetch(query)
   return {
     props: { portfolioPieces },
-    fallback: 'blocking',
-    revalidate: 400,
   }
 }
 

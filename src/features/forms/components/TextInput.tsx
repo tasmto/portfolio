@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  label: string;
-  type?: 'text' | 'email' | 'password';
-  name: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  value: string;
-};
+  label: string
+  type?: 'text' | 'email' | 'password'
+  name: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  required?: boolean
+  value: string
+}
 
 const TextInput = ({ label, name, onChange, required, value, type }: Props) => {
-  const [inputValue, setInputValue] = React.useState(value || '');
-  const [inputHasFocus, setInputHasFocus] = React.useState(false);
+  const [inputValue, setInputValue] = React.useState(value || '')
+  const [inputHasFocus, setInputHasFocus] = React.useState(false)
 
-  const focusStyles = `translate-y-[-0.8rem] text-sm text-gray-500`;
+  const focusStyles = `translate-y-[-0.8rem] text-sm text-gray-500`
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    onChange(event);
-  };
+    setInputValue(event.target.value)
+    onChange(event)
+  }
   return (
     <>
       <div className='relative z-0 w-full mb-5'>
@@ -43,7 +43,7 @@ const TextInput = ({ label, name, onChange, required, value, type }: Props) => {
         </label>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default TextInput;
+export default TextInput

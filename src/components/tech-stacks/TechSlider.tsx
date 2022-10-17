@@ -25,12 +25,14 @@ const TechSlider = ({ technologies }: Props) => {
             className='flex-shrink-0 flex gap-2 snap-center items-center hover:text-gray-300 group'
           >
             <img
-              src={urlFor(tech.icon.asset)
-                .width(20)
-                .height(20)
-                .fit('max')
-                .auto('format')
-                .url()}
+              src={
+                urlFor(tech.icon.asset)
+                  ?.width(20)
+                  ?.height(20)
+                  ?.fit('max')
+                  ?.auto('format')
+                  ?.url() ?? ''
+              }
               alt=''
               loading='lazy'
               className='opacity-40 group-hover:opacity-60 grayscale brightness-[400]'

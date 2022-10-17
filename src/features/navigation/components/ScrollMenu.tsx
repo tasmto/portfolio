@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
-import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
-import Logo from '../assets/ts-logo.svg'
 import { HiMenuAlt4 } from 'react-icons/hi'
-import { useRouter } from 'next/router'
+import { IoCloseCircle, IoDownloadOutline } from 'react-icons/io5'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import Typography from '@/components/typography/Typography'
-import { IoClose, IoCloseCircle, IoDownloadOutline } from 'react-icons/io5'
-import { allLinks, primaryLinks } from '../routes'
-import { CgCloseR } from 'react-icons/cg'
+import { useRouter } from 'next/router'
+
 import Button from '@/components/button/Button'
+import Typography from '@/components/typography/Typography'
+
+import Logo from '../assets/ts-logo.svg'
+import { allLinks } from '../routes'
+
 import styles from '../../../styles/ScrollBar.module.css'
 
 const ScrollMenu = () => {

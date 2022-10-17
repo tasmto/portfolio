@@ -1,8 +1,8 @@
 type Props = {
-  type?: 'solid' | 'dashed' | 'dotted';
-  prominent?: boolean;
-  className?: string;
-};
+  type?: 'solid' | 'dashed' | 'dotted'
+  prominent?: boolean
+  className?: string
+}
 
 /**
  *
@@ -21,7 +21,7 @@ const Divider = ({ type, prominent, className }: Props) => {
           : 'border-solid'
       } ${className ? className : ''}`}
     />
-  );
-};
+  )
+}
 
-export default Divider;
+export default Divider

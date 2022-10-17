@@ -1,6 +1,8 @@
 import React from 'react'
+
 import Button from '@/components/button/Button'
 import Typography from '@/components/typography/Typography'
+
 import PortableTextParser from '../PortableTextParser'
 
 export type PlainTextType = {

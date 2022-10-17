@@ -1,26 +1,26 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import React from 'react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { materialLight } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-type Props = { code: string; language: string };
+type Props = { code: string; language: string }
 
 const convertLanguageNameToAlias = (language: string): string => {
-  const lowerCaseLanguage = language?.toLowerCase();
+  const lowerCaseLanguage = language?.toLowerCase()
   switch (lowerCaseLanguage) {
     case 'typescript':
-      return 'ts';
+      return 'ts'
     case 'javascript':
-      return 'js';
+      return 'js'
     case 'html':
-      return 'html';
+      return 'html'
     case 'css':
-      return 'css';
+      return 'css'
     case 'csharp':
-      return 'c#';
+      return 'c#'
     default:
-      return language || 'js';
+      return language || 'js'
   }
-};
+}
 const CodeParser = ({ code, language }: Props) => {
   return (
     <div className='relative max-w-full w-full h-full max-h-full '>
@@ -42,7 +42,7 @@ const CodeParser = ({ code, language }: Props) => {
         {code}
       </SyntaxHighlighter>
     </div>
-  );
-};
+  )
+}
 
-export default CodeParser;
+export default CodeParser

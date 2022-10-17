@@ -1,16 +1,18 @@
 import React from 'react'
-import { PortfolioPieceType } from '../types'
-import { urlFor } from '@/lib/sanity'
-import Typography from '@/components/typography/Typography'
-import { motion } from 'framer-motion'
-import Button from '@/components/button/Button'
 import {
   IoArrowForwardOutline,
   IoLogoGithub,
   IoPlayOutline,
   IoTodayOutline,
 } from 'react-icons/io5'
+import { motion } from 'framer-motion'
+
+import Button from '@/components/button/Button'
 import Tag from '@/components/tags/Tag'
+import Typography from '@/components/typography/Typography'
+import { urlFor } from '@/lib/sanity'
+
+import { PortfolioPieceType } from '../types'
 
 type Props = {
   portfolio: PortfolioPieceType
@@ -93,16 +95,18 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
             bg-no-repeat rounded-3xl bg-fixed shadow-lg '
             style={{
               // y: y2,
-              backgroundImage: `url(${urlFor(
-                portfolio?.coverImage?.asset
-                  ? portfolio?.coverImage?.asset
-                  : portfolio.coverImage?.asset
-              )
-                .width(1066)
-                .height(600)
-                .fit('max')
-                .auto('format')
-                .url()})`,
+              backgroundImage: `url(${
+                urlFor(
+                  portfolio?.coverImage?.asset
+                    ? portfolio?.coverImage?.asset
+                    : portfolio.coverImage?.asset
+                )
+                  ?.width(1066)
+                  ?.height(600)
+                  ?.fit('max')
+                  ?.auto('format')
+                  ?.url() ?? ''
+              })`,
             }}
           ></motion.div>
         </article>

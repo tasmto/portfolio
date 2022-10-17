@@ -1,9 +1,11 @@
 import React from 'react'
+
+import Button from '@/components/button/Button'
+import CodeParser from '@/components/code-embed/CodeViewer'
 import Typography from '@/components/typography/Typography'
+
 import { CodeEmbedType } from '../../portfolio/types'
 import PortableTextParser from '../PortableTextParser'
-import CodeParser from '@/components/code-embed/CodeViewer'
-import Button from '@/components/button/Button'
 
 type Props = {
   content: CodeEmbedType

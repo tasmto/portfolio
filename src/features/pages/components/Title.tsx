@@ -1,5 +1,5 @@
 import React from 'react'
-import reactSyntaxHighlighter from 'react-syntax-highlighter'
+
 import Divider from '@/components/divider/Divider'
 import Typography from '@/components/typography/Typography'
 

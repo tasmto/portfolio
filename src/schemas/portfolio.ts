@@ -6,13 +6,14 @@ export default defineType({
   title: 'Portfolio',
   type: 'document',
   icon: TbRainbow,
+  // @ts-expect-error
   fields: [
     {
       name: 'projectName',
       title: 'Project Name',
       type: 'string',
       description: 'The name of the company (preferably).',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: 'projectSubtitle',
@@ -20,7 +21,7 @@ export default defineType({
       type: 'string',
       description:
         'The aspects of the project completed. i.e. "Website, API, etc."',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -40,7 +41,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: 'walkthrough',
@@ -53,7 +54,7 @@ export default defineType({
       name: 'startedAt',
       title: 'When did you start working on it? *',
       type: 'datetime',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: 'completedAt',
@@ -79,7 +80,7 @@ export default defineType({
       description:
         'What was the problem you were trying to solve for your client or with this idea?',
       type: 'strippedRCE',
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
 
     {
@@ -88,7 +89,7 @@ export default defineType({
       type: 'strippedRCE',
       description:
         'In a few sentences, describe the solution you came up with for your client or with this idea.',
-      validation: (Rule) => Rule.required().max(350),
+      // validation: (Rule) => Rule.required().max(350),
     },
     {
       name: 'body',

@@ -1,7 +1,9 @@
 import React from 'react'
+import { IoArrowForward } from 'react-icons/io5'
+
 import Button from '@/components/button/Button'
 import Typography from '@/components/typography/Typography'
-import { IoArrowForward } from 'react-icons/io5'
+
 import { ButtonType } from '../../portfolio/types'
 
 type Props = {

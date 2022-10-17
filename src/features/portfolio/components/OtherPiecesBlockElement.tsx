@@ -1,11 +1,13 @@
-import Image from 'next/image'
-import React, { Ref, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { PortfolioPieceType } from '../types'
+import Image from 'next/image'
 import Link from 'next/link'
+
 import Typography from '@/components/typography/Typography'
 import { urlFor } from '@/lib/sanity'
-import subDivideArray from '../../../utilities/subDivideArray'
+import subDivideArray from '@/utilities/subDivideArray'
+
+import { PortfolioPieceType } from '../types'
 
 type Props = {
   pieces: Array<PortfolioPieceType>
@@ -101,16 +103,18 @@ const OtherPiecesBlockElement = ({ pieces }: Props) => {
                         </Typography>
                       </article>
                       <Image
-                        src={urlFor(
-                          content?.coverImage?.asset
-                            ? content?.coverImage?.asset
-                            : content?.coverImage?.asset
-                        )
-                          .height(calculateStaticHeight(row.length))
-                          .width(calculateStaticWidth(row.length))
-                          .fit('min')
-                          .auto('format')
-                          .url()}
+                        src={
+                          urlFor(
+                            content?.coverImage?.asset
+                              ? content?.coverImage?.asset
+                              : content?.coverImage?.asset
+                          )
+                            ?.height(calculateStaticHeight(row.length))
+                            ?.width(calculateStaticWidth(row.length))
+                            ?.fit('min')
+                            ?.auto('format')
+                            ?.url() ?? ''
+                        }
                         width={calculateStaticWidth(row.length)}
                         height={calculateStaticHeight(row.length)}
                         layout='responsive'

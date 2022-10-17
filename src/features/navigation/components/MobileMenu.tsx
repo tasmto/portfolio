@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React from 'react';
+import React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import { mobileLinks } from '../routes';
+import { mobileLinks } from '../routes'
 
-type Props = {};
+type Props = {}
 
 const MobileMenu = (props: Props) => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <nav
@@ -34,7 +34,7 @@ const MobileMenu = (props: Props) => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu
