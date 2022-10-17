@@ -1,14 +1,13 @@
+import React from 'react'
 import groq from 'groq'
 import Link from 'next/link'
-import React from 'react'
+
+import Layout from '@/components/Layout'
+import PageMeta from '@/components/seo/Seo'
+import PageTitle from '@/features/pages/components/Title'
+import FeaturedBlockElement from '@/features/portfolio/components/FeaturedBlockElement'
+import { PortfolioPieceType } from '@/features/portfolio/types'
 import { getClient } from '@/lib/sanity.server'
-import Layout from '../components/Layout'
-import PageMeta from '../components/seo/Seo'
-import Typography from '../components/typography/Typography'
-import PageTitle from '../features/pages/components/Title'
-import PortfolioCard from '../features/portfolio/components/Card'
-import FeaturedBlockElement from '../features/portfolio/components/FeaturedBlockElement'
-import { PortfolioPieceType } from '../features/portfolio/types'
 
 type Props = {
   portfolioPieces: PortfolioPieceType[]

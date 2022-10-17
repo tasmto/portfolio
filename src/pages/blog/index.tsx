@@ -1,11 +1,12 @@
 import groq from 'groq'
+
+import Layout from '@/components/Layout'
+import PageMeta from '@/components/seo/Seo'
+import BlogCard from '@/features/blog/components/Card'
+import { BlogPostType } from '@/features/blog/types'
+import FooterSecondaryContactCard from '@/features/navigation/components/FooterCard'
+import PageTitle from '@/features/pages/components/Title'
 import { getClient } from '@/lib/sanity.server'
-import FooterSecondaryContactCard from '../../features/navigation/components/FooterCard'
-import PageMeta from '../../components/seo/Seo'
-import PageTitle from '../../features/pages/components/Title'
-import BlogCard from '../../features/blog/components/Card'
-import { BlogPostType } from '../../features/blog/types'
-import Layout from '../../components/Layout'
 
 type Props = {
   posts: Array<BlogPostType>

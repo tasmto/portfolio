@@ -1,16 +1,16 @@
-import '../styles/styles.css'
-import type { AppProps } from 'next/app'
-import SiteWrapper from '../components/Layout'
 import React from 'react'
-import Footer from '../features/navigation/components/Footer'
-import NavBar from '../features/navigation/components/NavBar'
+import { AnimatePresence } from 'framer-motion'
 import LogRocket from 'logrocket'
-
-import { AnimatePresence, motion } from 'framer-motion'
-import PageMeta from '../components/seo/Seo'
+import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
-function MyApp({ Component, pageProps }: AppProps) {
+import PageMeta from '@/components/seo/Seo'
+import Footer from '@/features/navigation/components/Footer'
+import NavBar from '@/features/navigation/components/NavBar'
+
+import '../styles/styles.css'
+
+var MyApp = ({ Component, pageProps }: AppProps) => {
   if (process.env.NEXT_PUBLIC_NODE_ENV === 'production')
     LogRocket.init('fjdwny/portfolio')
   const router = useRouter()

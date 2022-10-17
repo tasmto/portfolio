@@ -1,4 +1,4 @@
-import { StudioComponent } from '../../features/sanity-studio/studioComponent'
+import { StudioComponent } from '@/features/sanity-studio/studioComponent'
 
 const StudioPage = () => <StudioComponent />
 

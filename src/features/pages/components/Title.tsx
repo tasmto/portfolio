@@ -1,12 +1,12 @@
-import React from 'react';
-import reactSyntaxHighlighter from 'react-syntax-highlighter';
-import Divider from '../../../components/divider/Divider';
-import Typography from '../../../components/typography/Typography';
+import React from 'react'
+import reactSyntaxHighlighter from 'react-syntax-highlighter'
+import Divider from '@/components/divider/Divider'
+import Typography from '@/components/typography/Typography'
 
 type Props = {
-  title: string;
-  body?: React.ReactNode | string;
-};
+  title: string
+  body?: React.ReactNode | string
+}
 
 const PageTitle = ({ body, title }: Props) => {
   return (
@@ -23,7 +23,7 @@ const PageTitle = ({ body, title }: Props) => {
       </article>
       <Divider type='dashed' className='opacity-100 !border-slate-500' />
     </>
-  );
-};
+  )
+}
 
-export default PageTitle;
+export default PageTitle

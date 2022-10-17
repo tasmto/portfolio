@@ -1,15 +1,15 @@
-import { getClient } from '@/lib/sanity.server'
 import groq from 'groq'
-import PageScrollLine from '../../features/pages/components/ScrollProgress'
-import PageMeta from '../../components/seo/Seo'
-import PortableTextParser from '../../features/portable-text/PortableTextParser'
-import { BlogPostType } from '../../features/blog/types'
-import Layout from '../../components/Layout'
-import PageTitle from '../../features/pages/components/Title'
 import Image from 'next/image'
+
+import Divider from '@/components/divider/Divider'
+import Layout from '@/components/Layout'
+import PageMeta from '@/components/seo/Seo'
+import Typography from '@/components/typography/Typography'
+import { BlogPostType } from '@/features/blog/types'
+import PageScrollLine from '@/features/pages/components/ScrollProgress'
+import PortableTextParser from '@/features/portable-text/PortableTextParser'
 import { urlFor } from '@/lib/sanity'
-import Typography from '../../components/typography/Typography'
-import Divider from '../../components/divider/Divider'
+import { getClient } from '@/lib/sanity.server'
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 

@@ -1,27 +1,27 @@
-import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5';
-import Divider from '../../../components/divider/Divider';
-import Typography from '../../../components/typography/Typography';
-import { footerLinks } from '../routes';
+import Link from 'next/link'
+import React, { useEffect } from 'react'
+import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
+import Divider from '@/components/divider/Divider'
+import Typography from '@/components/typography/Typography'
+import { footerLinks } from '../routes'
 
 const Footer = () => {
-  const [currentYear, setCurrentYear] = React.useState(2111);
+  const [currentYear, setCurrentYear] = React.useState(2111)
 
   useEffect(() => {
     const conFirmCurrentYear = async () => {
       try {
-        const res = await fetch('http://worldclockapi.com/api/json/utc/now');
-        const data = await res.json();
-        const year = data?.currentDateTime?.substring(0, 4);
+        const res = await fetch('http://worldclockapi.com/api/json/utc/now')
+        const data = await res.json()
+        const year = data?.currentDateTime?.substring(0, 4)
         if (year && Number(year) && Number(year) !== currentYear) {
-          setCurrentYear(Number(year));
+          setCurrentYear(Number(year))
         }
       } catch (error) {}
-    };
-    conFirmCurrentYear();
+    }
+    conFirmCurrentYear()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <footer className='grid gap-6 md:gap-14 my-12 container-1'>
@@ -133,7 +133,7 @@ const Footer = () => {
         </ul>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

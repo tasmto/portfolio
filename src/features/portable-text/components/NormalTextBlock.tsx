@@ -1,22 +1,22 @@
-import React from 'react';
-import Button from '../../../components/button/Button';
-import Typography from '../../../components/typography/Typography';
-import PortableTextParser from '../PortableTextParser';
+import React from 'react'
+import Button from '@/components/button/Button'
+import Typography from '@/components/typography/Typography'
+import PortableTextParser from '../PortableTextParser'
 
 export type PlainTextType = {
-  description?: any;
-  heading?: string;
-  subheading?: string;
-  link?: string;
-  linkText?: string;
-};
+  description?: any
+  heading?: string
+  subheading?: string
+  link?: string
+  linkText?: string
+}
 
 type Props = {
-  content: PlainTextType;
-};
+  content: PlainTextType
+}
 
 const NormalTextBlock = ({ content }: Props) => {
-  console.log(content);
+  console.log(content)
   return (
     <section className='w-full grid gap-4 container-1'>
       {content?.heading && (
@@ -40,7 +40,7 @@ const NormalTextBlock = ({ content }: Props) => {
         </Button>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default NormalTextBlock;
+export default NormalTextBlock

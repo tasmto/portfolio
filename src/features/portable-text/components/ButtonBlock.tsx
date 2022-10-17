@@ -1,15 +1,15 @@
-import React from 'react';
-import Button from '../../../components/button/Button';
-import Typography from '../../../components/typography/Typography';
-import { IoArrowForward } from 'react-icons/io5';
-import { ButtonType } from '../../portfolio/types';
+import React from 'react'
+import Button from '@/components/button/Button'
+import Typography from '@/components/typography/Typography'
+import { IoArrowForward } from 'react-icons/io5'
+import { ButtonType } from '../../portfolio/types'
 
 type Props = {
-  content: ButtonType;
-};
+  content: ButtonType
+}
 
 const ButtonBlock = ({ content }: Props) => {
-  if (!content.link) return null;
+  if (!content.link) return null
 
   return (
     <section className='p-8 md:px-14 md:py-10 bg-primary-50/50 rounded-2xl flex flex-col md:flex-row justify-between gap-6 w-full container-2'>
@@ -35,7 +35,7 @@ const ButtonBlock = ({ content }: Props) => {
         {content?.linkText || 'Learn More'}
       </Button>
     </section>
-  );
-};
+  )
+}
 
-export default ButtonBlock;
+export default ButtonBlock

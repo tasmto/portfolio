@@ -1,11 +1,11 @@
 import {
-  IoChatbubble,
-  IoChatbubbleOutline,
-  IoNewspaper,
-  IoDocumentTextOutline,
   IoBrowsers,
   IoBrowsersOutline,
-} from 'react-icons/io5';
+  IoChatbubble,
+  IoChatbubbleOutline,
+  IoDocumentTextOutline,
+  IoNewspaper,
+} from 'react-icons/io5'
 
 export const mobileLinks = [
   {
@@ -26,7 +26,7 @@ export const mobileLinks = [
     icon: IoChatbubbleOutline,
     iconActive: IoChatbubble,
   },
-];
+]
 
 export const primaryLinks = [
   {
@@ -42,7 +42,7 @@ export const primaryLinks = [
     href: '/blog',
     text: 'Blog',
   },
-];
+]
 
 export const allLinks = [
   {
@@ -66,7 +66,7 @@ export const allLinks = [
     text: 'Contact me',
     href: '/contact',
   },
-];
+]
 
 export const footerLinks = [
   {
@@ -112,4 +112,4 @@ export const footerLinks = [
       },
     ],
   },
-];
+]

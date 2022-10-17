@@ -1,13 +1,13 @@
-import React from 'react';
-import Footer from '../features/navigation/components/Footer';
-import NavBar from '../features/navigation/components/NavBar';
-import LogRocket from 'logrocket';
-import PageMeta from './seo/Seo';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react'
+import Footer from '@/features/navigation/components/Footer'
+import NavBar from '@/features/navigation/components/NavBar'
+import LogRocket from 'logrocket'
+import PageMeta from './seo/Seo'
+import { AnimatePresence, motion } from 'framer-motion'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 /**
  * @description Wrapper for the site, includes global stuff Redux stores etc if needed.
@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
     hidden: { opacity: 0, x: -200 },
     enter: { opacity: 1, x: 0, y: 0 },
     exit: { opacity: 0, x: 200 },
-  };
+  }
 
   return (
     <motion.main
@@ -31,7 +31,7 @@ const Layout = ({ children }: Props) => {
     >
       {children}
     </motion.main>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

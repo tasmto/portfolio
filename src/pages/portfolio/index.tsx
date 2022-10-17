@@ -1,15 +1,16 @@
-import Link from 'next/link'
-import groq from 'groq'
-import { getClient } from '@/lib/sanity.server'
-import PortfolioCard from '../../features/portfolio/components/Card'
-import Typography from '../../components/typography/Typography'
-import Button from '../../components/button/Button'
 import { IoCalendar } from 'react-icons/io5'
-import FooterSecondaryContactCard from '../../features/navigation/components/FooterCard'
-import PageMeta from '../../components/seo/Seo'
-import PageTitle from '../../features/pages/components/Title'
-import { PortfolioPieceType } from '../../features/portfolio/types'
-import Layout from '../../components/Layout'
+import groq from 'groq'
+import Link from 'next/link'
+
+import Button from '@/components/button/Button'
+import Layout from '@/components/Layout'
+import PageMeta from '@/components/seo/Seo'
+import Typography from '@/components/typography/Typography'
+import FooterSecondaryContactCard from '@/features/navigation/components/FooterCard'
+import PageTitle from '@/features/pages/components/Title'
+import PortfolioCard from '@/features/portfolio/components/Card'
+import { PortfolioPieceType } from '@/features/portfolio/types'
+import { getClient } from '@/lib/sanity.server'
 
 type Props = {
   portfolioPieces: Array<PortfolioPieceType>

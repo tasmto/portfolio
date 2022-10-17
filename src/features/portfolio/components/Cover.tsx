@@ -1,16 +1,16 @@
 import React from 'react'
 import { PortfolioPieceType } from '../types'
 import { urlFor } from '@/lib/sanity'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import { motion } from 'framer-motion'
-import Button from '../../../components/button/Button'
+import Button from '@/components/button/Button'
 import {
   IoArrowForwardOutline,
   IoLogoGithub,
   IoPlayOutline,
   IoTodayOutline,
 } from 'react-icons/io5'
-import Tag from '../../../components/tags/Tag'
+import Tag from '@/components/tags/Tag'
 
 type Props = {
   portfolio: PortfolioPieceType

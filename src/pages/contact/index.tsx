@@ -1,8 +1,9 @@
-import Image from 'next/image'
 import React from 'react'
-import ContactForm from '../../features/forms/components/ContactForm'
-import Typography from '../../components/typography/Typography'
-import Layout from '../../components/Layout'
+import Image from 'next/image'
+
+import Layout from '@/components/Layout'
+import Typography from '@/components/typography/Typography'
+import ContactForm from '@/features/forms/components/ContactForm'
 
 type Props = {}
 

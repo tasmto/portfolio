@@ -1,16 +1,16 @@
-import React from 'react';
-import Typography from '../../../components/typography/Typography';
+import React from 'react'
+import Typography from '@/components/typography/Typography'
 
 export type CustomListType = {
-  description?: string;
-  heading?: string;
-  listItems: string[];
-  numbered: boolean;
-};
+  description?: string
+  heading?: string
+  listItems: string[]
+  numbered: boolean
+}
 
 type Props = {
-  content: CustomListType;
-};
+  content: CustomListType
+}
 
 const CustomListBlock = ({ content }: Props) => {
   return (
@@ -42,7 +42,7 @@ const CustomListBlock = ({ content }: Props) => {
         ))}
       </ol>
     </section>
-  );
-};
+  )
+}
 
-export default CustomListBlock;
+export default CustomListBlock

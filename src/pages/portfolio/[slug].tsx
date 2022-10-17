@@ -1,19 +1,17 @@
-import { getClient } from '@/lib/sanity.server'
 import groq from 'groq'
-import PageScrollLine from '../../features/pages/components/ScrollProgress'
-import PortableTextParser from '../../features/portable-text/PortableTextParser'
-import Typography from '../../components/typography/Typography'
-import Divider from '../../components/divider/Divider'
-import TechStacksCards from '../../components/tech-stacks/TechStacksCards'
-import Button from '../../components/button/Button'
-import PageMeta from '../../components/seo/Seo'
-import RecommendedProjectsCards from '../../features/portfolio/components/RecommendedProjectsCards'
-import { PortfolioPieceType } from '../../features/portfolio/types'
-import PortFolioPieceCover from '../../features/portfolio/components/Cover'
-import Layout from '../../components/Layout'
-import { useRouter } from 'next/router'
 
-// Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
+import Button from '@/components/button/Button'
+import Divider from '@/components/divider/Divider'
+import Layout from '@/components/Layout'
+import PageMeta from '@/components/seo/Seo'
+import TechStacksCards from '@/components/tech-stacks/TechStacksCards'
+import Typography from '@/components/typography/Typography'
+import PageScrollLine from '@/features/pages/components/ScrollProgress'
+import PortableTextParser from '@/features/portable-text/PortableTextParser'
+import PortFolioPieceCover from '@/features/portfolio/components/Cover'
+import RecommendedProjectsCards from '@/features/portfolio/components/RecommendedProjectsCards'
+import { PortfolioPieceType } from '@/features/portfolio/types'
+import { getClient } from '@/lib/sanity.server'
 
 type Props = {
   piece: PortfolioPieceType

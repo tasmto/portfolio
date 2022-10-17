@@ -1,7 +1,7 @@
 import { SanityReference } from '@sanity/image-url/lib/types/types'
 import Image from 'next/image'
 import React from 'react'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import { urlFor } from '@/lib/sanity'
 
 type Props = {

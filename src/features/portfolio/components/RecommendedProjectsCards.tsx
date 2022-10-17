@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { PortfolioPieceType } from '../types'
 import { urlFor } from '@/lib/sanity'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import PortfolioCard from './Card'
 
 type Props = {

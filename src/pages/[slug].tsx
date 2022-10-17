@@ -1,9 +1,10 @@
-import { getClient } from '@/lib/sanity.server'
 import groq from 'groq'
-import PortableTextParser from '../features/portable-text/PortableTextParser'
-import { pageType } from '../features/pages/types'
-import FooterSecondaryContactCard from '../features/navigation/components/FooterCard'
-import Layout from '../components/Layout'
+
+import Layout from '@/components/Layout'
+import FooterSecondaryContactCard from '@/features/navigation/components/FooterCard'
+import { pageType } from '@/features/pages/types'
+import PortableTextParser from '@/features/portable-text/PortableTextParser'
+import { getClient } from '@/lib/sanity.server'
 
 // Guide: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js#3085b10bbadd
 

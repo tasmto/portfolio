@@ -7,7 +7,10 @@ class MyDocument extends ServerStyleSheetDocument {
     const originalRenderPage = ctx.renderPage
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App) => (props) => <App {...props} />,
+        enhanceApp: (App) =>
+          function (props) {
+            return <App {...props} />
+          },
       })
 
     const initialProps = await ServerStyleSheetDocument.getInitialProps(ctx)

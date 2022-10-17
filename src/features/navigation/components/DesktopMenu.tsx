@@ -3,7 +3,7 @@ import { motion, useTransform, useScroll } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { IoDownloadOutline } from 'react-icons/io5'
-import Button from '../../../components/button/Button'
+import Button from '@/components/button/Button'
 import { primaryLinks } from '../routes'
 import Logo from '../assets/ts-logo.svg'
 

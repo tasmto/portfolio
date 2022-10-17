@@ -1,16 +1,16 @@
-import React from 'react';
-import Typography from '../../../components/typography/Typography';
-import { CodeEmbedType } from '../../portfolio/types';
-import PortableTextParser from '../PortableTextParser';
-import CodeParser from '../../../components/code-embed/CodeViewer';
-import Button from '../../../components/button/Button';
+import React from 'react'
+import Typography from '@/components/typography/Typography'
+import { CodeEmbedType } from '../../portfolio/types'
+import PortableTextParser from '../PortableTextParser'
+import CodeParser from '@/components/code-embed/CodeViewer'
+import Button from '@/components/button/Button'
 
 type Props = {
-  content: CodeEmbedType;
-};
+  content: CodeEmbedType
+}
 
 const CodeTextEmbedBlock = ({ content }: Props) => {
-  const { heading, description, code, link, linkText } = content;
+  const { heading, description, code, link, linkText } = content
   return (
     <section className='grid gap-6 md:gap-7 container-1 w-full'>
       {heading && (
@@ -34,7 +34,7 @@ const CodeTextEmbedBlock = ({ content }: Props) => {
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CodeTextEmbedBlock;
+export default CodeTextEmbedBlock

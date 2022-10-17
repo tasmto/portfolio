@@ -1,15 +1,15 @@
-import React from 'react';
-import Button from '../../../components/button/Button';
-import Typography from '../../../components/typography/Typography';
-import { IframeEmbedType } from '../../portfolio/types';
-import PortableTextParser from '../PortableTextParser';
+import React from 'react'
+import Button from '@/components/button/Button'
+import Typography from '@/components/typography/Typography'
+import { IframeEmbedType } from '../../portfolio/types'
+import PortableTextParser from '../PortableTextParser'
 
 type Props = {
-  content: IframeEmbedType;
-};
+  content: IframeEmbedType
+}
 
 const IframeEmbed = ({ content }: Props) => {
-  if (!content.iframeLink) return null;
+  if (!content.iframeLink) return null
   return (
     <section className='grid gap-6 md:gap-7 container-1 w-full'>
       {content?.heading && (
@@ -41,7 +41,7 @@ const IframeEmbed = ({ content }: Props) => {
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default IframeEmbed;
+export default IframeEmbed

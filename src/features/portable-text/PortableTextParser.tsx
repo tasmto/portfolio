@@ -1,27 +1,27 @@
-import PortableText from 'react-portable-text';
-import React from 'react';
+import PortableText from 'react-portable-text'
+import React from 'react'
 import {
   ButtonType,
   CodeEmbedType,
   IframeEmbedType,
   PortfolioPieceType,
   TextImageType,
-} from '../portfolio/types';
-import Typography from '../../components/typography/Typography';
-import CodeTextEmbedBlock from './components/CodeTextEmbedBlock';
-import NormalTextBlock, { PlainTextType } from './components/NormalTextBlock';
-import TextImageBlock from './components/TextImageBlock';
-import ButtonBlock from './components/ButtonBlock';
-import IframeEmbed from './components/IframeEmbed';
-import CustomListBlock, { CustomListType } from './components/CustomList.tsx';
+} from '../portfolio/types'
+import Typography from '@/components/typography/Typography'
+import CodeTextEmbedBlock from '@/components/CodeTextEmbedBlock'
+import NormalTextBlock, { PlainTextType } from '@/components/NormalTextBlock'
+import TextImageBlock from '@/components/TextImageBlock'
+import ButtonBlock from '@/components/ButtonBlock'
+import IframeEmbed from '@/components/IframeEmbed'
+import CustomListBlock, { CustomListType } from '@/components/CustomList.tsx'
 
 interface Props {
-  content: PortfolioPieceType['body'] | any;
-  className?: string;
+  content: PortfolioPieceType['body'] | any
+  className?: string
 }
 
 const PortableTextParser = ({ content, className }: Props) => {
-  if (!content) return null;
+  if (!content) return null
   return (
     <PortableText
       className={className}
@@ -66,7 +66,7 @@ const PortableTextParser = ({ content, className }: Props) => {
         ),
       }}
     />
-  );
-};
+  )
+}
 
-export default PortableTextParser;
+export default PortableTextParser

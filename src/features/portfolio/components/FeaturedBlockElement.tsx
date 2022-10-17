@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useState } from 'react'
-import Divider from '../../../components/divider/Divider'
+import Divider from '@/components/divider/Divider'
 import {
   IoArrowForwardOutline,
   IoBookmarks,
@@ -8,13 +8,13 @@ import {
 } from 'react-icons/io5'
 import { BiLinkExternal } from 'react-icons/bi'
 import { TbRainbow } from 'react-icons/tb'
-import Button from '../../../components/button/Button'
+import Button from '@/components/button/Button'
 import Link from 'next/link'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import { PortfolioPieceType } from '../types'
 import { blockContentToPlainText } from 'react-portable-text'
 import trimString from '../../../utilities/trimString'
-import Tag from '../../../components/tags/Tag'
+import Tag from '@/components/tags/Tag'
 import PortableTextParser from '../../portable-text/PortableTextParser'
 import generatePlainText from '../../portable-text/lib/generatePlainText'
 import { urlFor } from '@/lib/sanity'

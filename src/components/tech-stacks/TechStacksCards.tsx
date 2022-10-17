@@ -1,5 +1,5 @@
 import React from 'react'
-import { PortfolioPieceType } from '../../features/portfolio/types'
+import { PortfolioPieceType } from '@/features/portfolio/types'
 import { urlFor } from '@/lib/sanity'
 import Typography from '../typography/Typography'
 

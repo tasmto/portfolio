@@ -4,11 +4,11 @@ import Logo from '../assets/ts-logo.svg'
 import { HiMenuAlt4 } from 'react-icons/hi'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import { IoClose, IoCloseCircle, IoDownloadOutline } from 'react-icons/io5'
 import { allLinks, primaryLinks } from '../routes'
 import { CgCloseR } from 'react-icons/cg'
-import Button from '../../../components/button/Button'
+import Button from '@/components/button/Button'
 import styles from '../../../styles/ScrollBar.module.css'
 
 const ScrollMenu = () => {

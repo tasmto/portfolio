@@ -2,7 +2,7 @@ import React from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import styles from '../../styles/ScrollBar.module.css'
 import { urlFor } from '@/lib/sanity'
-import { PortfolioPieceType } from '../../features/portfolio/types'
+import { PortfolioPieceType } from '@/features/portfolio/types'
 
 type Props = {
   technologies: PortfolioPieceType['technologies']

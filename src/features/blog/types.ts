@@ -1,4 +1,3 @@
-import { SanityReference } from '@sanity/image-url/lib/types/types';
 import {
   ButtonType,
   CodeEmbedType,
@@ -6,26 +5,24 @@ import {
   IframeEmbedType,
   ImageEmbedType,
   PlainTextType,
-  SanityBlockContentType,
-  SanityReferenceType,
   SanitySlug,
   TextImageType,
-} from '../portfolio/types';
+} from '../portfolio/types'
 
 export type BlogPostType = {
-  _type: string;
-  title: string;
-  slug: SanitySlug;
-  coverImage: any;
+  _type: string
+  title: string
+  slug: SanitySlug
+  coverImage: any
   categories: {
-    description: string;
-    title: string;
-    slug: SanitySlug;
-  }[];
+    description: string
+    title: string
+    slug: SanitySlug
+  }[]
 
-  publishedAt: string;
+  publishedAt: string
 
-  extract: string;
+  extract: string
   body: Array<
     | PlainTextType
     | CodeEmbedType
@@ -34,14 +31,14 @@ export type BlogPostType = {
     | TextImageType
     | ButtonType
     | CustomListType
-  >;
+  >
 
-  relatedArticles: any[];
+  relatedArticles: any[]
 
   // Todo: Add SEO fields
 
   // Meta
-  _createdAt: string;
-  _rev: string;
-  _updatedAt: string;
-};
+  _createdAt: string
+  _rev: string
+  _updatedAt: string
+}

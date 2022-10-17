@@ -3,7 +3,7 @@ import React, { Ref, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { PortfolioPieceType } from '../types'
 import Link from 'next/link'
-import Typography from '../../../components/typography/Typography'
+import Typography from '@/components/typography/Typography'
 import { urlFor } from '@/lib/sanity'
 import subDivideArray from '../../../utilities/subDivideArray'
 
