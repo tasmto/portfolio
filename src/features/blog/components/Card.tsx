@@ -1,10 +1,12 @@
 import React from 'react'
-import { BlogPostType } from '../types'
-import { urlFor } from '@/lib/sanity'
-import Typography from '@/components/typography/Typography'
-import Link from 'next/link'
-import Tag from '@/components/tags/Tag'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import Tag from '@/components/tags/Tag'
+import Typography from '@/components/typography/Typography'
+import { urlFor } from '@/lib/sanity'
+
+import { BlogPostType } from '../types'
 
 type Props = {
   post: BlogPostType

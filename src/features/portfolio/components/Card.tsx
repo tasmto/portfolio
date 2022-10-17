@@ -1,13 +1,13 @@
 import React from 'react'
-import { PortfolioPieceType } from '../types'
-import { urlFor } from '@/lib/sanity'
-import Typography from '@/components/typography/Typography'
-import Button from '@/components/button/Button'
-import { IoArrowForwardOutline, IoTodayOutline } from 'react-icons/io5'
-import Link from 'next/link'
-import Tag from '@/components/tags/Tag'
-import { useRouter } from 'next/router'
+import { IoTodayOutline } from 'react-icons/io5'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import Tag from '@/components/tags/Tag'
+import Typography from '@/components/typography/Typography'
+import { urlFor } from '@/lib/sanity'
+
+import { PortfolioPieceType } from '../types'
 
 type Props = {
   portfolio: PortfolioPieceType
@@ -15,6 +15,7 @@ type Props = {
 }
 
 const PortfolioCard = ({ portfolio, className = '' }: Props) => {
+  console.log(portfolio?.technologies)
   return (
     <article className='group'>
       <Link href={`/portfolio/${portfolio?.slug?.current}`}>
@@ -41,13 +42,15 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
           <div className='w-full  image-h-full border border-slate-200'>
             <Image
               alt=''
-              src={urlFor(portfolio.coverImage?.asset)
-                .width(1000)
-                .height(800)
-                .blur(1)
-                .fit('max')
-                .auto('format')
-                .url()}
+              src={
+                urlFor(portfolio.coverImage?.asset)
+                  ?.width(1000)
+                  ?.height(800)
+                  ?.blur(1)
+                  ?.fit('max')
+                  ?.auto('format')
+                  ?.url() ?? ''
+              }
               width={1000}
               height={800}
               className='w-full h-full rounded-xl cursor-eye group-hover:opacity-95 aspect-square'
@@ -57,24 +60,26 @@ const PortfolioCard = ({ portfolio, className = '' }: Props) => {
             aria-hidden='true'
             className='absolute z-50 top-6 right-6 flex items-center gap-2 flex-wrap bg-slate-100/80 px-2 py-1 rounded-full  image-h-full shadow-sm border border-slate-300'
           >
-            {portfolio?.technologies?.map((technology, i) => (
-              <img
-                key={i}
-                src={
-                  urlFor(technology?.icon?.asset ?? '')
-                    ?.width(20)
-                    ?.height(20)
-                    ?.fit('fillmax')
-                    ?.auto('format')
-                    ?.url() ?? ''
-                }
-                alt=''
-                className=' opacity-80'
-                loading='lazy'
-                width={20}
-                height={20}
-              />
-            ))}
+            {portfolio?.technologies?.map((technology, i) =>
+              technology?.icon?.asset ? (
+                <img
+                  key={i}
+                  src={
+                    urlFor(technology?.icon?.asset)
+                      ?.width(20)
+                      ?.height(20)
+                      ?.fit('fillmax')
+                      ?.auto('format')
+                      ?.url() ?? ''
+                  }
+                  alt=''
+                  className=' opacity-80'
+                  loading='lazy'
+                  width={20}
+                  height={20}
+                />
+              ) : undefined
+            )}
           </div>
           <div className='grid gap-2 z-50 w-3/4 right-1/2 translate-x-1/2 mx-3 absolute md:bottom-3 bottom-6  transition-all sm:translate-y-[50%] sm:group-hover:translate-y-0 origin-top '>
             <h1 className=' px-4 py-1 bg-slate-800/80 justify-self-start rounded-full tracking-tight max-w-2xl leading-tight font-bold  drop-shadow-md delay-[50ms] text-xl md:text-2xl'>

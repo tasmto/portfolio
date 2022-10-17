@@ -1,8 +1,9 @@
 import React from 'react'
-import ScrollContainer from 'react-indiana-drag-scroll'
-import styles from '../../styles/ScrollBar.module.css'
-import { urlFor } from '@/lib/sanity'
+
 import { PortfolioPieceType } from '@/features/portfolio/types'
+import { urlFor } from '@/lib/sanity'
+
+import styles from '../../styles/ScrollBar.module.css'
 
 type Props = {
   technologies: PortfolioPieceType['technologies']
@@ -12,9 +13,10 @@ const TechSlider = ({ technologies }: Props) => {
   if (!technologies) return null
 
   return (
-    <ScrollContainer
-      hideScrollbars={false}
-      className={`${styles.horizontalScroll} max-w-lg md:max-w-[100%] flex py-2 px-2 scroll-container cursor-grab active:cursor-grabbing focus:cursor-grabbing`}
+    <div
+      // draggable={true}
+      // hideScrollbars={false}
+      className={`${styles.horizontalScroll} max-w-lg md:max-w-[100%] flex py-2 px-2 scroll-container  overflow-x-auto`}
     >
       <ul className='transition-transform duration-500 flex gap-8 text-gray-400 flex-nowrap w-full  snap-x'>
         {technologies.map((tech, i) => (
@@ -39,7 +41,7 @@ const TechSlider = ({ technologies }: Props) => {
           </li>
         ))}
       </ul>
-    </ScrollContainer>
+    </div>
   )
 }
 

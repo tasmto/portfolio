@@ -13,7 +13,7 @@ import { config } from './config'
  * Read more: https://www.sanity.io/docs/image-url
  **/
 export const urlFor = (source: SanityImageSource) =>
-  createImageUrlBuilder(config).image(source)
+  source ? createImageUrlBuilder(config).image(source) : undefined
 
 // Set up the live preview subscription hook
 export const usePreviewSubscription = createPreviewSubscriptionHook(config)

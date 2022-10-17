@@ -1,4 +1,5 @@
 import { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+// eslint-disable-next-line import/no-unresolved
 import { ServerStyleSheetDocument } from 'next-sanity/studio'
 
 class MyDocument extends ServerStyleSheetDocument {

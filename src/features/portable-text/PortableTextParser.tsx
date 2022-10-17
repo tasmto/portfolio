@@ -1,5 +1,8 @@
-import PortableText from 'react-portable-text'
 import React from 'react'
+import PortableText from 'react-portable-text'
+
+import Typography from '@/components/typography/Typography'
+
 import {
   ButtonType,
   CodeEmbedType,
@@ -7,13 +10,13 @@ import {
   PortfolioPieceType,
   TextImageType,
 } from '../portfolio/types'
-import Typography from '@/components/typography/Typography'
-import CodeTextEmbedBlock from '@/components/CodeTextEmbedBlock'
-import NormalTextBlock, { PlainTextType } from '@/components/NormalTextBlock'
-import TextImageBlock from '@/components/TextImageBlock'
-import ButtonBlock from '@/components/ButtonBlock'
-import IframeEmbed from '@/components/IframeEmbed'
-import CustomListBlock, { CustomListType } from '@/components/CustomList.tsx'
+
+import ButtonBlock from './components/ButtonBlock'
+import CodeTextEmbedBlock from './components/CodeTextEmbedBlock'
+import CustomListBlock, { CustomListType } from './components/CustomList.tsx'
+import IframeEmbed from './components/IframeEmbed'
+import NormalTextBlock, { PlainTextType } from './components/NormalTextBlock'
+import TextImageBlock from './components/TextImageBlock'
 
 interface Props {
   content: PortfolioPieceType['body'] | any

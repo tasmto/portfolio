@@ -1,21 +1,21 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import TechSlider from '@/components/tech-stacks/TechSlider'
-import Button from '@/components/button/Button'
 import { IoDownloadOutline } from 'react-icons/io5'
-import Divider from '@/components/divider/Divider'
-import Typography from '@/components/typography/Typography'
-import ResumeTabsElement from '@/features/resume/components/ResumeTabsElement'
-import ContactForm from '@/features/forms/components/ContactForm'
+import { motion } from 'framer-motion'
 import groq from 'groq'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import Button from '@/components/button/Button'
+import Layout from '@/components/Layout'
+import TechSlider from '@/components/tech-stacks/TechSlider'
+import Typography from '@/components/typography/Typography'
+import BlogCard from '@/features/blog/components/Card'
+import { BlogPostType } from '@/features/blog/types'
+import ContactForm from '@/features/forms/components/ContactForm'
 // import client from '../client'
 import PortfolioCard from '@/features/portfolio/components/Card'
-import BlogCard from '@/features/blog/components/Card'
-import { PortfolioPieceType } from '@/features/portfolio/types'
 import FeaturedBlockElement from '@/features/portfolio/components/FeaturedBlockElement'
-import { BlogPostType } from '@/features/blog/types'
-import Layout from '@/components/Layout'
-import { motion } from 'framer-motion'
+import { PortfolioPieceType } from '@/features/portfolio/types'
+import ResumeTabsElement from '@/features/resume/components/ResumeTabsElement'
 import { getClient } from '@/lib/sanity.server'
 
 type Props = {
@@ -43,8 +43,16 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
                     size='body1'
                     className='max-w-[30rem] text-slate-300'
                   >
-                    I'm currently looking for my next opportunity to make more
-                    kickass software for the web.
+                    I'm currently working as a React developer at{' '}
+                    <a
+                      href='https://www.warpdevelopment.com/'
+                      target={'_blank'}
+                      rel='noreferrer'
+                      className='underline underline-offset-4 hover:opacity-80'
+                    >
+                      Warp development 🥰
+                    </a>
+                    .
                   </Typography>
                   <div className='flex flex-wrap-reverse gap-3 mt-4'>
                     <Link href='/#career-highlights'>

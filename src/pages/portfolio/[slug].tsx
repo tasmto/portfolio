@@ -99,6 +99,7 @@ const PortfolioPiece = ({ piece }: Props) => {
   )
 }
 
+// todo: tech icons on cards not being fetched correctly
 const query = groq`*[_type == "portfolio" && slug.current == $slug][0]{
   ...,
   "technologies": technologies[]->{name, icon, description,featured},

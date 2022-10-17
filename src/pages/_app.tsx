@@ -4,10 +4,6 @@ import LogRocket from 'logrocket'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
-import PageMeta from '@/components/seo/Seo'
-import Footer from '@/features/navigation/components/Footer'
-import NavBar from '@/features/navigation/components/NavBar'
-
 import '../styles/styles.css'
 
 var MyApp = ({ Component, pageProps }: AppProps) => {
@@ -16,21 +12,13 @@ var MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()
 
   return (
-    <div
-      id='main'
-      className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mb-0 md:gap-32 selection:bg-primary-100 selection:text-primary-800 relative  overflow-x-hidden'
+    <AnimatePresence
+      mode='wait'
+      initial={false}
+      onExitComplete={() => window.scrollTo(0, 0)}
     >
-      <PageMeta />
-      <NavBar />
-      <AnimatePresence
-        exitBeforeEnter={true}
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} key={router.asPath} />
-      </AnimatePresence>
-      <Footer />
-    </div>
+      <Component {...pageProps} key={router.asPath} />
+    </AnimatePresence>
   )
 }
 

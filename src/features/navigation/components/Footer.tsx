@@ -1,8 +1,10 @@
-import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
+import Link from 'next/link'
+
 import Divider from '@/components/divider/Divider'
 import Typography from '@/components/typography/Typography'
+
 import { footerLinks } from '../routes'
 
 const Footer = () => {
