@@ -1,13 +1,66 @@
 {
-  "name": "tasmto-portfolio",
+  "name": "portfolio",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
-    "web": "yarn workspace web dev",
-    "studio": "yarn workspace studio start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@formspree/react": "^2.4.0",
+    "@portabletext/react": "^1.0.6",
+    "@sanity/client": "^3.4.1",
+    "@sanity/code-input": "^3.0.0-v3-studio.11",
+    "@sanity/image-url": "^1.0.1",
+    "@svgr/webpack": "^6.5.0",
+    "@types/react-syntax-highlighter": "^15.5.5",
+    "autoprefixer": "^10.4.12",
+    "framer-motion": "^7.5.3",
+    "groq": "^2.33.2",
+    "install": "^0.13.0",
+    "logrocket": "^3.0.1",
+    "next": "12.3.1",
+    "next-sanity": "^1.0.0",
+    "postcss": "^8.4.18",
+    "prismjs": "^1.29.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-google-recaptcha-v3": "^1.10.0",
+    "react-icons": "^4.6.0",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "react-portable-text": "^0.5.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "sanity": "3.0.0-purple-unicorn.6",
+    "sass": "^1.55.0",
+    "styled-components": "^5.3.6",
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/pkg-utils": "^1.15.0",
+    "@sanity/semantic-release-preset": "^2.0.2",
+    "@types/node": "18.11.0",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "airbnb": "^0.0.2",
+    "eslint": "^8.25.0",
+    "eslint-config": "^0.3.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.7.0",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^5.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "typescript": "4.8.4"
   }
 }
