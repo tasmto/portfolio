@@ -44,6 +44,8 @@ export const getStaticProps = async () => {
   const posts = await getClient().fetch(query)
   return {
     props: { posts },
+    fallback: 'blocking',
+    revalidate: 400,
   }
 }
 

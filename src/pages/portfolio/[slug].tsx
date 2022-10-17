@@ -131,7 +131,7 @@ export const getStaticProps = async (context: any) => {
       groq`*[_type == "portfolio" && slug.current != "${slug}"][0..1]{coverImage,coverImage, projectName, projectSubtitle, slug}`
     )
   }
-  return { props: { piece } }
+  return { props: { piece }, fallback: 'blocking', revalidate: 400 }
 }
 
 export default PortfolioPiece

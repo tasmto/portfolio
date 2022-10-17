@@ -36,12 +36,14 @@ const PortfolioPiece = ({ piece }: Props) => {
           </article>
           <div className='border image-h-full border-gray-200 rounded-3xl w-full min-h-[400px] lg:min-h-[500px]'>
             <Image
-              src={urlFor(piece?.coverImage?.asset?._ref)
-                .width(1280)
-                .height(720)
-                .fit('max')
-                .auto('format')
-                .url()}
+              src={
+                urlFor(piece?.coverImage?.asset?._ref)
+                  ?.width(1280)
+                  ?.height(720)
+                  ?.fit('max')
+                  ?.auto('format')
+                  ?.url() ?? ''
+              }
               alt=''
               loading='lazy'
               width={1280}
@@ -86,7 +88,7 @@ export const getStaticProps = async (context: any) => {
   // Its important to default the slug so that it doesn't return undefined
   const { slug = '' }: { slug: string } = context.params
   const piece = await getClient().fetch(query, { slug })
-  return { props: { piece } }
+  return { props: { piece }, fallback: 'blocking', revalidate: 400 }
 }
 
 export default PortfolioPiece

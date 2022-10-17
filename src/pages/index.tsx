@@ -318,6 +318,8 @@ export const getStaticProps = async () => {
 
   return {
     props: { portfolioPieces, technologies, blogPosts },
+    fallback: 'blocking',
+    revalidate: 400,
   }
 }
 

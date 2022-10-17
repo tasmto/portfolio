@@ -50,7 +50,7 @@ export const getStaticProps = async (context: any) => {
   const { slug = '' }: { slug: string } = context.params
 
   const data = await getClient().fetch(query, { slug })
-  return { props: { data } }
+  return { props: { data }, fallback: 'blocking', revalidate: 400 }
 }
 
 export default PortfolioPiece
