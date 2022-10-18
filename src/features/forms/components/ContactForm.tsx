@@ -50,7 +50,6 @@ const ContactForm = (props: Props) => {
           onSubmit={(e) => {
             e.preventDefault()
             handleSubmit(formData)
-            console.log(state)
           }}
         >
           <TextInput

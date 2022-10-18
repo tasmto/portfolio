@@ -15,7 +15,6 @@ type Props = {
 }
 
 const PortfolioCard = ({ portfolio, className = '' }: Props) => {
-  console.log(portfolio?.technologies)
   return (
     <article className='group'>
       <Link href={`/portfolio/${portfolio?.slug?.current}`}>
