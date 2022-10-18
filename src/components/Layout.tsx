@@ -22,7 +22,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div
       id='main'
-      className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mb-0 md:gap-32 selection:bg-primary-100 selection:text-primary-800 relative  overflow-x-hidden'
+      className='min-h-[80vh] max-w-[100vw] mb-[80px] md:mb-0 md:gap-32 selection:bg-primary-100 selection:text-primary-800 relative   overflow-x-hidden'
     >
       <PageMeta />
       <NavBar />

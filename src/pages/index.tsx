@@ -66,7 +66,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
                     <Link href='/portfolio'>
                       <a>
                         <Button type='primary' size='large'>
-                          My Portfolio
+                          My Projects
                         </Button>
                       </a>
                     </Link>

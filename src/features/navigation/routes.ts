@@ -31,7 +31,7 @@ export const mobileLinks = [
 export const primaryLinks = [
   {
     href: '/portfolio',
-    text: 'Portfolio',
+    text: 'Projects',
   },
 
   {
@@ -47,7 +47,7 @@ export const primaryLinks = [
 export const allLinks = [
   {
     href: '/portfolio',
-    text: 'Portfolio',
+    text: 'Projects',
   },
   // {
   //   text: 'About me.',

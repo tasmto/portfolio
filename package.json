@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@formspree/react": "^2.4.0",
-    "@portabletext/react": "^1.0.6",
     "@sanity/client": "^3.4.1",
     "@sanity/code-input": "^3.0.0-v3-studio.11",
     "@sanity/image-url": "^1.0.1",
