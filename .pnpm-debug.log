@@ -1,0 +1,349 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "portfolio",
+      "version": "0.0.1",
+      "private": true,
+      "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "playwright test",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "test:unit": "vitest",
+        "lint": "prettier --plugin-search-dir . --check . && eslint .",
+        "format": "prettier --plugin-search-dir . --write ."
+      },
+      "devDependencies": {
+        "@playwright/test": "^1.28.1",
+        "@sveltejs/adapter-auto": "^2.0.0",
+        "@sveltejs/kit": "^1.5.0",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint": "^8.28.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-svelte3": "^4.0.0",
+        "prettier": "^2.8.0",
+        "prettier-plugin-svelte": "^2.8.1",
+        "svelte": "^3.54.0",
+        "svelte-check": "^3.0.1",
+        "tslib": "^2.4.1",
+        "typescript": "^5.0.0",
+        "vite": "^4.2.0",
+        "vitest": "^0.25.3"
+      },
+      "type": "module"
+    },
+    "prefix": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "C:\\Users\\tasmto\\.pnpm-store\\v3",
+    "virtualStoreDir": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio\\node_modules\\.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslib/2.5.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "tslib",
+      "rawSpec": "^2.4.1"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.8.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier",
+      "rawSpec": "^2.8.0"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.8.7",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "8 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "size": 12652,
+    "status": "started"
+  },
+  "9 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-prettier/8.8.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-prettier",
+      "rawSpec": "^8.5.0"
+    }
+  },
+  "10 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.8.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "11 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/prettier/2.8.7",
+    "size": 2735185,
+    "status": "started"
+  },
+  "12 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.8.0",
+    "size": 5420,
+    "status": "started"
+  },
+  "13 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.8.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte/3.57.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte",
+      "rawSpec": "^3.54.0"
+    }
+  },
+  "16 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte/3.57.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vite/4.2.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vite",
+      "rawSpec": "^4.2.0"
+    }
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite/4.2.1",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "19 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/svelte/3.57.0",
+    "size": 1825764,
+    "status": "started"
+  },
+  "20 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/vite/4.2.1",
+    "size": 745726,
+    "status": "started"
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite/4.2.1",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier-plugin-svelte/2.10.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier-plugin-svelte",
+      "rawSpec": "^2.8.1"
+    }
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.10.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.8.7",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@typescript-eslint/parser/5.56.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@typescript-eslint/parser",
+      "rawSpec": "^5.45.0"
+    }
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/parser/5.56.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "27 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.10.0",
+    "size": 55249,
+    "status": "started"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.10.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte/3.57.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "30 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/8.36.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "^8.28.0"
+    }
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.36.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "32 debug pnpm:update-check": {
+    "currentVersion": "6.11.0",
+    "latestVersion": "7.30.3"
+  },
+  "33 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vitest/0.25.8",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vitest",
+      "rawSpec": "^0.25.3"
+    }
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vitest/0.25.8",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "35 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/eslint/8.36.0",
+    "size": 531331,
+    "status": "started"
+  },
+  "36 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/vitest/0.25.8",
+    "size": 344014,
+    "status": "started"
+  },
+  "37 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-svelte3",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "39 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "size": 13112,
+    "status": "started"
+  },
+  "40 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/@typescript-eslint/parser/5.56.0",
+    "size": 5989,
+    "status": "started"
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/parser/5.56.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "43 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte-check/3.1.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte-check",
+      "rawSpec": "^3.0.1"
+    }
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/3.1.4",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "resolved"
+  },
+  "45 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/svelte-check/3.1.4",
+    "size": 680009,
+    "status": "started"
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vitest/0.25.8",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.36.0",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/3.1.4",
+    "requester": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio",
+    "status": "fetched"
+  },
+  "49 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@sveltejs/kit/1.14.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@sveltejs/kit",
+      "rawSpec": "^1.5.0"
+    }
+  },
+  "50 warn pnpm:install-check": {
+    "message": "Unsupported engine for registry.npmjs.org/@sveltejs/kit/1.14.0: wanted: {\"node\":\"^16.14 || >=18\"} (current: {\"node\":\"v16.13.0\",\"pnpm\":\"6.11.0\"})",
+    "prefix": "C:\\Users\\tasmto\\Documents\\tashinga\\portfolio"
+  },
+  "51 error pnpm": {
+    "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+    "packageId": "registry.npmjs.org/@sveltejs/kit/1.14.0",
+    "wanted": {
+      "node": "^16.14 || >=18"
+    },
+    "current": {
+      "node": "v16.13.0",
+      "pnpm": "6.11.0"
+    },
+    "err": {
+      "name": "Error",
+      "message": "Unsupported engine for registry.npmjs.org/@sveltejs/kit/1.14.0: wanted: {\"node\":\"^16.14 || >=18\"} (current: {\"node\":\"v16.13.0\",\"pnpm\":\"6.11.0\"})",
+      "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+      "stack": "Error: Unsupported engine for registry.npmjs.org/@sveltejs/kit/1.14.0: wanted: {\"node\":\"^16.14 || >=18\"} (current: {\"node\":\"v16.13.0\",\"pnpm\":\"6.11.0\"})\n    at Object.checkEngine [as default] (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:35213:16)\n    at checkPackage (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:35357:99)\n    at Object.packageIsInstallable [as default] (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:35327:20)\n    at resolveDependency (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:110715:81)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async resolveDependenciesOfDependency (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:110452:39)\n    at async Promise.all (index 2)\n    at async Object.resolveDependencies [as default] (C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:110422:29)\n    at async C:\\Users\\tasmto\\.node\\corepack\\pnpm\\6.11.0\\dist\\pnpm.cjs:110937:47"
+    }
+  }
+}
