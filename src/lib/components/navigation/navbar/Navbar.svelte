@@ -41,7 +41,7 @@
 					class="text-size-7 theme-toggle--button"
 					title={$t('nav.toogleTheme', {
 						// @ts-expect-error
-						$currentTheme
+						currentTheme: $currentTheme === 'light' ? 'dark' : 'light'
 					})}
 					on:click={() => currentTheme.toggleTheme()}
 				>

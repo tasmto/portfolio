@@ -5,7 +5,7 @@
     "contact": "Contact",
     "portfolio": "Portfolio",
     "resume": "My Resume/ CV",
-    "toogleTheme": "Toggle {{currentTheme}} theme",
+    "toogleTheme": "Change to the {{currentTheme}} theme",
     "noticeBannerMessage": "<span class=\"link-dark-bg line-150\">I have recently added a new portfolio piece. <a class=\"underline uppercase \" href=\"/\">Check it out!</a></span>",
     "accessibility": {
         "skipToContent": "Skip the navigation menu",
