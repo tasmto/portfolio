@@ -13,6 +13,9 @@
 		class="sr-only skip-navigation-button"
 		on:click={() => {
 			const mainContent = document.getElementById('main-content');
+			if (mainContent) {
+				mainContent.focus();
+			}
 		}}
 	>
 		{$t('nav.accessibility.skipToContent')}
