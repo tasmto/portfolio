@@ -1,6 +1,9 @@
 <script lang="ts">
+	import '../app.scss';
+	import '../app.scss';
+	import '../app.scss';
 	import { page } from '$app/stores';
-	import type { LayoutData } from './$types';
+	import type { LayoutData, LayoutServerLoad } from './$types';
 	export let data: LayoutData;
 	// import "virtual:windi.css";
 
@@ -16,14 +19,7 @@
 </script>
 
 {#if showPreviewBanner}
-	<PreviewBanner {embedded} />
+	<previewbanner {embedded} />
 {/if}
 
 <slot />
-
-<style>
-	:global(body) {
-		margin: 0;
-		padding: 0;
-	}
-</style>

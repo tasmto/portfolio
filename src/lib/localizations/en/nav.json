@@ -1,0 +1,16 @@
+{
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "resume": "My Resume/ CV",
+    "toogleTheme": "Toggle {{currentTheme}} theme",
+    "noticeBannerMessage": "<span class=\"link-dark-bg line-150\">I have recently added a new portfolio piece. <a class=\"underline uppercase \" href=\"/\">Check it out!</a></span>",
+    "accessibility": {
+        "skipToContent": "Skip the navigation menu",
+        "skipToNavigation": "Skip to navigation",
+        "skipToFooter": "Skip to footer",
+        "closeMobileMenu": "Close the navigation menu"
+    }
+}

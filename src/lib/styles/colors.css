@@ -1,0 +1,28 @@
+:root {
+	--color-white: rgb(255, 255, 255);
+	--color-black: #191414;
+
+	--color-gray: rgb(98, 98, 98);
+	--color-gray-dark: rgb(12, 12, 12);
+	--color-gray-light: rgb(174, 174, 175);
+	--color-off-white: rgb(240, 240, 240);
+
+	--color-primary: #007aff;
+	--color-primary-dark: #2d46b8;
+	--color-primary-light: #3e60ff;
+
+	--color-accent: #c3f0c8;
+	--color-accent-dark: #006450;
+	--color-accent-light: #d5f5d9;
+
+	/* TEXT COLORS */
+	--color-text: var(--color-black);
+	--color-inverse-text: var(--color-white);
+}
+
+body.dark-theme {
+	--color-text: var(--color-white);
+	--color-inverse-text: var(--color-black);
+	background-color: var(--color-black);
+	transition: background-color 0.2s ease;
+}
