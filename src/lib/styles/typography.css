@@ -427,3 +427,17 @@ body.bg-dark-blue .link-light-bg a {
 		color: hsla(0, 0%, 100%, 0.6);
 	}
 }
+
+.text-outline {
+	color: rgba(255, 255, 255, 1);
+	/* background-color: white; */
+	text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+		-1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+}
+
+body.dark-theme .text-outline {
+	color: rgba(0, 0, 0, 1) !important;
+	/* background-color: white; */
+	text-shadow: -1px -1px 0 var(--color-white), 1px -1px 0 var(--color-white),
+		-1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white) !important;
+}

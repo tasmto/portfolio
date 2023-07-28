@@ -2,11 +2,11 @@
 	import { t } from '$lib/translations';
 	import { theme as currentTheme } from '$lib/stores/theme';
 	import Icon from '@iconify/svelte';
-
+	import { hideNavbar } from '$lib/stores/layout';
 	let mobileMenuOpen = false;
 </script>
 
-<header data-expanded={mobileMenuOpen}>
+<header data-expanded={mobileMenuOpen} class:hide={$hideNavbar && !mobileMenuOpen}>
 	<a
 		href="/#main-content"
 		target="_self"
@@ -93,10 +93,14 @@
 		left: 0;
 		right: 0;
 		z-index: 100;
+		transition: transform 0.3s ease-in-out;
+	}
+	header.hide {
+		transform: translateY(-100%);
 	}
 	.notice-banner {
 		background: var(--color-primary);
-		background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
 		color: var(--color-white);
 		padding: 0.75rem 0.25rem;
 		text-align: center;
@@ -121,7 +125,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem 0.25rem;
+		padding: 1rem 1.35rem;
 		color: var(--color-text);
 		background: rgba(250, 250, 250, 0.8);
 		backdrop-filter: blur(2px);
@@ -163,7 +167,7 @@
 		cursor: pointer;
 		display: flex;
 		flex-direction: column;
-		transform: translateY(10%);
+		transform: translateY(0px);
 		transition: transform 700ms cubic-bezier(0.48, 1.12, 0.69, 0.5);
 	}
 	.theme-toggle--button > span {
@@ -180,7 +184,7 @@
 	}
 
 	:global(body.dark-theme .theme-toggle--button) {
-		transform: translateY(-40%) !important;
+		transform: translateY(-1.45rem) !important;
 	}
 	body.dark-theme .theme-toggle--button .dark {
 		opacity: 1;

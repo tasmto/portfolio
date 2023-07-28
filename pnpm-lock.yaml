@@ -31,6 +31,7 @@ specifiers:
   styled-components: ^5.3.9
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-inview: ^4.0.0
   svelte-preprocess: ^4.10.7
   svelte2tsx: ^0.5.23
   sveltekit-i18n: ^2.2.2
@@ -57,6 +58,7 @@ dependencies:
   sanity: 3.0.0-rc.3_yzb7qj3wy3w5yqqnj563m4tjxa
   sanity-plugin-asset-source-unsplash: 1.0.6_c2h5rkwhpopionsuigrzi7xmfa
   styled-components: 5.3.9_biqbaboplfbrettd7655fr4n2y
+  svelte-inview: 4.0.0_svelte@3.57.0
   sveltekit-i18n: 2.2.2_svelte@3.57.0
 
 devDependencies:
@@ -5910,6 +5912,14 @@ packages:
     dependencies:
       svelte: 3.57.0
     dev: true
+
+  /svelte-inview/4.0.0_svelte@3.57.0:
+    resolution: {integrity: sha512-2lvfkJRkmHt19RvDe5MrIK/pFiPJhyXbKL6JrEyRNC73EYTmFSMBc7481UIw01s5+/+uRQXRPvrtC0zA45HLaA==}
+    peerDependencies:
+      svelte: ^3.0.0
+    dependencies:
+      svelte: 3.57.0
+    dev: false
 
   /svelte-preprocess/4.10.7_gqrs7n6v6dhdlnuouxz2nsfc2u:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}

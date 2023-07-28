@@ -24,6 +24,7 @@
 </main>
 
 <style>
+	@import '../../lib/styles/global.css';
 	@import '../../lib/styles/reset.css';
 	@import '../../lib/styles/colors.css';
 	@import '../../lib/styles/typography.css';
