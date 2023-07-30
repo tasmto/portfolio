@@ -36,7 +36,7 @@
 		background-color: var(--color-text);
 		border: 1px solid var(--color-text) !important;
 		color: var(--color-inverse-text);
-		padding: 0.95rem 2.45rem;
+		padding: 1.2rem 2.45rem;
 		border-radius: 4rem;
 		border: none;
 		cursor: pointer;

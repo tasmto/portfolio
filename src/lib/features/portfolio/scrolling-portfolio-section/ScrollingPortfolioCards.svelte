@@ -14,7 +14,7 @@
 	const options: Options = {
 		// rootMargin: '-50px'
 		root: portfolioContainerElement,
-		threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+		threshold: [0, 0.02, 0.05, 0.1, 0.5, 0.925, 0.95, 1]
 	};
 
 	export let portfolioItems: {
@@ -32,11 +32,11 @@
 	use:inview={containerOptions}
 	on:inview_enter={({ detail }) => {
 		if (detail.scrollDirection.vertical === 'up') {
-			siteBackgroundColor.setBackgroundColor('var(--color-off-bg)');
+			// siteBackgroundColor.setBackgroundColor('var(--color-off-bg)');
 			hideNavbar.hideNavbar();
 		} else if (detail.scrollDirection.vertical === 'down') {
 			console.log('enter', detail.scrollDirection.vertical);
-			siteBackgroundColor.resetBackgroundColor();
+			// siteBackgroundColor.resetBackgroundColor();
 			hideNavbar.showNavbar();
 		}
 	}}
@@ -46,6 +46,17 @@
 	}}
 >
 	{#each portfolioItems as item, index}
+		<h3
+			class="text-size-5 text-size-5-mobile fw-bold"
+			style={`bottom:  0;
+			margin-top: -3rem;
+		z-index: ${portfolioItems.length - index + 5};
+		top:  ${index * 3.55 + 0.05 * index}rem;
+		background-color: var(--color-inverse-text);
+		`}
+		>
+			{item.title}
+		</h3>
 		<div
 			class="portfolio-scrolling-card active"
 			use:inview={options}
@@ -60,37 +71,14 @@
 				cardPercentages[index] = 0;
 				detail.node.classList.remove('active');
 			}}
-			class:card0={cardPercentages[index] < 20}
-			class:card20={cardPercentages[index] >= 20 && cardPercentages[index] < 40}
-			class:card40={cardPercentages[index] >= 40 && cardPercentages[index] < 60}
-			class:card60={cardPercentages[index] >= 60 && cardPercentages[index] < 80}
-			class:card80={cardPercentages[index] >= 80 && cardPercentages[index] < 90}
-			class:card100={cardPercentages[index] >= 90}
-			style={`--cardPercentage: ${cardPercentages[index]}%`}
 		>
-			<h3 class="text-size-5 text-size-5-mobile fw-bold">{item.title}</h3>
-
-			<figure class={`portfolio-scrolling-card--content-container ${cardPercentages[index]}`}>
+			<figure class={`portfolio-scrolling-card--content-container`}>
 				<figcaption class="content">
 					<h1 class="text-size-4 fw-bold text-size-4-mobile">{item.title}</h1>
-					<p
-						class="line-150"
-						style={`opacity: ${cardPercentages[index] > 30 ? 1 : 0};
-						transition: opacity 0.3s linear ${cardPercentages[index] > 30 ? 0.3 : 0}s;
-					`}
-					>
+					<p class="line-150 text-size-7">
 						{item.description}
 					</p>
-					<Button
-						class="button"
-						href={`/portfolio/${item.slug}`}
-						style={`transform: translateX(${
-							cardPercentages[index] > 50 ? 0 : index % 2 ? 30 : -30
-						}%);
-							opacity: ${cardPercentages[index] > 50 ? 1 : 0};
-							transition: transform 0.7s linear, opacity 0.3s linear;
-						`}>Read more</Button
-					>
+					<Button class="button" href={`/portfolio/${item.slug}`}>Read more</Button>
 				</figcaption>
 				<div class="image">
 					<img src={item.image} alt={item.title} />
@@ -103,11 +91,14 @@
 <style>
 	.portfolio-scrolling-cards--container {
 		position: relative;
-		padding: 0 2rem;
+		border-bottom: 1px solid var(--color-text);
 	}
 
 	.portfolio-scrolling-cards--container > div:not(:first-child) {
 		margin-top: -2rem;
+	}
+	.portfolio-scrolling-cards--container > :last-child {
+		padding-bottom: 0rem;
 	}
 
 	@media (min-width: 575px) {
@@ -120,16 +111,13 @@
 	}
 
 	.portfolio-scrolling-card {
-		--borderWidth: 2px;
-		--borderInActiveColor: rgb(136, 136, 136);
-		--borderActiveColor: var(--color-text);
-		padding: 3rem 2rem 0;
+		padding: 3rem 4rem 4rem;
 		border-radius: 0.2rem 0.2rem 0 0;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
 		/* Animated border */
-		border: var(--borderWidth) solid transparent;
+		/* border: 1px solid var(--color-text); */
 		border-bottom-width: 0px !important;
 		transition: border-width 0.3s linear border-radius 0.3s linear background 0.3s linear;
 	}
@@ -139,138 +127,25 @@
 		border-radius: 2rem 2rem 0 0;
 	}
 
-	.portfolio-scrolling-card.card0 {
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderInActiveColor) 0deg,
-					var(--borderInActiveColor) 75deg,
-					var(--borderInActiveColor) 115deg,
-					var(--borderInActiveColor) 180deg,
-					var(--borderInActiveColor) 233deg,
-					var(--borderInActiveColor) 297deg,
-					var(--borderInActiveColor) 358deg,
-					var(--borderInActiveColor) 360deg
-				)
-				border-box;
-	}
-	.portfolio-scrolling-card.card20 {
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderActiveColor) 0deg,
-					var(--borderActiveColor) 75deg,
-					var(--borderInActiveColor) 115deg,
-					var(--borderInActiveColor) 175deg,
-					var(--borderInActiveColor) 235deg,
-					var(--borderInActiveColor) 300deg,
-					var(--borderInActiveColor) 358deg,
-					var(--borderInActiveColor) 360deg
-				)
-				border-box;
-	}
-	.portfolio-scrolling-card.card40 {
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderActiveColor) 0deg,
-					var(--borderActiveColor) 75deg,
-					var(--borderActiveColor) 115deg,
-					var(--borderInActiveColor) 175deg,
-					var(--borderInActiveColor) 235deg,
-					var(--borderInActiveColor) 300deg,
-					var(--borderInActiveColor) 358deg,
-					var(--borderInActiveColor) 360deg
-				)
-				border-box;
-	}
-	.portfolio-scrolling-card.card60 {
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderActiveColor) 0deg,
-					var(--borderActiveColor) 75deg,
-					var(--borderActiveColor) 115deg,
-					var(--borderActiveColor) 175deg,
-					var(--borderInActiveColor) 235deg,
-					var(--borderInActiveColor) 300deg,
-					var(--borderInActiveColor) 358deg,
-					var(--borderInActiveColor) 360deg
-				)
-				border-box;
-	}
-	.portfolio-scrolling-card.card80 {
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderActiveColor) 0deg,
-					var(--borderActiveColor) 75deg,
-					var(--borderActiveColor) 115deg,
-					var(--borderActiveColor) 175deg,
-					var(--borderActiveColor) 235deg,
-					var(--borderInActiveColor) 300deg,
-					var(--borderInActiveColor) 358deg,
-					var(--borderInActiveColor) 360deg
-				)
-				border-box;
-	}
-	.portfolio-scrolling-card.card100 {
-		--borderWith: 5px;
-		background: linear-gradient(var(--color-inverse-text), var(--color-inverse-text)) padding-box,
-			conic-gradient(
-					from 180deg at 50% 50%,
-					var(--borderActiveColor) 0deg,
-					var(--borderActiveColor) 75deg,
-					var(--borderActiveColor) 115deg,
-					var(--borderActiveColor) 175deg,
-					var(--borderActiveColor) 235deg,
-					var(--borderActiveColor) 300deg,
-					var(--borderActiveColor) 358deg,
-					var(--borderActiveColor) 360deg
-				)
-				border-box;
-	}
-
-	.portfolio-scrolling-card h3 {
-		margin-bottom: 1rem;
+	.portfolio-scrolling-cards--container h3 {
+		padding: 1rem 4rem;
 		display: none;
 		text-align: right;
 		color: var(--color-text);
-		opacity: 0.5;
+		opacity: 1;
+		background-color: var(--color-inverse-text);
 		transition: translate 0.1s linear opacity 0.3 ease-in;
+		border-top: solid 1px var(--color-text);
 	}
 	@media (min-width: 575px) {
-		.portfolio-scrolling-card h3 {
+		.portfolio-scrolling-cards--container h3 {
 			display: block;
+			position: sticky;
+			bottom: 0;
 		}
 	}
 
-	:global(.portfolio-scrolling-card.card0 h3) {
-		translate: 0 -250%;
-		opacity: 0.5;
-	}
-	:global(.portfolio-scrolling-card.card20 h3) {
-		translate: 0 -150%;
-		opacity: 1;
-	}
-	:global(.portfolio-scrolling-card.card40 h3) {
-		translate: 0 -100%;
-		opacity: 1;
-	}
-	:global(.portfolio-scrolling-card.card60 h3) {
-		translate: 0 -60%;
-		opacity: 1;
-	}
-	:global(.portfolio-scrolling-card.card80 h3) {
-		translate: 0 -40%;
-		opacity: 0.8;
-	}
-	:global(.portfolio-scrolling-card.card100 h3) {
-		translate: 0 -0%;
-		opacity: 0.6;
-	}
-
-	.portfolio-scrolling-cards--container .portfolio-scrolling-card:nth-last-child(even) h3 {
+	.portfolio-scrolling-cards--container h3:nth-last-child(even) {
 		text-align: left;
 	}
 
