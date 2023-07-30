@@ -6,6 +6,7 @@
 	--color-gray-dark: rgb(12, 12, 12);
 	--color-gray-light: rgb(174, 174, 175);
 	--color-off-white: rgb(240, 240, 240);
+	--color-off-bg: rgb(243 243 243);
 
 	--color-primary: #007aff;
 	--color-primary-dark: #2d46b8;
@@ -25,4 +26,5 @@ body.dark-theme {
 	--color-inverse-text: var(--color-black);
 	background-color: var(--color-black);
 	transition: background-color 0.2s ease;
+	--color-off-bg: #1f1c1c;
 }
