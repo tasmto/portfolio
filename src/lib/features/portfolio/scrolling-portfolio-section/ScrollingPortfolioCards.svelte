@@ -47,7 +47,7 @@
 >
 	{#each portfolioItems as item, index}
 		<h3
-			class="text-size-5 text-size-5-mobile fw-bold"
+			class="text-size-6 text-size-5-mobile fw-bold container"
 			style={`bottom:  0;
 			margin-top: -3rem;
 		z-index: ${portfolioItems.length - index + 5};
@@ -58,7 +58,7 @@
 			{item.title}
 		</h3>
 		<div
-			class="portfolio-scrolling-card active"
+			class="portfolio-scrolling-card active container"
 			use:inview={options}
 			on:inview_enter={({ detail }) => {
 				const percentage = Math.floor(detail.entry.intersectionRatio * 100);
@@ -103,15 +103,18 @@
 
 	@media (min-width: 575px) {
 		.portfolio-scrolling-cards--container
-			.portfolio-scrolling-card:nth-last-child(even)
+			.portfolio-scrolling-card:nth-child(4n + 2)
 			.portfolio-scrolling-card--content-container
 			.content {
 			order: 2;
 		}
+		.portfolio-scrolling-cards--container h3:nth-child(4n + 1) {
+			text-align: left;
+		}
 	}
 
 	.portfolio-scrolling-card {
-		padding: 3rem 4rem 4rem;
+		padding: 3rem 0rem 4rem;
 		border-radius: 0.2rem 0.2rem 0 0;
 		display: flex;
 		flex-direction: column;
@@ -121,6 +124,7 @@
 		border-bottom-width: 0px !important;
 		transition: border-width 0.3s linear border-radius 0.3s linear background 0.3s linear;
 	}
+
 	.portfolio-scrolling-card.active,
 	:nth-child(1).portfolio-scrolling-card {
 		/* background-color: red !important; */
@@ -128,10 +132,10 @@
 	}
 
 	.portfolio-scrolling-cards--container h3 {
-		padding: 1rem 4rem;
+		padding: 1rem 0rem;
 		display: none;
 		text-align: right;
-		color: var(--color-text);
+		color: var(--color-gray);
 		opacity: 1;
 		background-color: var(--color-inverse-text);
 		transition: translate 0.1s linear opacity 0.3 ease-in;
@@ -143,10 +147,6 @@
 			position: sticky;
 			bottom: 0;
 		}
-	}
-
-	.portfolio-scrolling-cards--container h3:nth-last-child(even) {
-		text-align: left;
 	}
 
 	.portfolio-scrolling-card--content-container {
@@ -165,7 +165,7 @@
 		justify-content: center;
 		align-items: start;
 		gap: 2rem;
-		padding-bottom: 4rem;
+		padding-bottom: 6rem;
 	}
 	.portfolio-scrolling-card--content-container .content p {
 		max-width: 400px;

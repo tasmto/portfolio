@@ -52,15 +52,17 @@
 
 <style>
 	.tech-scroller--container {
-		padding: 6rem 4rem;
+		padding: 6rem 0;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		gap: 4rem;
 		overflow-x: clip;
+		max-width: 100%;
 	}
 	.tech-scroller {
 		display: flex;
+		align-items: center;
 		flex-wrap: nowrap;
 		gap: 4rem;
 		width: 100%;
@@ -86,11 +88,12 @@
 	}
 	.tech-scroller--item img {
 		width: 100%;
-		height: 6rem;
+		height: 4rem;
 		flex: 1;
 		display: inline;
 		border-radius: 1rem;
 		object-fit: cover;
+		margin-right: -2rem;
 	}
 	.tech-scroller--item:hover img {
 		filter: grayscale(100%);

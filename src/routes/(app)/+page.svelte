@@ -124,7 +124,7 @@
 	];
 </script>
 
-<div class="hero-container">
+<div class="hero-container container">
 	<div class="hero-content--container">
 		<h1 class="text-size-2 text-size-1-mobile fw-bold line-120">
 			Hey there, my name is Tashinga & <span class="text-outline">I am a full stack developer.</span
@@ -138,8 +138,8 @@
 <ScrollingPortfolioCards {portfolioItems} />
 
 <section>
-	<article class="text-container--2 text-center">
-		<h2 class="text-size-4 text-size-1-mobile fw-bold line-120">
+	<article class="text-container--2 text-center container">
+		<h2 class="text-size-3 text-size-1-mobile fw-bold line-120">
 			Here are some of the technologies I work with
 		</h2>
 		<p class=" line-150 text-size-7">
@@ -195,8 +195,7 @@
 	}
 
 	.text-container--2 {
-		padding: 3rem 6rem;
-		max-width: 500px;
+		max-width: 600px;
 		margin: 0 auto;
 		display: grid;
 		gap: 2rem;
