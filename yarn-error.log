@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Users\tasmto\AppData\Roaming\nvm\v16.13.0\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+  C:\Users\tasmto\AppData\Roaming\nvm\v20.5.0\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
   C:\Users\tasmto\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\tasmto\bin;C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\tasmto\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\Program Files (x86)\dotnet;C:\Users\tasmto\AppData\Local\Android\Sdk\platform-tools;C:\Users\tasmto\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Users\tasmto\AppData\Roaming\npm;C:\Users\tasmto\AppData\Local\Microsoft\WinGet\Links;C:\Users\tasmto\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\tasmto\AppData\Local\Yarn\bin;C:\Users\tasmto\AppData\Local\Programs\oh-my-posh\bin;C:\Users\tasmto\.dotnet\tools;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -8,13 +8,13 @@ Yarn version:
   1.22.19
 
 Node version: 
-  16.13.0
+  20.5.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: EEXIST: file already exists, mkdir 'C:\Users\tasmto\Documents\tashinga\portfolio\node_modules\@sanity\ui\node_modules\@reach'
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\tasmto\AppData\Local\Yarn\Cache\v6\npm-escape-string-regexp-4.0.0-14ba83a5d373e3d311e5afca29cf5bfad965bf34-integrity\node_modules\escape-string-regexp\index.d.ts' -> 'C:\Users\tasmto\Documents\tashinga\portfolio\node_modules\eslint\node_modules\escape-string-regexp\index.d.ts'
 
 npm manifest: 
   {

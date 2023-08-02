@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blockContent from './blockContent';
 import category from './category';
 import post from './post';
+import resume from './resume';
 import technologies from './technologies';
 import portfolio from './portfolio';
 import codeEmbed from './custom/codeEmbed';
@@ -15,6 +16,7 @@ import textImage from './custom/textImage';
 import iframeEmbed from './custom/iframeEmbed';
 import plainText from './custom/plainText';
 import strippedRCE from './custom/strippedRCE';
+import basicRCE from './custom/basicRCE';
 import customList from './custom/customList';
 import button from './custom/button';
 import page from './page';
@@ -37,12 +39,14 @@ export default createSchema({
     post,
     postSeries,
     category,
+    resume,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     // Customized RCEs
     blockContent,
     strippedRCE,
+    basicRCE,
 
     // Custom sections
     customSEO,
