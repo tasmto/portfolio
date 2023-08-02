@@ -1,29 +1,29 @@
-import React from 'react'
-import { PortfolioPieceType } from '../types'
-import GetResourceUrl from '../../../utilities/GetResourceURL'
-import Typography from '../../../components/typography/Typography'
-import { motion } from 'framer-motion'
-import Button from '../../../components/button/Button'
+import React from 'react';
+import { PortfolioPieceType } from '../types';
+import GetResourceUrl from '../../../utilities/GetResourceURL';
+import Typography from '../../../components/typography/Typography';
+import { motion } from 'framer-motion';
+import Button from '../../../components/button/Button';
 import {
   IoArrowForwardOutline,
   IoLogoGithub,
   IoPlayOutline,
   IoTodayOutline,
-} from 'react-icons/io5'
-import Tag from '../../../components/tags/Tag'
+} from 'react-icons/io5';
+import Tag from '../../../components/tags/Tag';
 
 type Props = {
-  portfolio: PortfolioPieceType
-}
+  portfolio: PortfolioPieceType;
+};
 
 const PortFolioPieceCover = ({ portfolio }: Props) => {
   if (!portfolio?.coverImage?.asset && !portfolio?.coverImage?.asset)
-    return null
+    return null;
   return (
     <div className='grid gap-6 md:gap-10 w-full m-auto md:mb-14'>
       <div
         className=' bg-gradient-to-tr  bg-slate-800  from-slate-900/70 to-slate-900 border px-2 grid pt-16 md:pt-32 bg-fixed shadow-inner'
-        style={{ backgroundImage: 'url("/images/section-bg.webp")' }}
+        // style={{ backgroundImage: 'url("/images/section-bg.webp")' }}
       >
         <div className='container-1 w-full'>
           <div className='z-10 grid gap-2'>
@@ -108,7 +108,7 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
         </article>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PortFolioPieceCover
+export default PortFolioPieceCover;
