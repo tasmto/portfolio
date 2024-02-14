@@ -1,0 +1,18 @@
+---
+import { socials } from './navigation.constants';
+---
+
+<footer>
+  <ul class='flex space-x-2 justify-center'>
+    {
+      socials.map((social) => (
+        <li>
+          <a href={social.url} target='_blank' rel='noopener noreferrer'>
+            <img src={social.icon} alt={social.name} class='w-8' />
+            <span class='sr-only'>{social.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

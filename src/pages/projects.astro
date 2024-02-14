@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from './layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.svelte';
+
+const allPieces = await getCollection('projects');
+---
+
+<BaseLayout pageTitle='tasmto - p o r t f o l i o'>
+  <h1>My Astro Site</h1>
+  <h1>About Me</h1>
+  <h2>... and my new Astro site!</h2>
+
+  <div class='flex gap-x-2 gap-y-4'>
+    {
+      allPieces.map((piece) => (
+        <ProjectCard
+          title={piece.data.title}
+          slug={`/projects/${piece.slug}`}
+          category={piece.data.subtitle}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>
