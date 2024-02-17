@@ -17,8 +17,10 @@ const projectsCollection = defineCollection({
     }),
     publishedAt: z.date(),
     tags: z.array(z.string()),
+    description: z.string(),
   }),
 });
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   projects: projectsCollection,

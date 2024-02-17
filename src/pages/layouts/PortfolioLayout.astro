@@ -1,10 +1,23 @@
 ---
+import { fade, slide } from 'astro:transitions';
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={`tasmto - ${frontmatter.title}`}>
-  <h1>{frontmatter.title}</h1>
+  <img
+    src={frontmatter.coverImage.url}
+    alt=''
+    class='h-[40vh] w-full object-cover'
+    transition:name={`${frontmatter.title.replaceAll(' ', '-')}-cover-image`}
+    transition:animate={fade({ duration: '200ms' })}
+  />
+  <h1
+    transition:name={frontmatter.title.replaceAll(' ', '-')}
+    class='font-display text-2xl'
+  >
+    {frontmatter.title}
+  </h1>
   <p>{frontmatter.description}</p>
   <slot />
 </BaseLayout>

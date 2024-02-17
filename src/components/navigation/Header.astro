@@ -1,25 +1,37 @@
 ---
 import { navLinks, socials } from './navigation.constants';
+import { fade } from 'astro:transitions';
 ---
 
-<header class='flex justify-between'>
+<header
+  class='flex justify-between fixed top-0 max-w-4xl left-1/2 -translate-x-1/2 px-4 py-2 w-full z-50'
+>
   <h2 class='text-lg font-bold'><a href='/'>tasmto</a></h2>
   <ul class='flex space-x-2'>
     {
       navLinks.map((link) => (
         <li>
-          <a href={link.url}>{link.name}</a>
+          <a
+            href={link.url}
+            class=' '
+            style={' mix-blend-mode: difference; color: white;'}
+          >
+            {link.name}
+          </a>
         </li>
       ))
     }
   </ul>
 
-  <ul class='flex space-x-2'>
+  <ul
+    class='flex space-x-2 items-center'
+    transition:animate={fade({ duration: '2s' })}
+  >
     {
       socials.map((social) => (
         <li>
           <a href={social.url} target='_blank' rel='noopener noreferrer'>
-            <img src={social.icon} alt='GitHub' class='w-8' />
+            <img src={social.icon} alt='GitHub' class='w-6' />
             <span class='sr-only'>My {social.name}</span>
           </a>
         </li>

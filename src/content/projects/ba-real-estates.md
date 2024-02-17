@@ -1,8 +1,8 @@
 ---
-title: Ej Woods store
-subtitle: 'eccomerce store'
+title: BA Real Estates
+subtitle: 'Web App'
 coverImage:
-  url: 'https://images01.nicepagecdn.com/page/17/68/website-template-preview-1768014.jpg'
+  url: 'https://images01.nicepagecdn.com/page/39/25/website-template-preview-3925874.jpg'
   alt: 'Thumbnail of Astro rays.'
 logoImage:
   url: 'https://docs.astro.build/assets/rays.webp'
@@ -12,4 +12,4 @@ description: My solution was a web-app based on the phenominal T3 stack and with
 tags: ['astro', 'learning in public', 'setbacks', 'community']
 ---
 
-After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
