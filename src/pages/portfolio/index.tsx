@@ -1,20 +1,20 @@
-import { IoCalendar } from 'react-icons/io5'
-import groq from 'groq'
-import Link from 'next/link'
+import { IoCalendar } from 'react-icons/io5';
+import groq from 'groq';
+import Link from 'next/link';
 
-import Button from '@/components/button/Button'
-import Layout from '@/components/Layout'
-import PageMeta from '@/components/seo/Seo'
-import Typography from '@/components/typography/Typography'
-import FooterSecondaryContactCard from '@/features/navigation/components/FooterCard'
-import PageTitle from '@/features/pages/components/Title'
-import PortfolioCard from '@/features/portfolio/components/Card'
-import { PortfolioPieceType } from '@/features/portfolio/types'
-import { getClient } from '@/lib/sanity.server'
+import Button from '@/components/button/Button';
+import Layout from '@/components/Layout';
+import PageMeta from '@/components/seo/Seo';
+import Typography from '@/components/typography/Typography';
+import FooterSecondaryContactCard from '@/features/navigation/components/FooterCard';
+import PageTitle from '@/features/pages/components/Title';
+import PortfolioCard from '@/features/portfolio/components/Card';
+import { PortfolioPieceType } from '@/features/portfolio/types';
+import { getClient } from '@/lib/sanity.server';
 
 type Props = {
-  portfolioPieces: Array<PortfolioPieceType>
-}
+  portfolioPieces: Array<PortfolioPieceType>;
+};
 
 const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
   return (
@@ -30,7 +30,7 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
               </Link>{' '}
               or if you need a{' '}
               <Link href='/hi'>
-                <a className='link'>in-person demo</a>
+                <a className='link'>online call demo</a>
               </Link>{' '}
               of any of my projects.
             </>
@@ -73,16 +73,16 @@ const PortfolioCollectionsPage = ({ portfolioPieces }: Props) => {
         {''}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-const query = groq`*[_type == "portfolio"] | order(featured desc)`
+const query = groq`*[_type == "portfolio"] | order(featured desc)`;
 
 export const getStaticProps = async () => {
-  const portfolioPieces = await getClient().fetch(query)
+  const portfolioPieces = await getClient().fetch(query);
   return {
     props: { portfolioPieces },
-  }
-}
+  };
+};
 
-export default PortfolioCollectionsPage
+export default PortfolioCollectionsPage;

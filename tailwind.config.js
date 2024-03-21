@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -62,6 +62,7 @@ module.exports = {
     extend: {
       cursor: {
         eye: 'url(/cursors/eye.png), pointer',
+        party: 'url(/cursors/party.png), pointer',
       },
       screens: {
         // prettier-ignore
@@ -70,4 +71,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

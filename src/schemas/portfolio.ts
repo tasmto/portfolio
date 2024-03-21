@@ -1,5 +1,5 @@
-import { TbRainbow } from 'react-icons/tb'
-import { defineType } from 'sanity'
+import { TbRainbow } from 'react-icons/tb';
+import { defineType } from 'sanity';
 
 export default defineType({
   name: 'portfolio',
@@ -160,12 +160,12 @@ export default defineType({
       capstone: 'featured',
     },
     prepare({ title, subtitle, media, capstone }) {
-      const titleText = capstone ? `${title} 🌟` : title
+      const titleText = capstone ? `${title} 🌟` : title;
       return {
         title: titleText,
         subtitle,
         media,
-      }
+      };
     },
   },
-})
+});

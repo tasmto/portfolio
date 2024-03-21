@@ -1,64 +1,47 @@
-import { useState } from 'react'
-import { IoDownloadOutline } from 'react-icons/io5'
+import { useState } from 'react';
+import { IoDownloadOutline } from 'react-icons/io5';
 
-import Button from '@/components/button/Button'
-import Typography from '@/components/typography/Typography'
+import Button from '@/components/button/Button';
+import Typography from '@/components/typography/Typography';
 
-type Props = {}
+type Props = {};
 
 const ResumeTabsElement = (props: Props) => {
   const resumeContent = [
     {
-      title: 'Front-End Developer',
-      company: 'Future Agent',
-      startDate: '2021',
-      endDate: 'Current',
+      title: 'Full-Stack Developer',
+      company: 'Warp Development',
+      startDate: 'Sept 2022',
+      endDate: 'Present',
       description: [
-        'Responsible for leading and structuring development processes and roadmaps for our C2C (Customer-to-Customer) application.',
-        'Personally responsible for the design and current co-development of our C2C application.',
-        'Introduced and currently solely responsible for managing our React and design component libraries.',
-        'Created and currently responsible for overseeing the brand design system and guidelines.',
-        'Main technology researcher and helping implement technologies (like React Native) for our products.',
+        'Solely led development and maintenance of two React sites, a React Native app, an Electron desktop app, and two .NET backends.',
+        'Optimised image processing, improving photo processing speeds from 4 images per minute to 17 images per minute per virtual machine, all while maintaining the existing costs and the infrastructure setup.',
+        'Successfully overhauled previously unreliable and bug-prone Stripe, PayPal, and Paygate payment gateway integrations across the entire product platform. This resulted in greater platform reliability and eliminated customer complaints and frustrations regarding inaccurate payment reporting and unprocessed customer payments. ...',
+      ],
+    },
+    {
+      title: 'Full-Stack Developer',
+      company: 'Future Agent ',
+      startDate: 'Aug 2021',
+      endDate: 'Aug 2022',
+      description: [
+        'Led the development of our home seller-to-buyer mobile application and buyer-to-seller web app, using React Native, Next js with TRPC and Postgres SQL.',
+        "Designed and maintained the company's design system within Figma, integrating it with React component libraries in Storybook to ensure consistency and efficiency in our UI/UX design and development workflows.",
+        "Helped lead the technical planning sessions to align business objectives with the development side, ensuring a coherent roadmap for during the products' development.",
       ],
     },
     {
       title: 'Web Developer and Designer',
       company: 'Beyond Architecture Real Estate',
-      startDate: '2021',
-      endDate: '2022',
+      startDate: 'Nov 2021',
+      endDate: 'Jun 2022',
       description: [
-        'Establishing processes through the integration and sometimes development of technologies that help the business scale. For example, a custom client facing property lifestyle calculator that helps potential property buyers see properties they can afford and provides step-by-step help in getting bonds, calculating transfer costs, etc.',
-        "As the only developer on the team, I develop and/or integrate all the business' digital tools. For example integrating the website forms and analytics with the CRM (Customer Relations Manager) software.",
-        'Required to provide training and technical support for different teams and departments across the company.',
-        'Responsible for creating and maintaining our design system for our marketing and technology departments. ',
+        "Soley led the development of the company's marketing website and real estate advertising platform, ensuring seamless integration with their existing realtor platforms. Additionally, developed internal tools to help improve workflows between the sales team and the realtors.",
+        "Created and maintained the company's design and brand guidelines, ensuring consistency across their marketing channels (including social media and physical media).",
       ],
     },
-    {
-      title: 'Learning Technologist Tech Lead',
-      company: 'Construct Education',
-      startDate: '2021',
-      endDate: '2021',
-      description: [
-        'Introduced and integrated a new atomic approach of creating CSS class and attribute based custom components in Canvas LMS (one of our main learning management platforms) through libraries like Tailwind CSS, Material-UI, etc.',
-        "Took over managing, cataloging and integrating LTI's (Learning Tool Interoperability) across our Canvas instance and select clients' instances.",
-        'Responsible for providing Canvas LMS technical support to our learning design and technology teams.',
-        'Assisted with on-boarding and training the Canvas helpdesk support team (30 people) and learning designers with learning Canvas.',
-        'Supported our sales and project management teams with creating a client quoting framework for Canvas LMS courses.',
-      ],
-    },
-    {
-      title: 'Learning Technologist',
-      company: 'Construct Education',
-      startDate: '2019',
-      endDate: '2020',
-      description: [
-        'Successfully & consistently developed and launched multiple online courses within the given timelines & budgets.',
-        'Required to develop course design ideas and concepts from our designers in high-pressure, time-sensitive briefs.',
-        'Worked directly with our partner institutions, providing technical support to their lecturers and staff. Most notably worked directly with the Saïd Business School in Oxford and the Ross Business School in Michigan, especially at the beginning of the pandemic.',
-      ],
-    },
-  ]
-  const [activeTab, setActiveTab] = useState(0)
+  ];
+  const [activeTab, setActiveTab] = useState(0);
   return (
     <div className='grid grid-cols-5 gap-3 w-full content-stretch'>
       <aside
@@ -98,7 +81,7 @@ const ResumeTabsElement = (props: Props) => {
           className='mt-3 text-start  text-slate-100 '
           icon={IoDownloadOutline}
           iconPosition='left'
-          href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
+          href='https://github.com/tasmto/tasmto/releases/download/1.0/Tashinga.Mtoko.CV.pdf'
           download
         >
           Download a full PDF version <span className='sr-only'>of my CV</span>
@@ -129,7 +112,7 @@ const ResumeTabsElement = (props: Props) => {
         </ul>
       </article>
     </div>
-  )
-}
+  );
+};
 
-export default ResumeTabsElement
+export default ResumeTabsElement;

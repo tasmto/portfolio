@@ -1,5 +1,5 @@
-import { IoNewspaperOutline } from 'react-icons/io5'
-import { defineType } from 'sanity'
+import { IoNewspaperOutline } from 'react-icons/io5';
+import { defineType } from 'sanity';
 
 export default defineType({
   title: 'Text & Image',
@@ -61,8 +61,8 @@ export default defineType({
       description: 'description',
       link: 'link',
       linkText: 'linkText',
-      media: 'image.asset.url',
+      media: 'image',
       textLast: 'textLast',
     },
   },
-})
+});

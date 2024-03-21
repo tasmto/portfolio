@@ -1,25 +1,25 @@
-import React from 'react'
-import { IoDownloadOutline } from 'react-icons/io5'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import React from 'react';
+import { IoDownloadOutline } from 'react-icons/io5';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Button from '@/components/button/Button'
+import Button from '@/components/button/Button';
 
-import Logo from '../assets/ts-logo.svg'
-import { primaryLinks } from '../routes'
+import Logo from '../assets/ts-logo.svg';
+import { primaryLinks } from '../routes';
 
-type Props = {}
+type Props = {};
 
 const DesktopMenu = (props: Props) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress } = useScroll();
   const translateMenuUpAnim = useTransform(
     scrollYProgress,
     [0, 0.005],
     [0, -200]
-  )
+  );
 
   return (
     <div className='sr-only md:not-sr-only '>
@@ -58,7 +58,7 @@ const DesktopMenu = (props: Props) => {
             <Button
               type='secondary'
               icon={IoDownloadOutline}
-              href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
+              href='https://github.com/tasmto/tasmto/releases/download/1.0/Tashinga.Mtoko.CV.pdf'
               download
             >
               My CV
@@ -74,7 +74,7 @@ const DesktopMenu = (props: Props) => {
         </ul>
       </motion.nav>
     </div>
-  )
-}
+  );
+};
 
-export default DesktopMenu
+export default DesktopMenu;

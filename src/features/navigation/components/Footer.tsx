@@ -1,30 +1,13 @@
-import React, { useEffect } from 'react'
-import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
-import Link from 'next/link'
+import React from 'react';
+import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5';
+import Link from 'next/link';
 
-import Divider from '@/components/divider/Divider'
-import Typography from '@/components/typography/Typography'
+import Divider from '@/components/divider/Divider';
+import Typography from '@/components/typography/Typography';
 
-import { footerLinks } from '../routes'
+import { footerLinks } from '../routes';
 
 const Footer = () => {
-  const [currentYear, setCurrentYear] = React.useState(2111)
-
-  useEffect(() => {
-    const conFirmCurrentYear = async () => {
-      try {
-        const res = await fetch('http://worldclockapi.com/api/json/utc/now')
-        const data = await res.json()
-        const year = data?.currentDateTime?.substring(0, 4)
-        if (year && Number(year) && Number(year) !== currentYear) {
-          setCurrentYear(Number(year))
-        }
-      } catch (error) {}
-    }
-    conFirmCurrentYear()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <footer className='grid gap-6 md:gap-14 my-12 container-1'>
       <Divider type='dashed' className='opacity-100 !border-slate-500' />
@@ -63,7 +46,7 @@ const Footer = () => {
       </nav>
       <div className='text-slate-400 container-1 rounded-xl bg-slate-100 py-4 px-4 flex justify-between items-center gap-5 flex-wrap'>
         <Typography as='p' size='body3'>
-          &copy; Tashinga Mtoko {currentYear}. Built with{'  '}
+          &copy; Tashinga Mtoko {new Date().getFullYear()}. Built with{'  '}
           {'  '}
           <a
             href='https://nextjs.org/'
@@ -135,7 +118,7 @@ const Footer = () => {
         </ul>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

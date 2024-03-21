@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import { NextStudio } from 'next-sanity/studio'
-import { StudioLayout, StudioProvider } from 'sanity'
+import { NextStudio } from 'next-sanity/studio';
+import { StudioLayout, StudioProvider } from 'sanity';
 
-import config from '../../../sanity.config'
+import config from '../../../sanity.config';
 
-type Props = {}
+type Props = {};
 
 const StudioComponent = (props: Props) => {
   return (
@@ -15,7 +15,7 @@ const StudioComponent = (props: Props) => {
         <StudioLayout />
       </StudioProvider>
     </NextStudio>
-  )
-}
+  );
+};
 
-export { StudioComponent }
+export { StudioComponent };

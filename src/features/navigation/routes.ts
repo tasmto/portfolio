@@ -5,7 +5,7 @@ import {
   IoChatbubbleOutline,
   IoDocumentTextOutline,
   IoNewspaper,
-} from 'react-icons/io5'
+} from 'react-icons/io5';
 
 export const mobileLinks = [
   {
@@ -26,7 +26,7 @@ export const mobileLinks = [
     icon: IoChatbubbleOutline,
     iconActive: IoChatbubble,
   },
-]
+];
 
 export const primaryLinks = [
   {
@@ -42,7 +42,7 @@ export const primaryLinks = [
     href: '/blog',
     text: 'Blog',
   },
-]
+];
 
 export const allLinks = [
   {
@@ -66,7 +66,7 @@ export const allLinks = [
     text: 'Contact me',
     href: '/contact',
   },
-]
+];
 
 export const footerLinks = [
   {
@@ -82,7 +82,7 @@ export const footerLinks = [
       },
       {
         title: 'Download my CV',
-        href: '/Tashinga-Mtoko-Fullstack-Developer-CV.pdf',
+        href: 'https://github.com/tasmto/tasmto/releases/download/1.0/Tashinga.Mtoko.CV.pdf',
       },
     ],
   },
@@ -112,4 +112,4 @@ export const footerLinks = [
       },
     ],
   },
-]
+];

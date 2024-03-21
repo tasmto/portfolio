@@ -1,38 +1,43 @@
-import React, { useEffect } from 'react'
-import { HiMenuAlt4 } from 'react-icons/hi'
-import { IoCloseCircle, IoDownloadOutline } from 'react-icons/io5'
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import React, { useEffect } from 'react';
+import { HiMenuAlt4 } from 'react-icons/hi';
+import { IoCloseCircle, IoDownloadOutline } from 'react-icons/io5';
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Button from '@/components/button/Button'
-import Typography from '@/components/typography/Typography'
+import Button from '@/components/button/Button';
+import Typography from '@/components/typography/Typography';
 
-import Logo from '../assets/ts-logo.svg'
-import { allLinks } from '../routes'
+import Logo from '../assets/ts-logo.svg';
+import { allLinks } from '../routes';
 
-import styles from '../../../styles/ScrollBar.module.css'
+import styles from '../../../styles/ScrollBar.module.css';
 
 const ScrollMenu = () => {
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress } = useScroll();
   const translateMenuDownAnim = useTransform(
     scrollYProgress,
     [0, 0.005],
     [-300, 30]
-  )
+  );
 
-  const router = useRouter()
-  const [menuOpen, setMenuOpen] = React.useState(false)
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = React.useState(false);
   useEffect(() => {
-    setMenuOpen(false)
+    setMenuOpen(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.route])
+  }, [router.route]);
 
   const variants = {
     hidden: { opacity: 0, x: -10 },
     enter: { opacity: 1, x: 0, y: 0, duration: 1 },
     exit: { opacity: 0, x: 10, duration: 1.5 },
-  }
+  };
 
   return (
     <>
@@ -47,7 +52,7 @@ const ScrollMenu = () => {
       >
         <Logo
           onClick={() => {
-            if (router.pathname !== '/') router.push('/')
+            if (router.pathname !== '/') router.push('/');
           }}
           title='back to home'
           className='w-10 h-10 cursor-pointer pointer-events-auto hover:rotate-6 transition-all duration-200'
@@ -78,7 +83,7 @@ const ScrollMenu = () => {
             key='menu'
             aria-hidden='true'
             onClick={(e) => {
-              setMenuOpen(false)
+              setMenuOpen(false);
             }}
             className='hidden xs:block fixed mx-auto z-[10000] top-0 left-0 w-screen max-w-[100vw] h-screen bg-slate-700/60 md:pr-2 backdrop-blur-sm'
           >
@@ -111,7 +116,7 @@ const ScrollMenu = () => {
                     type='secondary'
                     size='large'
                     icon={IoDownloadOutline}
-                    href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
+                    href='https://github.com/tasmto/tasmto/releases/download/1.0/Tashinga.Mtoko.CV.pdf'
                     download
                     className='w-full self-stretch'
                   >
@@ -124,7 +129,7 @@ const ScrollMenu = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default ScrollMenu
+export default ScrollMenu;

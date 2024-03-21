@@ -1,32 +1,33 @@
-import { IoDownloadOutline } from 'react-icons/io5'
-import { motion } from 'framer-motion'
-import groq from 'groq'
-import Image from 'next/image'
-import Link from 'next/link'
+import { IoDownloadOutline } from 'react-icons/io5';
+import { motion } from 'framer-motion';
+import groq from 'groq';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Button from '@/components/button/Button'
-import Layout from '@/components/Layout'
-import TechSlider from '@/components/tech-stacks/TechSlider'
-import Typography from '@/components/typography/Typography'
-import BlogCard from '@/features/blog/components/Card'
-import { BlogPostType } from '@/features/blog/types'
-import ContactForm from '@/features/forms/components/ContactForm'
+import AboutMeImageCluster from '@/components/AboutMeImageCluster';
+import Button from '@/components/button/Button';
+import Layout from '@/components/Layout';
+import TechSlider from '@/components/tech-stacks/TechSlider';
+import Typography from '@/components/typography/Typography';
+import BlogCard from '@/features/blog/components/Card';
+import { BlogPostType } from '@/features/blog/types';
+import ContactForm from '@/features/forms/components/ContactForm';
 // import client from '../client'
-import PortfolioCard from '@/features/portfolio/components/Card'
-import FeaturedBlockElement from '@/features/portfolio/components/FeaturedBlockElement'
-import { PortfolioPieceType } from '@/features/portfolio/types'
-import ResumeTabsElement from '@/features/resume/components/ResumeTabsElement'
-import { getClient } from '@/lib/sanity.server'
+import PortfolioCard from '@/features/portfolio/components/Card';
+import FeaturedBlockElement from '@/features/portfolio/components/FeaturedBlockElement';
+import { PortfolioPieceType } from '@/features/portfolio/types';
+import ResumeTabsElement from '@/features/resume/components/ResumeTabsElement';
+import { getClient } from '@/lib/sanity.server';
 
 type Props = {
-  portfolioPieces: Array<PortfolioPieceType>
-  technologies: PortfolioPieceType['technologies']
-  blogPosts: Array<BlogPostType>
-}
+  portfolioPieces: Array<PortfolioPieceType>;
+  technologies: PortfolioPieceType['technologies'];
+  blogPosts: Array<BlogPostType>;
+};
 
 const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
-  const featuredPieces = portfolioPieces.filter((piece) => piece.featured)
-  const nonFeaturedPieces = portfolioPieces.filter((piece) => !piece.featured)
+  const featuredPieces = portfolioPieces.filter((piece) => piece.featured);
+  const nonFeaturedPieces = portfolioPieces.filter((piece) => !piece.featured);
 
   return (
     <Layout>
@@ -37,13 +38,13 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
               <article className='w-full grid md:grid-cols-5 gap-10 content-center justify-items-center'>
                 <div className='flex flex-col gap-5 self-center justify-self-center md:col-span-3 max-w-lg md:max-w-none'>
                   <Typography size='display1' as='h1'>
-                    Hi, I'm Tashinga, a full-stack JavaScript developer.
+                    Hi, I'm Tashinga, a full-stack developer.
                   </Typography>
                   <Typography
                     size='body1'
                     className='max-w-[30rem] text-slate-300'
                   >
-                    I'm currently working as a React developer at{' '}
+                    I'm currently working as a full-stack developer at{' '}
                     <a
                       href='https://www.warpdevelopment.com/'
                       target={'_blank'}
@@ -73,16 +74,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
                   </div>
                 </div>
                 <div className='hidden md:block col-span-2 '>
-                  <Image
-                    // src='/images/guide.gif'
-                    src='/images/about-me-image-cluster.png'
-                    width={450}
-                    height={450}
-                    layout='intrinsic'
-                    className='object-center object-contain'
-                    priority={true}
-                    alt=''
-                  />
+                  <AboutMeImageCluster />
                 </div>
               </article>
               <TechSlider technologies={technologies} />
@@ -141,7 +133,7 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
               type='primary'
               width='block'
               icon={IoDownloadOutline}
-              href='/Tashinga-Mtoko-Fullstack-Developer-CV.pdf'
+              href='https://github.com/tasmto/tasmto/releases/download/1.0/Tashinga.Mtoko.CV.pdf'
               download
             >
               Download My CV
@@ -296,29 +288,29 @@ const Home = ({ portfolioPieces, technologies, blogPosts }: Props) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-const projectsQuery = groq`*[_type == "portfolio"] | order(featured desc){
+const projectsQuery = groq`*[_type == "portfolio"] | order(startedAt desc){
   ...,
   "technologies": technologies[]->{name,icon}
-}`
+}`;
 const technologiesQuery = groq`*[_type == "technologies" && featured][] | order(featured desc){
  name, icon, description,featured
-}`
+}`;
 const blogQuery = groq`*[_type == "post"][0..5] | order(publishedAt  desc){
   ...,
   "categories": categories[]->title,
-}`
+}`;
 
 export const getStaticProps = async () => {
-  const portfolioPieces = await getClient().fetch(projectsQuery)
-  const technologies = await getClient().fetch(technologiesQuery)
-  const blogPosts = await getClient().fetch(blogQuery)
+  const portfolioPieces = await getClient().fetch(projectsQuery);
+  const technologies = await getClient().fetch(technologiesQuery);
+  const blogPosts = await getClient().fetch(blogQuery);
 
   return {
     props: { portfolioPieces, technologies, blogPosts },
-  }
-}
+  };
+};
 
-export default Home
+export default Home;
