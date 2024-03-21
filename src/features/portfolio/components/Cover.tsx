@@ -101,8 +101,8 @@ const PortFolioPieceCover = ({ portfolio }: Props) => {
                     ? portfolio?.coverImage?.asset
                     : portfolio.coverImage?.asset
                 )
-                  ?.width(1066)
-                  ?.height(600)
+                  ?.width(1500)
+                  ?.height(1080)
                   ?.fit('max')
                   ?.auto('format')
                   ?.url() ?? ''
