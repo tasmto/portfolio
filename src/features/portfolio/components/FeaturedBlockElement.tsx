@@ -2,23 +2,23 @@ import {
   IoArrowForwardOutline,
   IoBookmarks,
   IoTodayOutline,
-} from 'react-icons/io5'
-import Link from 'next/link'
+} from 'react-icons/io5';
+import Link from 'next/link';
 
-import Button from '@/components/button/Button'
-import Tag from '@/components/tags/Tag'
-import Typography from '@/components/typography/Typography'
-import { urlFor } from '@/lib/sanity'
+import Button from '@/components/button/Button';
+import Tag from '@/components/tags/Tag';
+import Typography from '@/components/typography/Typography';
+import { urlFor } from '@/lib/sanity';
 
-import trimString from '../../../utilities/trimString'
-import generatePlainText from '../../portable-text/lib/generatePlainText'
-import { PortfolioPieceType } from '../types'
+import trimString from '../../../utilities/trimString';
+import generatePlainText from '../../portable-text/lib/generatePlainText';
+import { PortfolioPieceType } from '../types';
 // import {urlFor} from '@/lib/sanity'
 type Props = {
-  piece: PortfolioPieceType
-  textFirst?: boolean
-  className?: string
-}
+  piece: PortfolioPieceType;
+  textFirst?: boolean;
+  className?: string;
+};
 const FeaturedBlockElement = ({
   piece,
   textFirst = false,
@@ -33,7 +33,6 @@ const FeaturedBlockElement = ({
             urlFor(piece?.coverImage?.asset)
               ?.width(1080)
               ?.height(500)
-              ?.blur(10)
               ?.fit('max')
               ?.auto('format')
               ?.url() ?? ''
@@ -109,7 +108,7 @@ const FeaturedBlockElement = ({
         </div>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default FeaturedBlockElement
+export default FeaturedBlockElement;
