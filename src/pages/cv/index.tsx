@@ -26,10 +26,8 @@ const index = (props: Props) => {
             <>
               {' '}
               I reccomend having a look at my{' '}
-              <Link href='contact'>
-                <a href='/' className='link'>
-                  portfolio projects
-                </a>
+              <Link href='/'>
+                <a className='link'>portfolio projects</a>
               </Link>{' '}
               first but if you really need a PDF then you can download it below:
               <Button
